@@ -1,4 +1,7 @@
 <h1> Installing SteamBSD online </h1>
+<br>First, install FreBSD with user admin (group wheel) and reboot PC
+<br>Login as root:
+<br><code>su root</code>
 <br>Download from git: 
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/inet</code>
