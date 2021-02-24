@@ -1,3 +1,5 @@
+#!/bin/sh
+
 ### How to install simple steam on freebsd
 #installation: delete kernel-dbg, ipv6 - no, asia - RF, set date, sshd, moused, clear_tmp, dis sendmail, user admin (administrator) 1001 wheel 0000
 #login to root
