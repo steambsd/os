@@ -2,9 +2,14 @@
 <br>Download from git: 
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/inet</code>
+<br><code>cd inet</code>
 <br>Or download without install git:
 <br><code>fetch https://github.com/steambsd/inet/archive/main.zip</code>
 <br><code>unzip main.zip</code>
+<br><code>cd inet-main</code>
+<br>
+<br>Add permission:
+<br><code>chmod 755 start</code>
 <br> 
 <br>Finally, run it:
 <br><code>./start</code>
