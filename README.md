@@ -8,7 +8,7 @@
 <br>Finally, run it:
 <br><code>./start</code>
 <br> 
-<br>Offline ISO and IMG.
+<br>Offline ISO and IMG (very fast installation).
 <br>Download: https://drive.google.com/drive/folders/18toZCkXbWEp226KgjWZecLe1ad6-FMze
 <br> 
 <br>---
