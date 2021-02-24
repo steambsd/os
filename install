@@ -1,0 +1,111 @@
+### How to install simple steam on freebsd
+#installation: delete kernel-dbg, ipv6 - no, asia - RF, set date, sshd, moused, clear_tmp, dis sendmail, user admin (administrator) 1001 wheel 0000
+#login to root
+#ifconfig
+#ssh admin@192.168.43.103
+#login: admin, pass: 0000
+#su root
+
+#update
+env PAGER=cat freebsd-update fetch
+freebsd-update install 
+env ASSUME_ALWAYS_YES=YES pkg bootstrap
+env ASSUME_ALWAYS_YES=YES pkg update -f
+
+#packages
+pkg ins -y sudo bash
+echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
+pw usermod admin -s /usr/local/bin/bash
+sudo pkg ins -y xorg
+
+#attention! without space!
+vi /usr/local/etc/X11/xorg.conf.d/xorg.conf
+Section "Screen"
+        Identifier "Screen0"
+        Monitor    "Monitor0"
+        SubSection "Display"
+                Viewport   0 0
+                Depth     24
+                Modes     "800x600"
+        EndSubSection
+EndSection
+
+
+#linux
+sysrc linux_enable="YES"
+sysrc linux64_enable="YES"
+kldload linux
+kldload linux64
+#tuning
+echo 'kern.coredump=0' >> /etc/sysctl.conf
+sysctl kern.coredump=0
+
+#save virtualbox machine
+#poweroff
+
+sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
+sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
+sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
+sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
+
+#first variant
+#pkg ins linux-steam-utils
+#mount -a
+#pw useradd steam -m
+#su steam -c steam-install
+
+#second variant
+#pkg ins -y gcc
+#pkg ins -y linux-c7-devtools linux-c7-libgfortran linux_libusb
+pkg ins -y ca_root_nss linux-c7-dbus-libs linux-c7-devtools linux-c7-nss
+mount -a
+fetch https://github.com/shkhln/linuxulator-steam-utils/archive/master.zip
+unzip master.zip
+cd linuxulator-steam-utils-master
+make
+make install
+pw useradd steamdev -m
+steamdev -c /opt/steam-utils/bin/steam-install
+
+### In Xorg
+startx
+
+#first variant
+#sudo su steam -c steam
+
+#second variant
+sudo su steamdev -c /opt/steam-utils/bin/steam
+
+### --- SLIM + LXDE
+pkg ins slim lxde-meta
+sysrc dbus_enable="YES"
+sysrc hald_enable="YES"
+sysrc slim_enable="YES"
+#--- slim
+echo "default_user        admin" >> /usr/local/etc/slim.conf
+echo "auto_login          yes" >> /usr/local/etc/slim.conf
+echo 'focus_password      yes' >> /usr/local/etc/slim.conf
+#--- lxde
+echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/admin/.xinitrc
+echo 'startlxde' >> .xinitrc
+cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
+polkit.addRule(function (action, subject) {
+  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop")
+      && subject.isInGroup("wheel")) {
+    return polkit.Result.YES;
+  }
+});
+EOF
+cat << EOF >> /etc/crontab
+@reboot root /bin/echo 'startlxde' > /home/admin/.xinitrc
+EOF
+
+#utils
+fetch https://github.com/LightProgres/east/archive/master.zip
+unzip master.zip
+mv east-master/utils-latest utils
+sudo chmod 755 utils
+rm -rf east-master
+rm master.zip
+
