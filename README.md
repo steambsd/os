@@ -1,5 +1,3 @@
-#!/bin/sh
-
 This is installation of SteamBSD from internet
 Download: 
 pkg ins git
