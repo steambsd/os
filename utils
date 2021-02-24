@@ -180,7 +180,7 @@ EOF'
  ;;
    rbt)
    ### reboot
-   sudo reboot
+   sudo shutdown -r now
  ;;
  0)
    echo 'Exit.'
