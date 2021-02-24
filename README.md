@@ -8,8 +8,9 @@
 <br>Finally, run it:
 <br><code>./start</code>
 <br> 
-<br>Offline ISO and IMG:
+<br>Offline ISO and IMG.
 <br>Download: https://drive.google.com/drive/folders/18toZCkXbWEp226KgjWZecLe1ad6-FMze
+<br> 
 <br>---
 <br>SteamBSD © is FREE operating system.
 <br>Site: http://steambsd.epizy.com
