@@ -1,4 +1,4 @@
-h1 This is installation of SteamBSD from internet
+<h1> This instruction for installation of SteamBSD from internet</h1>
 <br>Download: 
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/inet</code>
