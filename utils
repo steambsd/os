@@ -21,12 +21,12 @@ echo '6 - [proton - beta] unpack slrs (steam linux runtime - soldier)'
 echo '7 - [proton - beta] select emulators/wine-proton in properties'
 echo '8 - [proton - beta] download simple game'
 echo '9 - [proton - beta] test wineserver (see Readme.txt)'
-echo 'c - construct full snapshot of system'
-echo 'd - delete full snapshot of system'
-echo 'l - list snapshot of system'
-echo 'r - restore full snapshot of system'
 echo 'st - open steam for user steam'
 echo 'sd - open steam for user steamdev'
+echo 'zc - construct full snapshot of system'
+echo 'zd - delete full snapshot of system'
+echo 'zl - list snapshot of system'
+echo 'zr - restore full snapshot of system'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo 'sht - shutdown pc'
@@ -105,21 +105,29 @@ echo -n 'Choose your number: '
    sudo pw useradd steamdev -m
    sudo su steamdev -c 'lxterminal --title="you must exec command: /opt/steam-utils/bin/lsu-wine-env wine winecfg" &'
  ;;
- c)
+ st)
+   ### steam
+   sudo su steam -c 'xterm -geometry 40x4-0+0 -e steam &'
+ ;;
+ sd)
+   ### steamdev
+   sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
+ ;;
+ zc)
    ### create snapshot zroot
    sudo zfs snapshot -r zroot@backup
  ;;
- d)
+ zd)
    ### delete snapshot zroot
    sudo zfs destroy -r zroot@backup
  ;;
- l)
+ zl)
    ### list
    zfs list -t snapshot
    echo 'sleep 5 sec'
    sleep 5
  ;;
- r)
+ zr)
    ### restore snapshot zroot
    sudo zfs rollback zroot@backup
    sudo zfs rollback zroot/ROOT@backup
@@ -135,14 +143,6 @@ echo -n 'Choose your number: '
    sudo zfs rollback zroot/var/log@backup
    sudo zfs rollback zroot/var/mail@backup
    #sudo zfs rollback zroot/var/tmp@backup
- ;;
- st)
-   ### steam
-   sudo su steam -c 'xterm -geometry 40x4-0+0 -e steam &'
- ;;
- sd)
-   ### steamdev
-   sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
  ;;
  800)
    ### add screen resolution 800x600
