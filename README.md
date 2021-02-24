@@ -1,9 +1,9 @@
 This is installation of SteamBSD from internet
-Download: 
-pkg ins git
-git clone https://github.com/steambsd/inet
-Or download without install git:
-fetch https://github.com/steambsd/inet/archive/main.zip
+<br>Download: 
+<br>pkg ins git
+<br>git clone https://github.com/steambsd/inet
+<br>Or download without install git:
+<br>fetch https://github.com/steambsd/inet/archive/main.zip
 
 Finally, run it:
 ./start
