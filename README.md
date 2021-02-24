@@ -6,8 +6,8 @@
 <br><code>fetch https://github.com/steambsd/inet/archive/main.zip</code>
 <br> 
 <br>Finally, run it:
-<code>./start</code>
-<br>
+<br><code>./start</code>
+<br> 
 <br>Offline ISO and IMG:
 <br>Download: https://drive.google.com/drive/folders/18toZCkXbWEp226KgjWZecLe1ad6-FMze
 ***
