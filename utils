@@ -69,7 +69,7 @@ echo -n 'Choose your number: '
    sudo pkg remove -y winetricks
    sudo pkg remove -y wine-mono
    sudo pkg remove -y wine-gecko
-   sudo rm -rf /home/admin/.wine
+   sudo rm -rf .wine
    sudo killall -HUP wine
  ;;
  4)
