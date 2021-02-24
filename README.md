@@ -1,9 +1,10 @@
 <h1> Installing SteamBSD online </h1>
-<br>Download: 
+<br>Download from git: 
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/inet</code>
 <br>Or download without install git:
 <br><code>fetch https://github.com/steambsd/inet/archive/main.zip</code>
+<br><code>unzip main.zip</code>
 <br> 
 <br>Finally, run it:
 <br><code>./start</code>
