@@ -1,5 +1,5 @@
 <h1> SteamBSD installation on the internet </h1>
-<br>Install FreBSD with user "youruser" (group must be "wheel"!), reboot PC and then login as root:
+<br>Install FreBSD with user admin (group must be "wheel"!), reboot PC and then login as root:
 <br><code>su root</code>
 <br>Download from git: 
 <br><code>pkg ins git</code>
@@ -14,7 +14,7 @@
 <br><code>chmod 755 start</code>
 <br> 
 <br>Finally, run it:
-<br><code>./start youruser</code>
+<br><code>./start</code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
