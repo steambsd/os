@@ -27,6 +27,7 @@ sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
 kldload linux
 kldload linux64
+
 #tuning
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
