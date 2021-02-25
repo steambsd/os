@@ -72,12 +72,9 @@ cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart
 @lxterminal -e ~/autoconfig
 EOF
 # ----------------------------------------------------------------------------------------
-# create files
-echo '#!/bin/sh' > /home/$AZER/.steam-linux
-echo 'sudo su steam -c steam' > /home/$AZER/.steam-linux
-echo '#!/bin/sh' > /home/$AZER/.steam-wine
-echo 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser' > /home/$AZER/.steam-wine
 # copy files
+cp steam-linux /home/${AZER}/.steam-linux
+cp steam-wine /home/${AZER}/.steam-wine
 cp autoconfig /home/${AZER}/ 
 cp wall.jpg /home/${AZER}/
 cp check /home/${AZER}/
