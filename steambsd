@@ -9,8 +9,6 @@ echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
 echo "We have USER = $AZER"
-# user for steam
-pw useradd steam -m
 # update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
@@ -20,6 +18,11 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
+# user for steam
+pw useradd steam -m
+# ---!!! tmp
+pkg ins -y linux-steam-utils
+read ans
 pkg ins -y xorg
 pkg ins -y slim
 pkg ins -y lxde-meta
@@ -29,8 +32,7 @@ pkg ins -y winetricks
 pkg ins -y wine-mono
 pkg ins -y wine-gecko
 # packages for linux
-pkg ins -y linux-steam-utils
-read ans
+
 ## packages for comfort
 #pkg ins -y leafpad
 #pkg ins -y chromium
