@@ -9,9 +9,17 @@ echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
 echo "We have USER = $AZER"
-# basic
+# /boot/loader.conf tuning
 sysrc -f /boot/loader.conf autoboot_delay=2
 sysrc -f /boot/loader.conf beastie_disable=YES
+# /etc/sysctl.conf tuning
+echo 'kern.coredump=0' >> /etc/sysctl.conf
+# /etc/rc.conf tuning
+sysctl kern.coredump=0
+sysrc clear_tmp_enable=YES
+sysrc sendmail_enable=NO
+sysrc moused_enable=NO
+sysrc sshd_enable=YES
 # update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
@@ -28,9 +36,7 @@ sysrc linux_enable=YES
 sysrc linux64_enable=YES
 kldload linux
 kldload linux64
-# tuning
-echo 'kern.coredump=0' >> /etc/sysctl.conf
-sysctl kern.coredump=0
+
 # packages for desktop environment
 pkg ins -y xorg
 pkg ins -y slim
