@@ -29,10 +29,10 @@ pkg ins -y wine-gecko
 # packages for linux
 pkg ins -y linux-steam-utils
 ## packages for comfort
-pkg ins -y leafpad
-pkg ins -y chromium
-pkg ins -y vlc
-pkg ins -y simplescreenrecorder
+#pkg ins -y leafpad
+#pkg ins -y chromium
+#pkg ins -y vlc
+#pkg ins -y simplescreenrecorder
 # linux
 sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
@@ -82,6 +82,8 @@ cp autoconfig /home/${AZER}/
 cp wall.jpg /home/${AZER}/
 cp check /home/${AZER}/
 cp utils /home/${AZER}/
+# set permission
+chown -R ${AZER}:wheel /home/${AZER}/
 # startx
 su $AZER -c 'startx'
 
