@@ -11,7 +11,7 @@
 <br><code>cd inet-main</code>
 <br>
 <br>Add permission:
-<br><code>chmod 755 start</code>
+<br><code>chmod +x start</code>
 <br> 
 <br>Finally, run it:
 <br><code>./start</code>
