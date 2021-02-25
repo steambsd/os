@@ -5,9 +5,10 @@
 ### Config
 # choose driver for your PC, it may be: nvidia, amdgpu, radeon, intel or vesa (vesa for virtual machine)
 DRIVER='nvidia'
+echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`echo $USER`
-
+echo "We have USER = $AZER"
 
 #update
 env PAGER=cat freebsd-update fetch
@@ -18,7 +19,6 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 #packages
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
-echo "We have USER = $AZER"
 pw usermod $AZER -s /usr/local/bin/bash
-sudo pkg ins -y xorg
+#sudo pkg ins -y xorg
 
