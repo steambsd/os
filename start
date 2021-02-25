@@ -19,6 +19,11 @@ pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 pkg ins -y xorg
+## packages for wine
+#pkg ins i386-wine
+#pkg ins winetricks
+#pkg ins wine-mono
+#pkg ins wine-gecko
 ## packages for comfort
 #pkg ins -y leafpad
 #pkg ins -y chromium
