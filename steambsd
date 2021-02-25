@@ -17,7 +17,7 @@ env PAGER=cat freebsd-update fetch
 freebsd-update install
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
-# packages
+# packages for user privilegies
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
@@ -31,22 +31,23 @@ kldload linux64
 # tuning
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
+# packages for desktop environment
 pkg ins -y xorg
 pkg ins -y slim
 pkg ins -y lxde-meta
-## packages for wine
+# packages for wine
 pkg ins -y i386-wine
 pkg ins -y winetricks
 pkg ins -y wine-mono
 pkg ins -y wine-gecko
 # packages for linux
 pkg ins -y linux-steam-utils
-## packages for comfort
-#pkg ins -y leafpad
-#pkg ins -y chromium
-#pkg ins -y vlc
-#pkg ins -y simplescreenrecorder
-# slim
+# packages for comfort
+pkg ins -y leafpad
+pkg ins -y chromium
+pkg ins -y vlc
+pkg ins -y simplescreenrecorder
+# slim customization
 sysrc dbus_enable=YES
 sysrc hald_enable=YES
 sysrc slim_enable=YES
@@ -56,7 +57,7 @@ service slim start
 echo "default_user        $AZER" >> /usr/local/etc/slim.conf
 echo "auto_login          yes" >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
-# lxde
+# lxde customization
 # ----------------------------------------------------------------------------------------
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/$AZER/.xinitrc
