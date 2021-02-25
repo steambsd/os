@@ -3,8 +3,7 @@
 ### Simple installation Steam on FreeBSD ###
 ############################################
 ### Config
-# choose driver for your PC, it may be: nvidia, amdgpu, radeon, intel or vesa (v
-esa for virtual machine)
+# choose driver for your PC, it may be: nvidia, amdgpu, radeon, intel or vesa (vesa for virtual machine)
 DRIVER='nvidia'
 echo "We have DRIVER = $DRIVER"
 # user with wheel group
