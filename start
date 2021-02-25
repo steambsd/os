@@ -20,5 +20,5 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
-#sudo pkg ins -y xorg
+sudo pkg ins -y xorg
 
