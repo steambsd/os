@@ -1,9 +1,6 @@
 #!/bin/sh
 sleep 4
-AZER='admin'
-UZER='steam'
 
-cd /home/${AZER}  
 #if [ -e check ]; then
 # rm -rf check 
 #else
@@ -14,7 +11,7 @@ sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
 
 sudo mount -a
-sudo su ${UZER} -c "steam-install"
+sudo su steam -c steam-install
 
 # graphics
 drv=`cat /etc/rc.conf | grep kld_list | cut -d '"' -f2`
@@ -74,10 +71,6 @@ echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/a
 echo '@xterm -geometry 73x31-0-0 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
 
 cat << EOF > ~/Desktop/Readme.txt
-HOW TO LOGIN
-login: admin, password 0000
-login: steam, password 0000
-
 HOW TO INSTALL GAMES
 1. Found your favorite steam game and remember ID (in browsers link)
 2. Open terminal and enter follow code:
@@ -93,7 +86,7 @@ winecfg
 
 HOW TO CREATE WINE-PREFIX 
 # for preinstall i386-wine
-env WINEPREFIX=/home/admin/.wine-test wine winecfg
+env WINEPREFIX=/home/<user>/.wine-test wine winecfg
 # for test exprimental proton (you must login special user steamdev)
 env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine winecfg
 env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine64 winecfg
@@ -124,19 +117,6 @@ EndSection
 2. For example resolution  1920x1080, you may use other 
 
 3. Press ESC and leave editor with save changes
-
-HOW TO CHANGE MORE X-SETTINGS [IT IS NOT NECESSARY]
-see example or copy it:
-FOR NVIDIA
-sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.example-nvidia /usr/local/etc/X11/xorg.conf.d/xorg.conf
-FOR AMDGPU
-sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.example-amdgpu /usr/local/etc/X11/xorg.conf.d/xorg.conf
-FOR RADEON 
-sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.example-radeon /usr/local/etc/X11/xorg.conf.d/xorg.conf
-FOR INTEL
-sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.example-intel /usr/local/etc/X11/xorg.conf.d/xorg.conf
-FOR VESA
-sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.example-vesa /usr/local/etc/X11/xorg.conf.d/xorg.conf
 
 P.S.
 For more information see 
