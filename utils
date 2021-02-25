@@ -12,7 +12,7 @@ echo '=========================       UTILS      =========================='
 echo '====================================================================='
 echo 'ATTENTION! For other screen resolution see file Readme.txt'
 echo ''
-echo '1 - update utils and reopen'
+echo '1 - reinstall wine'
 echo '2 - install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
@@ -31,6 +31,7 @@ echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo 'sht - shutdown pc'
 echo 'rbt - reboot pc'
+echo 'upd - update utils and reopen'
 echo '0 - exit'
 echo ''
 echo -n 'Choose your number: '
@@ -181,6 +182,18 @@ EOF'
    rbt)
    ### reboot
    sudo shutdown -r now
+ ;;
+   upd)
+   ### update utils
+   fetch https://github.com/steambsd/inet/archive/main.zip
+   unzip main.zip
+   mv inet-main/utils utils
+   sudo chmod 755 utils
+   rm -rf inet-main
+   rm main.zip
+   xterm -geometry 73x31-0-0 -e ./utils &
+   sleep 2
+   break
  ;;
  0)
    echo 'Exit.'
