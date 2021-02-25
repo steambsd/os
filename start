@@ -40,7 +40,8 @@ echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab
 
 # prepare linux-steam
 pkg ins linux-steam-utils
-pw useradd steam -m
-su steam -c steam
 mount -a
+pw useradd steam -m
+su steam -c steam-install
+
 
