@@ -1,6 +1,7 @@
 #!/bin/sh
 sleep 4
 
+cd ~
 # check for duplicate terminals
 #if [ -e check ]; then
 # rm -rf check 
