@@ -74,6 +74,14 @@ EOF
 cat << EOF >> /etc/crontab
 @reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
 EOF
+echo '#!/bin/sh' > /home/$AZER/.steam-linux
+echo 'sudo su steam -c steam' > /home/$AZER/.steam-linux
+echo '#!/bin/sh' > /home/$AZER/.steam-wine
+echo 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser' > /home/$AZER/.steam-linux
+#autostart
+cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
+@lxterminal -e ~/desk
+EOF
 
 ## startx
 #su $AZER -c 'startx'
