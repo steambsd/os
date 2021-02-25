@@ -12,7 +12,7 @@ cd ~
 pcmanfm --set-wallpaper wall.jpg
 echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
 echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
-echo '@xterm -geometry 73x31-0-0 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
+echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
 #----------------------------------------------------------------------------------------
 # steam-linux
 sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
