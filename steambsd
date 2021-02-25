@@ -9,6 +9,9 @@ echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
 echo "We have USER = $AZER"
+# basic
+sysrc -f /boot/loader.conf autoboot_delay=2
+sysrc -f /boot/loader.conf beastie_disable=YES
 # update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
@@ -21,8 +24,8 @@ pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
 pw useradd steam -m
 # linux
-sysrc linux_enable="YES"
-sysrc linux64_enable="YES"
+sysrc linux_enable=YES
+sysrc linux64_enable=YES
 kldload linux
 kldload linux64
 # tuning
@@ -44,9 +47,9 @@ pkg ins -y linux-steam-utils
 #pkg ins -y vlc
 #pkg ins -y simplescreenrecorder
 # slim
-sysrc dbus_enable="YES"
-sysrc hald_enable="YES"
-sysrc slim_enable="YES"
+sysrc dbus_enable=YES
+sysrc hald_enable=YES
+sysrc slim_enable=YES
 service dbus start
 service hald start
 service slim start
