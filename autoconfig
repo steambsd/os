@@ -7,6 +7,13 @@ cd ~
 # rm -rf check 
 #else
 
+# lxde
+#----------------------------------------------------------------------------------------
+pcmanfm --set-wallpaper wall.jpg
+echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
+echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
+echo '@xterm -geometry 73x31-0-0 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
+#----------------------------------------------------------------------------------------
 # steam-linux
 sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
 sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
@@ -70,14 +77,6 @@ EOF'
  echo 'Detected vesa'
  ;;
 esac
-
-# lxde
-#----------------------------------------------------------------------------------------
-pcmanfm --set-wallpaper wall.jpg
-echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
-echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
-echo '@xterm -geometry 73x31-0-0 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
-#----------------------------------------------------------------------------------------
 
 # create Readme.txt
 cat << EOF > ~/Desktop/Readme.txt
