@@ -9,6 +9,8 @@ echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
 echo "We have USER = $AZER"
+# user for steam
+pw useradd steam -m
 # update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
