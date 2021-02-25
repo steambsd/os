@@ -12,7 +12,8 @@ echo '=========================       UTILS      =========================='
 echo '====================================================================='
 echo 'ATTENTION! For other screen resolution see file Readme.txt'
 echo ''
-echo '1 - reinstall steam wine'
+echo '0 - reinstall steam wine'
+echo '1 - reinstall linux-steam-utils'
 echo '2 - install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
@@ -32,12 +33,12 @@ echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo 'sht - shutdown pc'
 echo 'rbt - reboot pc'
 echo 'upd - update utils and reopen'
-echo '0 - exit'
+echo 'exit - close utils and exit'
 echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
- 1)
+ 0)
    ### reinstall steam wine
    # delete wine
    sudo pkg remove -y i386-wine
@@ -53,7 +54,17 @@ echo -n 'Choose your number: '
    sudo pkg ins -y wine-gecko
    lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
    lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
-
+ ;;
+ 1)
+   ### reinstall linux-steam-utils
+   # delete linux-steam-utils
+   sudo pkg remove -y linux-steam-utils
+   sudo rm -rf /home/steam/.steam
+   sudo killall -HUP steam
+   # install wine
+   sudo pkg ins -y linux-steam-utils
+   sudo su steam -c 'lxterminal --geometry=40x4 -e steam-install &'
+   sudo su steam -c 'lxterminal --geometry=40x4 -e steam &'
  ;;
  2)
    ### install steam developers
@@ -201,7 +212,7 @@ EOF'
    sleep 2
    break
  ;;
- 0)
+ exit)
    echo 'Exit.'
    sleep 1
    break
