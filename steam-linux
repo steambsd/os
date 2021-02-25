@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo su steam -c 'steam'
+sudo su steam -c steam
