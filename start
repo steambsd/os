@@ -64,3 +64,5 @@ EOF
 cat << EOF >> /etc/crontab
 @reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
 EOF
+
+su $AZER -c 'startx'
