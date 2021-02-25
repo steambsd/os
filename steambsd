@@ -14,8 +14,8 @@ sysrc -f /boot/loader.conf autoboot_delay=2
 sysrc -f /boot/loader.conf beastie_disable=YES
 # /etc/sysctl.conf tuning
 echo 'kern.coredump=0' >> /etc/sysctl.conf
-# /etc/rc.conf tuning
 sysctl kern.coredump=0
+# /etc/rc.conf tuning
 sysrc clear_tmp_enable=YES
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
