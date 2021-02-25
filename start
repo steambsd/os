@@ -76,11 +76,11 @@ cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart
 EOF
 #files
 cp autoconfig /home/${AZER}/ 
-cp steamwall.jpg /home/${AZER}/
+cp wall.jpg /home/${AZER}/
 cp check /home/${AZER}/
 cp utils /home/${AZER}/
 
 ## startx
-#su $AZER -c 'startx'
+su $AZER -c 'startx'
 
 
