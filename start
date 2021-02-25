@@ -47,8 +47,8 @@ echo "auto_login          yes" >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 # lxde
 pkg ins -y lxde-meta
-echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/admin/.xinitrc
-echo 'startlxde' >> .xinitrc
+echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
+echo 'startlxde' >> /home/$AZER/.xinitrc
 cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
 polkit.addRule(function (action, subject) {
   if ((action.id == "org.freedesktop.consolekit.system.restart" ||
