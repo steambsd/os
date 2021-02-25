@@ -28,6 +28,7 @@ pkg ins -y wine-mono
 pkg ins -y wine-gecko
 # packages for linux
 pkg ins -y linux-steam-utils
+read ans
 ## packages for comfort
 #pkg ins -y leafpad
 #pkg ins -y chromium
