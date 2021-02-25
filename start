@@ -10,24 +10,24 @@ echo "We have DRIVER = $DRIVER"
 AZER=`ls /home`
 echo "We have USER = $AZER"
 
-#update
+# update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
 
-#packages
+# packages
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 pkg ins -y xorg
 
-#linux
+# linux
 sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
 kldload linux
 kldload linux64
 
-#tuning
+# tuning
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
