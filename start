@@ -19,6 +19,11 @@ pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 pkg ins -y xorg
+## packages for comfort
+#pkg ins -y leafpad
+#pkg ins -y chromium
+#pkg ins -y vlc
+#pkg ins -y simplescreenrecorder
 # linux
 sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
@@ -65,4 +70,7 @@ cat << EOF >> /etc/crontab
 @reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
 EOF
 
-su $AZER -c 'startx'
+## startx
+#su $AZER -c 'startx'
+
+
