@@ -7,7 +7,7 @@
 DRIVER='nvidia'
 echo "We have DRIVER = $DRIVER"
 # user with wheel group
-AZER=`echo $USER`
+AZER=`ls /home`
 echo "We have USER = $AZER"
 
 #update
