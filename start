@@ -9,35 +9,29 @@ echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
 echo "We have USER = $AZER"
-
 # update
 env PAGER=cat freebsd-update fetch
 freebsd-update install
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
-
 # packages
 pkg ins -y sudo bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 pkg ins -y xorg
-
 # linux
 sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
 kldload linux
 kldload linux64
-
 # tuning
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
-
 # linux filesystem
 echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab
 echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab
 echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab
 echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab
-
 # prepare linux-steam
 pkg ins linux-steam-utils
 mount -a
