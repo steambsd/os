@@ -1,4 +1,4 @@
-#!/bin/sh
+a#!/bin/sh
 
 while :
 do
@@ -12,7 +12,7 @@ echo '=========================       UTILS      =========================='
 echo '====================================================================='
 echo 'ATTENTION! For other screen resolution see file Readme.txt'
 echo ''
-echo '1 - reinstall wine'
+echo '1 - reinstall steam wine'
 echo '2 - install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
@@ -38,16 +38,22 @@ echo -n 'Choose your number: '
  read ans
  case "$ans" in
  1)
-   ### update utils
-   fetch https://github.com/LightProgres/east/archive/master.zip
-   unzip master.zip
-   mv east-master/utils-latest utils
-   sudo chmod 777 utils
-   rm -rf east-master
-   rm master.zip
-   xterm -geometry 73x31-0-0 -e ./utils &
-   sleep 2
-   break
+   ### reinstall steam wine
+   # delete wine
+   sudo pkg remove -y i386-wine
+   sudo pkg remove -y winetricks
+   sudo pkg remove -y wine-mono
+   sudo pkg remove -y wine-gecko
+   sudo rm -rf .wine
+   sudo killall -HUP wine
+   # install wine
+   sudo pkg ins -y i386-wine
+   sudo pkg ins -y winetricks
+   sudo pkg ins -y wine-mono
+   sudo pkg ins -y wine-gecko
+   lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
+   lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
+
  ;;
  2)
    ### install steam developers
