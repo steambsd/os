@@ -39,7 +39,8 @@ echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       
 echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab
 
 # prepare linux-steam
-pkg ins linux_base-c7
+pkg ins linux-steam-utils
 pw useradd steam -m
+su steam -c steam
 mount -a
 
