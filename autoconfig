@@ -1,21 +1,26 @@
 #!/bin/sh
 sleep 4
+
+# check for duplicate terminals
 #if [ -e check ]; then
 # rm -rf check 
 #else
 
-#steam-linux
+# steam-linux
 sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
 sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
 sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
 sudo mount -a
 sudo su steam -c steam-install
-#steam-wine
+
+# steam-wine
+# without mono and gecko
 #export WINEDLLOVERRIDES="mscoree,mshtml="
 #sudo winetricks --self-update
 #winetricks -q steam
 #wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe
+# with mono and gecko
 fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
 wine SteamSetup.exe /S
 wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
@@ -64,6 +69,7 @@ EOF'
  echo 'Detected vesa'
  ;;
 esac
+
 # lxde
 #----------------------------------------------------------------------------------------
 pcmanfm --set-wallpaper wall.jpg
@@ -72,6 +78,7 @@ echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/a
 echo '@xterm -geometry 73x31-0-0 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
 #----------------------------------------------------------------------------------------
 
+# create Readme.txt
 cat << EOF > ~/Desktop/Readme.txt
 HOW TO INSTALL GAMES
 1. Found your favorite steam game and remember ID (in browsers link)
