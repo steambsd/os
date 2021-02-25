@@ -14,7 +14,7 @@
 <br><code>chmod +x *</code>
 <br> 
 <br>Finally, run it:
-<br><code>./seambsd</code>
+<br><code>./steambsd</code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
