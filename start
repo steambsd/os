@@ -1,11 +1,13 @@
 #!/bin/sh
-### How to install simple steam on freebsd
-#installation: delete kernel-dbg, ipv6 - no, asia - RF, set date, sshd, moused, clear_tmp, dis sendmail, user admin (administrator) 1001 wheel 0000
-#login to root
-#ifconfig
-#ssh admin@192.168.43.103
-#login: admin, pass: 0000
-#su root
+############################################
+### Simple installation Steam on FreeBSD ###
+############################################
+### Config
+# choose driver for your PC, it may be: nvidia, amdgpu, radeon, intel or vesa (vesa for virtual machine)
+DRIVER='nvidia'
+# user with wheel group
+AZER=`echo $USER`
+
 
 #update
 env PAGER=cat freebsd-update fetch
