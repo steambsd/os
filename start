@@ -22,17 +22,17 @@ pkg ins -y xorg
 pkg ins -y slim
 pkg ins -y lxde-meta
 ## packages for wine
-#pkg ins i386-wine
-#pkg ins winetricks
-#pkg ins wine-mono
-#pkg ins wine-gecko
+pkg ins i386-wine
+pkg ins winetricks
+pkg ins wine-mono
+pkg ins wine-gecko
 # packages for linux
 pkg ins linux-steam-utils
 ## packages for comfort
-#pkg ins -y leafpad
-#pkg ins -y chromium
-#pkg ins -y vlc
-#pkg ins -y simplescreenrecorder
+pkg ins -y leafpad
+pkg ins -y chromium
+pkg ins -y vlc
+pkg ins -y simplescreenrecorder
 # linux
 sysrc linux_enable="YES"
 sysrc linux64_enable="YES"
