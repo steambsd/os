@@ -69,11 +69,16 @@ EOF
 echo '#!/bin/sh' > /home/$AZER/.steam-linux
 echo 'sudo su steam -c steam' > /home/$AZER/.steam-linux
 echo '#!/bin/sh' > /home/$AZER/.steam-wine
-echo 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser' > /home/$AZER/.steam-linux
+echo 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser' > /home/$AZER/.steam-wine
 #autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
 @lxterminal -e ~/autoconfig
 EOF
+#files
+cp autoconfig /home/${AZER}/ 
+cp steamwall.jpg /home/${AZER}/
+cp check /home/${AZER}/
+cp utils /home/${AZER}/
 
 ## startx
 #su $AZER -c 'startx'
