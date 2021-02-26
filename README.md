@@ -16,7 +16,7 @@
 <br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
 <br>
-<br>where:
+<br><b>Where:</b>
 <br>[your_user] is user created during installation
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
 <br>nvidia - [recommended] best choice for linux steam
