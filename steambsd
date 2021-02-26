@@ -10,7 +10,7 @@
 ############################################
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa (vm)
-DRIVER='vesa'
+DRIV='vesa'
 echo "We have DRIVER = $DRIVER"
 # user with wheel group
 AZER=`ls /home`
