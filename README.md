@@ -14,11 +14,16 @@
 <br><code>chmod +x *</code>
 <br> 
 <br>Finally, run it:
-<br><code>./steambsd [user] [driver] </code>
+<br><code>./steambsd [your_user] [video_driver] </code>
 <br>
 <br>where:
-<br>[user] - your user created during installation
-<br>[driver] - 
+<br>[your_user] is user created during installation
+<br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
+<br>nvidia - [recommended] best choice for linux steam
+<br>amdgpu - not bad for wine steam
+<br>radeon - not bad for wine steam
+<br>intel - not bad for wine steam
+<br>vesa - for test virtual box
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
