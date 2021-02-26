@@ -103,7 +103,7 @@ echo "auto_login          yes" >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 
 ############################################
-### Desktop environment                  ###
+### Desktop environment customization    ###
 ############################################
 # start session
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
