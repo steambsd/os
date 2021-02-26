@@ -13,7 +13,7 @@
 <br>Add permission:
 <br><code>chmod +x *</code>
 <br> 
-<br><b>Finally, run it:</b>
+<br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
 <br>
 <br>Where:
