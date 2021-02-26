@@ -103,7 +103,7 @@ echo "auto_login          yes" >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 
 ############################################
-### Desktop environment customization    ###
+### Desktop environment                  ###
 ############################################
 # start session
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
@@ -126,10 +126,6 @@ EOF
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
 @lxterminal -e ~/autoconfig
 EOF
-
-############################################
-### Get to graphic                       ###
-############################################
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
