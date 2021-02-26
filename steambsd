@@ -79,14 +79,14 @@ pkg ins -y simplescreenrecorder
 ### Files                                ###
 ############################################
 # create documents folder
-mkdir /home/${AZER}/Documents
+mkdir /home/$AZER/Documents
 # copy steambsd scrips
-cp steam-linux /home/${AZER}/.steam-linux
-cp steam-wine /home/${AZER}/.steam-wine
-cp autoconfig /home/${AZER}/ 
-cp wall.jpg /home/${AZER}/
-cp check /home/${AZER}/
-cp utils /home/${AZER}/
+cp steam-linux /home/$AZER/.steam-linux
+cp steam-wine /home/$AZER/.steam-wine
+cp autoconfig /home/$AZER/ 
+cp wall.jpg /home/$AZER/
+cp check /home/$AZER/
+cp utils /home/$AZER/
 
 ############################################
 ### Login manager                        ###
@@ -126,9 +126,12 @@ EOF
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
 @lxterminal -e ~/autoconfig
 EOF
-# ----------------------------------------------------------------------------------------
+
+############################################
+### Start X                              ###
+############################################
 # set permission
-chown -R ${AZER}:wheel /home/${AZER}/
+chown -R $AZER:wheel /home/$AZER/
 # startx
 su $AZER -c 'startx'
 
