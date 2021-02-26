@@ -74,7 +74,6 @@ pkg ins -y chromium
 pkg ins -y vlc
 pkg ins -y simplescreenrecorder
 
-
 ############################################
 ### Files                                ###
 ############################################
