@@ -1,29 +1,29 @@
 <h1>SteamBSD installation on the internet </h1>
-<br><b>Install FreBSD, reboot PC and login as root:</b>
+<br>Install FreBSD, reboot PC and login as root:
 <br><code>su root</code>
-<br><b>Download from git:</b>
+<br>Download from git:
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/inet</code>
 <br><code>cd inet</code>
-<br><b>Or download without install git:</b>
+<br>Or download without install git:
 <br><code>fetch https://github.com/steambsd/inet/archive/main.zip</code>
 <br><code>unzip main.zip</code>
 <br><code>cd inet-main</code>
 <br>
-<br><b>Add permission:</b>
+<br>Add permission:
 <br><code>chmod +x *</code>
 <br> 
 <br><b>Finally, run it:</b>
 <br><code>./steambsd [your_user] [video_driver] </code>
 <br>
-<br><b>Where:</b>
-<br><b>[your_user]</b> is user created during installation
-<br><b>[video_driver]</b> is one of: nvidia, amdgpu, radeon, intel or vesa
-<br><b>nvidia</b> - [recommended] best choice for linux steam
-<br><b>amdgpu</b> - not bad for wine steam
-<br><b>radeon</b> - not bad for wine steam
-<br><b>intel</b> - not bad for wine steam
-<br><b>vesa</b> - for test virtual machines
+<br>Where:
+<br>[your_user] is user created during installation
+<br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
+<br>nvidia - [recommended] best choice for linux steam
+<br>amdgpu - not bad for wine steam
+<br>radeon - not bad for wine steam
+<br>intel - not bad for wine steam
+<br>vesa - for test virtual machines
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
