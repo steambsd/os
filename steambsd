@@ -128,7 +128,7 @@ cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart
 EOF
 
 ############################################
-### Start X                              ###
+### Get to graphic                       ###
 ############################################
 # set permission
 chown -R $AZER:wheel /home/$AZER/
