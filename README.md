@@ -1,5 +1,5 @@
 <h1>SteamBSD installation on the internet </h1>
-<br><b>Install FreBSD, reboot PC and login as root:
+<br><b>Install FreBSD, reboot PC and login as root:</b>
 <br><code>su root</code>
 <br><b>Download from git:</b>
 <br><code>pkg ins git</code>
