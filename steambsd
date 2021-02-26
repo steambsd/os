@@ -8,13 +8,14 @@
 ############################################
 ### Variables                            ###
 ############################################
+# user with wheel group
+AZER=$1
+echo "We have USER = $AZER"
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa (vm)
-DRIV='vesa'
+DRIV=$2
 echo "We have DRIVER = $DRIVER"
-# user with wheel group
-AZER=`ls /home`
-echo "We have USER = $AZER"
+
 
 ############################################
 ### Tuning                               ###
