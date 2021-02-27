@@ -17,7 +17,7 @@
 <br><code>./steambsd [your_user] [video_driver] </code>
 <br>
 <br>Where:
-<br>[your_user] is user created during installation (GROUP MUST BE WHEEL!)
+<br>[your_user] is user created during installation (group must be wheel)
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
 <br>nvidia - [recommended] best choice for linux steam
 <br>amdgpu - not bad for wine steam
