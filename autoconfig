@@ -1,13 +1,10 @@
 #!/bin/sh
-
 sleep 4
 cd ~
 
 ############################################
 ### Desktop customization                ###
 ############################################
-# create Readme.txt
-mv deskreadme Desktop/Readme.txt
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
 # autostart
@@ -21,6 +18,49 @@ sudo su steam -c steam-install
 fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
 wine SteamSetup.exe /S
 wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
+
+############################################
+### Generate Readme.txt                  ###
+############################################
+cat << EOF > ~/Desktop/Readme.txt
+HOW TO INSTALL WINE GAMES
+1. Found your favorite steam game and remember ID (in browsers link)
+2. Open terminal and enter follow code:
+wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://install/630
+Where 630 - ID of steam game
+P.S. If linux-steam-utils work, you may add games to libroray game. Just click "Play" but not install game, open wine-based steam and you see this game.
+
+HOW TO CREATE WINE-PREFIX 
+# for preinstall i386-wine
+env WINEPREFIX=/home/admin/.wine-test wine winecfg
+# for test exprimental proton (you must login special user steamdev)
+env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine winecfg
+env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine64 winecfg
+
+HOW TO BACKUP [ZFS method]
+See utils
+
+HOW TO CHANGE SCREEN RESOLUTION 
+1. Open file xorg.conf and add section 
+sudo ee /usr/local/etc/X11/xorg.conf.d/xorg.conf
+Section "Screen"
+        Identifier "Screen0"
+        Device     "Card0"
+        Monitor    "Monitor0"
+        SubSection "Display"
+                Viewport   0 0
+                Depth     24
+                Modes     "1920x1080"
+        EndSubSection
+EndSection
+
+2. Press ESC and leave editor with save changes
+
+P.S.
+Youtube: SteamBSD
+Site: http://steambsd.epizy.com
+All quastions send to email: light.progres@gmail.com
+EOF
 
 mv ~/autoconfig ~/.autoconfig
 sudo reboot 
