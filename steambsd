@@ -17,7 +17,7 @@ DRIV=$2
 ############################################
 ### Function                             ###
 ############################################
-# check for type installation (local or inet)
+# package type installation (local or inet)
 pli()
 {
 if [ -d all ]; then
