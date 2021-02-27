@@ -68,7 +68,12 @@ sysrc linux_enable=YES
 sysrc linux64_enable=YES
 kldload linux
 kldload linux64
-
+cat << EOF >> /etc/fstab
+linprocfs       /compat/linux/proc      linprocfs rw           0 0
+linsysfs        /compat/linux/sys       linsysfs  rw           0 0
+tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0
+fdesc           /dev/fd                 fdescfs   rw           0 0
+EOF
 # packages for desktop environment
 pli xorg
 pli slim
@@ -85,7 +90,8 @@ pli linux-steam-utils
 #pli chromium
 #pli vlc
 #pli simplescreenrecorder
-
+mount -a
+su steam -c steam-install
 ############################################
 ### Files                                ###
 ############################################
