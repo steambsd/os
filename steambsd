@@ -101,6 +101,7 @@ pli linux-steam-utils
 #pli simplescreenrecorder
 mount -a
 su steam -c steam-install
+sleep 60
 read ans
 
 ############################################
