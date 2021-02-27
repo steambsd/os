@@ -14,21 +14,12 @@ echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/
 echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
 echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
 #----------------------------------------------------------------------------------------
+
 # steam-linux
-#sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
-#sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
-#sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
-#sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
-#sudo mount -a
-#sudo su steam -c steam-install
+sudo mount -a
+sudo su steam -c steam-install
 
 # steam-wine
-# without mono and gecko
-#export WINEDLLOVERRIDES="mscoree,mshtml="
-#sudo winetricks --self-update
-#winetricks -q steam
-#wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe
-# with mono and gecko
 fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
 wine SteamSetup.exe /S
 wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
@@ -36,7 +27,7 @@ wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
 # graphics
 drv=`cat /etc/rc.conf | grep kld_list | cut -d '"' -f2`
 case "$drv" in
- amdgpu)
+ /boot/modules/amdgpu.ko)
  echo 'Detected amdgpu'
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 Section "Device"
