@@ -56,8 +56,8 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 ### Packages                             ###
 ############################################
 # for user privilegies
-pkg ins -y sudo
-pkg ins -y bash
+pli sudo
+pli bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
@@ -70,21 +70,21 @@ kldload linux
 kldload linux64
 
 # packages for desktop environment
-pkg ins -y xorg
-pkg ins -y slim
-pkg ins -y lxde-meta
+pli xorg
+pli slim
+pli lxde-meta
 # packages for wine
-pkg ins -y i386-wine
-pkg ins -y winetricks
-pkg ins -y wine-mono
-pkg ins -y wine-gecko
+pli i386-wine
+pli winetricks
+pli wine-mono
+pli wine-gecko
 # packages for linux
-pkg ins -y linux-steam-utils
+pli linux-steam-utils
 # packages for comfort
-pkg ins -y leafpad
-pkg ins -y chromium
-pkg ins -y vlc
-pkg ins -y simplescreenrecorder
+#pli leafpad
+#pli chromium
+#pli vlc
+#pli simplescreenrecorder
 
 ############################################
 ### Files                                ###
