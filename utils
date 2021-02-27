@@ -12,8 +12,7 @@ echo '=========================       UTILS      =========================='
 echo '====================================================================='
 echo 'ATTENTION! For other screen resolution see file Readme.txt'
 echo ''
-echo '0 - reinstall/install steam wine'
-echo '1 - reinstall/install linux-steam-utils'
+echo '1 - reinstall steam wine to newest i386-wine-devel'
 echo '2 - install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
@@ -48,23 +47,13 @@ echo -n 'Choose your number: '
    sudo rm -rf .wine
    sudo killall -HUP wine
    # install wine
-   sudo pkg ins -y i386-wine
+   sudo pkg ins -y i386-wine-devel
    sudo pkg ins -y winetricks
-   sudo pkg ins -y wine-mono
-   sudo pkg ins -y wine-gecko
+   sudo pkg ins -y wine-mono-devel
+   sudo pkg ins -y wine-gecko-devel
+   fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
    lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
    lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
- ;;
- 1)
-   ### reinstall linux-steam-utils
-   # delete linux-steam-utils
-   sudo pkg remove -y linux-steam-utils
-   sudo rm -rf /home/steam/.steam
-   sudo killall -HUP steam
-   # install wine
-   sudo pkg ins -y linux-steam-utils
-   sudo su steam -c 'lxterminal --geometry=40x4 -e steam-install &'
-   sudo su steam -c 'lxterminal --geometry=40x4 -e steam &'
  ;;
  2)
    ### install steam developers
