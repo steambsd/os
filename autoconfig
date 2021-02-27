@@ -6,6 +6,8 @@ cd ~
 ############################################
 ### Desktop customization                ###
 ############################################
+# create Readme.txt
+mv deskreadme Desktop/Readme.txt
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
 # autostart
@@ -19,8 +21,6 @@ sudo su steam -c steam-install
 fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
 wine SteamSetup.exe /S
 wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
-# create Readme.txt
-mv deskreadme Desktop/Readme.txt
 
 mv ~/autoconfig ~/.autoconfig
 sudo reboot 
