@@ -34,6 +34,7 @@ else
 echo "$1" >> /etc/fstab
 fi
 }
+
 ############################################
 ### Tuning                               ###
 ############################################
@@ -100,13 +101,15 @@ pli nvidia-driver
 pli nvidia-settings
 pli linux-nvidia-libs
 pli drm-kmod
+pli xf86-video-amdgpu
+pli xf86-video-intel
 
 ############################################
 ### Driver                               ###
 ############################################
 case "$DRIV" in
  nvidia-modeset)
- echo 'Detected nvidia-modeset'
+sysrc kld_list+="nvidia-modeset"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "NVIDIA Card"
@@ -116,7 +119,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 EOF'
  ;;
  /boot/modules/amdgpu.ko)
- echo 'Detected amdgpu'
+sysrc kld_list+="/boot/modules/amdgpu.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
 #        Identifier "Card0"
@@ -125,7 +128,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 EOF'
  ;;
   /boot/modules/radeonkms.ko)
- echo 'Detected radeonkms'
+sysrc kld_list+="/boot/modules/radeonkms.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
 #        Identifier "Card0"
@@ -134,7 +137,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 EOF'
  ;;
  /boot/modules/i915kms.ko)
- echo 'Detected i915kms'
+sysrc kld_list+="/boot/modules/i915kms.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
 #        Identifier "Card0"
