@@ -10,12 +10,23 @@
 ############################################
 # user with wheel group
 AZER=$1
-
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa (vm)
 DRIV=$2
 
-
+############################################
+### Function                             ###
+############################################
+# check for type installation (local or inet)
+pli()
+{
+pck=$1
+if [ -d all ]; then
+pkg add pck-*
+else
+pkg ins -y pck
+fi
+}
 
 ############################################
 ### Tuning                               ###
