@@ -219,7 +219,8 @@ cat << EOF >> /etc/crontab
 EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
-@lxterminal -e ~/autoconfig
+#@lxterminal -e ~/autoconfig
+@xterm -geometry 100x20+0-0 -e ~/autoconfig
 EOF
 # set permission
 chown -R $AZER:wheel /home/$AZER/
