@@ -11,7 +11,7 @@
 <br><code>cd inet-main</code>
 <br>
 <br>Add permission:
-<br><code>chmod +x *</code>
+<br><code>chmod +x steambsd</code>
 <br> 
 <br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
