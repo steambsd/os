@@ -26,7 +26,14 @@ else
 pkg ins -y $1
 fi
 }
-
+addfstab()
+{
+if [ -d All ]; then
+echo "$1" >> /tmp/bsdinstall_etc/fstab
+else
+echo "$1" >> /etc/fstab
+fi
+}
 ############################################
 ### Tuning                               ###
 ############################################
@@ -68,13 +75,11 @@ sysrc linux_enable=YES
 sysrc linux64_enable=YES
 kldload linux
 kldload linux64
-cat << EOF >> /etc/fstab
-linprocfs       /compat/linux/proc      linprocfs rw           0 0
-linsysfs        /compat/linux/sys       linsysfs  rw           0 0
-tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0
-fdesc           /dev/fd                 fdescfs   rw           0 0
-EOF
-# packages for desktop environment
+addfstab 'linprocfs       /compat/linux/proc      linprocfs rw           0 0'
+addfstab 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0'
+addfstab 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0'
+addfstab 'fdesc           /dev/fd                 fdescfs   rw           0 0'
+# packages for WM
 pli xorg
 pli slim
 pli lxde-meta
@@ -90,14 +95,6 @@ pli linux-steam-utils
 #pli chromium
 #pli vlc
 #pli simplescreenrecorder
-
-read ans
-
-mount -a
-
-su steam -c steam-install
-sleep 60
-read ans
 
 ############################################
 ### Files                                ###
@@ -154,6 +151,7 @@ chown -R $AZER:wheel /home/$AZER/
 service dbus start
 service hald start
 service slim start
+read ans
 su $AZER -c 'startx'
 
 
