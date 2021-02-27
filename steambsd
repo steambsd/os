@@ -13,6 +13,54 @@ AZER=$1
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa (vm)
 DRIV=$2
+case "$DRIV" in
+ nvidia-modeset)
+sysrc kld_list+="nvidia-modeset"
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+#Section "Device"
+#        Identifier "NVIDIA Card"
+#        VendorName "NVIDIA Corporation"
+#        Driver "nvidia"
+#EndSection
+EOF'
+ ;;
+ /boot/modules/amdgpu.ko)
+sysrc kld_list+="/boot/modules/amdgpu.ko"
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "amdgpu"
+#EndSection
+EOF'
+ ;;
+  /boot/modules/radeonkms.ko)
+sysrc kld_list+="/boot/modules/radeonkms.ko"
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "radeonkms"
+#EndSection
+EOF'
+ ;;
+ /boot/modules/i915kms.ko)
+sysrc kld_list+="/boot/modules/i915kms.ko"
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "intel"
+#EndSection
+EOF'
+ ;;
+ *)
+ echo 'Detected vesa'
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+ Section "Device"
+    Identifier    "Card0"
+    Driver        "vesa"
+ EndSection 
+EOF
+ ;;
+esac
 
 ############################################
 ### Function                             ###
@@ -100,9 +148,9 @@ pli linux-steam-utils
 pli nvidia-driver
 pli nvidia-settings
 pli linux-nvidia-libs
-pli drm-kmod
-pli xf86-video-amdgpu
-pli xf86-video-intel
+#pli drm-kmod
+#pli xf86-video-amdgpu
+#pli xf86-video-intel
 
 ############################################
 ### Driver                               ###
@@ -146,7 +194,6 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 EOF'
  ;;
  *)
- echo 'Detected vesa'
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
  Section "Device"
     Identifier    "Card0"
