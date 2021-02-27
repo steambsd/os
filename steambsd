@@ -3,7 +3,11 @@
 ###          SIMPLE INSTALLATION         ###
 ###                 STEAM                ###   
 ###              ON FREEBSD              ###
-############################################
+############# set permission ###############
+chmod +x autoconfig
+chmod +x steam-linux
+chmod +x steam-wine
+chmod +x utils
 
 ############################################
 ### Variables                            ###
