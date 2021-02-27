@@ -151,7 +151,7 @@ chown -R $AZER:wheel /home/$AZER/
 service dbus start
 service hald start
 service slim start
-read ans
+
 #-----------------------------------
 # graphics
 drv=`cat /etc/rc.conf | grep kld_list | cut -d '"' -f2`
@@ -198,6 +198,8 @@ EOF'
  ;;
 esac
 #-----------------------------------
+read ans
+
 su $AZER -c 'startx'
 
 
