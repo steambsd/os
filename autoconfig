@@ -30,10 +30,10 @@ case "$drv" in
  /boot/modules/amdgpu.ko)
  echo 'Detected amdgpu'
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
-Section "Device"
-        Identifier "Card0"
-        Driver     "amdgpu"
-EndSection
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "amdgpu"
+#EndSection
 EOF'
  ;;
  /boot/modules/i915kms.ko)
@@ -57,11 +57,11 @@ EOF'
  nvidia-modeset)
  echo 'Detected nvidia-modeset'
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
-Section "Device"
-        Identifier "NVIDIA Card"
-        VendorName "NVIDIA Corporation"
-        Driver "nvidia"
-EndSection
+#Section "Device"
+#        Identifier "NVIDIA Card"
+#        VendorName "NVIDIA Corporation"
+#        Driver "nvidia"
+#EndSection
 EOF'
  ;;
  *)
