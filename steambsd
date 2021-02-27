@@ -152,6 +152,52 @@ service dbus start
 service hald start
 service slim start
 read ans
+#-----------------------------------
+# graphics
+drv=`cat /etc/rc.conf | grep kld_list | cut -d '"' -f2`
+case "$drv" in
+ /boot/modules/amdgpu.ko)
+ echo 'Detected amdgpu'
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "amdgpu"
+#EndSection
+EOF'
+ ;;
+ /boot/modules/i915kms.ko)
+ echo 'Detected i915kms'
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "intel"
+#EndSection
+EOF'
+ ;;
+ /boot/modules/radeonkms.ko)
+ echo 'Detected radeonkms'
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#Section "Device"
+#        Identifier "Card0"
+#        Driver     "radeonkms"
+#EndSection
+EOF'
+ ;;
+ nvidia-modeset)
+ echo 'Detected nvidia-modeset'
+sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+#Section "Device"
+#        Identifier "NVIDIA Card"
+#        VendorName "NVIDIA Corporation"
+#        Driver "nvidia"
+#EndSection
+EOF'
+ ;;
+ *)
+ echo 'Detected vesa'
+ ;;
+esac
+#-----------------------------------
 su $AZER -c 'startx'
 
 
