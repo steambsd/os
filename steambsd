@@ -116,6 +116,7 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 # start session
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/$AZER/.xinitrc
+echo 'startlxde' >> /home/steam/.xinitrc
 # adding power and reset buttons
 cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
 polkit.addRule(function (action, subject) {
