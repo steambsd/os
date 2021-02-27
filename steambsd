@@ -13,52 +13,20 @@ AZER=$1
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa (vm)
 DRIV=$2
+
+############################################
+### Bugs                                 ###
+############################################
+#Bug FreeBSD 12.2
 case "$DRIV" in
- nvidia-modeset)
-sysrc kld_list+="nvidia-modeset"
-sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
-#Section "Device"
-#        Identifier "NVIDIA Card"
-#        VendorName "NVIDIA Corporation"
-#        Driver "nvidia"
-#EndSection
-EOF'
+ amdgpu)
+ DRIV='vesa'  
  ;;
- /boot/modules/amdgpu.ko)
-sysrc kld_list+="/boot/modules/amdgpu.ko"
-sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
-#Section "Device"
-#        Identifier "Card0"
-#        Driver     "amdgpu"
-#EndSection
-EOF'
+ radeon)
+ DRIV='vesa'  
  ;;
-  /boot/modules/radeonkms.ko)
-sysrc kld_list+="/boot/modules/radeonkms.ko"
-sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
-#Section "Device"
-#        Identifier "Card0"
-#        Driver     "radeonkms"
-#EndSection
-EOF'
- ;;
- /boot/modules/i915kms.ko)
-sysrc kld_list+="/boot/modules/i915kms.ko"
-sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
-#Section "Device"
-#        Identifier "Card0"
-#        Driver     "intel"
-#EndSection
-EOF'
- ;;
- *)
- echo 'Detected vesa'
-cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
- Section "Device"
-    Identifier    "Card0"
-    Driver        "vesa"
- EndSection 
-EOF
+ intel)
+ DRIV='vesa'  
  ;;
 esac
 
@@ -156,7 +124,7 @@ pli linux-nvidia-libs
 ### Driver                               ###
 ############################################
 case "$DRIV" in
- nvidia-modeset)
+ nvidia)
 sysrc kld_list+="nvidia-modeset"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
@@ -166,7 +134,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #EndSection
 EOF'
  ;;
- /boot/modules/amdgpu.ko)
+ amdgpu)
 sysrc kld_list+="/boot/modules/amdgpu.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
@@ -175,7 +143,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #EndSection
 EOF'
  ;;
-  /boot/modules/radeonkms.ko)
+  radeon)
 sysrc kld_list+="/boot/modules/radeonkms.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
@@ -184,7 +152,7 @@ sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #EndSection
 EOF'
  ;;
- /boot/modules/i915kms.ko)
+ intel)
 sysrc kld_list+="/boot/modules/i915kms.ko"
 sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 #Section "Device"
