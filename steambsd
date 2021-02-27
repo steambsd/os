@@ -20,8 +20,8 @@ DRIV=$2
 # package type installation (local or inet)
 pli()
 {
-if [ -d all ]; then
-pkg add all/$1-*
+if [ -d All ]; then
+pkg add All/$1-*
 else
 pkg ins -y $1
 fi
