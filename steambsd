@@ -43,7 +43,7 @@ sysrc moused_enable=NO
 sysrc sshd_enable=YES
 
 ############################################
-### Upadate                              ###
+### Update                               ###
 ############################################
 # system
 env PAGER=cat freebsd-update fetch
