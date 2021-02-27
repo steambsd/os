@@ -62,6 +62,9 @@ Site: http://steambsd.epizy.com
 All quastions send to email: light.progres@gmail.com
 EOF
 
+############################################
+### Final                                ###
+############################################
 mv ~/autoconfig ~/.autoconfig
 sudo reboot 
 
