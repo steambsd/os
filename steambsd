@@ -57,7 +57,8 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 ### Packages                             ###
 ############################################
 # for user privilegies
-pkg ins -y sudo bash
+pkg ins -y sudo
+pkg ins -y bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
