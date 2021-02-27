@@ -21,7 +21,7 @@ DRIV=$2
 pli()
 {
 if [ -d all ]; then
-pkg add $1-*
+pkg add all/$1-*
 else
 pkg ins -y $1
 fi
