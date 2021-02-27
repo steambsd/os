@@ -170,7 +170,6 @@ mkdir /home/$AZER/Documents
 cp autoconfig /home/$AZER/ 
 cp steam-linux /home/$AZER/.steam-linux
 cp steam-wine /home/$AZER/.steam-wine
-cp check /home/$AZER/
 cp utils /home/$AZER/
 cp wall.jpg /home/$AZER/
 
