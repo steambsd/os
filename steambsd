@@ -18,17 +18,7 @@ DRIV=$2
 ### Bugs                                 ###
 ############################################
 #Bug FreeBSD 12.2
-case "$DRIV" in
- amdgpu)
- DRIV='vesa'  
- ;;
- radeon)
- DRIV='vesa'  
- ;;
- intel)
- DRIV='vesa'  
- ;;
-esac
+if [ $DRIV != 'nvidia' ]; then $DRIV='vesa'; fi
 
 ############################################
 ### Function                             ###
@@ -163,10 +153,10 @@ EOF'
  ;;
  *)
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
- Section "Device"
-    Identifier    "Card0"
-    Driver        "vesa"
- EndSection 
+# Section "Device"
+#    Identifier    "Card0"
+#    Driver        "vesa"
+# EndSection 
 EOF
  ;;
 esac
