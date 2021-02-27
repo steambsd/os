@@ -101,6 +101,8 @@ pli linux-steam-utils
 #pli simplescreenrecorder
 mount -a
 su steam -c steam-install
+read ans
+
 ############################################
 ### Files                                ###
 ############################################
