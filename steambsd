@@ -20,11 +20,10 @@ DRIV=$2
 # check for type installation (local or inet)
 pli()
 {
-pck=$1
 if [ -d all ]; then
-pkg add pck-*
+pkg add $1-*
 else
-pkg ins -y pck
+pkg ins -y $1
 fi
 }
 
