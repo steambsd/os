@@ -177,8 +177,7 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
-cp autoconfig /home/$AZER/
-cp deskreadme /home/$AZER/ 
+cp autoconfig /home/$AZER/ 
 cp steam-linux /home/$AZER/.steam-linux
 cp steam-wine /home/$AZER/.steam-wine
 cp check /home/$AZER/
