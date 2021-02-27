@@ -107,10 +107,11 @@ sysrc dbus_enable=YES
 sysrc hald_enable=YES
 sysrc slim_enable=YES
 service dbus start
-service hald start
+service hald onestart
+sleep 20
 service slim start
 echo "default_user        $AZER" >> /usr/local/etc/slim.conf
-echo "auto_login          yes" >> /usr/local/etc/slim.conf
+echo 'auto_login          yes' >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 
 ############################################
