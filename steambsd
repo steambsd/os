@@ -149,6 +149,14 @@ pli linux-nvidia-libs
 case "$DRIV" in
  nvidia)
 sysrc kld_list+="nvidia-modeset"
+kldload nvidia-modeset
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+Section "Device"
+        Identifier "NVIDIA Card"
+        VendorName "NVIDIA Corporation"
+        Driver "nvidia"
+EndSection
+EOF
 #sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "NVIDIA Card"
