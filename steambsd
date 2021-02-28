@@ -67,11 +67,12 @@ fi
 }
 addfstab()
 {
-if [ -d All ]; then
-echo "$1" >> /tmp/bsdinstall_etc/fstab
-else
-echo "$1" >> /etc/fstab
-fi
+echo "$1" >> /mnt/etc/fstab
+#if [ -d All ]; then
+#echo "$1" >> /tmp/bsdinstall_etc/fstab
+#else
+#echo "$1" >> /etc/fstab
+#fi
 }
 
 ############################################
