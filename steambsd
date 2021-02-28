@@ -130,7 +130,7 @@ pli lxde-meta
 #pli wine-mono
 #pli wine-gecko
 # packages for linux
-#pli linux-steam-utils
+pli linux-steam-utils
 # packages for comfort
 #pli leafpad
 #pli chromium
