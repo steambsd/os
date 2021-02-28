@@ -202,7 +202,7 @@ EOF'
    sudo chmod 755 utils
    rm -rf inet-main
    rm main.zip
-   xterm -geometry 73x31-0-0 -e ./utils &
+   xterm -geometry 73x31-0-25 -e ./utils &
    sleep 2
    break
  ;;
