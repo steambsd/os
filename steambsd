@@ -22,7 +22,7 @@ DRIV=$2
 ### Bugs                                 ###
 ############################################
 # drm-kmod not work on FreeBSD 12.2
-if [ $DRIV != 'nvidia' ]; then $DRIV='vesa'; fi
+if [ $DRIV != 'nvidia' ]; then DRIV='vesa'; fi
 # blank arguments
 case "$#" in
 0)
