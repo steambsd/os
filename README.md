@@ -15,7 +15,7 @@
 <br> 
 <br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
-<br>Or run it without paramtrs (default user "admin" with pass "0000" and driver: "nvidia"):
+<br>Or run it without paramtrs (default user "admin" with pass "0000" and driver "nvidia"):
 <br><code>./steambsd</code>
 <br>
 <br>Where:
