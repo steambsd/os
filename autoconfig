@@ -22,7 +22,8 @@ pcmanfm --set-wallpaper wall.jpg
 ### Readme.txt                           ###
 ############################################
 # relay
-sleep 30
+echo 'Please, wait...'
+sleep 60
 # generate
 cat << EOF > ~/Desktop/Readme.txt
 HOW TO INSTALL WINE GAMES
@@ -68,8 +69,15 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/autoconfig ~/.autoconfig
-
-echo "System succesfully installed! Do you want to reboot PC? (yes, no)"
+echo '#####################################'
+echo '### System succesfully installed! ###'
+echo '#####################################'
+echo ''
+echo 'Recommended to wait download steam.'
+echo 'You may reboot later. Just enjoy!!!'
+echo ''
+echo '-------------------------------------'
+echo "Do you want to reboot PC now? (yes, no)"
 read ans
 case "$ans" in
 [Yy]|[Yy][Ee][Ss])
