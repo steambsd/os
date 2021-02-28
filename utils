@@ -39,8 +39,7 @@ echo -n 'Choose your number: '
  case "$ans" in
  1)
    ### open instruction
-   # go to 
-   chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
+   xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
  ;;
  2)
    ### install steam developers
