@@ -1,32 +1,33 @@
 #!/bin/sh
-sleep 4
+sleep 1
 cd ~
 
 ############################################
 ### Desktop customization                ###
 ############################################
+# steam-linux
+sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab"
+sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
+sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
+sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
+sudo mount -a
+
+#sudo su steam -c steam-install
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
 # autostart
-echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
-echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
-echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
-# steam-linux
-read ans
-#sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
-#sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
-#sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
-#sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
-sudo mount -a
-read ans
-sudo su steam -c steam-install
+#echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
+#echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
+#echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
+
 read ans
 # steam-wine
-fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
-wine SteamSetup.exe /S
-wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
+#fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+#wine SteamSetup.exe /S
+#wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
+
 # relay
-sleep 10
+sleep 5
 
 ############################################
 ### Generate Readme.txt                  ###
@@ -37,7 +38,8 @@ HOW TO INSTALL WINE GAMES
 2. Open terminal and enter follow code:
 wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://install/630
 Where 630 - ID of steam game
-P.S. If linux-steam-utils work, you may add games to libroray game. Just click "Play" but not install game, open wine-based steam and you see this game.
+P.S. If linux-steam-utils work, you may add games to libroray game. 
+Just click "Play" but not install game, open wine-based steam and you see this game.
 
 HOW TO CREATE WINE-PREFIX 
 # for preinstall i386-wine
