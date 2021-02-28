@@ -32,7 +32,9 @@
 <br>For example:
 <br><code>./steambsd bob nvidia </code>
 <br><code>./steambsd den amdgpu </code>
-<br><code>./steambsd vms vesa </code>
+<br><code>./steambsd zed radeon </code>
+<br><code>./steambsd hanna intel </code>
+<br><code>./steambsd vmuser vesa </code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
