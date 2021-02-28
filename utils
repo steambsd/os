@@ -11,7 +11,7 @@ echo '=========================       UTILS      =========================='
 
 echo '====================================================================='
 echo ''
-echo '1 - [proton - beta] open terminal for manual installation'
+echo '1 - [proton - beta] open lxterminal (if you want manually install proton)'
 echo '2 - [proton - beta] install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
