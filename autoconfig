@@ -12,10 +12,10 @@ echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/
 echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
 echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
 # steam-linux
-sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
-sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
-sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
-sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
+#sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw  0 0' >> /etc/fstab"
+#sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw  0 0' >> /etc/fstab"
+#sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777    0       0' >> /etc/fstab"
+#sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw  0 0' >> /etc/fstab"
 sudo mount -a
 read ans
 sudo su steam -c steam-install
@@ -74,6 +74,21 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/autoconfig ~/.autoconfig
-sudo reboot 
+
+echo "System succesfully installed! Do you want to reboot PC? (yes, no)"
+read ans
+case "$ans" in
+[Yy]|[Yy][Ee][Ss])
+ echo "OK. Good bye."
+ sudo reboot
+ ;;
+[Nn]|[Nn][Oo])
+ echo "OK. Go on."
+ ;;
+*)
+ echo "Error. Please, type yes or no."
+ ;;
+esac
+ 
 
 
