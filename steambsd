@@ -115,10 +115,10 @@ sysrc linux_enable=YES
 sysrc linux64_enable=YES
 kldload linux
 kldload linux64
-addfstab 'linprocfs       /compat/linux/proc      linprocfs rw           0 0'
-addfstab 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0'
-addfstab 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0'
-addfstab 'fdesc           /dev/fd                 fdescfs   rw           0 0'
+#addfstab 'linprocfs       /compat/linux/proc      linprocfs rw           0 0'
+#addfstab 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0'
+#addfstab 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0'
+#addfstab 'fdesc           /dev/fd                 fdescfs   rw           0 0'
 # packages for WM
 pli xorg
 pli slim
