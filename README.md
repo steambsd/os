@@ -20,7 +20,8 @@
 <br>
 <br>Where:
 <br>[your_user] is user created during installation 
-<br>If not exist, script add automaticly with password "0000" you may change password after installation "command: passwd [your_user]"
+<br>If user not exist, script add automaticly with password "0000" you may change password after installation:
+<br><code>passwd [your_user]</code>
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
 <br>nvidia - [recommended] best choice for linux steam
 <br>amdgpu - not bad for wine steam
