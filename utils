@@ -32,7 +32,7 @@ echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo 'sht - shutdown pc'
 echo 'rbt - reboot pc'
 echo 'upd - update utils and reopen'
-echo 'exit - close utils and exit'
+echo 'exit - close utils'
 echo ''
 echo -n 'Choose your number: '
  read ans
