@@ -5,29 +5,16 @@ cd ~
 ############################################
 ### Desktop customization                ###
 ############################################
-# steam-linux
+# fstab and mount
 sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab"
 sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
 sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
 sudo mount -a
-
-#sudo su steam -c steam-install
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
-# autostart
-#echo '@xterm -geometry 40x4-250+0 -e ~/.steam-wine' >> ~/.config/lxsession/LXDE/autostart
-#echo '@xterm -geometry 40x4-0+0 -e ~/.steam-linux' >> ~/.config/lxsession/LXDE/autostart
-#echo '@xterm -geometry 73x31-0-25 -e ./utils' >> ~/.config/lxsession/LXDE/autostart
-
-read ans
-# steam-wine
-#fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
-#wine SteamSetup.exe /S
-#wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
-
 # relay
-sleep 5
+sleep 30
 
 ############################################
 ### Generate Readme.txt                  ###
@@ -64,11 +51,10 @@ Section "Screen"
                 Modes     "1920x1080"
         EndSubSection
 EndSection
-
-2. Press ESC and leave editor with save changes
+2. Press ESC, "a" and "a" to save and leave editor
 
 P.S.
-Youtube: SteamBSD
+Youtube: SteamBSD (https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA)
 Site: http://steambsd.epizy.com
 All quastions send to email: light.progres@gmail.com
 EOF
