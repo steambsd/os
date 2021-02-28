@@ -38,7 +38,7 @@ case "$#" in
  ;;
 2)
  # add if not exist
- pw usershow ${AZER} || pw useradd ${AZER} -m -b /usr/home; echo 0000 | pw usermod ${AZER} -h0
+ pw usershow ${AZER} || su root -c "pw useradd ${AZER} -m -b /usr/home; echo 0000 | pw usermod ${AZER} -h0"
  # try to wheel
  pw usermod ${AZER} -G wheel
  ;;
