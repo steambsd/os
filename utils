@@ -54,7 +54,7 @@ echo -n 'Choose your number: '
    sudo make install
    sudo pw useradd steamdev -m
    sudo su steamdev -c /opt/steam-utils/bin/steam-install
-   sudo su steamdev -c /opt/steam-utils/bin/steam
+   sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
  ;;
  3)
    ### remove wine
