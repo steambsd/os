@@ -21,6 +21,30 @@ DRIV=$2
 ############################################
 ### Bugs                                 ###
 ############################################
+# blank arguments
+case "$#" in
+0)
+ # default: user - admin, driver - nvidia
+ AZER='admin'
+ pw useradd ${AZER} -m -b /usr/home -G wheel
+ echo 0000 | pw usermod ${AZER} -h0
+ DRIV='nvidia'
+ ;;
+1)
+ echo "Error. Please, type two arguments."
+ echo "Usage: $0 [your_user] [your_driver]"
+ exit 0
+ ;;
+2)
+ # add to wheel if it not
+ pw usermod ${AZER} -G wheel
+ ;;
+*)
+ echo "Error. Please, type two arguments."
+ echo "Usage: $0 [your_user] [video_driver]"
+ exit 0
+ ;;
+esac
 # drm-kmod not work on FreeBSD 12.2
 if [ $DRIV != 'nvidia' ]; then $DRIV='vesa'; fi
 
