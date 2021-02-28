@@ -1,2 +1,8 @@
 #!/bin/sh
-wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+if [ -d .wine ]; then
+ wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+else
+ fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+ wine SteamSetup.exe /S
+ wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
+fi
