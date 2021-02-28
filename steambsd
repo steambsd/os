@@ -120,21 +120,21 @@ pli xorg
 pli slim
 pli lxde-meta
 # packages for wine
-pli i386-wine
-pli winetricks
-pli wine-mono
-pli wine-gecko
+#pli i386-wine
+#pli winetricks
+#pli wine-mono
+#pli wine-gecko
 # packages for linux
-pli linux-steam-utils
+#pli linux-steam-utils
 # packages for comfort
 #pli leafpad
 #pli chromium
 #pli vlc
 #pli simplescreenrecorder
 # video driver
-pli nvidia-driver
-pli nvidia-settings
-pli linux-nvidia-libs
+#pli nvidia-driver
+#pli nvidia-settings
+#pli linux-nvidia-libs
 #pli drm-kmod
 #pli xf86-video-amdgpu
 #pli xf86-video-intel
