@@ -40,7 +40,7 @@ echo -n 'Choose your number: '
  1)
    ### open lxterminal
    # go to shell
-   lxterminal -e 'dmesg | grep vga &'
+   lxterminal -e dmesg | grep vga &
  ;;
  2)
    ### install steam developers
