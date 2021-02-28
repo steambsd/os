@@ -10,9 +10,8 @@ echo '====================================================================='
 echo '=========================       UTILS      =========================='
 
 echo '====================================================================='
-echo 'ATTENTION! For other screen resolution see file Readme.txt'
 echo ''
-echo '1 - reinstall steam wine to newest i386-wine-devel'
+echo '1 - [proton - beta] open terminal and get information'
 echo '2 - [proton - beta] install steam developers and add user steamdev'
 echo '3 - [proton - beta] completely remove wine and kill process'
 echo '4 - [proton - beta] install proton 5.13 for run windows games'
@@ -21,6 +20,7 @@ echo '6 - [proton - beta] unpack slrs (steam linux runtime - soldier)'
 echo '7 - [proton - beta] select emulators/wine-proton in properties'
 echo '8 - [proton - beta] download simple game'
 echo '9 - [proton - beta] test wineserver (see Readme.txt)'
+echo 'rw - reinstall steam wine to newest i386-wine-devel'
 echo 'sm - open steam for user steam'
 echo 'sv - open steam for user steamdev'
 echo 'zc - construct full snapshot of system'
@@ -37,23 +37,10 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
- 0)
-   ### reinstall steam wine
-   # delete wine
-   sudo pkg remove -y i386-wine
-   sudo pkg remove -y winetricks
-   sudo pkg remove -y wine-mono
-   sudo pkg remove -y wine-gecko
-   sudo rm -rf .wine
-   sudo killall -HUP wine
-   # install wine
-   sudo pkg ins -y i386-wine-devel
-   sudo pkg ins -y winetricks
-   sudo pkg ins -y wine-mono-devel
-   sudo pkg ins -y wine-gecko-devel
-   fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
-   lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
-   lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
+ 1)
+   ### open lxterminal
+   # go to shell
+   lxterminal -e 'dmesg | grep vga &'
  ;;
  2)
    ### install steam developers
@@ -111,6 +98,24 @@ echo -n 'Choose your number: '
    ### test wine-proton
    sudo pw useradd steamdev -m
    sudo su steamdev -c 'lxterminal --title="you must exec command: /opt/steam-utils/bin/lsu-wine-env wine winecfg" &'
+ ;;
+ rw)
+   ### reinstall steam wine
+   # delete wine
+   sudo pkg remove -y i386-wine
+   sudo pkg remove -y winetricks
+   sudo pkg remove -y wine-mono
+   sudo pkg remove -y wine-gecko
+   sudo rm -rf .wine
+   sudo killall -HUP wine
+   # install wine
+   sudo pkg ins -y i386-wine-devel
+   sudo pkg ins -y winetricks
+   sudo pkg ins -y wine-mono-devel
+   sudo pkg ins -y wine-gecko-devel
+   fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+   lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
+   lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
  ;;
  sm)
    ### steam
