@@ -28,6 +28,11 @@
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
+<br>
+<br>For example:
+<br><code>./steambsd bob nvidia </code>
+<br><code>./steambsd den amdgpu </code>
+<br><code>./steambsd vms vesa </code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
