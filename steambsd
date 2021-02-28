@@ -38,7 +38,6 @@ case "$#" in
  ;;
 2)
  # add if not exist
- #pw usershow ${AZER} || su root -c "pw useradd ${AZER} -m; echo \"0000\" | pw usermod ${AZER} -h0"
  pw usershow ${AZER} || chk=1
  if [ $chk = 1 ]; then
   pw useradd ${AZER} -m
