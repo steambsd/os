@@ -1,5 +1,5 @@
 <h1>SteamBSD installation on the internet </h1>
-<br>Install FreBSD with wheel user, reboot PC and login as root:
+<br>Install FreBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
 <br><code>pkg ins git</code>
@@ -15,9 +15,11 @@
 <br> 
 <br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
+<br>Or run it without paramtrs (default user "admin" with pass "0000" and driver: "nvidia"):
+<br><code>./steambsd</code>
 <br>
 <br>Where:
-<br>[your_user] is user created during installation (group must be wheel)
+<br>[your_user] is user created during installation (if not exist, script add automaticly "admin" with password "0000")
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
 <br>nvidia - [recommended] best choice for linux steam
 <br>amdgpu - not bad for wine steam
