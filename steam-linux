@@ -1,2 +1,8 @@
 #!/bin/sh
-sudo su steam -c steam
+sleep 4
+if [ -d /home/steam/.steam ]; then
+ sudo su steam -c steam
+else
+ sudo su steam -c steam-install
+fi
+
