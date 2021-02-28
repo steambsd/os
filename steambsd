@@ -28,7 +28,7 @@ case "$#" in
 0)
  # default: user - admin, driver - nvidia
  AZER='admin'
- pw useradd ${AZER} -m -b /usr/home -G wheel; echo 0000 | pw usermod ${AZER} -h0
+ pw useradd $AZER -m -b /usr/home -G wheel; echo 0000 | pw usermod $AZER -h0
  DRIV='nvidia'
  ;;
 1)
@@ -41,6 +41,8 @@ case "$#" in
  pw usershow ${AZER} || su root -c "pw useradd ${AZER} -m -b /usr/home; echo 0000 | pw usermod ${AZER} -h0"
  # try to wheel
  pw usermod ${AZER} -G wheel
+ # ost
+ read ans
  ;;
 *)
  echo "Error. Please, type two arguments."
