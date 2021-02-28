@@ -40,7 +40,7 @@ echo -n 'Choose your number: '
  1)
    ### open lxterminal
    # go to shell
-   sudo su root -c 'lxterminal -e pkg info linux-steam-utils &'
+    sudo su steam -c 'lxterminal -e pkg info linux-steam-utils &'
  ;;
  2)
    ### install steam developers
