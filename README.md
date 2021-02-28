@@ -23,7 +23,7 @@
 <br>If the user does not exist, the script will add it automatically with the password "0000", you can change the password after installation:
 <br><code>passwd [your_user]</code>
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
-<br>nvidia - [recommended] best choice for linux steam
+<br>nvidia - recommended, best choice for linux steam
 <br>amdgpu - not bad for wine steam
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
