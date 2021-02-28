@@ -4,5 +4,6 @@ if [ -d /home/steam/.steam ]; then
  sudo su steam -c steam
 else
  sudo su steam -c steam-install
+ sudo su steam -c steam
 fi
 
