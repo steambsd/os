@@ -132,6 +132,12 @@ pli linux-nvidia-libs
 #pli xf86-video-intel
 
 ############################################
+### Steam-linux                          ###
+############################################
+su steam -c steam-install
+read ans
+
+############################################
 ### Driver                               ###
 ############################################
 case "$DRIV" in
@@ -237,6 +243,9 @@ EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
 @xterm -e ~/autoconfig
+@xterm -geometry 40x4-250+0 -e ~/.steam-wine
+@xterm -geometry 40x4-0+0 -e ~/.steam-linux
+@xterm -geometry 73x31-0-25 -e ./utils
 EOF
 # set permission
 chown -R $AZER:wheel /home/$AZER/
