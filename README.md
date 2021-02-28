@@ -42,5 +42,6 @@
 <br> 
 <br>---
 <br>SteamBSD © is FREE operating system.
+<br>YouTube: SteamBSD (https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA)
 <br>Site: http://steambsd.epizy.com
 <br>E-mail: light.progres@gmail.com.
