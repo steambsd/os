@@ -15,6 +15,9 @@
 <br> 
 <br>Finally, run it:
 <br><code>./steambsd [your_user] [video_driver] </code>
+<br>For example:
+<br><code>./steambsd bob nvidia </code>
+<br><code>./steambsd tester vesa </code>
 <br>Or run it without paramtrs (default user "admin" with pass "0000" and driver "nvidia"):
 <br><code>./steambsd</code>
 <br>
