@@ -3,11 +3,19 @@
 ###          SIMPLE INSTALLATION         ###
 ###                 STEAM                ###   
 ###              ON FREEBSD              ###
-############# set permission ###############
+############################################
+# set permission
 chmod +x autoconfig
 chmod +x steam-linux
 chmod +x steam-wine
 chmod +x utils
+# lan interface
+ETH=`ifconfig | grep flags | cut -d\: -f1 | head -n1 | tail -n1`
+ping -c2 google.com || nhk=1
+if [ $nhk = 1 ]; then
+ dhclient $ETH
+ sysrc ifconfig_${ETH}=SYNCDHCP
+fi
 
 ############################################
 ### Variables                            ###
