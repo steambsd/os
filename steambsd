@@ -299,7 +299,7 @@ cat << EOF >> /etc/crontab
 EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
-@xterm -e -geometry 40x10+0-25 ~/autoconfig
+@xterm -e -geometry 50x15+0-25 ~/autoconfig
 @xterm -geometry 40x4-250+0 -e ~/.steam-wine
 @xterm -geometry 40x4-0+0 -e ~/.steam-linux
 @xterm -geometry 73x31-0-25 -e ./utils
