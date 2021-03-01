@@ -145,48 +145,41 @@ Section "Device"
         Driver "nvidia"
 EndSection
 EOF
-#sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
-#Section "Device"
-#        Identifier "NVIDIA Card"
-#        VendorName "NVIDIA Corporation"
-#        Driver "nvidia"
-#EndSection
-#EOF'
  ;;
  amdgpu)
 sysrc kld_list+="/boot/modules/amdgpu.ko"
-#sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
 #        Driver     "amdgpu"
 #EndSection
-#EOF'
+#EOF
  ;;
   radeon)
 sysrc kld_list+="/boot/modules/radeonkms.ko"
-#sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
 #        Driver     "radeonkms"
 #EndSection
-#EOF'
+#EOF
  ;;
  intel)
 sysrc kld_list+="/boot/modules/i915kms.ko"
-#sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+#cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
 #        Driver     "intel"
 #EndSection
-#EOF'
+#EOF
  ;;
  *)
-#sudo su root -c 'cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+#cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 # Section "Device"
 #    Identifier    "Card0"
 #    Driver        "vesa"
 # EndSection 
-#EOF'
+#EOF
  ;;
 esac
 
