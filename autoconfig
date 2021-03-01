@@ -69,11 +69,11 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/autoconfig ~/.autoconfig
-echo '#####################################'
-echo '### System installed successfully! ###'
-echo '#####################################'
+echo '############################################'
+echo '###    System installed successfully!    ###'
+echo '############################################'
 echo ''
-echo 'It is recommended to wait for the download of Steam updates.'
+echo 'It is recommended to wait for Steam updates.'
 echo 'You may reboot later. Just enjoy!!!'
 echo ''
 echo '-------------------------------------'
