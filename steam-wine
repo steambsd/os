@@ -8,3 +8,4 @@ else
  wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 fi
+read ans
