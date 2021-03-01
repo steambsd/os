@@ -9,7 +9,6 @@ chmod +x steam-linux
 chmod +x steam-wine
 chmod +x utils
 
-
 ############################################
 ### Variables                            ###
 ############################################
