@@ -96,7 +96,7 @@ env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
 
 ############################################
-### Packages                             ###
+### Prepare                              ###
 ############################################
 # for user privilegies
 pli sudo
@@ -106,11 +106,75 @@ pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
 pw useradd steam -m
 pw usermod steam -s /usr/local/bin/bash
+# user for steam development
+pw useradd steamdev -m
+pw usermod steamdev -s /usr/local/bin/bash
 # linux
 sysrc linux_enable=YES
 sysrc linux64_enable=YES
 kldload linux
 kldload linux64
+
+############################################
+### Custom                               ###
+############################################
+# motd
+echo "==> Build date used for motd and product file"
+BUILDDATE=$(date +%Y%m%d)
+RELEASE="12.2-RELEASE"
+DOC_URL="http://steambsd.epizy.com/"
+
+echo "==> Creating /etc/motd"
+mv /etc/motd /etc/motd-backup
+cat << MOTD > /etc/motd
+
+ -=Light=-
+     LTD
+
+                         Instance (FreeBSD $RELEASE $BUILDDATE)
+                          $DOC_URL
+
+MOTD
+
+
+
+echo "==> Creating /etc/product file"
+cat << PRODUCT > /etc/product
+Name: SteamBSD Instance
+Image: SteamBSD $RELEASE $BUILDDATE
+Documentation: $DOC_URL
+Description: SteamBSD $RELEASE 64-bit image with just essential packages \
+installed. Ideal for users who are comfortable with setting up their \
+own environment and tools.
+PRODUCT
+# change name of OS
+echo '==> Change name of os'
+cat << EOF >> /root/.bashrc
+alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
+EOF
+cat << EOF >> /root/.cshrc
+alias uname	uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+EOF
+cat << EOF >> /home/${AZER}/.bashrc
+alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
+EOF
+cat << EOF >> /home/${AZER}/.cshrc
+alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+EOF
+cat << EOF >> /home/steam/.bashrc 
+alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
+EOF
+cat << EOF >> /home/steam/.cshrc 
+alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+cat << EOF >> /home/steamdev/.bashrc 
+alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
+EOF
+cat << EOF >> /home/steamdev/.cshrc 
+alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+
+############################################
+### Packages                             ###
+############################################
 # packages for WM
 pli xorg
 pli slim
