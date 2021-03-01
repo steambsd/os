@@ -19,6 +19,19 @@ AZER=$1
 DRIV=$2
 
 ############################################
+### Function                             ###
+############################################
+# package type installation (local or inet)
+pli()
+{
+if [ -d All ]; then
+pkg add All/$1-*
+else
+pkg ins -y $1
+fi
+}
+
+############################################
 ### Bugs                                 ###
 ############################################
 # drm-kmod not work on FreeBSD 12.2
@@ -56,19 +69,6 @@ case "$#" in
  exit 0
  ;;
 esac
-
-############################################
-### Function                             ###
-############################################
-# package type installation (local or inet)
-pli()
-{
-if [ -d All ]; then
-pkg add All/$1-*
-else
-pkg ins -y $1
-fi
-}
 
 ############################################
 ### Tuning                               ###
