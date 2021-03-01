@@ -166,11 +166,13 @@ alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
 EOF
 cat << EOF >> /home/steam/.cshrc 
 alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+EOF
 cat << EOF >> /home/steamdev/.bashrc 
 alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
 EOF
 cat << EOF >> /home/steamdev/.cshrc 
 alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
+EOF
 
 ############################################
 ### Packages                             ###
