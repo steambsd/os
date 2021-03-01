@@ -27,13 +27,6 @@ if [ $DRIV != 'nvidia' ]; then DRIV='vesa'; fi
 ############################################
 ### Check system                         ###
 ############################################
-# lan interface
-ETH=`ifconfig | grep flags | cut -d\: -f1 | head -n1 | tail -n1`
-ping -c2 google.com || nhk=1
-if [ $nhk = 1 ]; then
- dhclient $ETH
- sysrc ifconfig_${ETH}=SYNCDHCP
-fi
 # blank arguments
 case "$#" in
 0)
