@@ -15,7 +15,7 @@ chmod +x utils
 # user with wheel group
 AZER=$1
 # choose driver for your PC, it may be: 
-# nvidia, amdgpu, radeon, intel or vesa (vm)
+# nvidia, amdgpu, radeon, intel or vesa
 DRIV=$2
 
 ############################################
