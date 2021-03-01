@@ -128,7 +128,7 @@ echo "==> Creating /etc/motd"
 mv /etc/motd /etc/motd-backup
 cat << MOTD > /etc/motd
 
- -=LightP=-
+ -=L-Progres=-
      LTD
 
                          Instance (FreeBSD $RELEASE $BUILDDATE)
