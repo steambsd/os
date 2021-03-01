@@ -42,13 +42,13 @@ case "$#" in
  ;;
 2)
  # add if not exist
- pw usershow ${AZER} || chk=1
+ pw usershow $AZER || chk=1
  if [ $chk = 1 ]; then
-  pw useradd ${AZER} -m
-  echo '0000' | pw usermod ${AZER} -h0
+  pw useradd $AZER -m
+  echo '0000' | pw usermod $AZER -h0
  fi
  # try to wheel
- pw usermod ${AZER} -G wheel
+ pw usermod $AZER -G wheel
  ;;
 *)
  echo "Error. Please, type two arguments."
@@ -219,7 +219,7 @@ echo 'startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/steam/.xinitrc
 # adding power and reset buttons
 cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
-polkit.addRule(function (action, subject) {
+polkit.addRule(function (action, subject) 
   if ((action.id == "org.freedesktop.consolekit.system.restart" ||
       action.id == "org.freedesktop.consolekit.system.stop")
       && subject.isInGroup("wheel")) {
