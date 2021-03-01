@@ -1,5 +1,5 @@
 <h1>SteamBSD installation on the internet </h1>
-<br>Install FreeBSD, reboot PC and login as root:
+<br>Install FreeBSD (with kernel-dbg, lib32), reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
 <br><code>pkg ins git</code>
