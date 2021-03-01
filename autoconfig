@@ -69,15 +69,15 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/autoconfig ~/.autoconfig
-echo '############################################'
-echo '###    System installed successfully!    ###'
-echo '############################################'
+echo '################################################'
+echo '###      System installed successfully!      ###'
+echo '################################################'
 echo ''
 echo 'It is recommended to wait for Steam updates.'
 echo 'You may reboot later. Just enjoy!!!'
 echo ''
 echo '-------------------------------------'
-echo "Do you want to reboot PC now? (yes, no)"
+echo -n "Do you want to reboot PC now? (yes, no): "
 read ans
 case "$ans" in
 [Yy]|[Yy][Ee][Ss])
