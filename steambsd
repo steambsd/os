@@ -116,65 +116,6 @@ kldload linux
 kldload linux64
 
 ############################################
-### Custom                               ###
-############################################
-# motd
-echo "==> Build date used for motd and product file"
-BUILDDATE=$(date +%Y%m%d)
-RELEASE="12.2-RELEASE"
-DOC_URL="http://steambsd.epizy.com/"
-
-echo "==> Creating /etc/motd"
-mv /etc/motd /etc/motd-backup
-cat << MOTD > /etc/motd
-
- -=L-Progres=-
-     LTD
-
-                         Instance (FreeBSD $RELEASE $BUILDDATE)
-                          $DOC_URL
-
-MOTD
-
-
-
-echo "==> Creating /etc/product file"
-cat << PRODUCT > /etc/product
-Name: SteamBSD Instance
-Image: SteamBSD $RELEASE $BUILDDATE
-Documentation: $DOC_URL
-Description: SteamBSD $RELEASE 64-bit image with just essential packages \
-installed. Ideal for users who are comfortable with setting up their \
-own environment and tools.
-PRODUCT
-# change name of OS
-echo '==> Change name of os'
-cat << EOF >> /root/.bashrc
-alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
-EOF
-cat << EOF >> /root/.cshrc
-alias uname	uname -a | sed -e 's/FreeBSD/SteamBSD/g'
-EOF
-cat << EOF >> /home/${AZER}/.bashrc
-alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
-EOF
-cat << EOF >> /home/${AZER}/.cshrc
-alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
-EOF
-cat << EOF >> /home/steam/.bashrc 
-alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
-EOF
-cat << EOF >> /home/steam/.cshrc 
-alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
-EOF
-cat << EOF >> /home/steamdev/.bashrc 
-alias uname="uname -a | sed -e 's/FreeBSD/SteamBSD/g'"
-EOF
-cat << EOF >> /home/steamdev/.cshrc 
-alias uname     uname -a | sed -e 's/FreeBSD/SteamBSD/g'
-EOF
-
-############################################
 ### Packages                             ###
 ############################################
 # packages for WM
@@ -193,20 +134,15 @@ pli leafpad
 pli chromium
 pli vlc
 pli simplescreenrecorder
-# video driver
-pli nvidia-driver
-pli nvidia-settings
-pli linux-nvidia-libs
-#pli drm-kmod
-#pli xf86-video-amdgpu
-#pli xf86-video-ati
-#pli xf86-video-intel
 
 ############################################
 ### Driver                               ###
 ############################################
 case "$DRIV" in
  nvidia)
+pli nvidia-driver
+pli nvidia-settings
+pli linux-nvidia-libs
 sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
 kldload nvidia-modeset
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
@@ -217,6 +153,8 @@ EndSection
 EOF
  ;;
  amdgpu)
+pli drm-kmod
+pli xf86-video-amdgpu
 sysrc kld_list+="/boot/modules/amdgpu.ko"
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
@@ -226,6 +164,8 @@ sysrc kld_list+="/boot/modules/amdgpu.ko"
 #EOF
  ;;
   radeon)
+pli drm-kmod
+pli xf86-video-ati
 sysrc kld_list+="/boot/modules/radeonkms.ko"
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
@@ -235,6 +175,8 @@ sysrc kld_list+="/boot/modules/radeonkms.ko"
 #EOF
  ;;
  intel)
+pli drm-kmod
+pli xf86-video-intel
 sysrc kld_list+="/boot/modules/i915kms.ko"
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
