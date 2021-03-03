@@ -62,6 +62,7 @@ case "$#" in
  # add if not exist
  pw usershow $AZER || chk=1
  if [ $chk = 1 ]; then
+  echo "Create user $AZER"
   pw useradd $AZER -m
   echo '0000' | pw usermod $AZER -h0
  fi
