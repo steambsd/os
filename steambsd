@@ -212,8 +212,8 @@ case "$VERS" in
   make
   make install
   rm -rf kms-drm
-  #cp ./pci.ids /usr/local/share/pciids/pci.ids
   rm -rf drm-v5.0-fbsd12.1.zip
+  #cp ./pci.ids /usr/local/share/pciids/pci.ids
  ;;
  12.2)
   sysrc kld_list-="/boot/modules/amdgpu.ko"
