@@ -221,7 +221,8 @@ case "$VERS" in
   sysrc kld_list-="/boot/modules/radeonkms.ko"
  ;;
  13.0)
-
+  echo 'Detect latest system'
+  
  ;;
  *)
 exit 0
