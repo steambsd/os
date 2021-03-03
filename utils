@@ -11,7 +11,7 @@ echo '=========================       UTILS      =========================='
 
 echo '====================================================================='
 echo ''
-echo '1 - [proton - beta] open web-instruction'
+echo '1 - [proton - beta] open information'
 echo '2 - [proton - beta] install steam developers'
 echo '3 - [proton - beta] completely remove wine'
 echo '4 - [proton - beta] install proton 5.13'
@@ -39,7 +39,8 @@ echo -n 'Choose your number: '
  case "$ans" in
  1)
    ### open instruction
-   xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
+   #xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
+   xterm -geometry 40x4+0-0 -e leafpad Desktop/Readme.txt
  ;;
  2)
    ### install steam developers
