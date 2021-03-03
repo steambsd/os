@@ -225,7 +225,9 @@ case "$VERS" in
   
  ;;
  *)
-exit 0
+  echo -n 'Script is not intended for installation on this version of the system: '
+  echo -n $VERS
+  exit 0
  ;;
 esac
 
