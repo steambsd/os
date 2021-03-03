@@ -17,6 +17,8 @@ AZER=$1
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa
 DRIV=$2
+# version
+VERS=`uname -r`
 
 ############################################
 ### Function                             ###
