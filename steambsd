@@ -149,7 +149,7 @@ pli nvidia-driver
 pli nvidia-settings
 pli linux-nvidia-libs
 sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
-kldload nvidia-modeset
+kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
         Identifier "NV Card"
@@ -161,6 +161,7 @@ EOF
 pli drm-kmod
 pli xf86-video-amdgpu
 sysrc kld_list+="/boot/modules/amdgpu.ko"
+kldload /boot/modules/amdgpu.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
@@ -172,6 +173,7 @@ sysrc kld_list+="/boot/modules/amdgpu.ko"
 pli drm-kmod
 pli xf86-video-ati
 sysrc kld_list+="/boot/modules/radeonkms.ko"
+kldload /boot/modules/radeonkms.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
@@ -183,6 +185,7 @@ sysrc kld_list+="/boot/modules/radeonkms.ko"
 pli drm-kmod
 pli xf86-video-intel
 sysrc kld_list+="/boot/modules/i915kms.ko"
+kldload /boot/modules/i915kms.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
