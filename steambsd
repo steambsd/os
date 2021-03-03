@@ -209,7 +209,7 @@ esac
 
 case "$VERS" in
  12.0)
-  cd /usr/ports/graphics/drm-kmod && make BATCH=yes deinstall build install clean 
+  #cd /usr/ports/graphics/drm-kmod && make BATCH=yes deinstall build install clean 
  ;;
  12.1)
   fetch https://github.com/FreeBSDDesktop/kms-drm/archive/drm-v5.0-fbsd12.1.zip
