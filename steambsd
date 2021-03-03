@@ -19,9 +19,9 @@ AZER=$1
 DRIV=$2
 # version
 VERS=`uname -r | cut -d'-' -f1`
-#VERS='12.0'
-#VERS='12.1'
-#VERS='12.2'
+#VERS='12.0' #not tested
+#VERS='12.1' #need src.txz
+#VERS='12.2' #without drm
 
 ############################################
 ### Function                             ###
