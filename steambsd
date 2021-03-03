@@ -214,6 +214,7 @@ case "$VERS" in
   #cd /usr/ports/graphics/drm-kmod && make BATCH=yes deinstall build install clean 
  ;;
  12.1)
+  svnlite checkout http://svn.freebsd.org/base/releng/12.1/ /usr/src
   fetch https://github.com/FreeBSDDesktop/kms-drm/archive/drm-v5.0-fbsd12.1.zip
   unzip drm-v5.0-fbsd12.1.zip 
   mv kms-drm-drm-v5.0-fbsd12.1 kms-drm
