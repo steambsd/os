@@ -18,10 +18,10 @@ AZER=$1
 # nvidia, amdgpu, radeon, intel or vesa
 DRIV=$2
 # version
+VERS=`uname -r | cut -d'-' -f1`
 #VERS='12.0'
 #VERS='12.1'
 #VERS='12.2'
-VERS=`uname -r | cut -d'-' -f1`
 
 ############################################
 ### Function                             ###
