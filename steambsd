@@ -199,6 +199,34 @@ sysrc kld_list+="/boot/modules/i915kms.ko"
  ;;
 esac
 
+case "$VERS" in
+ 12.0)
+  cd /usr/ports/graphics/drm-kmod && make BATCH=yes deinstall build install clean 
+ ;;
+ 12.1)
+  fetch https://github.com/FreeBSDDesktop/kms-drm/archive/drm-v5.0-fbsd12.1.zip
+  unzip drm-v5.0-fbsd12.1.zip 
+  mv kms-drm-drm-v5.0-fbsd12.1 kms-drm
+  cd kms-drm
+  make
+  make install
+  rm -rf kms-drm
+  #cp ./pci.ids /usr/local/share/pciids/pci.ids
+  rm -rf drm-v5.0-fbsd12.1.zip
+ ;;
+ 12.2)
+  sysrc kld_list-="/boot/modules/amdgpu.ko"
+  sysrc kld_list-="/boot/modules/i915kms.ko"
+  sysrc kld_list-="/boot/modules/radeonkms.ko"
+ ;;
+ 13.0)
+
+ ;;
+ *)
+exit 0
+ ;;
+esac
+
 ############################################
 ### Files                                ###
 ############################################
