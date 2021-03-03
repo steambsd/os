@@ -112,9 +112,11 @@ pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
 pw useradd steam -m
 pw usermod steam -s /usr/local/bin/bash
+echo '0000' | pw usermod steam -h0
 # user for steam development
 pw useradd steamdev -m
 pw usermod steamdev -s /usr/local/bin/bash
+echo '0000' | pw usermod steamdev -h0
 # linux
 sysrc linux_enable=YES
 sysrc linux64_enable=YES
