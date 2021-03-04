@@ -30,7 +30,7 @@ sleep 30
 cat << EOF > ~/Desktop/Readme.txt
 ATTENTION!
 1. Proton is experemental version, it may not work.
-2. VAC and farming work good with SteamBSD 13 - version
+2. Farming is experemental version, it may not work.
 
 HOW TO INSTALL WINE GAMES
 1. Found your favorite steam game and remember ID (in browsers link)
