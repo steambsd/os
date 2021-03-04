@@ -22,8 +22,6 @@ echo '8 - [proton - beta] download simple game (Creativerse)'
 echo '9 - [proton - beta] test wineserver (see Readme.txt)'
 echo 'rw - reinstall steam wine to newest i386-wine-devel'
 echo 'sm - open steam for user steam'
-echo 'so - [farming] open steam for user steamone'
-echo 'st - [farming] open steam for user steamtwo'
 echo 'sv - open steam for user steamdev'
 echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
@@ -122,14 +120,6 @@ echo -n 'Choose your number: '
  sm)
    ### steam
    sudo su steam -c 'xterm -geometry 40x4-0+0 -e steam &'
- ;;
- so)
-   ### steam
-   sudo su steamone -c 'xterm -geometry 40x4-0+0 -e steam &'
- ;;
- st)
-   ### steam
-   sudo su steamtwo -c 'xterm -geometry 40x4-0+0 -e steam &'
  ;;
  sv)
    ### steamdev
