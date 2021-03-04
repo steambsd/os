@@ -11,8 +11,6 @@ sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw     
 sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
 sudo mount -a
-sudo su steamone -c steam-install
-sudo su steamtwo -c steam-install
 
 ############################################
 ### Desktop customization                ###
