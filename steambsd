@@ -113,14 +113,6 @@ pw usermod $AZER -s /usr/local/bin/bash
 pw useradd steam -m
 pw usermod steam -s /usr/local/bin/bash
 echo '0000' | pw usermod steam -h0
-# user for farming one
-pw useradd steamone -m
-pw usermod steamone -s /usr/local/bin/bash
-echo '0000' | pw usermod steamone -h0
-# user for farming two
-pw useradd steamtwo -m
-pw usermod steamtwo -s /usr/local/bin/bash
-echo '0000' | pw usermod steamtwo -h0
 # user for steam development
 pw useradd steamdev -m
 pw usermod steamdev -s /usr/local/bin/bash
@@ -172,8 +164,6 @@ EOF
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
-pw groupmod video -m steamone
-pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-amdgpu
 sysrc kld_list+="/boot/modules/amdgpu.ko"
@@ -189,8 +179,6 @@ kldload /boot/modules/amdgpu.ko
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
-pw groupmod video -m steamone
-pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-ati
 sysrc kld_list+="/boot/modules/radeonkms.ko"
@@ -206,8 +194,6 @@ kldload /boot/modules/radeonkms.ko
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
-pw groupmod video -m steamone
-pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-intel
 sysrc kld_list+="/boot/modules/i915kms.ko"
