@@ -172,6 +172,8 @@ EOF
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
+pw groupmod video -m steamone
+pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-amdgpu
 sysrc kld_list+="/boot/modules/amdgpu.ko"
@@ -187,6 +189,8 @@ kldload /boot/modules/amdgpu.ko
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
+pw groupmod video -m steamone
+pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-ati
 sysrc kld_list+="/boot/modules/radeonkms.ko"
@@ -202,6 +206,8 @@ kldload /boot/modules/radeonkms.ko
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
+pw groupmod video -m steamone
+pw groupmod video -m steamtwo
 pw groupmod video -m steamdev
 pli xf86-video-intel
 sysrc kld_list+="/boot/modules/i915kms.ko"
