@@ -113,6 +113,14 @@ pw usermod $AZER -s /usr/local/bin/bash
 pw useradd steam -m
 pw usermod steam -s /usr/local/bin/bash
 echo '0000' | pw usermod steam -h0
+# user for steam one
+pw useradd steamone -m
+pw usermod steamone -s /usr/local/bin/bash
+echo '0000' | pw usermod steamone -h0
+# user for steam two
+pw useradd steamtwo -m
+pw usermod steamtwo -s /usr/local/bin/bash
+echo '0000' | pw usermod steamtwo -h0
 # user for steam development
 pw useradd steamdev -m
 pw usermod steamdev -s /usr/local/bin/bash
