@@ -94,12 +94,18 @@ sysrc sshd_enable=NO
 ############################################
 ### Update                               ###
 ############################################
+if [ -d All ]; then
+tar xf All/pkg.txz -s ",/.*/,,g" "*/pkg-static"
+./pkg-static add All/pkg.txz
+else
 # system
 env PAGER=cat freebsd-update fetch
 freebsd-update install
 # pkg
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
+fi
+
 
 ############################################
 ### Prepare                              ###
