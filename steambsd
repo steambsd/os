@@ -95,7 +95,7 @@ sysrc sshd_enable=NO
 ### Update                               ###
 ############################################
 if [ -d All ]; then
-tar xf All/pkg.txz -s ",/.*/,,g" "*/pkg-static"
+tar xf All/pkg-* -s ",/.*/,,g" "*/pkg-static"
 ./pkg-static add All/pkg-*
 else
 # system
