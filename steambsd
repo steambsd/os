@@ -96,7 +96,7 @@ sysrc sshd_enable=NO
 ############################################
 if [ -d All ]; then
 tar xf All/pkg.txz -s ",/.*/,,g" "*/pkg-static"
-./pkg-static add All/pkg.txz
+./pkg-static add All/pkg-*
 else
 # system
 env PAGER=cat freebsd-update fetch
