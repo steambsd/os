@@ -1,4 +1,4 @@
-a#!/bin/sh
+#!/bin/sh
 
 while :
 do
@@ -216,5 +216,3 @@ EOF'
  ;;
  esac
 done
-
-#mv ~/utils ~/.utils
