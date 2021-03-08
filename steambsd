@@ -234,6 +234,10 @@ case "$VERS" in
   #cd /usr/ports/graphics/drm-kmod && make BATCH=yes deinstall build install clean 
  ;;
  12.1)
+  #fetch https://download.freebsd.org/ftp/releases/amd64/12.1-RELEASE/base.txz
+  #fetch https://download.freebsd.org/ftp/releases/amd64/12.1-RELEASE/lib32.txz
+  #tar -xvf base.txz -C /data/jails/basejail && tar -xvf lib32.txz -C /data/jails/basejail
+  #rm -rf base.txz && rm -rf lib32.txz
   svnlite checkout http://svn.freebsd.org/base/releng/12.1/ /usr/src
   fetch https://github.com/FreeBSDDesktop/kms-drm/archive/drm-v5.0-fbsd12.1.zip
   unzip drm-v5.0-fbsd12.1.zip 
