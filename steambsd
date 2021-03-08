@@ -306,6 +306,10 @@ cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart
 @xterm -geometry 40x4-0+0 -e ~/.steam-linux
 @xterm -geometry 73x31-0-25 -e ./.utils
 EOF
+
+############################################
+### Final stage                          ###
+############################################
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
