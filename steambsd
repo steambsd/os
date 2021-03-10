@@ -243,6 +243,9 @@ case "$VERS" in
   sysrc kld_list-="/boot/modules/amdgpu.ko"
   sysrc kld_list-="/boot/modules/i915kms.ko"
   sysrc kld_list-="/boot/modules/radeonkms.ko"
+  kldunload "/boot/modules/amdgpu.ko"
+  kldunload "/boot/modules/i915kms.ko"
+  kldunload "/boot/modules/radeonkms.ko"
  ;;
  13.0)
   echo 'Detect latest system'
