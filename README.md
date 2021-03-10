@@ -29,7 +29,7 @@
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
 <br>
-<br>Only for this internet installer (NOT for ISO IMG) you may choose: nvidia-390, nvidia-340, nvidia-304
+<br>Only for this internet installer (NOT for ISO IMG) you may old driver choose: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
 <br><code>./steambsd bob nvidia </code>
