@@ -23,14 +23,19 @@
 <br>If the user does not exist, the script will add it automatically with the password "0000", you can change the password after installation:
 <br><code>passwd [your_user]</code>
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
-<br>nvidia - recommended, best choice for linux steam
+<br>nvidia - recommended, best choice for linux steam *
 <br>amdgpu - not bad for wine steam
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
 <br>
+<br>Only for this internet installer (NOT for ISO IMG) you may choose: nvidia-390, nvidia-340, nvidia-304
+<br>
 <br>For example:
 <br><code>./steambsd bob nvidia </code>
+<br><code>./steambsd lee nvidia-390 </code>
+<br><code>./steambsd kim nvidia-340 </code>
+<br><code>./steambsd son nvidia-304 </code>
 <br><code>./steambsd den amdgpu </code>
 <br><code>./steambsd zed radeon </code>
 <br><code>./steambsd hanna intel </code>
