@@ -15,6 +15,8 @@ sudo mount -a
 ############################################
 ### Desktop customization                ###
 ############################################
+# policy
+sudo su root -c "/usr/local/bin/lxpolkit"
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
 
