@@ -11,12 +11,12 @@
 <br><code>cd inet-main</code>
 <br>
 <br>Add permission:
-<br><code>chmod +x steambsd</code>
+<br><code>chmod +x run</code>
 <br> 
 <br>Finally, run it:
 <br><code>./run [your_user] [video_driver] </code>
 <br>Or run it without paramtrs (default user "admin" with pass "0000" and driver "nvidia"):
-<br><code>./steambsd</code>
+<br><code>./run</code>
 <br>
 <br>Where:
 <br>[your_user] is user created during installation 
@@ -32,14 +32,14 @@
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
-<br><code>./steambsd bob nvidia </code>
-<br><code>./steambsd lee nvidia-390 </code>
-<br><code>./steambsd kim nvidia-340 </code>
-<br><code>./steambsd son nvidia-304 </code>
-<br><code>./steambsd den amdgpu </code>
-<br><code>./steambsd zed radeon </code>
-<br><code>./steambsd hanna intel </code>
-<br><code>./steambsd vmuser vesa </code>
+<br><code>./run bob nvidia </code>
+<br><code>./run lee nvidia-390 </code>
+<br><code>./run kim nvidia-340 </code>
+<br><code>./run son nvidia-304 </code>
+<br><code>./run den amdgpu </code>
+<br><code>./run zed radeon </code>
+<br><code>./run hanna intel </code>
+<br><code>./run vmuser vesa </code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
