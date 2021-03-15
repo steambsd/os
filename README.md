@@ -14,8 +14,8 @@
 <br><code>chmod +x run</code>
 <br> 
 <br>Finally, run it:
-<br><code>./run [your_user] [video_driver] </code>
-<br>Or run it without paramtrs (default user "admin" with pass "0000" and driver "nvidia"):
+<br><code>./run [your_user] [video_driver] [your_desktop]</code>
+<br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "kde"):
 <br><code>./run</code>
 <br>
 <br>Where:
@@ -28,18 +28,19 @@
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
+<br>[your_desktop] choose between kde and lxde
 <br>
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
-<br><code>./run bob nvidia </code>
-<br><code>./run lee nvidia-390 </code>
-<br><code>./run kim nvidia-340 </code>
-<br><code>./run son nvidia-304 </code>
-<br><code>./run den amdgpu </code>
-<br><code>./run zed radeon </code>
-<br><code>./run hanna intel </code>
-<br><code>./run vmuser vesa </code>
+<br><code>./run bob nvidia kde </code>
+<br><code>./run lee nvidia-390 lxde </code>
+<br><code>./run kim nvidia-340 kde</code>
+<br><code>./run son nvidia-304 kde</code>
+<br><code>./run den amdgpu kde</code>
+<br><code>./run zed radeon kde</code>
+<br><code>./run hanna intel kde</code>
+<br><code>./run vmuser vesa kde</code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
