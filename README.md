@@ -36,11 +36,11 @@
 <br><code>./run bob nvidia kde </code>
 <br><code>./run lee nvidia-390 lxde </code>
 <br><code>./run kim nvidia-340 kde</code>
-<br><code>./run son nvidia-304 kde</code>
+<br><code>./run son nvidia-304 lxde</code>
 <br><code>./run den amdgpu kde</code>
-<br><code>./run zed radeon kde</code>
+<br><code>./run zed radeon lxde</code>
 <br><code>./run hanna intel kde</code>
-<br><code>./run vmuser vesa kde</code>
+<br><code>./run vmuser vesa lxde</code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
