@@ -139,9 +139,12 @@ pli wine-gecko
 pli linux-steam-utils
 # packages for comfort
 pli leafpad
+pli lxterminal
 pli chromium
 pli vlc
 pli simplescreenrecorder
+# extended
+pli qt5
 
 ############################################
 ### Driver                               ###
