@@ -1,4 +1,4 @@
-<h1>SteamBSD installation on the internet </h1>
+<h1>Test SteamBSD installation on the internet </h1>
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
