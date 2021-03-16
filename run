@@ -328,6 +328,10 @@ kde)
 pli plasma5-plasma
 echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
+lumina)
+pli lumina
+echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
+ ;;
 lxqt)
 pli lxqt
 echo 'startlxqt' >> /home/$AZER/.xinitrc
