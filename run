@@ -362,6 +362,7 @@ polkit.addRule(function (action, subject)
   }
 });
 EOF
+
 # autostart
 cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
 [Desktop Entry]
