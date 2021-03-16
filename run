@@ -319,12 +319,7 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 ############################################
 ### Desktop environment                  ###
 ############################################
-# choose desktop
-case "$DENV" in
-kde)
-pli plasma5-plasma
-echo 'exec ck-launch-session startplasma-x11' >> /home/$AZER/.xinitrc
-# adding power and reset buttons
+# adding buttons
 cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
 polkit.addRule(function (action, subject) 
   if ((action.id == "org.freedesktop.consolekit.system.restart" ||
@@ -333,35 +328,6 @@ polkit.addRule(function (action, subject)
     return polkit.Result.YES;
   }
 });
-EOF
-# file removal protection
-cat << EOF >> /etc/crontab
-@reboot root /bin/echo 'startplasma-x11' > /home/$AZER/.xinitrc
-EOF
-# autostart
-cat << EOF >> /usr/local/etc/xdg/kdesession/KDE/autostart 
-@xterm -geometry 50x15+0-25 -e ~/autoconfig
-@xterm -geometry 40x4-250+0 -e ~/.steam-wine
-@xterm -geometry 40x4-0+0 -e ~/.steam-linux
-@xterm -geometry 73x31-0-25 -e ./.utils
-EOF
- ;;
-lxqt)
-pli lxqt
-echo 'exec ck-launch-session startlxde' >> /home/$AZER/.xinitrc
-# adding power and reset buttons
-cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
-polkit.addRule(function (action, subject) 
-  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("wheel")) {
-    return polkit.Result.YES;
-  }
-});
-EOF
-# file removal protection
-cat << EOF >> /etc/crontab
-@reboot root /bin/echo 'startlxqt' > /home/$AZER/.xinitrc
 EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
@@ -385,22 +351,21 @@ Type=Application
 Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
 Terminal=false
 EOF
+# choose desktop
+case "$DENV" in
+kde)
+pli plasma5-plasma
+echo 'startplasma-x11' >> /home/$AZER/.xinitrc
+ ;;
+lxqt)
+pli lxqt
+echo 'startlxqt' >> /home/$AZER/.xinitrc
  ;;
 lxde)
 pli lxde-meta
 # start session
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/$AZER/.xinitrc
-# adding power and reset buttons
-cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
-polkit.addRule(function (action, subject) 
-  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("wheel")) {
-    return polkit.Result.YES;
-  }
-});
-EOF
 # file removal protection
 cat << EOF >> /etc/crontab
 @reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
@@ -415,7 +380,7 @@ EOF
  ;;
 *)
  echo "Error. Unrecognized desktop."
- DENV=kde
+ exit 0
  ;;
 esac
 
