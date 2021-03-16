@@ -331,6 +331,7 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
 lumina)
 pli lumina
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
+pw groupmod operator -m $AZER
  ;;
 lxqt)
 pli lxqt
