@@ -144,7 +144,7 @@ pli chromium
 pli vlc
 pli simplescreenrecorder
 # extended
-pli qt5
+#pli qt5
 
 ############################################
 ### Driver                               ###
