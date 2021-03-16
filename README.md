@@ -28,7 +28,7 @@
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
-<br>[your_desktop] choose between kde and lxde
+<br>[your_desktop] choose between lxde, lxqt and kde
 <br>
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
