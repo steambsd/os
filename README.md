@@ -15,7 +15,7 @@
 <br> 
 <br>Finally, run it:
 <br><code>./run [your_user] [video_driver] [your_desktop]</code>
-<br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "lxqt"):
+<br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "lumina"):
 <br><code>./run</code>
 <br>
 <br>Where:
