@@ -319,38 +319,6 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 ############################################
 ### Desktop environment                  ###
 ############################################
-# adding buttons
-cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
-polkit.addRule(function (action, subject) 
-  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("wheel")) {
-    return polkit.Result.YES;
-  }
-});
-EOF
-# autostart
-cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
-[Desktop Entry]
-Name=utils
-Type=Application
-Exec=xterm -geometry 73x31-0-25 -e ./.utils
-Terminal=false
-EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-wine.desktop 
-[Desktop Entry]
-Name=steam-wine
-Type=Application
-Exec=xterm -geometry 40x4-250+0 -e ~/.steam-wine
-Terminal=false
-EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-linux.desktop 
-[Desktop Entry]
-Name=steam-linux
-Type=Application
-Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
-Terminal=false
-EOF
 # choose desktop
 case "$DENV" in
 kde)
@@ -384,6 +352,38 @@ EOF
  ;;
 esac
 
+# adding buttons
+cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
+polkit.addRule(function (action, subject) 
+  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop")
+      && subject.isInGroup("wheel")) {
+    return polkit.Result.YES;
+  }
+});
+EOF
+# autostart
+cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
+[Desktop Entry]
+Name=utils
+Type=Application
+Exec=xterm -geometry 73x31-0-25 -e ./.utils
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-wine.desktop 
+[Desktop Entry]
+Name=steam-wine
+Type=Application
+Exec=xterm -geometry 40x4-250+0 -e ~/.steam-wine
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-linux.desktop 
+[Desktop Entry]
+Name=steam-linux
+Type=Application
+Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
+Terminal=false
+EOF
 
 ############################################
 ### Final stage                          ###
