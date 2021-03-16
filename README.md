@@ -28,17 +28,17 @@
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
 <br>vesa - for test virtual machines
-<br>[your_desktop] choose between lxde, lxqt and kde
+<br>[your_desktop] choose between lxde, lxqt, lumina and plasma
 <br>
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
-<br><code>./run bob nvidia kde </code>
+<br><code>./run bob nvidia plasma </code>
 <br><code>./run lee nvidia-390 lxqt </code>
-<br><code>./run kim nvidia-340 lxde</code>
+<br><code>./run kim nvidia-340 lumina</code>
 <br><code>./run son nvidia-304 lxde</code>
-<br><code>./run den amdgpu kde</code>
-<br><code>./run zed radeon lxde</code>
+<br><code>./run den amdgpu plasma</code>
+<br><code>./run zed radeon lumina</code>
 <br><code>./run hanna intel lxqt</code>
 <br><code>./run vmuser vesa lxde</code>
 <br> 
