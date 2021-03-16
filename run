@@ -324,7 +324,7 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 ############################################
 # choose desktop
 case "$DENV" in
-kde)
+plasma)
 pli plasma5-plasma
 echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
