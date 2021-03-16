@@ -346,6 +346,46 @@ cat << EOF >> /usr/local/etc/xdg/kdesession/KDE/autostart
 @xterm -geometry 73x31-0-25 -e ./.utils
 EOF
  ;;
+lxqt)
+pli lxqt
+echo 'exec ck-launch-session startlxde' >> /home/$AZER/.xinitrc
+# adding power and reset buttons
+cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
+polkit.addRule(function (action, subject) 
+  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop")
+      && subject.isInGroup("wheel")) {
+    return polkit.Result.YES;
+  }
+});
+EOF
+# file removal protection
+cat << EOF >> /etc/crontab
+@reboot root /bin/echo 'startlxqt' > /home/$AZER/.xinitrc
+EOF
+# autostart
+cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
+[Desktop Entry]
+Name=utils
+Type=Application
+Exec=xterm -geometry 73x31-0-25 -e ./.utils
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-wine.desktop 
+[Desktop Entry]
+Name=steam-wine
+Type=Application
+Exec=xterm -geometry 40x4-250+0 -e ~/.steam-wine
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-linux.desktop 
+[Desktop Entry]
+Name=steam-linux
+Type=Application
+Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
+Terminal=false
+EOF
+ ;;
 lxde)
 pli lxde-meta
 # start session
