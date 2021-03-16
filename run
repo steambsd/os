@@ -17,6 +17,8 @@ AZER=$1
 # choose driver for your PC, it may be: 
 # nvidia, amdgpu, radeon, intel or vesa
 DRIV=$2
+# desktop environment 
+DENV=$3
 # version
 VERS=`uname -r | cut -d'-' -f1`
 #VERS='12.0' #not tested
@@ -52,13 +54,9 @@ case "$#" in
  AZER='admin'
  pw useradd $AZER -m -b /usr/home -G wheel; echo 0000 | pw usermod $AZER -h0
  DRIV='nvidia'
+ DENV='kde'
  ;;
-1)
- echo "Error. Please, type two arguments."
- echo "Usage: $0 [your_user] [your_driver]"
- exit 0
- ;;
-2)
+3)
  # add if not exist
  pw usershow $AZER || chk=1
  if [ $chk = 1 ]; then
@@ -70,8 +68,8 @@ case "$#" in
  pw usermod $AZER -G wheel
  ;;
 *)
- echo "Error. Please, type two arguments."
- echo "Usage: $0 [your_user] [video_driver]"
+ echo "Error. Please, type three arguments."
+ echo "Usage: $0 [your_user] [video_driver] [your_desktop]"
  exit 0
  ;;
 esac
@@ -132,7 +130,6 @@ kldload linux64
 # packages for WM
 pli xorg
 pli slim
-pli lxde-meta
 # packages for wine
 pli i386-wine
 pli winetricks
@@ -322,10 +319,38 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 ############################################
 ### Desktop environment                  ###
 ############################################
+# choose desktop
+case "$DENV" in
+kde)
+pli plasma5-plasma
+echo 'exec ck-launch-session startplasma-x11' >> /home/$AZER/.xinitrc
+# adding power and reset buttons
+cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
+polkit.addRule(function (action, subject) 
+  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+      action.id == "org.freedesktop.consolekit.system.stop")
+      && subject.isInGroup("wheel")) {
+    return polkit.Result.YES;
+  }
+});
+EOF
+# file removal protection
+cat << EOF >> /etc/crontab
+@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
+EOF
+# autostart
+cat << EOF >> /usr/local/etc/xdg/kdesession/KDE/autostart 
+@xterm -geometry 50x15+0-25 -e ~/autoconfig
+@xterm -geometry 40x4-250+0 -e ~/.steam-wine
+@xterm -geometry 40x4-0+0 -e ~/.steam-linux
+@xterm -geometry 73x31-0-25 -e ./.utils
+EOF
+ ;;
+lxde)
+pli lxde-meta
 # start session
 echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/$AZER/.xinitrc
-echo 'startlxde' >> /home/steam/.xinitrc
 # adding power and reset buttons
 cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
 polkit.addRule(function (action, subject) 
@@ -347,6 +372,13 @@ cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart
 @xterm -geometry 40x4-0+0 -e ~/.steam-linux
 @xterm -geometry 73x31-0-25 -e ./.utils
 EOF
+ ;;
+*)
+ echo "Error. Unrecognized desktop."
+ DENV=kde
+ ;;
+esac
+
 
 ############################################
 ### Final stage                          ###
