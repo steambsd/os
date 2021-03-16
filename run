@@ -336,7 +336,7 @@ polkit.addRule(function (action, subject)
 EOF
 # file removal protection
 cat << EOF >> /etc/crontab
-@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
+@reboot root /bin/echo 'startplasma-x11' > /home/$AZER/.xinitrc
 EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/kdesession/KDE/autostart 
