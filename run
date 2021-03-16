@@ -372,6 +372,13 @@ polkit.addRule(function (action, subject)
 EOF
 
 # autostart
+cat << EOF >> /usr/local/etc/xdg/autostart/autoconfig.desktop 
+[Desktop Entry]
+Name=utils
+Type=Application
+Exec=xterm -geometry 50x15+0-25 -e ~/autoconfig
+Terminal=false
+EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
 [Desktop Entry]
 Name=utils
