@@ -54,7 +54,7 @@ case "$#" in
  AZER='admin'
  pw useradd $AZER -m -b /usr/home -G wheel; echo 0000 | pw usermod $AZER -h0
  DRIV='nvidia'
- DENV='kde'
+ DENV='lxqt'
  ;;
 3)
  # add if not exist
