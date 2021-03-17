@@ -22,9 +22,10 @@ sudo su root -c "/usr/local/bin/lxpolkit"
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf"
 #change wallpaper lxde
 pcmanfm --set-wallpaper wall.jpg
+#pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg
 #change wallpaper lxqt
-pcmanfm --set-wallpaper wall.jpg
-
+pcmanfm-qt --set-wallpaper wall.jpg
+#pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg
 
 ############################################
 ### Readme.txt                           ###
