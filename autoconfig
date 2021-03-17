@@ -20,6 +20,7 @@ sudo su root -c "/usr/local/bin/lxpolkit"
 # change wallpaper
 pcmanfm --set-wallpaper wall.jpg
 
+
 ############################################
 ### Readme.txt                           ###
 ############################################
