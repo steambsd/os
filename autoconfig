@@ -1,6 +1,7 @@
 #!/bin/sh
 sleep 2
 cd ~
+echo "Start customization for user $USER"
 
 ############################################
 ### Filesystem                           ###
@@ -18,12 +19,15 @@ sudo mount -a
 # policy
 sudo su root -c "/usr/local/bin/lxpolkit"
 # change wallpaper
-#lxde
-#lxqt
-pcmanfm --set-wallpaper wall.jpg
 #lumina
 sudo su root -c "mkdir /usr/local/share/wallpapers"
 sudo su root -c "cp wall.jpg /usr/local/share/wallpapers/wall.jpg"
+sudo su root -c "chown -R $USER:wheel /usr/local/share/wallpapers"
+sed -i '' 's/filelist=default/filelist=\/usr\/local\/share\/wallpapers\/wall.jpg/g' ~/.config/lumina-desktop/desktopsettings.conf
+#lxde
+pcmanfm --set-wallpaper wall.jpg
+#lxqt
+pcmanfm --set-wallpaper wall.jpg
 
 
 ############################################
