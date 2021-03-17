@@ -37,7 +37,7 @@ pcmanfm --set-wallpaper wall.jpg
 echo 'Please, wait...'
 sleep 30
 # generate
-cat << EOF > ~/Desktop/Readme.txt
+cat << EOF > ~/Desktop/Readme
 ATTENTION!
 1. Proton is experemental version, it may not work.
 2. If you have problem - try reboot PC.
