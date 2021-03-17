@@ -18,7 +18,12 @@ sudo mount -a
 # policy
 sudo su root -c "/usr/local/bin/lxpolkit"
 # change wallpaper
+#lxde
+#lxqt
 pcmanfm --set-wallpaper wall.jpg
+#lumina
+sudo su root -c "mkdir /usr/local/share/wallpapers"
+sudo su root -c "cp wall.jpg /usr/local/share/wallpapers/wall.jpg"
 
 
 ############################################
