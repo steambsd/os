@@ -19,18 +19,19 @@ sudo mount -a
 # policy
 sudo su root -c "/usr/local/bin/lxpolkit"
 
-#change wallpaper lxde
+#lxde
 pcmanfm --set-wallpaper wall.jpg
 #pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg
 
-#change wallpaper lxqt
+#lxqt
 pcmanfm-qt --set-wallpaper wall.jpg
 #pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg
 
-#change wallpaper lumina
+#lumina
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf"
+sudo su root -c "sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf"
 
-#change wallpaper plasma
+#plasma
 qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///usr/local/share/wallpapers/wall.jpg")}'; 
 
 ############################################
