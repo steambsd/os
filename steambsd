@@ -50,7 +50,7 @@ fi
 # blank arguments
 case "$#" in
 0)
- # default: user - admin, driver - nvidia
+ # default: user - admin, driver - nvidia, desktop - lumina
  AZER='admin'
  pw useradd $AZER -m -b /usr/home -G wheel; echo 0000 | pw usermod $AZER -h0
  DRIV='nvidia'
