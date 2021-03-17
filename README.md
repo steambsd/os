@@ -11,12 +11,12 @@
 <br><code>cd inet-main</code>
 <br>
 <br>Add permission:
-<br><code>chmod +x run</code>
+<br><code>chmod +x steambsd</code>
 <br> 
 <br>Finally, run it:
-<br><code>./run [your_user] [video_driver] [your_desktop]</code>
+<br><code>./steambsd [your_user] [video_driver] [your_desktop]</code>
 <br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "lumina"):
-<br><code>./run</code>
+<br><code>./steambsd</code>
 <br>
 <br>Where:
 <br>[your_user] is user created during installation 
@@ -33,14 +33,14 @@
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
-<br><code>./run bob nvidia plasma </code>
-<br><code>./run lee nvidia-390 lxqt </code>
-<br><code>./run kim nvidia-340 lumina</code>
-<br><code>./run son nvidia-304 lxde</code>
-<br><code>./run den amdgpu plasma</code>
-<br><code>./run zed radeon lumina</code>
-<br><code>./run hanna intel lxqt</code>
-<br><code>./run vmuser vesa lxde</code>
+<br><code>./steambsd bob nvidia plasma </code>
+<br><code>./steambsd lee nvidia-390 lxqt </code>
+<br><code>./steambsd kim nvidia-340 lumina</code>
+<br><code>./steambsd son nvidia-304 lxde</code>
+<br><code>./steambsd den amdgpu plasma</code>
+<br><code>./steambsd zed radeon lumina</code>
+<br><code>./steambsd hanna intel lxqt</code>
+<br><code>./steambsd vmuser vesa lxde</code>
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
