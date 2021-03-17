@@ -40,7 +40,7 @@ echo -n 'Choose your number: '
  1)
    ### open instruction
    #xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
-   xterm -geometry 40x4+0-0 -e leafpad Desktop/Readme.txt
+   xterm -geometry 40x4+0-0 -e leafpad Desktop/Readme
  ;;
  2)
    ### install steam developers
