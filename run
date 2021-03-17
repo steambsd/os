@@ -307,6 +307,10 @@ cp steam-linux /home/$AZER/.steam-linux
 cp steam-wine /home/$AZER/.steam-wine
 cp utils /home/$AZER/.utils
 cp wall.jpg /home/$AZER/
+# wallpaper
+mkdir /usr/local/share/wallpapers
+chown -R $AZER:wheel /usr/local/share/wallpapers
+cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 
 ############################################
 ### Login manager                        ###
