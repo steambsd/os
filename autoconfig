@@ -20,10 +20,9 @@ sudo mount -a
 sudo su root -c "/usr/local/bin/lxpolkit"
 # change wallpaper
 #lumina
-#sudo su root -c "mkdir /usr/local/share/wallpapers"
-#sudo su root -c "cp wall.jpg /usr/local/share/wallpapers/wall.jpg"
-#sudo su root -c "chown -R $USER:wheel /usr/local/share/wallpapers"
-sed -i '' 's/filelist=default/filelist=\/usr\/local\/share\/wallpapers\/wall.jpg/g' ~/.config/lumina-desktop/desktopsettings.conf
+sudo su root -c "chown -R $USER:wheel /home/$USER/.config/lumina-desktop/desktopsettings.conf"
+sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf"
+
 #lxde
 pcmanfm --set-wallpaper wall.jpg
 #lxqt
