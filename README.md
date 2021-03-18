@@ -16,7 +16,7 @@
 <br>Finally, run it:
 <br><code>./run [your_user] [video_driver] [your_desktop]</code>
 <br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "lumina"):
-<br><code>./steambsd</code>
+<br><code>./run</code>
 <br>
 <br>Where:
 <br>[your_user] is user created during installation 
