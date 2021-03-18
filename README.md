@@ -46,8 +46,6 @@
 <br>Offline ISO and IMG (fast installation).
 <br>Download: https://drive.google.com/drive/folders/18toZCkXbWEp226KgjWZecLe1ad6-FMze
 <br> 
-<br>---
-<br>SteamBSD © is FREE operating system.
-<br>YouTube: SteamBSD (https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA)
-<br>Site: http://steambsd.epizy.com
-<br>E-mail: light.progres@gmail.com.
+--- SteamBSD © is FREE operating system.
+<br>Site: https://lpros.blogspot.com/
+<br>E-mail: steambsd@gmail.com
