@@ -196,12 +196,12 @@ EOF'
  ;;
    upd)
    ### update utils
-   fetch https://github.com/steambsd/inet/archive/main.zip
-   unzip main.zip
-   mv inet-main/utils .utils
+   fetch https://github.com/steambsd/os/archive/go.zip
+   unzip go.zip
+   mv os-go/utils .utils
    sudo chmod +x .utils
-   rm -rf inet-main
-   rm main.zip
+   rm -rf os-go
+   rm go.zip
    xterm -geometry 73x31-0-25 -e ./.utils &
    sleep 2
    break
