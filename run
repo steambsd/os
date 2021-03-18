@@ -4,7 +4,7 @@
 ###                 STEAM                ###   
 ###              ON FREEBSD              ###
 ############   set permission   ############
-chmod +x autoconfig
+chmod +x reconfig
 chmod +x steam-linux
 chmod +x steam-wine
 chmod +x utils
@@ -302,7 +302,7 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
-cp autoconfig /home/$AZER/ 
+cp reconfig /home/$AZER/ 
 cp steam-linux /home/$AZER/.steam-linux
 cp steam-wine /home/$AZER/.steam-wine
 cp utils /home/$AZER/.utils
@@ -352,7 +352,7 @@ cat << EOF >> /etc/crontab
 EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
-@xterm -geometry 50x15+0-25 -e ~/autoconfig
+@xterm -geometry 50x15+0-25 -e ~/reconfig
 @xterm -geometry 40x4-250+0 -e ~/.steam-wine
 @xterm -geometry 40x4-0+0 -e ~/.steam-linux
 @xterm -geometry 73x31-0-25 -e ./.utils
@@ -380,7 +380,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/autoconfig.desktop
 [Desktop Entry]
 Name=utils
 Type=Application
-Exec=xterm -geometry 50x15+0-25 -e ~/autoconfig
+Exec=xterm -geometry 50x15+0-25 -e ~/reconfig
 Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
