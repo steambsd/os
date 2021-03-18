@@ -24,8 +24,10 @@ pcmanfm --set-wallpaper wall.jpg
 #pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg
 
 #lxqt
-pcmanfm-qt --set-wallpaper wall.jpg
-#pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg
+#pcmanfm-qt --set-wallpaper wall.jpg
+pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg
+#sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lxqt/session.conf"
+sudo su root -c "echo 'window_manager=openbox' >> /home/$USER/.config/lxqt/session.conf"
 
 #lumina
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf"
