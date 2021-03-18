@@ -3,12 +3,12 @@
 <br><code>su root</code>
 <br>Download from git:
 <br><code>pkg ins git</code>
-<br><code>git clone https://github.com/steambsd/inet</code>
-<br><code>cd inet</code>
+<br><code>git clone https://github.com/steambsd/os</code>
+<br><code>cd os</code>
 <br>Or download without install git:
-<br><code>fetch https://github.com/steambsd/inet/archive/main.zip</code>
+<br><code>fetch https://github.com/steambsd/os/archive/main.zip</code>
 <br><code>unzip main.zip</code>
-<br><code>cd inet-main</code>
+<br><code>cd os-main</code>
 <br>
 <br>Add permission:
 <br><code>chmod +x run</code>
