@@ -6,9 +6,9 @@
 <br><code>git clone https://github.com/steambsd/os</code>
 <br><code>cd os</code>
 <br>Or download without install git:
-<br><code>fetch https://github.com/steambsd/os/archive/main.zip</code>
-<br><code>unzip main.zip</code>
-<br><code>cd os-main</code>
+<br><code>fetch https://github.com/steambsd/os/archive/go.zip</code>
+<br><code>unzip go.zip</code>
+<br><code>cd os-go</code>
 <br>
 <br>Add permission:
 <br><code>chmod +x run</code>
