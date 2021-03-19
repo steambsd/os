@@ -18,10 +18,18 @@ sudo mount -a
 ############################################
 
 #shortcut
-Steam-L.desktop
-cat << EOF > Desktop/Steam-L.desktop 
+rm Desktop/Steam.desktop 
+cat << EOF > Desktop/Steam-Wine.desktop 
 [Desktop Entry]
-Name=Steam-L
+Name=Steam-Linux
+Exec=wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0
+EOF
+cat << EOF > Desktop/Steam-Linux.desktop 
+[Desktop Entry]
+Name=Steam-Linux
 Exec=steam
 Type=Application
 StartupNotify=true
