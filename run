@@ -5,6 +5,8 @@
 ###              ON FREEBSD              ###
 ############   set permission   ############
 chmod +x reconfig
+chmod +x steam-acolyte-safe
+chmod +x steam-acolyte-wheel
 chmod +x steam-linux-safe
 chmod +x steam-linux-wheel
 chmod +x steam-wine-safe
