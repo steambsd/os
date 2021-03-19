@@ -98,7 +98,7 @@ pip --version
 pip install steam-acolyte
 echo 'export PATH=$PATH:.local/bin/l/bin/' >> ~/.bashrc
 export PATH=$PATH:.local/bin/l/bin/
-xterm -geometry 40x4-500+0 -e steam
+xterm -geometry 40x4-500+0 -e steam &
 steam-acolyte
 
 ############################################
