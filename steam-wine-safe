@@ -1,12 +1,12 @@
 #!/bin/sh
 sleep 4
+sudo su steam -c 'rm SteamSetup.exe'
 if [ -d .wine ]; then
  sudo su steam -c 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser'
 else
  cd /home/steam
  sudo su steam -c 'fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe'
  sudo su steam -c 'wine SteamSetup.exe /S'
- sudo su steam -c 'rm SteamSetup.exe'
  sudo su steam -c 'wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S'
  sudo su steam -c 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser'
 fi
