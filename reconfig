@@ -21,7 +21,7 @@ sudo mount -a
 rm Desktop/Steam.desktop 
 cat << EOF > Desktop/Steam-Wine.desktop 
 [Desktop Entry]
-Name=Steam-Linux
+Name=Steam-Wine
 Exec=wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 Type=Application
 StartupNotify=true
