@@ -5,9 +5,9 @@
 ###              ON FREEBSD              ###
 ############   set permission   ############
 chmod +x reconfig
-chmod +x steam-linux
+chmod +x steam-linux-safe
 chmod +x steam-linux-wheel
-chmod +x steam-wine
+chmod +x steam-wine-safe
 chmod +x steam-wine-wheel
 chmod +x utils
 
@@ -310,9 +310,9 @@ esac
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
 cp reconfig /home/$AZER/
-cp steam-linux /home/$AZER/.steam-linux-safe
+cp steam-linux-safe /home/$AZER/.steam-linux-safe
 cp steam-linux-wheel /home/$AZER/.steam-linux
-cp steam-wine /home/$AZER/.steam-wine-safe
+cp steam-wine-safe /home/$AZER/.steam-wine-safe
 cp steam-wine-wheel /home/$AZER/.steam-wine
 cp utils /home/$AZER/.utils
 cp wall.jpg /home/$AZER/
