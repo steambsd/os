@@ -137,6 +137,8 @@ pli wine-mono
 pli wine-gecko
 # packages for linux
 pli linux-steam-utils
+sudo su steam -c steam-install
+mv /home/steam/.steam /home/$AZER/.steam
 # packages for comfort
 pli leafpad
 pli lxterminal
@@ -144,7 +146,7 @@ pli chromium
 pli vlc
 pli simplescreenrecorder
 # extended
-pli
+pli python
 pli qt5
 pli py37-pip
 
