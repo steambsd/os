@@ -314,6 +314,8 @@ cp steam-linux-safe /home/$AZER/.steam-linux-safe
 cp steam-linux-wheel /home/$AZER/.steam-linux
 cp steam-wine-safe /home/$AZER/.steam-wine-safe
 cp steam-wine-wheel /home/$AZER/.steam-wine
+cp steam-acolyte-safe /home/$AZER/.steam-acolyte-safe
+cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
 cp utils /home/$AZER/.utils
 # wallpaper
 mkdir /usr/local/share/wallpapers
@@ -413,18 +415,11 @@ Type=Application
 Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte-wheel.desktop 
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop 
 [Desktop Entry]
 Name=steam-acolyte-wheel
 Type=Application
-Exec=steam-acolyte
-Terminal=false
-EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte-safe.desktop 
-[Desktop Entry]
-Name=steam-acolyte-safe
-Type=Application
-Exec=sudo su steam -c steam-acolyte
+Exec=xterm -geometry 40x4-500+0 -e ~/.steam-acolyte &
 Terminal=false
 EOF
 
