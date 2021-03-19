@@ -139,6 +139,7 @@ pli wine-gecko
 pli linux-steam-utils
 sudo su steam -c steam-install
 mv /home/steam/.steam /home/$AZER/.steam
+chown $AZER:wheel /home/$AZER/.steam
 # packages for comfort
 pli leafpad
 pli lxterminal
