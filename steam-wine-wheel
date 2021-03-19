@@ -1,11 +1,11 @@
 #!/bin/sh
 sleep 4
+rm SteamSetup.exe
 if [ -d .wine ]; then
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 else
  fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
  wine SteamSetup.exe /S
- rm SteamSetup.exe
  wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 fi
