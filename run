@@ -352,13 +352,14 @@ echo 'startlxqt' >> /home/$AZER/.xinitrc
  ;;
 lxde)
 pli lxde-meta
+pw groupmod operator -m $AZER
 # start session
-echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
+#echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
 echo 'startlxde' >> /home/$AZER/.xinitrc
 # file removal protection
-cat << EOF >> /etc/crontab
-@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
-EOF
+#cat << EOF >> /etc/crontab
+#@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
+#EOF
 # autostart
 cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
 @xterm -geometry 50x15+0-25 -e ~/reconfig
