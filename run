@@ -361,12 +361,12 @@ echo 'startlxde' >> /home/$AZER/.xinitrc
 #@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
 #EOF
 # autostart
-cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
-@xterm -geometry 50x15+0-25 -e ~/reconfig
-@xterm -geometry 40x4-250+0 -e ~/.steam-wine
-@xterm -geometry 40x4-0+0 -e ~/.steam-linux
-@xterm -geometry 73x31-0-25 -e ./.utils
-EOF
+#cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
+#@xterm -geometry 50x15+0-25 -e ~/reconfig
+#@xterm -geometry 40x4-250+0 -e ~/.steam-wine
+#@xterm -geometry 40x4-0+0 -e ~/.steam-linux
+#@xterm -geometry 73x31-0-25 -e ./.utils
+#EOF
  ;;
 *)
  echo "Error. Unrecognized desktop."
