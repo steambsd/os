@@ -1,0 +1,12 @@
+#!/bin/sh
+sleep 4
+if [ -d .steam ]; then
+ steam
+else
+ rm -rf /home/steam/.steam
+ sudo su steam -c steam-install
+ mv /home/steam/.steam /home/$USER/.steam
+ sudo chown $USER:wheel /home/$USER/.steam
+ steam
+fi
+
