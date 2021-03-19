@@ -9,4 +9,4 @@ else
  sudo chown $USER:wheel /home/$USER/.steam
  steam
 fi
-
+read ans
