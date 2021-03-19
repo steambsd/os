@@ -413,6 +413,20 @@ Type=Application
 Exec=xterm -geometry 40x4-0+0 -e ~/.steam-linux
 Terminal=false
 EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte-wheel.desktop 
+[Desktop Entry]
+Name=steam-acolyte-wheel
+Type=Application
+Exec=steam-acolyte
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte-safe.desktop 
+[Desktop Entry]
+Name=steam-acolyte-safe
+Type=Application
+Exec=sudo su steam -c steam-acolyte
+Terminal=false
+EOF
 
 ############################################
 ### Final stage                          ###
