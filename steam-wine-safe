@@ -1,6 +1,6 @@
 #!/bin/sh
 sleep 4
-sudo su steam -c 'rm SteamSetup.exe'
+sudo su steam -c 'rm /home/steam/SteamSetup.exe'
 if [ -d .wine ]; then
  sudo su steam -c 'wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser'
 else
