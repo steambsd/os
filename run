@@ -421,7 +421,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop
 [Desktop Entry]
 Name=steam-acolyte-wheel
 Type=Application
-Exec=xterm -geometry 40x4-500+0 -e ~/.steam-acolyte &
+Exec=xterm -geometry 40x4-500+0 -e ~/.steam-acolyte
 Terminal=false
 EOF
 
