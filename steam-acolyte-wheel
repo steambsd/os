@@ -1,2 +1,4 @@
 #!/bin/sh
-steam-acolyte
+sleep 1
+.local/bin/steam-acolyte
+read ans
