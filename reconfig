@@ -36,9 +36,6 @@ StartupNotify=true
 Icon=BAC4_steam.0
 EOF
 
-# policy
-#sudo su root -c "/usr/local/bin/lxpolkit"
-
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
