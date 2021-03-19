@@ -17,7 +17,7 @@ sudo mount -a
 ### Desktop customization                ###
 ############################################
 # policy
-sudo su root -c "/usr/local/bin/lxpolkit"
+#sudo su root -c "/usr/local/bin/lxpolkit"
 
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
