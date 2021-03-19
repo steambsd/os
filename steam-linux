@@ -6,3 +6,4 @@ else
  sudo su steam -c steam-install
  sudo su steam -c steam
 fi
+read ans
