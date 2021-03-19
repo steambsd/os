@@ -6,7 +6,7 @@ else
  rm -rf /home/steam/.steam
  sudo su steam -c steam-install
  sudo mv /home/steam/.steam /home/$USER/.steam
- sudo chown $USER:wheel /home/$USER/.steam
+ sudo chown -R $USER:wheel /home/$USER/.steam
  steam
 fi
 read ans
