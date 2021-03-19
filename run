@@ -143,11 +143,11 @@ pli linux-steam-utils
 #mv /home/steam/.steam /home/$AZER/.steam
 #chown $AZER:wheel /home/$AZER/.steam
 # packages for comfort
-pli leafpad
-pli lxterminal
-pli chromium
-pli vlc
-pli simplescreenrecorder
+#pli leafpad
+#pli lxterminal
+#pli chromium
+#pli vlc
+#pli simplescreenrecorder
 # extended
 pli python
 pli qt5
