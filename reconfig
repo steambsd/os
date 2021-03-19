@@ -89,6 +89,18 @@ Site: http://steambsd.epizy.com
 All quastions send to email: light.progres@gmail.com
 EOF
 
+
+############################################
+### Plugins for Steam                    ###
+############################################
+python --version
+pip --version
+pip install steam-acolyte
+echo 'export PATH=$PATH:.local/bin/l/bin/' >> ~/.bashrc
+export PATH=$PATH:.local/bin/l/bin/
+xterm -geometry 40x4-500+0 -e steam
+steam-acolyte
+
 ############################################
 ### Final                                ###
 ############################################
