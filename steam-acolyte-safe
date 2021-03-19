@@ -1,0 +1,2 @@
+#!/bin/sh
+sudo su steam -c steam-acolyte
