@@ -1,2 +1,2 @@
 #!/bin/sh
-sudo su steam -c steam-acolyte
+sudo su steam -c /home/steam/.local/bin/steam-acolyte
