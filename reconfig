@@ -16,6 +16,18 @@ sudo mount -a
 ############################################
 ### Desktop customization                ###
 ############################################
+
+#shortcut
+Steam-L.desktop
+cat << EOF > Desktop/Steam-L.desktop 
+[Desktop Entry]
+Name=Steam-L
+Exec=steam
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0
+EOF
+
 # policy
 #sudo su root -c "/usr/local/bin/lxpolkit"
 
