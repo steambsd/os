@@ -20,12 +20,12 @@ sudo mount -a
 sudo su root -c "/usr/local/bin/lxpolkit"
 
 #lxde
-pcmanfm --set-wallpaper wall.jpg
-#pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg
+#pcmanfm --set-wallpaper wall.jpg
+pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
 #lxqt
 #pcmanfm-qt --set-wallpaper wall.jpg
-pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg
+pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 #sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lxqt/session.conf"
 sudo su root -c "echo 'window_manager=openbox' >> /home/$USER/.config/lxqt/session.conf"
 
