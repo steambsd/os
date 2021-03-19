@@ -5,8 +5,10 @@
 ###              ON FREEBSD              ###
 ############   set permission   ############
 chmod +x reconfig
-chmod +x steam-linux
-chmod +x steam-wine
+chmod +x steam-linux-wheel
+chmod +x steam-wine-wheel
+#chmod +x steam-linux
+#chmod +x steam-wine
 chmod +x utils
 
 ############################################
@@ -137,9 +139,9 @@ pli wine-mono
 pli wine-gecko
 # packages for linux
 pli linux-steam-utils
-sudo su steam -c steam-install
-mv /home/steam/.steam /home/$AZER/.steam
-chown $AZER:wheel /home/$AZER/.steam
+#sudo su steam -c steam-install
+#mv /home/steam/.steam /home/$AZER/.steam
+#chown $AZER:wheel /home/$AZER/.steam
 # packages for comfort
 pli leafpad
 pli lxterminal
@@ -307,9 +309,11 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
-cp reconfig /home/$AZER/ 
-cp steam-linux /home/$AZER/.steam-linux
-cp steam-wine /home/$AZER/.steam-wine
+cp reconfig /home/$AZER/
+cp steam-linux-wheel /home/$AZER/.steam-linux
+cp steam-wine-wheel /home/$AZER/.steam-wine
+#cp steam-linux /home/$AZER/.steam-linux
+#cp steam-wine /home/$AZER/.steam-wine
 cp utils /home/$AZER/.utils
 cp wall.jpg /home/$AZER/
 # wallpaper
