@@ -13,28 +13,28 @@ sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
 sudo mount -a
 
-sleep 10
+sleep 15
 ############################################
 ### Desktop customization                ###
 ############################################
 
 #shortcut
-#cat << EOF > Desktop/Steam-Wine.desktop 
-#[Desktop Entry]
-#Name=Steam-Wine
-#Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
-#Type=Application
-#StartupNotify=true
-#Icon=BAC4_steam.0
-#EOF
-#cat << EOF > Desktop/Steam-Linux.desktop 
-#[Desktop Entry]
-#Name=Steam-Linux
-#Exec=steam
-#Type=Application
-#StartupNotify=true
-#Icon=BAC4_steam.0
-#EOF
+cat << EOF > Desktop/SWine.desktop 
+[Desktop Entry]
+Name=SWine
+Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0
+EOF
+cat << EOF > Desktop/SLinux.desktop 
+[Desktop Entry]
+Name=SLinux
+Exec=steam
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0
+EOF
 
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
