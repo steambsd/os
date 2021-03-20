@@ -56,14 +56,13 @@ sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appl
 printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc
 kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 
-############################################
-### Readme.txt                           ###
-############################################
 # relay
 echo 'Please, wait...'
 sleep 30
 rm Desktop/Steam.desktop >> /dev/null 2>&1
-# generate
+############################################
+### Readme.txt                           ###
+############################################
 cat << EOF > ~/Desktop/Readme
 ATTENTION!
 1. Proton is experemental version, it may not work.
