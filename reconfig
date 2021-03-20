@@ -35,9 +35,9 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/zico-linux.png
 EOF
-cat << EOF > Desktop/SUtils.desktop 
+cat << EOF > Desktop/SYSet.desktop 
 [Desktop Entry]
-Name=SUtils
+Name=SYSet
 Exec=xterm -geometry 73x31-0-25 -e ./.utils &
 Type=Application
 StartupNotify=true
