@@ -25,7 +25,7 @@ Name=SWine
 Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 Type=Application
 StartupNotify=true
-Icon=BAC4_steam.0
+Icon=/usr/local/share/pixmaps/zico-wine.png
 EOF
 cat << EOF > Desktop/SLinux.desktop 
 [Desktop Entry]
@@ -33,7 +33,7 @@ Name=SLinux
 Exec=steam
 Type=Application
 StartupNotify=true
-Icon=BAC4_steam.0
+Icon=/usr/local/share/pixmaps/zico-linux.png
 EOF
 
 #lxde
