@@ -184,8 +184,8 @@ pli linux-steam-utils
 #pli simplescreenrecorder
 # pip
 pli python
-pli qt5
-pli py37-pip
+#pli qt5
+#pli py37-pip
 # desk
 pli comption
 pli cairo-clock
