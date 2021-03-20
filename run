@@ -419,7 +419,7 @@ polkit.addRule(function (action, subject)
 EOF
 
 # wbar
-cat << EOF >
+cat << EOF > /home/$AZER/.wbar
 i: /usr/local/share/pixmaps/wbar/dock.png
 c: wbar --bpress --above-desk --vbar --pos right --isize 64 --idist 5 --nanim 4
 --falfa 65
