@@ -42,7 +42,7 @@
 <br><code>./run hanna intel lxqt</code>
 <br><code>./run vmuser vesa lxde</code>
 <br>
-<br>NOTE. If you install on virtualbox you must choose VMSVGA+128Mb (in virtualbox of course). This is in machine "settings -> display".
+<br>NOTE. If you install on VirtualBox you must choose VMSVGA+128Mb (in virtualbox of course). This is in machine "settings -> display".
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
