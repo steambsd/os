@@ -37,7 +37,7 @@ EOF
 cat << EOF > Desktop/Steam-Acolyte.desktop 
 [Desktop Entry]
 Name=Steam-Acolyte
-Exec=.local/bin/steam-acolyte
+Exec=steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=BAC4_steam.0
