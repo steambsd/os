@@ -357,7 +357,7 @@ cp utils /home/$AZER/.utils
 # wallpaper
 mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
-chown -R $AZER:wheel /usr/local/share/wallpapers
+#chown -R $AZER:wheel /usr/local/share/wallpapers
 # icons
 mkdir /usr/local/share/pixmaps
 cp zico-linux.png /usr/local/share/pixmaps/zico-linux.png
