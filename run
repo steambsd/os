@@ -183,7 +183,7 @@ pli linux-steam-utils
 #pli vlc
 #pli simplescreenrecorder
 # pip
-pli python
+#pli python
 #pli qt5
 #pli py37-pip
 # desk
