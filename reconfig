@@ -55,7 +55,8 @@ sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$U
 rm wall.jpg
 
 #plasma
-qdbus org.kde.plasmashell /PlasmaShell org.kde.PlasmaShell.evaluateScript 'var allDesktops = desktops();print (allDesktops);for (i=0;i<allDesktops.length;i++) {d = allDesktops[i];d.wallpaperPlugin = "org.kde.image";d.currentConfigGroup = Array("Wallpaper", "org.kde.image", "General");d.writeConfig("Image", "file:///usr/local/share/wallpapers/wall.jpg")}'; 
+sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc
+printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc
 
 ############################################
 ### Readme.txt                           ###
