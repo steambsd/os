@@ -363,6 +363,7 @@ chown -R $AZER:wheel /usr/local/share/wallpapers
 mkdir /usr/local/share/pixmaps
 cp zico-linux.png /usr/local/share/pixmaps/zico-linux.png
 cp zico-wine.png /usr/local/share/pixmaps/zico-wine.png
+cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 chown -R $AZER:wheel /usr/local/share/pixmaps
 
 ############################################
@@ -416,6 +417,30 @@ polkit.addRule(function (action, subject)
 });
 EOF
 
+# wbar
+cat << EOF >
+i: /usr/local/share/pixmaps/wbar/dock.png
+c: wbar --bpress --above-desk --vbar --pos right --isize 64 --idist 5 --nanim 4
+--falfa 65
+t: /10
+
+i: /usr/local/share/pixmaps/wbar/wbar.png
+c: wbar-config
+t: Config
+
+i: /usr/local/share/pixmaps/zico-linux.png
+c: steam
+t: steam-linux
+
+i: /usr/local/share/pixmaps/zico-wine.png
+c: wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open
+t: steam-wine
+
+i: /usr/local/share/pixmaps/ysettings.png
+c: xterm -geometry 73x31-0-25 -e ./.utils
+t: utils
+EOF
+
 # autostart
 cat << EOF >> /usr/local/etc/xdg/autostart/reconfig.desktop 
 [Desktop Entry]
@@ -450,6 +475,34 @@ cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop
 Name=steam-acolyte
 Type=Application
 Exec=xterm -geometry 40x4-500+0 -e ~/.steam-acolyte
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/wbar.desktop 
+[Desktop Entry]
+Name=wbar
+Type=Application
+Exec=wbar
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/conky.desktop 
+[Desktop Entry]
+Name=conky
+Type=Application
+Exec=conky
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/cairo-clock.desktop 
+[Desktop Entry]
+Name=cairo-clock
+Type=Application
+Exec=cairo-clock
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/compton.desktop 
+[Desktop Entry]
+Name=compton
+Type=Application
+Exec=compton
 Terminal=false
 EOF
 
