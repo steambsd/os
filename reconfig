@@ -112,6 +112,7 @@ EOF
 ############################################
 ### Plugins for Steam                    ###
 ############################################
+read ans
 python --version
 pip --version
 pip install steam-acolyte
