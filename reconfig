@@ -18,30 +18,22 @@ sudo mount -a
 ############################################
 
 #shortcut
-cat << EOF > Desktop/Steam-Wine.desktop 
-[Desktop Entry]
-Name=Steam-Wine
-Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
-Type=Application
-StartupNotify=true
-Icon=BAC4_steam.0
-EOF
-cat << EOF > Desktop/Steam-Linux.desktop 
-[Desktop Entry]
-Name=Steam-Linux
-Exec=steam
-Type=Application
-StartupNotify=true
-Icon=BAC4_steam.0
-EOF
-cat << EOF > Desktop/Steam-Acolyte.desktop 
-[Desktop Entry]
-Name=Steam-Acolyte
-Exec=steam-acolyte
-Type=Application
-StartupNotify=true
-Icon=BAC4_steam.0
-EOF
+#cat << EOF > Desktop/Steam-Wine.desktop 
+#[Desktop Entry]
+#Name=Steam-Wine
+#Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+#Type=Application
+#StartupNotify=true
+#Icon=BAC4_steam.0
+#EOF
+#cat << EOF > Desktop/Steam-Linux.desktop 
+#[Desktop Entry]
+#Name=Steam-Linux
+#Exec=steam
+#Type=Application
+#StartupNotify=true
+#Icon=BAC4_steam.0
+#EOF
 
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
