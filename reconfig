@@ -16,9 +16,8 @@ sudo mount -a
 ############################################
 ### Desktop customization                ###
 ############################################
-
-#shortcut
 rm Desktop/Steam.desktop 
+#shortcut
 cat << EOF > Desktop/Steam-Wine.desktop 
 [Desktop Entry]
 Name=Steam-Wine
