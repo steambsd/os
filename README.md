@@ -41,6 +41,8 @@
 <br><code>./run zed radeon lumina</code>
 <br><code>./run hanna intel lxqt</code>
 <br><code>./run vmuser vesa lxde</code>
+<br>
+<br>NOTE. If you install on virtualbox you must choose VMSVGA+128Mb (in virtualbox of course). This is in settings -> display.
 <br> 
 <br>---
 <br>Offline ISO and IMG (fast installation).
