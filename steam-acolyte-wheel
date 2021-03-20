@@ -1,3 +1,2 @@
 #!/bin/sh
-sleep 1
 .local/bin/steam-acolyte
