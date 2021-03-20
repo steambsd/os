@@ -16,12 +16,12 @@ sudo mount -a
 ############################################
 ### Desktop customization                ###
 ############################################
-rm Desktop/Steam.desktop 
+
 #shortcut
 cat << EOF > Desktop/Steam-Wine.desktop 
 [Desktop Entry]
 Name=Steam-Wine
-Exec=wine C:\\\\windows\\\\command\\\\start.exe /Unix .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 Type=Application
 StartupNotify=true
 Icon=BAC4_steam.0
@@ -30,6 +30,14 @@ cat << EOF > Desktop/Steam-Linux.desktop
 [Desktop Entry]
 Name=Steam-Linux
 Exec=steam
+Type=Application
+StartupNotify=true
+Icon=BAC4_steam.0
+EOF
+cat << EOF > Desktop/Steam-Acolyte.desktop 
+[Desktop Entry]
+Name=Steam-Acolyte
+Exec=.local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=BAC4_steam.0
@@ -62,6 +70,7 @@ kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
 # relay
 echo 'Please, wait...'
 sleep 30
+rm Desktop/Steam.desktop >> /dev/null 2>&1
 # generate
 cat << EOF > ~/Desktop/Readme
 ATTENTION!
