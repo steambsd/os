@@ -364,7 +364,7 @@ mkdir /usr/local/share/pixmaps
 cp zico-linux.png /usr/local/share/pixmaps/zico-linux.png
 cp zico-wine.png /usr/local/share/pixmaps/zico-wine.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
-chown -R $AZER:wheel /usr/local/share/pixmaps
+#chown -R $AZER:wheel /usr/local/share/pixmaps
 
 ############################################
 ### Login manager                        ###
