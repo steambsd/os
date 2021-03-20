@@ -52,8 +52,6 @@ sudo su root -c "sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.con
 sudo su root -c "sed -i '' 's/pluginlist=rssreader---DP-0.1/pluginlist=@Invalid()/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 
-rm wall.jpg
-
 #plasma
 sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc
 printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc
