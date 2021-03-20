@@ -123,7 +123,7 @@ sysctl kern.coredump=0
 sysrc clear_tmp_enable=YES
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
-sysrc sshd_enable=NO
+sysrc sshd_enable=YES
 
 ############################################
 ### Update                               ###
