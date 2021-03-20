@@ -389,9 +389,9 @@ polkit.addRule(function (action, subject)
 EOF
 
 # autostart
-cat << EOF >> /usr/local/etc/xdg/autostart/autoconfig.desktop 
+cat << EOF >> /usr/local/etc/xdg/autostart/reconfig.desktop 
 [Desktop Entry]
-Name=utils
+Name=reconfig
 Type=Application
 Exec=xterm -geometry 50x15+0-25 -e ~/reconfig
 Terminal=false
@@ -419,7 +419,7 @@ Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop 
 [Desktop Entry]
-Name=steam-acolyte-wheel
+Name=steam-acolyte
 Type=Application
 Exec=xterm -geometry 40x4-500+0 -e ~/.steam-acolyte
 Terminal=false
