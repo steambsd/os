@@ -384,7 +384,7 @@ echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
 lxqt)
 pli lxqt
 echo 'startlxqt' >> /home/$AZER/.xinitrc
-printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/session.conf
+printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/lxqt/session.conf
  ;;
 lxde)
 pli lxde-meta
