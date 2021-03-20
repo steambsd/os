@@ -43,6 +43,38 @@ fi
 }
 
 ############################################
+### Motd                            ###
+############################################
+# Build date used for motd and product file
+BUILDDATE=$(date +%Y%m%d)
+RELEASE="$VERS"
+DOC_URL="https://lpros.blogspot.com/"
+
+# Creating /etc/motd
+mv /etc/motd /etc/motd-backup
+cat << MOTD > /etc/motd
+
+ -=Lpros=-
+     LTD
+
+                         Instance (FreeBSD $RELEASE $BUILDDATE)
+                          $DOC_URL
+
+MOTD
+
+
+
+# Creating /etc/product file
+cat << PRODUCT > /etc/product
+Name: SteamBSD Instance
+Image: SteamBSD $RELEASE $BUILDDATE
+Documentation: $DOC_URL
+Description: SteamBSD $RELEASE 64-bit image with just essential packages \
+installed. Ideal for users who are comfortable with setting up their \
+own environment and tools.
+PRODUCT
+
+############################################
 ### Bugs                                 ###
 ############################################
 # drm-kmod not work on FreeBSD 12.2
