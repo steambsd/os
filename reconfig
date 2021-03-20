@@ -35,6 +35,14 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/zico-linux.png
 EOF
+cat << EOF > Desktop/SUtils.desktop 
+[Desktop Entry]
+Name=SUtils
+Exec=xterm -geometry 73x31-0-25 -e ./.utils &
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/ysettings.png
+EOF
 
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
