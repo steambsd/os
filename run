@@ -188,6 +188,7 @@ pli qt5
 pli py37-pip
 # desk
 pli wbar
+pli conky
 pli comption
 pli cairo-clock
 
