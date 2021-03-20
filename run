@@ -364,6 +364,12 @@ cp zico-linux.png /usr/local/share/pixmaps/zico-linux.png
 cp zico-wine.png /usr/local/share/pixmaps/zico-wine.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 #chown -R $AZER:wheel /usr/local/share/pixmaps
+# steam-acolyte
+cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
+cd /home/$AZER
+tar xvf steam-acolyte.tar.gz
+chown -R $AZER:wheel /home/$AZER/.local
+chmod -R +x /home/$AZER/.local/bin/
 
 ############################################
 ### Login manager                        ###
