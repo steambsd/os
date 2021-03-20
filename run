@@ -338,6 +338,7 @@ echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 ############################################
 ### Desktop environment                  ###
 ############################################
+pw groupmod operator -m $AZER
 # choose desktop
 case "$DENV" in
 plasma)
@@ -347,7 +348,6 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
 lumina)
 pli lumina
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
-pw groupmod operator -m $AZER
  ;;
 lxqt)
 pli lxqt
@@ -356,21 +356,8 @@ sudo su root -c "printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s
  ;;
 lxde)
 pli lxde-meta
-pw groupmod operator -m $AZER
-# start session
-#echo 'ck-launch-session dbus-launch --exit-with-session startlxde' >> /home/$AZER/.xinitrc
+
 echo 'startlxde' >> /home/$AZER/.xinitrc
-# file removal protection
-#cat << EOF >> /etc/crontab
-#@reboot root /bin/echo 'startlxde' > /home/$AZER/.xinitrc
-#EOF
-# autostart
-#cat << EOF >> /usr/local/etc/xdg/lxsession/LXDE/autostart 
-#@xterm -geometry 50x15+0-25 -e ~/reconfig
-#@xterm -geometry 40x4-250+0 -e ~/.steam-wine
-#@xterm -geometry 40x4-0+0 -e ~/.steam-linux
-#@xterm -geometry 73x31-0-25 -e ./.utils
-#EOF
  ;;
 *)
  echo "Error. Unrecognized desktop."
