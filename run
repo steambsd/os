@@ -352,6 +352,7 @@ pw groupmod operator -m $AZER
 lxqt)
 pli lxqt
 echo 'startlxqt' >> /home/$AZER/.xinitrc
+sudo su root -c "printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/session.conf"
  ;;
 lxde)
 pli lxde-meta
