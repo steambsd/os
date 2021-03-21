@@ -1,0 +1,5 @@
+#!/bin/sh
+screenfetch
+cat /etc/motd
+#cat /etc/product
+/usr/local/bin/bash
