@@ -351,6 +351,7 @@ cp steam-wine-safe /home/$AZER/.steam-wine-safe
 cp steam-wine-wheel /home/$AZER/.steam-wine
 cp steam-acolyte-safe /home/$AZER/.steam-acolyte-safe
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
+echo 'export PATH=$PATH:.local/bin/' >> ~/.bashrc
 cp utils /home/$AZER/.utils
 # wallpaper
 mkdir /usr/local/share/wallpapers
