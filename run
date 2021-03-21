@@ -4,6 +4,7 @@
 ###                 STEAM                ###   
 ###              ON FREEBSD              ###
 ############   set permission   ############
+chmod +x info
 chmod +x reconfig
 chmod +x steam-acolyte-safe
 chmod +x steam-acolyte-wheel
@@ -342,6 +343,7 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
+cp info /home/$AZER/.info
 cp reconfig /home/$AZER/
 cp steam-linux-safe /home/$AZER/.steam-linux-safe
 cp steam-linux-wheel /home/$AZER/.steam-linux
