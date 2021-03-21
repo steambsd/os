@@ -43,13 +43,13 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
 EOF
-cat << EOF > Desktop/Readme.desktop 
+cat << EOF > Desktop/Info.desktop 
 [Desktop Entry]
-Name=Readme
-Exec=chrome https://lpros.blogspot.com/ &
+Name=Info
+Exec=lxterminal -e ./.info &
 Type=Application
 StartupNotify=true
-Icon=
+Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
 EOF
 
 #lxde
