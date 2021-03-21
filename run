@@ -410,6 +410,7 @@ cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 cd /home/$AZER
 tar xvf steam-acolyte.tar.gz
+rm steam-acolyte.tar.gz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
 
