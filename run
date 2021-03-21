@@ -221,7 +221,14 @@ service devfs start
 # USB
 pli fusefs-ntfs
 echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
+sysrc fusefs_enable=YES
 kldload fusefs
+cat << EOF >> /etc/devfs.rules
+add path 'da*' mode 0660 group operator
+add path 'ugen*' mode 0660 group operator
+EOF
+echo 'vfs.usermount=1' >> /etc/sysctl.conf
+sysctl vfs.usermount=1
 
 ############################################
 ### Driver                               ###
