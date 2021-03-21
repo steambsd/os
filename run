@@ -192,11 +192,10 @@ pli comption
 pli cairo-clock
 
 ############################################
-### CD/DVD and USB                       ###
+### DVD and USB                          ###
 ############################################
 pli xfburn
-cat << EOF > /etc/devfs.conf
-# CDROM
+cat << EOF >> /etc/devfs.conf
 own cd0 root:operator
 perm cd0 0660
 
@@ -206,15 +205,21 @@ perm    pass2      0666
 own     xpt0       root:operator
 perm    xpt0       0666
 EOF
-sysrc devfs_system_ruleset=system
-cat << EOF > /etc/devfs.rules
+cat << EOF >> /etc/devfs.rules
         [system=10]
         add path 'acd*' mode 0666
         add path 'cd*' mode 0666
         add path 'pass*' mode 0666
         add path 'xpt*' mode 0666
 EOF
+sysrc devfs_system_ruleset=system
+sysrc -f /boot/loader.conf udf_load=YES
 service devfs start
+## to mount dvd
+#mount -t udf -r /dev/cd0 /mnt
+## to mount usb
+#mount_msdosfs /dev/da0 /media
+
 ############################################
 ### Driver                               ###
 ############################################
