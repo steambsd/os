@@ -61,13 +61,13 @@ sudo su root -c "sed -i '' 's/pluginlist=rssreader---DP-0.1/pluginlist=@Invalid(
 sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 
 #plasma
-sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc
-printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc
-kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell
+sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
+printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
+kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell >> /dev/null 2>&1
 
 # relay
 echo 'Please, wait...'
-sleep 30
+sleep 40
 rm Desktop/Steam.desktop >> /dev/null 2>&1
 ############################################
 ### Readme.txt                           ###
