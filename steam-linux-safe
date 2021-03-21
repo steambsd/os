@@ -1,5 +1,5 @@
 #!/bin/sh
-sleep 4
+sleep 10
 if [ -d /home/steam/.steam ]; then
  sudo su steam -c steam
 else
