@@ -194,6 +194,7 @@ pli cairo-clock
 ############################################
 ### DVD and USB                          ###
 ############################################
+# DVD
 pli xfburn
 cat << EOF >> /etc/devfs.conf
 own cd0 root:operator
@@ -214,13 +215,13 @@ cat << EOF >> /etc/devfs.rules
 EOF
 sysrc devfs_system_ruleset=system
 sysrc -f /boot/loader.conf udf_load=YES
+kldload udf
 service devfs start
-## to mount dvd
-#mount -t udf -r /dev/cd0 /mnt
-## to mount usb
-#mount_msdosfs /dev/da0 /media
-#to unmount
-#sudo umount -vf /mnt
+
+# USB
+pli fusefs-ntfs
+echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
+kldload fusefs
 
 ############################################
 ### Driver                               ###
