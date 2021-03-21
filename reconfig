@@ -27,17 +27,25 @@ sleep 15
 #StartupNotify=true
 #Icon=/usr/local/share/pixmaps/zico-wine.png
 #EOF
-cat << EOF > Desktop/SLinux.desktop 
+#cat << EOF > Desktop/SLinux.desktop 
+#[Desktop Entry]
+#Name=SLinux
+#Exec=steam
+#Type=Application
+#StartupNotify=true
+#Icon=/usr/local/share/pixmaps/zico-linux.png
+#EOF
+cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=SLinux
-Exec=steam
+Exec=.local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/zico-linux.png
 EOF
-cat << EOF > Desktop/SYSet.desktop 
+cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
-Name=SYSet
+Name=Utils
 Exec=xterm -geometry 73x31-0-25 -e ./.utils &
 Type=Application
 StartupNotify=true
