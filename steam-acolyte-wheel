@@ -1,3 +1,10 @@
 #!/bin/sh
-sleep 10
-.local/bin/steam-acolyte
+if [ -d .steam ]; then
+ sleep 5
+ .local/bin/steam-acolyte
+else
+ sleep 180
+ .local/bin/steam-acolyte
+fi
+read ans
+
