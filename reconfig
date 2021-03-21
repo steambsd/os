@@ -38,7 +38,7 @@ sleep 15
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
-Exec=.local/bin/steam-acolyte
+Exec=/home/$USER/.local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
