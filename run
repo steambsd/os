@@ -57,7 +57,7 @@ cat << MOTD > /etc/motd
  -=Lpros=-
      LTD
                                                                 Instance (SteamBSD $RELEASE $BUILDDATE)
-                               `:`                  `:`         Site: $DOC_URL
+                               `:`                  `:`         $DOC_URL
 MOTD
 # Creating /etc/product file
 cat << PRODUCT > /etc/product
