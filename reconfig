@@ -67,7 +67,7 @@ kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell >> /dev/null
 
 # relay
 echo 'Please, wait...'
-sleep 40
+sleep 60
 rm Desktop/Steam.desktop >> /dev/null 2>&1
 ############################################
 ### Readme.txt                           ###
