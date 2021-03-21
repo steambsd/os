@@ -219,6 +219,8 @@ service devfs start
 #mount -t udf -r /dev/cd0 /mnt
 ## to mount usb
 #mount_msdosfs /dev/da0 /media
+#to unmount
+#sudo umount -vf /mnt
 
 ############################################
 ### Driver                               ###
