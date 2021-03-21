@@ -79,7 +79,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait...'
-sleep 400
+sleep 390
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 ############################################
 ### Readme.txt                           ###
