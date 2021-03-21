@@ -56,8 +56,8 @@ mv /etc/motd /etc/motd-backup
 cat << MOTD > /etc/motd
  -=Lpros=-
      LTD
-                         Instance (SteamBSD $RELEASE $BUILDDATE)
-                          $DOC_URL
+                                                                Instance (SteamBSD $RELEASE $BUILDDATE)
+                               `:`                  `:`         Site: $DOC_URL
 MOTD
 # Creating /etc/product file
 cat << PRODUCT > /etc/product
