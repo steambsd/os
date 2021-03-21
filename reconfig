@@ -37,11 +37,11 @@ sleep 15
 #EOF
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
-Name=SLinux
+Name=Acolyte
 Exec=.local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
-Icon=/usr/local/share/pixmaps/zico-linux.png
+Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
 EOF
 cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
