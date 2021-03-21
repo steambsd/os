@@ -462,7 +462,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/cairo-clock.desktop
 [Desktop Entry]
 Name=cairo-clock
 Type=Application
-Exec=cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t zen
+Exec=cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple
 Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/compton.desktop 
