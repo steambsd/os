@@ -71,7 +71,7 @@ sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$U
 #plasma
 sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
 printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
-kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell >> /dev/null 2>&1
+( kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell ) >> /dev/null 2>&1
 
 # relay
 echo 'Please, wait...'
