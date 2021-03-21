@@ -43,6 +43,14 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
 EOF
+cat << EOF > Desktop/Readme.desktop 
+[Desktop Entry]
+Name=Readme
+Exec=chrome https://lpros.blogspot.com/ &
+Type=Application
+StartupNotify=true
+Icon=
+EOF
 
 #lxde
 #pcmanfm --set-wallpaper wall.jpg
