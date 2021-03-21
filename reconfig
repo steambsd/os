@@ -120,13 +120,13 @@ EOF
 ############################################
 ### Plugins for Steam                    ###
 ############################################
-read ans
-python --version
-pip --version
-pip install steam-acolyte
-echo 'export PATH=$PATH:.local/bin/' >> ~/.bashrc
-export PATH=$PATH:.local/bin/
-xterm -geometry 40x4-500+0 -e steam-acolyte &
+#read ans
+#python --version
+#pip --version
+#pip install steam-acolyte
+#echo 'export PATH=$PATH:.local/bin/' >> ~/.bashrc
+#export PATH=$PATH:.local/bin/
+#xterm -geometry 40x4-500+0 -e steam-acolyte &
 
 
 ############################################
