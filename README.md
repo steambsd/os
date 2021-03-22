@@ -1,11 +1,4 @@
-<h1>SteamBSD installation on the internet </h1>
- <style>
-   body {
-    background-image: url(wall.jpg); /* Путь к фоновому изображению */
-    background-color: #c7b39b; /* Цвет фона */
-   }
-  </style>
- 
+<h1>SteamBSD installation on the internet </h1> 
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
@@ -20,7 +13,6 @@
     <figcaption>Support</figcaption>
   </figure>
 </div>
-<body> 
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
@@ -73,4 +65,4 @@
 <br>--- SteamBSD © is FREE operating system.
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
-</body>
+
