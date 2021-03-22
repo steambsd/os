@@ -55,9 +55,11 @@ DOC_URL="https://lpros.blogspot.com/"
 #mv /etc/motd /etc/motd-backup
 cat << MOTD > /etc/motd
  -=Lpros=-
+
+ -=Ligres=-
      LTD
-                                                                Instance (SteamBSD $RELEASE $BUILDDATE)
-                               `:`                  `:`         $DOC_URL
+                         Instance (FreeBSD $RELEASE $BUILDDATE)
+                          $DOC_URL
 MOTD
 # Creating /etc/product file
 cat << PRODUCT > /etc/product
