@@ -5,7 +5,7 @@
     background-color: #c7b39b; /* Цвет фона */
    }
   </style>
-<body>  
+ 
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
@@ -20,6 +20,7 @@
     <figcaption>Support</figcaption>
   </figure>
 </div>
+<body> 
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
