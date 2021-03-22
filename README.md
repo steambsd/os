@@ -1,7 +1,7 @@
 <h1>SteamBSD installation on the internet </h1>
 <div class="thumb">
   <figure>
-    <a href="https://pypi.org/project/steam-acolyte/" target="_blank"><img src="zico-acolyte.png"></a>
+    <a href="https://pypi.org/project/steam-acolyte/" target="blank"><img src="zico-acolyte.png"></a>
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
