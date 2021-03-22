@@ -65,4 +65,4 @@
 <br>--- SteamBSD © is FREE operating system.
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
-<br><img src="wall.jpg">
+<br><a href="https://lpros.blogspot.com/"><img src="wall.jpg"></a>
