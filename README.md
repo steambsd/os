@@ -66,5 +66,5 @@
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
 <br><a href="https://lpros.blogspot.com/"><img src="wall.jpg"></a>
-<br>All rights reserved
-<br><a href="https://github.com/steambsd/os/blob/go/LICENSE">View license file</a>
+<br>About bug:
+<br><a href="https://github.com/steambsd/os/blob/go/LICENSE">SteamBSD</a>
