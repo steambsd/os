@@ -2,19 +2,19 @@
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
-    <figcaption>Support</figcaption>
+    <figcaption>Ready!</figcaption>
   </figure><!--
   --><figure>
     <a href="https://store.steampowered.com/linux/"><img src="zico-linux.png"></a>
-    <figcaption>Support</figcaption>
+    <figcaption>Ready!</figcaption>
   </figure><!--
   --><figure>
     <a href="https://www.winehq.org/"><img src="zico-wine.png"></a>
-    <figcaption>Support</figcaption>
+    <figcaption>Ready!</figcaption>
   </figure><!--
   --><figure>
     <a href="https://lpros.blogspot.com/p/in-operating-system-steambsd-i-have.html"><img src="https://1.bp.blogspot.com/-K5ZThGhPWNM/YFh8CuPZ49I/AAAAAAAAAkw/JmK2Mmv4pTUdoxHNzDv0Mx_ecZ-Wc0dQgCLcBGAsYHQ/s140/rssl.png"></a>
-    <figcaption>Support</figcaption>
+    <figcaption>Ready!</figcaption>
   </figure>
 </div>
 <br>Install FreeBSD, reboot PC and login as root:
