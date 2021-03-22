@@ -1,4 +1,30 @@
 <h1>SteamBSD installation on the internet </h1>
+<div class="thumb">
+  <figure>
+    <img src="zico-linux.png">
+    <figcaption>Text1</figcaption>
+  </figure><!--
+  --><figure>
+    <img src="zico-wine.png">
+    <figcaption>Text2</figcaption>
+  </figure><!--
+  --><figure>
+    <img src="http://placehold.it/200x200">
+    <figcaption>Text3</figcaption>
+  </figure><!--
+  --><figure>
+    <img src="http://placehold.it/200x200">
+    <figcaption>Text4</figcaption>
+  </figure><!--
+  --><figure>
+    <img src="http://placehold.it/200x200">
+    <figcaption>Text5</figcaption>
+  </figure><!--
+  --><figure>
+    <img src="http://placehold.it/200x200">
+    <figcaption>Text6</figcaption>
+  </figure>
+</div>
 <img src="zico-linux.png" alt="support steam-linux">
 <img src="zico-wine.png" alt="support steam-wine">
 <br>Install FreeBSD, reboot PC and login as root:
