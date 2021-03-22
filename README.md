@@ -1,4 +1,5 @@
 <h1>SteamBSD installation on the internet </h1>
+<body background="wall.jpg">
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
@@ -65,3 +66,4 @@
 <br>--- SteamBSD © is FREE operating system.
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
+</body
