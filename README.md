@@ -9,7 +9,7 @@
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <a href="https://www.winehq.org/"<img src="zico-wine.png"></a>
+    <a href="https://www.winehq.org/"><img src="zico-wine.png"></a>
     <figcaption>Support</figcaption>
   </figure>
 </div>
