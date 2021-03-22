@@ -166,12 +166,12 @@ kldload linux64
 pli xorg
 pli slim
 # packages for wine
-pli i386-wine
-pli winetricks
-pli wine-mono
-pli wine-gecko
+#pli i386-wine
+#pli winetricks
+#pli wine-mono
+#pli wine-gecko
 # packages for linux
-pli linux-steam-utils
+#pli linux-steam-utils
 #sudo su steam -c steam-install
 #mv /home/steam/.steam /home/$AZER/.steam
 #chown $AZER:wheel /home/$AZER/.steam
