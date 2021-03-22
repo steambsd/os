@@ -1,5 +1,11 @@
 <h1>SteamBSD installation on the internet </h1>
-<body background="wall.jpg">
+ <style>
+   body {
+    background-image: url(wall.jpg); /* Путь к фоновому изображению */
+    background-color: #c7b39b; /* Цвет фона */
+   }
+  </style>
+<body>  
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
