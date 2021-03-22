@@ -1,4 +1,5 @@
 <h1>SteamBSD installation on the internet </h1> 
+background-image: url(wall.jpg)
 <div class="thumb">
   <figure>
     <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
