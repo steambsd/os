@@ -1,4 +1,5 @@
 <h1>SteamBSD installation on the internet </h1>
+<br><img src="zico-linux.png" alt="support steam-linux">
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>Download from git:
