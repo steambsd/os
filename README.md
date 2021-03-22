@@ -11,6 +11,10 @@
   --><figure>
     <a href="https://www.winehq.org/"><img src="zico-wine.png"></a>
     <figcaption>Support</figcaption>
+  </figure><!--
+  --><figure>
+    <a href="https://www.blogger.com/blog/page/edit/preview/4462317336995720178/7552208361882841902"><img src="https://lh3.googleusercontent.com/-OZlIvUELX6k/YFh3xmvZsZI/AAAAAAAAAkQ/3PIWhdSjqwQbvZ2EUcOq0Qlk7Awv07kLACLcBGAsYHQ/rss.png"></a>
+    <figcaption>Support</figcaption>
   </figure>
 </div>
 <br>Install FreeBSD, reboot PC and login as root:
