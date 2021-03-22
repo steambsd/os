@@ -51,9 +51,9 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
 EOF
-cat << EOF > Desktop/Info.desktop 
+cat << EOF > Desktop/Terminal.desktop 
 [Desktop Entry]
-Name=Info
+Name=Terminal
 Exec=lxterminal -e ./.info &
 Type=Application
 StartupNotify=true
