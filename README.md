@@ -1,15 +1,15 @@
 <h1>SteamBSD installation on the internet </h1>
 <div class="thumb">
   <figure>
-    <img src="zico-linux.png">
+    <img src="zico-acolyte.png">
     <figcaption>Text1</figcaption>
   </figure><!--
   --><figure>
-    <img src="zico-wine.png">
+    <img src="zico-linux.png">
     <figcaption>Text2</figcaption>
   </figure><!--
   --><figure>
-    <img src="http://placehold.it/200x200">
+    <img src="zico-wine.png">
     <figcaption>Text3</figcaption>
   </figure><!--
   --><figure>
