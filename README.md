@@ -5,11 +5,11 @@
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <img src="zico-linux.png">
+    <a href="https://store.steampowered.com/linux/"><img src="zico-linux.png"></a>
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <img src="zico-wine.png">
+    <a href="https://www.winehq.org/"<img src="zico-wine.png"></a>
     <figcaption>Support</figcaption>
   </figure>
 </div>
