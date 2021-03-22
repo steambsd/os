@@ -11,18 +11,6 @@
   --><figure>
     <img src="zico-wine.png">
     <figcaption>Text3</figcaption>
-  </figure><!--
-  --><figure>
-    <img src="http://placehold.it/200x200">
-    <figcaption>Text4</figcaption>
-  </figure><!--
-  --><figure>
-    <img src="http://placehold.it/200x200">
-    <figcaption>Text5</figcaption>
-  </figure><!--
-  --><figure>
-    <img src="http://placehold.it/200x200">
-    <figcaption>Text6</figcaption>
   </figure>
 </div>
 <br>Install FreeBSD, reboot PC and login as root:
