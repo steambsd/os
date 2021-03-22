@@ -166,30 +166,31 @@ kldload linux64
 pli xorg
 pli slim
 # packages for wine
-#pli i386-wine
-#pli winetricks
-#pli wine-mono
-#pli wine-gecko
+pli i386-wine
+pli winetricks
+pli wine-mono
+pli wine-gecko
 # packages for linux
-#pli linux-steam-utils
+pli linux-steam-utils
 #sudo su steam -c steam-install
-#mv /home/steam/.steam /home/$AZER/.steam
-#chown $AZER:wheel /home/$AZER/.steam
-# packages for info
+# packages for console
 pli screenfetch
+pli mc
+# packages for info
 pli lxterminal
 pli leafpad
 # packages for comfort
-#pli chromium
-#pli vlc
-#pli simplescreenrecorder
+pli chromium
+pli smplayer
+pli simplescreenrecorder
+# packages for desktop
+pli comption
+pli cairo-clock
 # pip
 #pli python
 #pli qt5
 #pli py37-pip
-# desk
-pli comption
-pli cairo-clock
+echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 
 ############################################
 ### DVD and USB                          ###
@@ -394,7 +395,7 @@ cp steam-wine-safe /home/$AZER/.steam-wine-safe
 cp steam-wine-wheel /home/$AZER/.steam-wine
 cp steam-acolyte-safe /home/$AZER/.steam-acolyte-safe
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
-echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
+
 cp utils /home/$AZER/.utils
 # wallpaper
 mkdir /usr/local/share/wallpapers
