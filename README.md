@@ -13,7 +13,7 @@
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <a href="https://www.blogger.com/blog/page/edit/preview/4462317336995720178/7552208361882841902"><img src="https://1.bp.blogspot.com/-4JTaAelmM5Q/YFh5qtTtsxI/AAAAAAAAAkY/yAenEjA78FMmbQPlZVDkobYvgEb22NQ5ACLcBGAsYHQ/s256/rssfeed.png"></a>
+    <a href="https://www.blogger.com/blog/page/edit/preview/4462317336995720178/7552208361882841902"><img src="https://1.bp.blogspot.com/-0ojEb-EYTFs/YFh6ZjI90SI/AAAAAAAAAkk/cPtIACmNnBwxwddv0Sx9mEmUUloVeACwACLcBGAsYHQ/s140/rssf.png"></a>
     <figcaption>Support</figcaption>
   </figure>
 </div>
