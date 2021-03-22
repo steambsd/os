@@ -1,15 +1,15 @@
 <h1>SteamBSD installation on the internet </h1>
 <div class="thumb">
   <figure>
-    <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
+    <a href="https://pypi.org/project/steam-acolyte/" target="_blank"><img src="zico-acolyte.png"></a>
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <a href="https://store.steampowered.com/linux/"><img src="zico-linux.png"></a>
+    <a href="https://store.steampowered.com/linux/" target="_blank"><img src="zico-linux.png"></a>
     <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
-    <a href="https://www.winehq.org/"><img src="zico-wine.png"></a>
+    <a href="https://www.winehq.org/" target="_blank"><img src="zico-wine.png"></a>
     <figcaption>Support</figcaption>
   </figure>
 </div>
