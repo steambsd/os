@@ -2,15 +2,15 @@
 <div class="thumb">
   <figure>
     <img src="zico-acolyte.png">
-    <figcaption>Text1</figcaption>
+    <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
     <img src="zico-linux.png">
-    <figcaption>Text2</figcaption>
+    <figcaption>Support</figcaption>
   </figure><!--
   --><figure>
     <img src="zico-wine.png">
-    <figcaption>Text3</figcaption>
+    <figcaption>Support</figcaption>
   </figure>
 </div>
 <br>Install FreeBSD, reboot PC and login as root:
