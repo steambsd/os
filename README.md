@@ -19,6 +19,7 @@
 </div>
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
+<br>
 <br>Download from git:
 <br><code>pkg ins git</code>
 <br><code>git clone https://github.com/steambsd/os</code>
