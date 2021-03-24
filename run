@@ -219,6 +219,8 @@ kldload udf
 service devfs start
 
 # USB
+sysrc -f /boot/loader.conf ext2fs_load=YES
+kldload ext2fs
 pli fusefs-ntfs
 echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 sysrc fusefs_enable=YES
