@@ -5,30 +5,28 @@ do
 
 clear
 
-echo '====================================================================='
-
-echo '=========================       UTILS      =========================='
-
-echo '====================================================================='
-echo ''
-echo '1 - [proton - beta] open information'
-echo '2 - [proton - beta] install steam developers'
-echo '3 - [proton - beta] completely remove wine'
-echo '4 - [proton - beta] install proton 5.13'
-echo '5 - [proton - beta] install steam linux runtime - soldier'
-echo '6 - [proton - beta] unpack steam linux runtime - soldier'
-echo '7 - [proton - beta] select emulators/wine-proton in properties'
-echo '8 - [proton - beta] download simple game (Creativerse)'
-echo '9 - [proton - beta] test wineserver (see Readme.txt)'
+echo '===> proton (work with bugs)'
+echo 'p1 - open information'
+echo 'p2 - install steam developers'
+echo 'p3 - completely remove wine'
+echo 'p4 - install proton 5.13'
+echo 'p5 - install steam linux runtime - soldier'
+echo 'p6 - unpack steam linux runtime - soldier'
+echo 'p7 - select emulators/wine-proton in properties'
+echo 'p8 - download simple game (Creativerse)'
+echo 'p9 - test wineserver (see Readme.txt)'
+echo '===> wine/linux develop'
 echo 'rw - reinstall steam wine to newest i386-wine-devel'
-echo 'sm - open steam for user steam'
 echo 'sv - open steam for user steamdev'
+echo '===> zfs snapshot'
 echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
 echo 'zl - list snapshot of system'
 echo 'zr - restore full snapshot of system'
+echo '===> resolution'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
+echo '===> system commands'
 echo 'sht - shutdown pc'
 echo 'rbt - reboot pc'
 echo 'upd - update utils and reopen'
@@ -37,12 +35,12 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
- 1)
+ p1)
    ### open instruction
    #xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
    xterm -geometry 40x4+0-0 -e leafpad Desktop/Readme
  ;;
- 2)
+ p2)
    ### install steam developers
    # dependeses
    sudo pkg ins -y gcc
@@ -57,7 +55,7 @@ echo -n 'Choose your number: '
    sudo su steamdev -c /opt/steam-utils/bin/steam-install
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
  ;;
- 3)
+ p3)
    ### remove wine
    sudo pkg remove -y i386-wine
    sudo pkg remove -y winetricks
@@ -66,35 +64,35 @@ echo -n 'Choose your number: '
    sudo rm -rf .wine
    sudo killall -HUP wine
  ;;
- 4)
+ p4)
    ### install proton
    sudo pkg ins -y wine-proton libc6-shim python3
    sudo su steamdev -c '/opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri'
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1420170" &'
  ;;
- 5)
+ p5)
    ### install slrs
    sudo killall -HUP lxterminal
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1391110" &'
  ;;
- 6)
+ p6)
    ### unpack slrs
    cd /home/steamdev/.steam/steam/steamapps/common/SteamLinuxRuntime_soldier/
    sudo su steamdev -c 'mkdir com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime'
    sudo su steamdev -c 'tar xvfz ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime.tar.gz -C ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime'
    sudo su steamdev -c /opt/steam-utils/bin/lsu-register-proton
  ;;
- 7)
+ p7)
    ### select emulators/wine-proton in properties
    sudo killall -HUP lxterminal
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
  ;;
- 8)
+ p8)
    ### download simple game
    sudo killall -HUP lxterminal
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/280790" &'
  ;;
- 9)
+ p9)
    ### test wine-proton
    sudo pw useradd steamdev -m
    sudo su steamdev -c 'lxterminal --title="you must exec command: /opt/steam-utils/bin/lsu-wine-env wine winecfg" &'
@@ -116,10 +114,6 @@ echo -n 'Choose your number: '
    fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
    lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
    lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
- ;;
- sm)
-   ### steam
-   sudo su steam -c 'xterm -geometry 40x4-0+0 -e steam &'
  ;;
  sv)
    ### steamdev
