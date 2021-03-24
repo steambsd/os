@@ -52,15 +52,14 @@ RELEASE="$VERS"
 DOC_URL="https://lpros.blogspot.com/"
 
 # Creating /etc/motd
-#mv /etc/motd /etc/motd-backup
-cat << MOTD > /etc/motd
+cat << MOTD > /etc/motd.safe
  -=Lpros=-
      LTD
                          Instance (FreeBSD $RELEASE $BUILDDATE)
                           $DOC_URL
 MOTD
 # Creating /etc/product file
-cat << PRODUCT > /etc/product
+cat << PRODUCT > /etc/product.safe
 Name: SteamBSD Instance
 Image: SteamBSD $RELEASE $BUILDDATE
 Documentation: $DOC_URL
