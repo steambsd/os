@@ -192,7 +192,7 @@ pli cairo-clock
 echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 
 ############################################
-### DVD and USB                          ###
+### DVD, USB and CLOUD                   ###
 ############################################
 # DVD
 pli xfburn
@@ -231,6 +231,9 @@ add path 'ugen*' mode 0660 group operator
 EOF
 echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
+
+# CLOUD
+pli megatools
 
 ############################################
 ### Driver                               ###
