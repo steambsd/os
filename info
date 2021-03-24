@@ -1,4 +1,4 @@
 #!/bin/sh
 screenfetch
-cat /etc/motd
+cat /etc/motd.safe
 /usr/local/bin/bash
