@@ -71,4 +71,13 @@
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
 <br><a href="https://lpros.blogspot.com/"><img src="wall.jpg"></a>
-<br>Other <a href="https://github.com/steambsd/os/blob/go/LICENSE">information</a>
+<br>File of <a href="https://github.com/steambsd/os/blob/go/LICENSE">license</a>
+<br>How to use MEGA:
+<br>megareg --register --email somename@domain.example --name somename --password 1234
+<br>megareg --verify @stat@ @link@
+<br>megacopy --username somename@domain.example --password 1234 --local . --remote /Root/yourdir
+<br>megaget --username somename@domain.example --password 1234 --path . /Root/yourdir/file.tst
+
+<br>Where:
+<br>@stat@ - pass that was returned from megareg --register and a verification link from the email that was sent to email, for example 'vbFFFv7AFM25etzkFXLs9A==:Z7F'
+<br>@link@ - is registration link from the 'MEGA Signup' email, for example 'https://mega.nz/#confirmciyfWXRGFNcM...'
