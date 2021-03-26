@@ -76,10 +76,10 @@
 <br>How to use MEGA:
 <br><code>megareg --register --email somename@domain.example --name somename --password 1234</code>
 <br><code>megareg --verify vbFFFv7AFM25etzkFXLs9A==:Z7F... https://mega.nz/#confirmciyfWXRGFNcM...</code>
+<br><code>megamkdir --username somename@domain.example --password 1234 /Root/test</code>
 <br><code>megacopy --username somename@domain.example --password 1234 --local . --remote /Root/yourdir</code>
 <br><code>megaget --username somename@domain.example --password 1234 --path . /Root/yourdir/file.tst</code>
 <br>Second command explanation:
 <br><code>megareg --verify @stat@ @link@</code>
 <br>@stat@ - pass that was returned from megareg --register and a verification link from the email that was sent to email, for example vbFFFv7AFM25etzkFXLs9A==:Z7F...
 <br>@link@ - is registration link from the 'MEGA Signup' email, for example https://mega.nz/#confirmciyfWXRGFNcM...
-<br>Also, you need create catalog in browser 'yourdir'
