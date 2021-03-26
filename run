@@ -117,7 +117,7 @@ sysctl kern.coredump=0
 sysrc clear_tmp_enable=YES
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
-sysrc sshd_enable=YES
+sysrc sshd_enable=NO
 
 ############################################
 ### Update                               ###
@@ -148,10 +148,6 @@ pw usermod steam -s /usr/local/bin/bash
 # user for steam development
 pw useradd steamdev -m
 pw usermod steamdev -s /usr/local/bin/bash
-pw useradd steam1 -m
-pw useradd steam2 -m
-pw useradd steam3 -m
-pw useradd steam4 -m
 # linux
 sysrc linux_enable=YES
 sysrc linux64_enable=YES
