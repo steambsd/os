@@ -80,7 +80,7 @@
 <br><code>megaget --username somename@domain.example --password 1234 --path . /Root/yourdir/file.tst</code>
 
 <br>Attention! Second command 
-<code>megareg --verify @stat@ @link@</code>
+<br><code>megareg --verify @stat@ @link@</code>
 <br>Where:
 <br>@stat@ - pass that was returned from megareg --register and a verification link from the email that was sent to email, for example vbFFFv7AFM25etzkFXLs9A==:Z7F...
 <br>@link@ - is registration link from the 'MEGA Signup' email, for example https://mega.nz/#confirmciyfWXRGFNcM...
