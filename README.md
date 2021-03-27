@@ -1,22 +1,4 @@
 <h1>SteamBSD installation on the internet </h1> 
-<div class="thumb">
-  <figure>
-    <a href="https://pypi.org/project/steam-acolyte/"><img src="zico-acolyte.png"></a>
-    <figcaption>Ready!</figcaption>
-  </figure><!--
-  --><figure>
-    <a href="https://store.steampowered.com/linux/"><img src="zico-linux.png"></a>
-    <figcaption>Ready!</figcaption>
-  </figure><!--
-  --><figure>
-    <a href="https://www.winehq.org/"><img src="zico-wine.png"></a>
-    <figcaption>Ready!</figcaption>
-  </figure><!--
-  --><figure>
-    <a href="https://lpros.blogspot.com/p/in-operating-system-steambsd-i-have.html"><img src="https://1.bp.blogspot.com/-K5ZThGhPWNM/YFh8CuPZ49I/AAAAAAAAAkw/JmK2Mmv4pTUdoxHNzDv0Mx_ecZ-Wc0dQgCLcBGAsYHQ/s140/rssl.png"></a>
-    <figcaption>Ready!</figcaption>
-  </figure>
-</div>
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>
@@ -42,7 +24,7 @@
 <br>If the user does not exist, the script will add it automatically with the password "0000", you can change the password after installation:
 <br><code>passwd [your_user]</code>
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
-<br>nvidia - recommended, best choice for linux steam *
+<br>nvidia - recommended, best choice for linux steam
 <br>amdgpu - not bad for wine steam
 <br>radeon - not bad for wine steam
 <br>intel - not bad for wine steam
