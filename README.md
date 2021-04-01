@@ -46,14 +46,9 @@
 <br>NOTE. If you install on VirtualBox you must choose VMSVGA+128Mb (in virtualbox of course). This is in machine "settings -> display".
 <br> 
 <br>---
-<br>Offline ISO and IMG (fast installation).
-<br>Download: https://drive.google.com/drive/u/1/folders/1ltZ-98Fpy3F9FlVF-lLUIM3vM4T6N09a
-<br> 
 <br>--- SteamBSD © is FREE operating system.
 <br>Site: https://lpros.blogspot.com/
-<br>E-mail: steambsd@gmail.com
-<br><a href="https://lpros.blogspot.com/"><img src="wall.jpg"></a>
-<br>File of <a href="https://github.com/steambsd/os/blob/go/LICENSE">license</a>
+<br>E-mail: light.progres@gmail.com
 <br>
 <br>How to use MEGA (Attention! You must create new accaunt in commandline):
 <br><code>megareg --register --email somename@domain.example --name somename --password 1234</code>
