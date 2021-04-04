@@ -45,7 +45,6 @@
 <br>
 <br>NOTE. If you install on VirtualBox you must choose VMSVGA+128Mb (in virtualbox of course). This is in machine "settings -> display".
 <br> 
-<br>---
 <br>--- SteamBSD © is FREE operating system.
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: light.progres@gmail.com
