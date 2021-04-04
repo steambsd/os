@@ -143,8 +143,8 @@ pli bash
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 # terminal customization
-echo alias ls=\'ls -G\' > /root/.bashrc
-echo alias ls=\'ls -G\' > /home/$AZER/.bashrc
+echo alias ls=\'ls -G\' >> /root/.bashrc
+echo alias ls=\'ls -G\' >> /usr/home/$AZER/.bashrc
 # user for steam
 pw useradd steam -m
 pw usermod steam -s /usr/local/bin/bash
