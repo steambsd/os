@@ -411,6 +411,12 @@ cp zico-linux.png /usr/local/share/pixmaps/zico-linux.png
 cp zico-wine.png /usr/local/share/pixmaps/zico-wine.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 #chown -R $AZER:wheel /usr/local/share/pixmaps
+#epic-games
+unzip epic-games.zip
+cd legendary-master
+/usr/local/bin/python3.8 setup.py install
+cd ..
+echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 cd /home/$AZER
@@ -421,12 +427,7 @@ chmod -R +x /home/$AZER/.local/bin/
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
-#epic-games
-unzip epic-games.zip
-cd legendary-master
-/usr/local/bin/python3.8 setup.py install
-cd ..
-echo alias legendary=\'epic\' >> /home/$AZER/.bashrc
+
 
 ############################################
 ### Login manager                        ###
