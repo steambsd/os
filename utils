@@ -5,6 +5,8 @@ do
 
 clear
 
+echo '### epic-games'
+echo 'ew - install wine-devel wow'
 echo '### proton (work with bugs)'
 echo 'p1 - open information'
 echo 'p2 - install steam developers'
@@ -35,6 +37,32 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
+  ew)
+  echo "Start install wine32 + wine64 (experemental)..."
+
+   mkdir wine32
+   mkdir wine64
+   sudo pkg fetch -y i386-wine-devel
+   sudo pkg fetch -y wine-devel
+   cd wine32
+   PATH32=`ls /var/cache/pkg | grep i386-wine-devel | head -n1`
+   sudo su root -c "tar -xf /var/cache/pkg/$PATH32"
+   cd ..
+   cd wine64
+   PATH64=`ls /var/cache/pkg | grep wine-devel | tail -n2 | head -n1`
+   sudo su root -c "tar -xf /var/cache/pkg/$PATH64"
+   cd ..
+
+cat << EOF >> winedev.sh
+#!/bin/sh
+WINEPREFIX=~/.wine-wow
+PATH=~/wine64/usr/local/bin:~/wine32/usr/local/bin:$PATH
+wine64 $WINEPREFIX/drive_c/GOG\ Games/FTL\ Advanced\ Edition/FTLGame.exe
+EOF
+
+   sudo su root -c "chmod 777 winedev.sh"
+   sleep 1
+ ;;
  p1)
    ### open instruction
    #xterm -geometry 40x4+0-0 -e chrome https://github.com/shkhln/linuxulator-steam-utils/blob/master/README.md &
