@@ -239,7 +239,7 @@ EOF'
    sudo chmod +x .utils
    rm -rf os-go
    rm go.zip
-   xterm -geometry 83x31-0-25 -e ./.utils &
+   xterm -geometry 73x41-0-25 -e ./.utils &
    sleep 2
    break
  ;;
