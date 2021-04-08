@@ -110,9 +110,9 @@ EOF
  p4)
    ### install proton
    sudo pkg ins -y wine-proton 
-   sudo portsnap fetch extract
-   sudo cd /usr/ports/emulators/wine-proton
-   sudo make BATCH=yes install clean
+   #sudo portsnap fetch extract
+   #sudo cd /usr/ports/emulators/wine-proton
+   #sudo make BATCH=yes install clean
    sudo pkg ins -y libc6-shim python3
    cd /usr/ports/emulators
    sudo su steamdev -c '/opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri'
