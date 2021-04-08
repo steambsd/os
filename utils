@@ -11,7 +11,7 @@ echo 'ew - install wine-devel wow'
 echo '### keyboard layout (temporary)'
 echo 'kru - add russian switch alt-shift'
 echo 'kgr - add greek switch alt-shift'
-echo '### proton (work with bugs)'
+echo '### proton (broken)'
 echo 'p1 - open information'
 echo 'p2 - install steam developers'
 echo 'p3 - completely remove wine'
@@ -109,7 +109,12 @@ EOF
  ;;
  p4)
    ### install proton
-   sudo pkg ins -y wine-proton libc6-shim python3
+   sudo pkg ins -y wine-proton 
+   sudo portsnap fetch extract
+   sudo cd /usr/ports/emulators/wine-proton
+   sudo make BATCH=yes install clean
+   sudo pkg ins -y libc6-shim python3
+   cd /usr/ports/emulators
    sudo su steamdev -c '/opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri'
    sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1420170" &'
  ;;
