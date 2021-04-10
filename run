@@ -218,7 +218,7 @@ kldload udf
 service devfs start
 
 # USB
-sysrc -f /boot/loader.conf fuse_load=YES
+sysrc -f /boot/loader.conf fusefs_load=YES
 kldload fusefs
 sysrc -f /boot/loader.conf ext2fs_load=YES
 kldload ext2fs
