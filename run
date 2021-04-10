@@ -118,6 +118,10 @@ sysrc clear_tmp_enable=YES
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
 sysrc sshd_enable=NO
+# view startup log
+echo 'console.info                                   /var/log/console.log' >> /etc/syslog.conf
+touch /var/log/console.log
+chmod 600 /var/log/console.log
 
 ############################################
 ### Update                               ###
