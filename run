@@ -216,10 +216,8 @@ cat << EOF >> /etc/devfs.rules
         add path 'pass*' mode 0666
         add path 'xpt*' mode 0666
 EOF
-sysrc devfs_system_ruleset=system
 sysrc -f /boot/loader.conf udf_load=YES
 kldload udf
-service devfs start
 
 # USB
 sysrc -f /boot/loader.conf fusefs_load=YES
@@ -232,8 +230,11 @@ cat << EOF >> /etc/devfs.rules
 add path 'da*' mode 0660 group operator
 add path 'ugen*' mode 0660 group operator
 EOF
+
 echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
+sysrc devfs_system_ruleset=system
+service devfs start
 
 # CLOUD
 pli megatools
