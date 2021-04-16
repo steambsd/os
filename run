@@ -177,7 +177,7 @@ pli wine-gecko
 pli linux-steam-utils
 #sudo su steam -c steam-install
 # packages for console
-pli screenfetch
+pli screenFetch
 pli mc
 # packages for info
 pli lxterminal
