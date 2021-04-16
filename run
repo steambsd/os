@@ -39,7 +39,9 @@ VERS=`uname -r | cut -d'-' -f1`
 pli()
 {
 if [ -d All ]; then
-pkg add All/$1-*
+zvar=`ls All | grep $1 | awk '{ print length, $0 }' | sort -n | cut -d" " -f2- | head -1`
+pkg add All/$zvar
+#pkg add All/$1-*
 else
 pkg ins -y $1
 fi
