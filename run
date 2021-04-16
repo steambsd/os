@@ -188,7 +188,7 @@ pli smplayer
 pli simplescreenrecorder
 # packages for desktop
 pli compton
-pli cairo
+pli cairo-clock
 # pip
 #pli python
 #pli qt5
