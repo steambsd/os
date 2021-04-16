@@ -319,7 +319,7 @@ pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
 pw groupmod video -m steamdev
-pli xf86-video-ati
+#pli xf86-video-ati
 sysrc kld_list+="/boot/modules/radeonkms.ko"
 kldload /boot/modules/radeonkms.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
