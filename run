@@ -449,7 +449,7 @@ echo 'auto_login          yes' >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 # bugs
 cat << EOF >> /etc/crontab
-@reboot                                     root service slim start
+@reboot                                 root    service slim start
 EOF
 
 ############################################
