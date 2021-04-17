@@ -7,7 +7,7 @@ clear
 
 echo '### epic-games (beta)'
 echo 'eh - epic help commands'
-echo 'ew - install wine-devel wow'
+echo 'ew - install wine-devel WOW'
 echo '### keyboard layout (temporary)'
 echo 'kru - add russian switch alt-shift'
 echo 'kgr - add greek switch alt-shift'
