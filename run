@@ -126,6 +126,8 @@ sysrc sshd_enable=NO
 echo 'console.info                                   /var/log/console.log' >> /etc/syslog.conf
 touch /var/log/console.log
 chmod 600 /var/log/console.log
+sysrc syslogd_enable=YES
+service syslogd restart
 
 ############################################
 ### Update                               ###
