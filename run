@@ -119,6 +119,7 @@ echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
 # /etc/rc.conf
 sysrc clear_tmp_enable=YES
+/etc/rc.d/cleartmp start
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
 sysrc sshd_enable=NO
