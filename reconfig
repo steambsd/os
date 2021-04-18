@@ -6,6 +6,8 @@ echo "Start customization for user $USER"
 ############################################
 ### Filesystem                           ###
 ############################################
+sudo su root -c "rm -Rf /tmp/*"
+sudo su root -c "/etc/rc.d/cleartmp start"
 # fstab and mount
 sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab"
 sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
