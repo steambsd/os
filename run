@@ -120,9 +120,9 @@ sysctl kern.coredump=0
 # /etc/rc.conf
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
-cat << EOF >> /etc/crontab
-@reboot                                 root    /etc/rc.d/cleartmp start
-EOF
+#cat << EOF >> /etc/crontab
+#@reboot                                 root    /etc/rc.d/cleartmp start
+#EOF
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
 sysrc sshd_enable=NO
