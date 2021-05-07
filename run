@@ -203,6 +203,14 @@ echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 # python38
 pli python38
 pli py38-setuptools
+# compat
+pli gcc 
+pli linux-c7-devtools 
+pli linux-c7-libgfortran 
+pli linux_libusb 
+pli wine-proton 
+pli libc6-shim 
+pli python3
 
 ############################################
 ### DVD, USB and CLOUD                   ###
