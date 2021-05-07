@@ -101,7 +101,7 @@ sleep 376
 ############################################
 cat << EOF > ~/Desktop/Readme
 ATTENTION!
-1. Proton is experemental version, it may not work.
+1. Proton is experemental version.
 2. If you have problem - try reboot PC.
 
 HOW TO INSTALL WINE GAMES
