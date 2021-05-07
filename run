@@ -182,6 +182,7 @@ pli wine-gecko
 # packages for linux
 pli linux-steam-utils
 #sudo su steam -c steam-install
+linuxulator-steam-utils
 # packages for console
 pli screenFetch
 pli mc
@@ -211,6 +212,13 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
+# corec
+unzip master.zip
+cd linuxulator-steam-utils-master
+sudo make
+sudo make install
+cd ..
+
 
 ############################################
 ### DVD, USB and CLOUD                   ###
