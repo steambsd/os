@@ -13,6 +13,7 @@ sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw     
 sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
 sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
+sudo su root -c "echo 'procfs          none                    procfs    rw,late      0 0' >> /etc/fstab"
 sudo mount -a
 
 sleep 15
