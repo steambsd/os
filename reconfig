@@ -100,10 +100,12 @@ sleep 376
 ### Readme.txt                           ###
 ############################################
 cat << EOF > ~/Desktop/Readme
+
 --- SteamBSD © is FREE operating system.
 Site (download ISO/IMG): https://lpros.blogspot.com
 Github (internet installer): https://github.com/steambsd/os
 Email: steambsd@gmail.com
+
 --- Help to SteamBSD project
 Mastercard: 5336 6901 0091 0886
 Yoomoney (Yandex.Money): 4100 1297 1657 794
