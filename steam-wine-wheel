@@ -3,7 +3,8 @@ sleep 4
 if [ -d .wine ]; then
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 else
- echo 'Do you really want to install steam-wine? Press any key to install.'
+ echo 'Do you want install steam?'
+ echo 'Press any key to install.'
  read ans
  fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
  wine SteamSetup.exe /S
