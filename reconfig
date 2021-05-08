@@ -15,6 +15,7 @@ sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode
 sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
 sudo su root -c "echo 'procfs          /proc                   procfs    rw,late      0 0' >> /etc/fstab"
 sudo mount -a
+sudo mount -t procfs none /proc
 
 sleep 15
 ############################################
