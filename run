@@ -447,6 +447,7 @@ cd linuxulator-steam-utils-master
 sudo make
 sudo make install
 cd ..
+read ans
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 cd /home/$AZER
