@@ -5,6 +5,7 @@ if [ -d .wine ]; then
 else
  sudo winetricks --self-update
  winetricks -q vcrun2015
+ echo '-===WINE VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
  read ans
