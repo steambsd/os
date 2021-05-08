@@ -100,49 +100,15 @@ sleep 376
 ### Readme.txt                           ###
 ############################################
 cat << EOF > ~/Desktop/Readme
-ATTENTION!
-1. Proton is experemental version.
-2. If you have problem - try reboot PC.
-
-HOW TO INSTALL WINE GAMES
-1. Found your favorite steam game and remember ID (in browsers link)
-2. Open terminal and enter follow code:
-wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://install/630
-Where 630 - ID of steam game
-P.S. If linux-steam-utils work, you may add games to libroray game. 
-Just click "Play" but not install game, open wine-based steam and you see this game.
-
-HOW TO CREATE WINE-PREFIX 
-# for preinstall i386-wine
-env WINEPREFIX=/home/admin/.wine-test wine winecfg
-# for test exprimental proton (you must login special user steamdev)
-env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine winecfg
-env WINEPREFIX=/home/steamdev/.wine-test /opt/steam-utils/bin/lsu-wine-env wine64 winecfg
-
-HOW TO BACKUP [ZFS method]
-See utils
-
-HOW TO CHANGE SCREEN RESOLUTION 
-1. Open file xorg.conf and add section 
-sudo ee /usr/local/etc/X11/xorg.conf.d/xorg.conf
-Section "Screen"
-        Identifier "Screen0"
-        Device     "Card0"
-        Monitor    "Monitor0"
-        SubSection "Display"
-                Viewport   0 0
-                Depth     24
-                Modes     "1920x1080"
-        EndSubSection
-EndSection
-2. Press ESC, "a" and "a" to save and leave editor
-
-P.S.
-Youtube: SteamBSD (https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA)
-Site: http://lpros.blogspot.com
-All quastions send to email: steambsd@gmail.com
+--- SteamBSD © is FREE operating system.
+Site (download ISO/IMG): https://lpros.blogspot.com
+Github (internet installer): https://github.com/steambsd/os
+Email: steambsd@gmail.com
+--- Help to SteamBSD project
+Mastercard: 5336 6901 0091 0886
+Yoomoney (Yandex.Money): 4100 1297 1657 794
+Donationalerts: https://www.donationalerts.com/r/steambsd
 EOF
-
 
 ############################################
 ### Plugins for Steam                    ###
