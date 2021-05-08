@@ -49,7 +49,8 @@ echo -n 'Choose your number: '
  p4)
    ### select emulators/wine-proton in properties
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
-   xterm -geometry 40x4-0+0 -e ~/.steam-linux > /dev/null 2>&1 
+   #xterm -geometry 40x4-0+0 -e ~/.steam-linux > /dev/null 2>&1 
+   lxterminal --geometry=40x4 -e ~/.steam-linux &
  ;;
  p5)
    ### download simple game
