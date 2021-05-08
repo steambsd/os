@@ -5,18 +5,15 @@ do
 
 clear
 
-echo '### epic-games (beta)'
-echo 'eh - epic help commands'
-echo 'ew - show wine info'
-echo '### keyboard layout (temporary)'
-echo 'kru - add russian switch alt-shift'
-echo 'kgr - add greek switch alt-shift'
 echo '### proton'
 echo 'p1 - install proton 5.13'
 echo 'p2 - install steam linux runtime - soldier'
 echo 'p3 - unpack steam linux runtime - soldier'
 echo 'p4 - select emulators/wine-proton in properties'
 echo 'p5 - download simple game (High Octane Drift)'
+echo '### keyboard layout (temporary)'
+echo 'sru - add russian switch alt-shift'
+echo 'sgr - add greek switch alt-shift'
 echo '### zfs snapshot'
 echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
@@ -34,25 +31,6 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
- eh)
-  echo 'epic is alias of legendary'
-  legendary
-  sleep 20
-  ;;
- ew)
-  echo "Start install wine32 + wine64 (experemental)..."
-  echo 'wine version:'
-  wine --version
-  echo 'wine path:'
-  sudo find /usr/local/ -name wine
-  sleep 20
- ;;
- kru)
- setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp_led:scroll"
- ;;
- kgr)
- setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
- ;;
  p1)
    ### install proton
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1420170" &
@@ -78,6 +56,12 @@ echo -n 'Choose your number: '
    ### download simple game
    sudo killall -HUP lxterminal
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
+ ;;
+ sru)
+ setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp_led:scroll"
+ ;;
+ sgr)
+ setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
  zc)
    ### create snapshot zroot
