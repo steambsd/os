@@ -212,12 +212,6 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
-# corec
-unzip master.zip
-cd linuxulator-steam-utils-master
-sudo make
-sudo make install
-cd ..
 
 ############################################
 ### DVD, USB and CLOUD                   ###
@@ -447,6 +441,12 @@ cd legendary-master
 /usr/local/bin/python3.8 setup.py install
 cd ..
 echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
+# steam-linux-devel
+unzip master.zip
+cd linuxulator-steam-utils-master
+sudo make
+sudo make install
+cd ..
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 cd /home/$AZER
