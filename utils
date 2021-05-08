@@ -1,0 +1,215 @@
+#!/bin/sh
+
+while :
+do
+
+clear
+
+echo '### epic-games (beta)'
+echo 'eh - epic help commands'
+echo 'ew - install wine-devel WOW'
+echo '### keyboard layout (temporary)'
+echo 'kru - add russian switch alt-shift'
+echo 'kgr - add greek switch alt-shift'
+echo '### proton (broken)'
+echo 'p1 - install proton 5.13'
+echo 'p2 - install steam linux runtime - soldier'
+echo 'p3 - unpack steam linux runtime - soldier'
+echo 'p4 - select emulators/wine-proton in properties'
+echo 'p5 - download simple game (High Octane Drift)'
+echo '### wine/linux develop'
+echo 'rw - reinstall steam wine to newest i386-wine-devel'
+echo 'sv - open steam for user steamdev'
+echo '### zfs snapshot'
+echo 'zc - construct full snapshot of system'
+echo 'zd - delete full snapshot of system'
+echo 'zl - list snapshot of system'
+echo 'zr - restore full snapshot of system'
+echo '### resolution'
+echo '800 - add screen resolution 800x600 to xorg.conf'
+echo '1366 - add screen resolution 1366x768 to xorg.conf'
+echo '### system commands'
+echo 'sht - shutdown pc'
+echo 'rbt - reboot pc'
+echo 'upd - update utils and reopen'
+echo 'exit - close utils'
+echo ''
+echo -n 'Choose your number: '
+ read ans
+ case "$ans" in
+  eh)
+  echo 'epic is alias of legendary'
+  legendary
+  sleep 10
+  ;;
+  ew)
+  echo "Start install wine32 + wine64 (experemental)..."
+
+   mkdir wine32
+   mkdir wine64
+   sudo pkg fetch -y i386-wine-devel
+   sudo pkg fetch -y wine-devel
+   cd wine32
+   PATH32=`ls /var/cache/pkg | grep i386-wine-devel | head -n1`
+   sudo su root -c "tar -xf /var/cache/pkg/$PATH32"
+   cd ..
+   cd wine64
+   PATH64=`ls /var/cache/pkg | grep wine-devel | tail -n2 | head -n1`
+   sudo su root -c "tar -xf /var/cache/pkg/$PATH64"
+   cd ..
+
+cat << EOF >> winedev.sh
+#!/bin/sh
+WINEPREFIX=~/.wine-wow
+PATH=~/wine64/usr/local/bin:~/wine32/usr/local/bin:$PATH
+wine64 $WINEPREFIX/drive_c/GOG\ Games/FTL\ Advanced\ Edition/FTLGame.exe
+EOF
+
+   sudo su root -c "chmod 777 winedev.sh"
+   sleep 1
+ ;;
+ kru)
+ setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp_led:scroll"
+ ;;
+ kgr)
+ setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
+ ;;
+ p1)
+   ### install proton
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1420170" &
+ ;;
+ p2)
+   ### install slrs
+   #sudo killall -HUP lxterminal
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1391110" &
+ ;;
+ p3)
+   ### unpack slrs
+   cd /home/steam/.steam/steam/steamapps/common/SteamLinuxRuntime_soldier/
+   mkdir com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime
+   tar xvfz ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime.tar.gz -C ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime
+   /opt/steam-utils/bin/lsu-register-proton
+ ;;
+ p4)
+   ### select emulators/wine-proton in properties
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
+   xterm -geometry 40x4-0+0 -e ~/.steam-linux > /dev/null 2>&1 
+ ;;
+ p5)
+   ### download simple game
+   sudo killall -HUP lxterminal
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
+ ;;
+ rw)
+   ### reinstall steam wine
+   # delete wine
+   sudo pkg remove -y i386-wine
+   sudo pkg remove -y winetricks
+   sudo pkg remove -y wine-mono
+   sudo pkg remove -y wine-gecko
+   sudo rm -rf .wine
+   sudo killall -HUP wine
+   # install wine
+   sudo pkg ins -y i386-wine-devel
+   sudo pkg ins -y winetricks
+   sudo pkg ins -y wine-mono-devel
+   sudo pkg ins -y wine-gecko-devel
+   fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
+   lxterminal --geometry=40x4 -e wine SteamSetup.exe /S &
+   lxterminal --geometry=40x4 -e wine ~/.wine/drive_c/Program\ Files/Steam/Steam.exe /S &
+ ;;
+ sv)
+   ### steamdev
+   sudo su steamdev -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
+ ;;
+ zc)
+   ### create snapshot zroot
+   sudo zfs snapshot -r zroot@backup
+ ;;
+ zd)
+   ### delete snapshot zroot
+   sudo zfs destroy -r zroot@backup
+ ;;
+ zl)
+   ### list
+   zfs list -t snapshot
+   echo 'sleep 5 sec'
+   sleep 5
+ ;;
+ zr)
+   ### restore snapshot zroot
+   sudo zfs rollback zroot@backup
+   sudo zfs rollback zroot/ROOT@backup
+   sudo zfs rollback zroot/ROOT/default@backup
+   #sudo zfs rollback zroot/tmp@backup 
+   sudo zfs rollback zroot/usr@backup
+   sudo zfs rollback zroot/usr/home@backup
+   sudo zfs rollback zroot/usr/ports@backup
+   sudo zfs rollback zroot/usr/src@backup 
+   sudo zfs rollback zroot/var@backup 
+   sudo zfs rollback zroot/var/audit@backup
+   sudo zfs rollback zroot/var/crash@backup
+   sudo zfs rollback zroot/var/log@backup
+   sudo zfs rollback zroot/var/mail@backup
+   #sudo zfs rollback zroot/var/tmp@backup
+ ;;
+ 800)
+   ### add screen resolution 800x600
+   sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
+
+Section "Screen"
+        Identifier "Screen0"
+        Monitor    "Monitor0"
+        SubSection "Display"
+                Viewport   0 0
+                Depth     24
+                Modes     "800x600"
+        EndSubSection
+EndSection
+EOF'
+ ;;
+  1366)
+   ### add screen resolution 1366x768
+   sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
+
+Section "Screen"
+        Identifier "Screen0"
+        Monitor    "Monitor0"
+        SubSection "Display"
+                Viewport   0 0
+                Depth     24
+                Modes     "1366x768"
+        EndSubSection
+EndSection
+EOF'
+ ;;
+  sht)
+   ### help
+   sudo shutdown -p now
+ ;;
+   rbt)
+   ### reboot
+   sudo shutdown -r now
+ ;;
+   upd)
+   ### update utils
+   fetch https://github.com/steambsd/os/archive/go.zip
+   unzip go.zip
+   mv os-go/utils .utils
+   sudo chmod +x .utils
+   rm -rf os-go
+   rm go.zip
+   xterm -geometry 73x41-0-25 -e ./.utils &
+   sleep 2
+   break
+ ;;
+ exit)
+   echo 'Exit.'
+   sleep 1
+   break
+ ;;
+ *)
+   echo "Error. Please, type number. Start again..."
+ ;;
+ esac
+done
