@@ -37,7 +37,6 @@ echo -n 'Choose your number: '
  ;;
  p2)
    ### install slrs
-   #sudo killall -HUP lxterminal
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1391110" &
  ;;
  p3)
@@ -54,7 +53,6 @@ echo -n 'Choose your number: '
  ;;
  p5)
    ### download simple game
-   sudo killall -HUP lxterminal
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
  ;;
  sru)
