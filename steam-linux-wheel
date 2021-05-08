@@ -1,18 +1,13 @@
 #!/bin/sh
 sleep 10
 if [ -d .steam ]; then
- steam
+ /opt/steam-utils/bin/steam
 else
  rm -rf /home/steam/.steam
- ### simples steam
- #sudo su steam -c steam-install
- #sudo mv /home/steam/.steam /home/$USER/.steam
- ### develop steam
  sudo su steamdev -c /opt/steam-utils/bin/steam-install
  sudo mv /home/steamdev/.steam /home/$USER/.steam
  /opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
- 
  sudo chown -R $USER:wheel /home/$USER/.steam
- steam
+ /opt/steam-utils/bin/steam
 fi
 read ans
