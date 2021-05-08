@@ -444,10 +444,9 @@ echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
 # steam-linux-devel
 unzip master.zip
 cd linuxulator-steam-utils-master
-sudo make
-sudo make install
+make
+make install
 cd ..
-read ans
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 cd /home/$AZER
