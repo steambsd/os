@@ -5,10 +5,10 @@ do
 
 clear
 
-echo '### proton'
+echo '### proton (you must login first)'
 echo 'p1 - install proton 5.13'
 echo 'p2 - install steam linux runtime - soldier'
-echo 'p3 - select emulators/wine-proton in properties'
+echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
 echo 'p4 - download simple game (High Octane Drift)'
 echo '### add switch keyboard layout (temporary)'
 echo 'sru - add russian switch alt-shift'
