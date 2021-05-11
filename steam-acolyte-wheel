@@ -3,7 +3,8 @@ if [ -d .steam ]; then
  sleep 5
  .local/bin/steam-acolyte
 else
- sleep 1300
+ #sleep 1300
+ echo 'I will be run after reboot'
  .local/bin/steam-acolyte
 fi
 read ans
