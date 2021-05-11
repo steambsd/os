@@ -5,6 +5,7 @@ if [ -d .steam ]; then
 else
  #sleep 1300
  echo 'I will be run after reboot'
+ 'Please install proton before acolyte'
  #.local/bin/steam-acolyte
 fi
 read ans
