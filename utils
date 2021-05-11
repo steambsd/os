@@ -8,9 +8,8 @@ clear
 echo '### proton'
 echo 'p1 - install proton 5.13'
 echo 'p2 - install steam linux runtime - soldier'
-echo 'p3 - unpack steam linux runtime - soldier'
-echo 'p4 - select emulators/wine-proton in properties'
-echo 'p5 - download simple game (High Octane Drift)'
+echo 'p3 - select emulators/wine-proton in properties'
+echo 'p4 - download simple game (High Octane Drift)'
 echo '### add switch keyboard layout (temporary)'
 echo 'sru - add russian switch alt-shift'
 echo 'sgr - add greek switch alt-shift'
@@ -40,20 +39,13 @@ echo -n 'Choose your number: '
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1391110" &
  ;;
  p3)
-   ### unpack slrs
-   cd /home/steam/.steam/steam/steamapps/common/SteamLinuxRuntime_soldier/
-   mkdir com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime
-   tar xvfz ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime.tar.gz -C ./com.valvesoftware.SteamRuntime.Platform-amd64,i386-soldier-runtime
-   /opt/steam-utils/bin/lsu-register-proton
- ;;
- p4)
    ### select emulators/wine-proton in properties
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
    sleep 3
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=30x3 -e ~/.steam-linux &
  ;;
- p5)
+ p4)
    ### download simple game
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
  ;;
