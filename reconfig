@@ -96,7 +96,8 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait... (4 minutes)'
-sleep 376
+#sleep 376
+sleep 700
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 ############################################
 ### Readme.txt                           ###
@@ -129,7 +130,10 @@ echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
 echo ''
-echo 'It is recommended to wait for Steam updates.'
+#echo 'It is recommended to wait for Steam updates.'
+echo 'It is recommended to install PROTON right now.'
+echo 'Just open Utils on desktop and do p1,p2,p3.'
+echo '-------------------------------------'
 echo 'You may reboot later. Just enjoy!!!'
 echo ''
 echo '-------------------------------------'
