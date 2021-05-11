@@ -84,10 +84,11 @@ sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/s
 #sudo su root -c "sed -i '' 's/currentfeeds=/currentfeeds=https:\/\/lpros.blogspot.com\/feeds\/posts\/default, /g' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "sed -i '' '/currentfeeds=/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 sleep 2
+sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sleep 2
 sudo su root -c "printf '%s\n' /rssreader/a 'currentfeeds=https://lpros.blogspot.com/feeds/posts/default' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 sleep 2
 sudo su root -c "printf '%s\n' /rssreader/a 'default_interval_minutes=1' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1 
-#sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 
 #plasma
 sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
@@ -96,7 +97,6 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait... (7 minutes)'
-#sleep 376
 sleep 447
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 ############################################
@@ -130,7 +130,7 @@ echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
 echo ''
-#echo 'It is recommended to wait for Steam updates.'
+#echo 'Please wait for Steam updates.'
 echo 'It is recommended to install PROTON right now.'
 echo 'Just open Utils on desktop and do p1,p2,p3...'
 echo '-------------------------------------'
