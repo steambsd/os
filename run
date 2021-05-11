@@ -122,6 +122,7 @@ sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
 cat << EOF >> /etc/crontab
 @reboot                                 root    /etc/rc.d/cleartmp start
+@reboot                                 root    rm /home/"\${AZER}"/*.log
 EOF
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
