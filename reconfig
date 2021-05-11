@@ -95,7 +95,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 ( kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell ) >> /dev/null 2>&1
 
 # relay
-echo 'Please, wait... (4 minutes)'
+echo 'Please, wait... (7 minutes)'
 #sleep 376
 sleep 700
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
