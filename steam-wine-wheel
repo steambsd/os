@@ -2,7 +2,7 @@
 sleep 4
 if [ -d .wine ]; then
  echo '-===WINE VERSION OF STEAM===-'
- echo 'Continue running steam?'
+ echo 'Continue run steam?'
  echo 'Press any key to proceed.'
  read ans
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
