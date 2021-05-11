@@ -3,7 +3,7 @@ if [ -d .steam ]; then
  sleep 5
  .local/bin/steam-acolyte
 else
- sleep 700
+ sleep 1000
  .local/bin/steam-acolyte
 fi
 read ans
