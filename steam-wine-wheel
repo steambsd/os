@@ -1,6 +1,9 @@
 #!/bin/sh
 sleep 4
 if [ -d .wine ]; then
+ echo '-===WINE VERSION OF STEAM===-'
+ echo 'Continue running steam-wine?'
+ echo 'Press any key to proceed.'
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
  echo 'If you want reinstall steam-wine, please remove .wine and reboot pc'
 else
