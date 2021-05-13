@@ -450,11 +450,19 @@ make install
 cd ..
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
+# devel
+cp DEVEL.TAR.GZ /home/$AZER/DEVEL.TAR.GZ
+# unpack steam-acolyte
 cd /home/$AZER
 tar xvf steam-acolyte.tar.gz
 rm steam-acolyte.tar.gz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
+# unpack DEVEL.TAR.GZ
+tar xvf DEVEL.TAR.GZ
+rm DEVEL.TAR.GZ
+chown -R $AZER:wheel /home/$AZER/.i386-wine-pkg
+#chmod -R +x /home/$AZER/.i386-wine-pkg/usr/local/bin/
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
