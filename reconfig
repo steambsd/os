@@ -75,8 +75,8 @@ pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&
 
 #lumina
 sudo su root -c "sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
-#sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /General/a 'DisableQuotes=true' . w q | ex -s /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
+#sudo su root -c "sed -i '' 's/DisableQuotes=false/DisableQuotes=true/g' /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-DP-1/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-default/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
