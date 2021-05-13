@@ -197,11 +197,6 @@ pli simplescreenrecorder
 # packages for desktop
 pli compton
 pli cairo-clock
-# pip
-#pli python
-#pli qt5
-#pli py37-pip
-echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 # python38
 pli python38
 pli py38-setuptools
@@ -417,22 +412,16 @@ mkdir /home/$AZER/Documents
 # copy steambsd scrips
 cp info /home/$AZER/.info
 cp reconfig /home/$AZER/
-cp steam-linux-safe /home/$AZER/.steam-linux-safe
 cp steam-linux-wheel /home/$AZER/.steam-linux
-cp steam-wine-safe /home/$AZER/.steam-wine-safe
 cp steam-wine-wheel /home/$AZER/.steam-wine
-cp steam-acolyte-safe /home/$AZER/.steam-acolyte-safe
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
-
 cp utils /home/$AZER/.utils
 # wallpaper
 mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
-#chown -R $AZER:wheel /usr/local/share/wallpapers
 # icons
 mkdir /usr/local/share/pixmaps
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
-#chown -R $AZER:wheel /usr/local/share/pixmaps
 #epic-games
 unzip epic-games.zip
 cd legendary-master
@@ -459,10 +448,11 @@ chmod -R +x /home/$AZER/.local/bin/
 tar xvf DEVEL.TAR.GZ
 rm DEVEL.TAR.GZ
 chown -R $AZER:wheel /home/$AZER/.i386-wine-pkg
-#chmod -R +x /home/$AZER/.i386-wine-pkg/usr/local/bin/
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
+# steam-acolyte alias
+echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 
 ############################################
 ### Login manager                        ###
@@ -528,13 +518,6 @@ Type=Application
 Exec=xterm -geometry 50x15+0-25 -e ~/reconfig
 Terminal=false
 EOF
-#cat << EOF >> /usr/local/etc/xdg/autostart/utils.desktop 
-#[Desktop Entry]
-#Name=utils
-#Type=Application
-#Exec=xterm -geometry 73x31-0-25 -e ./.utils
-#Terminal=false
-#EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/steam-wine.desktop 
 [Desktop Entry]
 Name=steam-wine
