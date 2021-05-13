@@ -16,7 +16,7 @@ sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw     
 sudo su root -c "echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab"
 sudo mount -a
 
-sleep 15
+sleep 10
 ############################################
 ### Desktop customization                ###
 ############################################
