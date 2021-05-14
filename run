@@ -46,19 +46,6 @@ else
 pkg ins -y $1
 fi
 }
-# package for user
-pdg()
-{
-if [ -d Box ]; then
-cp Box/i386-wine-pkg.tar.gz /home/$1/i386-wine-pkg.tar.gz
-cd /home/$1/
-tar xvf i386-wine-pkg.tar.gz
-chown -R $1:wheel .i386-wine-pkg
-rm i386-wine-pkg.tar.gz
-else
-echo 'none'
-fi
-}
 
 ############################################
 ### Motd                            ###
@@ -224,9 +211,6 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
-
-# i386-wine-pkg
-pdg $AZER
 
 ############################################
 ### DVD, USB and CLOUD                   ###
@@ -452,18 +436,18 @@ make install
 cd ..
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
-# devel
-#cp DEVEL.TAR.GZ /home/$AZER/DEVEL.TAR.GZ
+# cache
+cp Box/i386-wine-pkg.tar.gz /home/$AZER/i386-wine-pkg.tar.gz
 # unpack steam-acolyte
 cd /home/$AZER
 tar xvf steam-acolyte.tar.gz
 rm steam-acolyte.tar.gz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
-# unpack DEVEL.TAR.GZ
-#tar xvf DEVEL.TAR.GZ
-#rm DEVEL.TAR.GZ
-#chown -R $AZER:wheel /home/$AZER/.i386-wine-pkg
+# unpack cache
+tar xvf i386-wine-pkg.tar.gz
+chown -R $1:wheel .i386-wine-pkg
+rm i386-wine-pkg.tar.gz
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
