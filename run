@@ -445,9 +445,9 @@ rm steam-acolyte.tar.gz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
 # unpack DEVEL.TAR.GZ
-tar xvf DEVEL.TAR.GZ
-rm DEVEL.TAR.GZ
-chown -R $AZER:wheel /home/$AZER/.i386-wine-pkg
+#tar xvf DEVEL.TAR.GZ
+#rm DEVEL.TAR.GZ
+#chown -R $AZER:wheel /home/$AZER/.i386-wine-pkg
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
