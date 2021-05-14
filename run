@@ -564,3 +564,20 @@ service dbus start
 service hald start
 service slim start
 su $AZER -c 'startx'
+
+############################################
+### If we have framebuffer               ###
+############################################
+case "$DRIV" in
+ amdgpu)
+ echo 'detect amdgpu, need reboot...'
+ reboot
+ ;;
+ intel)
+ echo 'detect intel, need nothing...'
+ ;;
+ *)
+ echo 'detect other, need nothing...'
+ ;;
+esac
+
