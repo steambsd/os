@@ -53,6 +53,7 @@ if [ -d Box ]; then
 cp Box/i386-wine-pkg.tar.gz /home/$1/i386-wine-pkg.tar.gz
 cd /home/$1/
 tar xvf i386-wine-pkg.tar.gz
+rm i386-wine-pkg.tar.gz
 else
 echo 'none'
 fi
