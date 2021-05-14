@@ -89,8 +89,7 @@ sleep 1
 sudo su root -c "printf '%s\n' /rssreader/a 'currentfeeds=https://lpros.blogspot.com/feeds/posts/default' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /rssreader/a 'default_interval_minutes=1' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1 
 sleep 1
-sudo su root -c "printf '%s\n' /rssreader---default/a 'currentfeeds=https://lpros.blogspot.com/feeds/posts/default' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sudo su root -c "printf '%s\n' /rssreader---default/a 'default_interval_minutes=1' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1 
+sudo su root -c "sed -i '' '/rssreader---/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 
 #plasma
 sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
