@@ -153,8 +153,11 @@ fi
 ### Prepare                              ###
 ############################################
 # privilegies
+pli doas
 pli sudo
 pli bash
+echo 'permit nopass keepenv :wheel' >> /usr/local/etc/doas.conf
+echo 'permit nopass keepenv root as root' >> /usr/local/etc/doas.conf
 echo '%wheel ALL=(ALL) NOPASSWD: ALL' >> /usr/local/etc/sudoers
 pw usermod $AZER -s /usr/local/bin/bash
 # user for steam
@@ -250,9 +253,6 @@ echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
 sysrc devfs_system_ruleset=system
 service devfs start
-
-# CLOUD
-pli megatools
 
 ############################################
 ### Driver                               ###
