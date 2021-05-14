@@ -46,6 +46,15 @@ else
 pkg ins -y $1
 fi
 }
+# package for user
+pdg()
+{
+if [ -d Box ]; then
+mv Box /home/$1/.i386-wine-pkg
+else
+echo 'none'
+fi
+}
 
 ############################################
 ### Motd                            ###
@@ -211,6 +220,9 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
+
+# i386-wine-pkg
+pdg $AZER
 
 ############################################
 ### DVD, USB and CLOUD                   ###
