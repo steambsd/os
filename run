@@ -332,7 +332,7 @@ pw groupmod video -m steam
 pw groupmod video -m steamdev
 pli xf86-video-amdgpu
 sysrc kld_list+="/boot/modules/amdgpu.ko"
-kldload /boot/modules/amdgpu.ko
+#kldload /boot/modules/amdgpu.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
