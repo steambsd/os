@@ -437,7 +437,8 @@ cd ..
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 # cache
-cp CACHE.TAR.XZ /home/$AZER/CACHE.TAR.XZ
+#cp CACHE.TAR.XZ /home/$AZER/CACHE.TAR.XZ
+cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # unpack steam-acolyte
 cd /home/$AZER
 tar xvf steam-acolyte.tar.gz
@@ -445,9 +446,12 @@ rm steam-acolyte.tar.gz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
 # unpack cache
-tar xvf CACHE.TAR.XZ
+#tar xvf CACHE.TAR.XZ
+#chown -R $1:wheel .i386-wine-pkg
+#rm CACHE.TAR.XZ
+tar xvf .i386-wine-pkg.tar.xz
 chown -R $1:wheel .i386-wine-pkg
-rm CACHE.TAR.XZ
+rm .i386-wine-pkg.tar.xz
 # terminal customization
 echo alias ls=\'ls -G\' >> /root/.bashrc
 echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
