@@ -53,6 +53,7 @@ if [ -d Box ]; then
 cp Box/i386-wine-pkg.tar.gz /home/$1/i386-wine-pkg.tar.gz
 cd /home/$1/
 tar xvf i386-wine-pkg.tar.gz
+chown -R $1:wheel /home/$AZER/.i386-wine-pkg
 rm i386-wine-pkg.tar.gz
 else
 echo 'none'
@@ -452,7 +453,7 @@ cd ..
 # steam-acolyte
 cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
 # devel
-cp DEVEL.TAR.GZ /home/$AZER/DEVEL.TAR.GZ
+#cp DEVEL.TAR.GZ /home/$AZER/DEVEL.TAR.GZ
 # unpack steam-acolyte
 cd /home/$AZER
 tar xvf steam-acolyte.tar.gz
