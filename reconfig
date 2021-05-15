@@ -22,6 +22,15 @@ sleep 10
 ############################################
 
 #shortcut
+cat << EOF > Desktop/Chromium.desktop
+[Desktop Entry]
+Name=Chromium
+Exec=chrome %U
+StartupNotify=true
+Type=Application
+Name=Chromium
+Icon=chrome
+EOF
 cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
 Name=Utils
@@ -54,15 +63,6 @@ StartupNotify=true
 Type=Application
 Name=Recorder
 Icon=simplescreenrecorder
-EOF
-cat << EOF > Desktop/Chromium.desktop
-[Desktop Entry]
-Name=Chromium
-Exec=chrome %U
-StartupNotify=true
-Type=Application
-Name=Chromium
-Icon=chrome
 EOF
 
 #lxde-preset
