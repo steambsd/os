@@ -570,18 +570,20 @@ service slim start
 su $AZER -c 'startx'
 
 ############################################
-### If we have framebuffer               ###
+### Framebuffer               ###
 ############################################
 case "$DRIV" in
  amdgpu)
- echo 'detect amdgpu, need reboot...'
+ # detect amdgpu, need reboot...
  reboot
  ;;
- intel)
- echo 'detect intel, need nothing...'
+ radeon)
+ # detect radeon, need reboot...
+ reboot
  ;;
  *)
- echo 'detect other, need nothing...'
+ # nothing
+ echo 'nothing...'
  ;;
 esac
 
