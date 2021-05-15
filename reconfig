@@ -21,50 +21,6 @@ sleep 10
 ### Desktop customization                ###
 ############################################
 
-#shortcut
-#cat << EOF > Desktop/Chromium.desktop
-#[Desktop Entry]
-#Name=Chromium
-#Exec=chrome %U
-#StartupNotify=true
-#Type=Application
-#Name=Chromium
-#Icon=chrome
-#EOF
-cat << EOF > Desktop/Utils.desktop 
-[Desktop Entry]
-Name=Utils
-Exec=xterm -geometry 73x41-0-25 -e ./.utils &
-Type=Application
-StartupNotify=true
-Icon=/usr/local/share/pixmaps/ysettings.png
-EOF
-cat << EOF > Desktop/Terminal.desktop 
-[Desktop Entry]
-Name=Terminal
-Exec=lxterminal -e ./.info &
-Type=Application
-StartupNotify=true
-Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
-EOF
-cat << EOF > Desktop/Acolyte.desktop 
-[Desktop Entry]
-Name=Acolyte
-Exec=/home/$USER/.local/bin/steam-acolyte
-Type=Application
-StartupNotify=true
-Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
-EOF
-cat << EOF > Desktop/Recorder.desktop
-[Desktop Entry]
-Name=Recorder
-Exec=simplescreenrecorder --logfile
-StartupNotify=true
-Type=Application
-Name=Recorder
-Icon=simplescreenrecorder
-EOF
-
 #lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
@@ -105,6 +61,51 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 echo 'Please, wait... (5 minutes)'
 sleep 320
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
+
+#shortcut
+cat << EOF > Desktop/Utils.desktop 
+[Desktop Entry]
+Name=Utils
+Exec=xterm -geometry 73x41-0-25 -e ./.utils &
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/ysettings.png
+EOF
+cat << EOF > Desktop/Terminal.desktop 
+[Desktop Entry]
+Name=Terminal
+Exec=lxterminal -e ./.info &
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
+EOF
+cat << EOF > Desktop/Acolyte.desktop 
+[Desktop Entry]
+Name=Acolyte
+Exec=/home/$USER/.local/bin/steam-acolyte
+Type=Application
+StartupNotify=true
+Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
+EOF
+cat << EOF > Desktop/Recorder.desktop
+[Desktop Entry]
+Name=Recorder
+Exec=simplescreenrecorder --logfile
+StartupNotify=true
+Type=Application
+Name=Recorder
+Icon=simplescreenrecorder
+EOF
+#cat << EOF > Desktop/Chromium.desktop
+#[Desktop Entry]
+#Name=Chromium
+#Exec=chrome %U
+#StartupNotify=true
+#Type=Application
+#Name=Chromium
+#Icon=chrome
+#EOF
+
 ############################################
 ### Readme.txt                           ###
 ############################################
