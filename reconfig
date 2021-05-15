@@ -63,13 +63,13 @@ StartupNotify=true
 Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
 EOF
 
-#lxde
+#lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
-#lxqt
+#lxqt-preset
 pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
-#lumina
+#lumina-preset
 sudo su root -c "sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /General/a 'DisableQuotes=true' . w q | ex -s /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
@@ -94,7 +94,7 @@ sudo su root -c "printf '%s\n' /rssreader/a 'default_interval_minutes=1' . w q |
 sleep 1
 
 
-#plasma
+#plasma-preset
 sed -i '' '/Image=file/d' /home/$USER/.config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
 printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' . w q | ex -s .config/plasma-org.kde.plasma.desktop-appletsrc >> /dev/null 2>&1
 ( kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell ) >> /dev/null 2>&1
