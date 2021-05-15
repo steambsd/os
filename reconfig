@@ -35,7 +35,7 @@ sleep 2
 sudo su root -c "sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /General/a 'DisableQuotes=true' . w q | ex -s /home/$USER/.config/lumina-desktop/sessionsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
-sleep 2
+sleep 8
 #sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 #sudo su root -c "printf '%s\n' /desktop-DP-1/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 #sudo su root -c "printf '%s\n' /desktop-default/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
@@ -68,7 +68,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait... (5 minutes)'
-sleep 300
+sleep 200
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
@@ -115,7 +115,7 @@ EOF
 #Icon=chrome
 #EOF
 
-sleep 10
+sleep 100
 ############################################
 ### Readme.txt                           ###
 ############################################
