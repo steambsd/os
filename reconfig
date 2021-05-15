@@ -22,30 +22,6 @@ sleep 10
 ############################################
 
 #shortcut
-#cat << EOF > Desktop/SWine.desktop 
-#[Desktop Entry]
-#Name=SWine
-#Exec=wine .wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
-#Type=Application
-#StartupNotify=true
-#Icon=/usr/local/share/pixmaps/zico-wine.png
-#EOF
-#cat << EOF > Desktop/SLinux.desktop 
-#[Desktop Entry]
-#Name=SLinux
-#Exec=steam
-#Type=Application
-#StartupNotify=true
-#Icon=/usr/local/share/pixmaps/zico-linux.png
-#EOF
-cat << EOF > Desktop/Acolyte.desktop 
-[Desktop Entry]
-Name=Acolyte
-Exec=/home/$USER/.local/bin/steam-acolyte
-Type=Application
-StartupNotify=true
-Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
-EOF
 cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
 Name=Utils
@@ -61,6 +37,32 @@ Exec=lxterminal -e ./.info &
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
+EOF
+cat << EOF > Desktop/Acolyte.desktop 
+[Desktop Entry]
+Name=Acolyte
+Exec=/home/$USER/.local/bin/steam-acolyte
+Type=Application
+StartupNotify=true
+Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
+EOF
+cat << EOF > Desktop/Recorder.desktop
+[Desktop Entry]
+Name=Recorder
+Exec=simplescreenrecorder --logfile
+StartupNotify=true
+Type=Application
+Name=Recorder
+Icon=simplescreenrecorder
+EOF
+cat << EOF > Desktop/Chromium.desktop
+[Desktop Entry]
+Name=Chromium
+Exec=chrome %U
+StartupNotify=true
+Type=Application
+Name=Chromium
+Icon=chrome
 EOF
 
 #lxde-preset
