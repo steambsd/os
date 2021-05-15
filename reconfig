@@ -77,18 +77,16 @@ sudo su root -c "printf '%s\n' /General/a 'DisableQuotes=true' . w q | ex -s /ho
 sudo su root -c "printf '%s\n' /desktop-DP-0/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-DP-1/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
 sudo su root -c "printf '%s\n' /desktop-default/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf" >> /dev/null 2>&1
-sleep 4
-sudo su root -c "sed -i '' '/currentfeeds=/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sleep 1
-sudo su root -c "sed -i '' '/currentfeeds=/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sleep 1
-sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sleep 1
-sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
-sleep 1
+sleep 5
 sudo su root -c "cp /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf.save" >> /dev/null 2>&1
+sudo su root -c "sed -i '' '/currentfeeds=/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sleep 1
+sudo su root -c "sed -i '' '/currentfeeds=/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sudo su root -c "sed -i '' '/feedReads/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
+sleep 1
 sudo su root -c "sed -i '' '/rssreader---/d' /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
 sleep 1
 sudo su root -c "printf '%s\n' /rssreader/a 'currentfeeds=https://lpros.blogspot.com/feeds/posts/default' . w q | ex -s /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf" >> /dev/null 2>&1
