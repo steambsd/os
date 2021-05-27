@@ -570,7 +570,7 @@ service slim start
 su $AZER -c 'startx'
 
 ############################################
-### Framebuffer               ###
+### Framebuffer                          ###
 ############################################
 case "$DRIV" in
  amdgpu)
