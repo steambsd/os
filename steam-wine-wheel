@@ -9,7 +9,7 @@ if [ -d .wine ]; then
  echo 'If you want reinstall steam-wine, please remove .wine and reboot pc'
 else
  sudo winetricks --self-update
- winetricks -q vcrun2015
+ winetricks -q 7zip
  echo '-===WINE VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
