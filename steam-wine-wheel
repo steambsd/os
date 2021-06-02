@@ -10,6 +10,11 @@ if [ -d .wine ]; then
 else
  sudo winetricks --self-update
  winetricks -q 7zip
+ sleep 2
+ cd Desktop
+ rm '7-Zip File Manager.desktop'
+ rm '7-Zip Help.desktop'
+ cd ..
  echo '-===WINE VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
