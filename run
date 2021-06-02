@@ -211,6 +211,9 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
+# emulators
+pli ppsspp
+pli dgen-sdl
 
 ############################################
 ### DVD, USB and CLOUD                   ###
@@ -428,6 +431,11 @@ cd legendary-master
 /usr/local/bin/python3.8 setup.py install
 cd ..
 echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
+echo alias epicpro=\'LGDRY_WINE_BINARY=/usr/local/bin/winepro legendary\' >> /home/$AZER/.bashrc
+# winepro
+echo '#!/bin/sh' > /usr/local/bin/winepro
+echo '/opt/steam-utils/bin/lsu-wine-env wine $1' >> /usr/local/bin/winepro
+chmod +x /usr/local/bin/winepro
 # steam-linux-devel
 unzip master.zip
 cd linuxulator-steam-utils-master
