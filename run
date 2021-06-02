@@ -443,14 +443,14 @@ make
 make install
 cd ..
 # steam-acolyte
-cp steam-acolyte.tar.gz /home/$AZER/steam-acolyte.tar.gz
+cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 # cache
 #cp CACHE.TAR.XZ /home/$AZER/CACHE.TAR.XZ
 cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # unpack steam-acolyte
 cd /home/$AZER
-tar xvf steam-acolyte.tar.gz
-rm steam-acolyte.tar.gz
+tar xvf steam-acolyte.tar.xz
+rm steam-acolyte.tar.xz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
 # unpack cache
