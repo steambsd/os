@@ -436,7 +436,7 @@ echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
 echo alias epicpro=\'LGDRY_WINE_BINARY=/usr/local/bin/winepro legendary\' >> /home/$AZER/.bashrc
 # winepro
 echo '#!/bin/sh' > /usr/local/bin/winepro
-echo '/opt/steam-utils/bin/lsu-wine-env wine $1' >> /usr/local/bin/winepro
+echo 'WINEPREFIX=~/.winepro /opt/steam-utils/bin/lsu-wine-env wine $1' >> /usr/local/bin/winepro
 chmod +x /usr/local/bin/winepro
 # steam-linux-devel
 unzip master.zip
