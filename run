@@ -211,6 +211,8 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim 
 pli python3
+# fonts
+pli webfonts
 # emulators
 pli ppsspp
 pli dgen-sdl
