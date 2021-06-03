@@ -69,6 +69,8 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 # relay
 echo 'Please, wait... (5 minutes)'
 sleep 200
+rm Desktop/7-Zip\ File\ Manager.desktop >> /dev/null 2>&1
+rm Desktop/7-Zip\ Help.desktop >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
