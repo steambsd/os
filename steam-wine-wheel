@@ -1,16 +1,20 @@
 #!/bin/sh
 sleep 4
+while true
+do
 if [ -d .wine ]; then
- echo '-===WINE VERSION OF STEAM===-'
+ echo '-===WINE 32 VERSION OF STEAM===-'
  echo 'Continue run steam?'
  echo 'Press any key to proceed.'
  read ans
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
- echo 'If you want reinstall steam-wine, please remove .wine and reboot pc'
+ sleep 8
+ echo 'If you want reinstall steam-wine, please remove .wine folder and reboot pc'
+ echo 'Press any key to run steam again'
 else
  sudo winetricks --self-update
  winetricks -q 7zip
- echo '-===WINE VERSION OF STEAM===-'
+ echo '-===WINE 32 VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
  read ans
@@ -21,3 +25,5 @@ else
  wine ~/.wine/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
 fi
 read ans
+done
+
