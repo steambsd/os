@@ -417,7 +417,7 @@ mkdir /home/$AZER/Documents
 cp info /home/$AZER/.info
 cp reconfig /home/$AZER/
 cp steam-wine-wheel /home/$AZER/.steam-wine
-cp steam-winepro-wheel /home/$AZER/.steam-wine
+cp steam-winepro-wheel /home/$AZER/.steam-winepro
 cp steam-linux-wheel /home/$AZER/.steam-linux
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
 cp utils /home/$AZER/.utils
@@ -541,7 +541,7 @@ Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/steam-winepro.desktop 
 [Desktop Entry]
-Name=steam-wine
+Name=steam-winepro
 Type=Application
 Exec=xterm -geometry 40x4-500+0 -e ~/.steam-winepro
 Terminal=false
