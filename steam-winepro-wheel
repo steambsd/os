@@ -5,7 +5,7 @@ if [ -d .wine ]; then
  echo 'Continue run steam?'
  echo 'Press any key to proceed.'
  read ans
- winepro ~/.winepro/drive_c/Program\ Files/Steam/steam.exe steam://open/minigameslist -no-browser
+ winepro ~/.winepro/drive_c/Program\ Files\ (x86)/Steam/steam.exe steam://open/minigameslist -no-browser
  echo 'If you want reinstall steam-winepro, please remove .wine and reboot pc'
 else
  echo '-===WINEPRO VERSION OF STEAM===-'
