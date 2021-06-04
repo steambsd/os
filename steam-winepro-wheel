@@ -1,15 +1,20 @@
 #!/bin/sh
 sleep 4
+while true
+do
 if [ -d .winepro ]; then
- echo '-===WINEPRO VERSION OF STEAM===-'
+ echo '-===WINEPRO 32-64 VERSION OF STEAM===-'
  echo 'Continue run steam?'
  echo 'Press any key to proceed.'
  read ans
  cd '.winepro/drive_c/Program Files (x86)/Steam/'
  winepro steam.exe steam://open/minigameslist -no-browser
- echo 'If you want reinstall steam-winepro, please remove .wine and reboot pc'
+ cd ~
+ sleep 8
+ echo 'If you want reinstall steam-winepro, please remove .winepro folder and reboot pc'
+ echo 'Press any key to run steam again'
 else
- echo '-===WINEPRO VERSION OF STEAM===-'
+ echo '-===WINEPRO 32-64 VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
  read ans
@@ -19,5 +24,8 @@ else
  cd '.winepro/drive_c/Program Files (x86)/Steam/'
  winepro Steam.exe /S
  winepro steam.exe steam://open/minigameslist -no-browser
+ cd ~
 fi
 read ans
+done
+
