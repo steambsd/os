@@ -498,20 +498,20 @@ pw groupmod operator -m $AZER
 case "$DENV" in
 plasma)
 pli plasma5-plasma
-echo 'exec startplasma-x11' >> /home/$AZER/.xinitrc
+echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
 lumina)
 pli lumina
-echo 'exec start-lumina-desktop' >> /home/$AZER/.xinitrc
+echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
  ;;
 lxqt)
 pli lxqt
-echo 'exec startlxqt' >> /home/$AZER/.xinitrc
+echo 'startlxqt' >> /home/$AZER/.xinitrc
 printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/lxqt/session.conf
  ;;
 lxde)
 pli lxde-meta
-echo 'exec startlxde' >> /home/$AZER/.xinitrc
+echo 'startlxde' >> /home/$AZER/.xinitrc
  ;;
 *)
  echo "Error. Unrecognized desktop."
