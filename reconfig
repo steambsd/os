@@ -110,6 +110,7 @@ Type=Application
 Name=Recorder
 Icon=simplescreenrecorder
 EOF
+cat << EOF > Desktop/Tools.desktop
 [Desktop Entry]
 Name=Tools
 Exec=python3.7 .tools.py 
