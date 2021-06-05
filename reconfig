@@ -102,15 +102,6 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
 EOF
-cat << EOF > Desktop/Tools.desktop
-[Desktop Entry]
-Name=Tools
-Exec=python3.7 .tools.py 
-StartupNotify=true
-Type=Application
-Name=Tools
-Icon=/usr/local/share/pixmaps/ysettingsnew.png
-EOF
 cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
 Name=Utils
@@ -118,6 +109,15 @@ Exec=xterm -geometry 73x41-0-25 -e ./.utils &
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
+EOF
+cat << EOF > Desktop/Yet.desktop
+[Desktop Entry]
+Name=Yet
+Exec=python3.7 .yet.py 
+StartupNotify=true
+Type=Application
+Name=Yet
+Icon=/usr/local/share/pixmaps/ysettingsnew.png
 EOF
 #cat << EOF > Desktop/Chromium.desktop
 #[Desktop Entry]
