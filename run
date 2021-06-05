@@ -124,7 +124,7 @@ sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
 cat << EOF >> /etc/crontab
 @reboot                                 root    /etc/rc.d/cleartmp start
-@reboot                                 root    rm /home/\${AZER}/*.log
+@reboot                                 root    rm /home/${AZER}/*.log
 EOF
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
@@ -498,20 +498,20 @@ pw groupmod operator -m $AZER
 case "$DENV" in
 plasma)
 pli plasma5-plasma
-echo 'startplasma-x11' >> /home/$AZER/.xinitrc
+echo 'exec startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
 lumina)
 pli lumina
-echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
+echo 'exec start-lumina-desktop' >> /home/$AZER/.xinitrc
  ;;
 lxqt)
 pli lxqt
-echo 'startlxqt' >> /home/$AZER/.xinitrc
+echo 'exec startlxqt' >> /home/$AZER/.xinitrc
 printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/lxqt/session.conf
  ;;
 lxde)
 pli lxde-meta
-echo 'startlxde' >> /home/$AZER/.xinitrc
+echo 'exec startlxde' >> /home/$AZER/.xinitrc
  ;;
 *)
  echo "Error. Unrecognized desktop."
