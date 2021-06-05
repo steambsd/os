@@ -207,6 +207,7 @@ pli cairo-clock
 # python38
 pli python38
 pli py38-setuptools
+pli py37-pip
 # compat
 pli gcc 
 pli linux-c7-devtools 
@@ -215,7 +216,6 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim
 pli python3
-pli py37-pip
 # emulators
 pli ppsspp
 pli dgen-sdl
