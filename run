@@ -215,6 +215,9 @@ pli python3
 # emulators
 pli ppsspp
 pli dgen-sdl
+# web
+pli curl
+pli wget
 
 ############################################
 ### DVD, USB and CLOUD                   ###
