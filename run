@@ -6,11 +6,11 @@
 ############   set permission   ############
 chmod +x info
 chmod +x reconfig
-chmod +x steam-acolyte-safe
+#chmod +x steam-acolyte-safe
 chmod +x steam-acolyte-wheel
-chmod +x steam-linux-safe
-chmod +x steam-linux-wheel
-chmod +x steam-wine-safe
+#chmod +x steam-compat-safe
+chmod +x steam-compat-wheel
+#chmod +x steam-wine-safe
 chmod +x steam-wine-wheel
 chmod +x steam-winepro-wheel
 chmod +x utils
@@ -418,7 +418,7 @@ cp info /home/$AZER/.info
 cp reconfig /home/$AZER/
 cp steam-wine-wheel /home/$AZER/.steam-wine
 cp steam-winepro-wheel /home/$AZER/.steam-winepro
-cp steam-linux-wheel /home/$AZER/.steam-linux
+cp steam-compat-wheel /home/$AZER/.steam-compat
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
 cp utils /home/$AZER/.utils
 # wallpaper
@@ -546,11 +546,11 @@ Type=Application
 Exec=xterm -geometry 40x4-500+0 -e ~/.steam-winepro
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-linux.desktop 
+cat << EOF >> /usr/local/etc/xdg/autostart/steam-compat.desktop 
 [Desktop Entry]
-Name=steam-linux
+Name=steam-compat
 Type=Application
-Exec=xterm -geometry 40x4-250+0 -e ~/.steam-linux
+Exec=xterm -geometry 40x4-250+0 -e ~/.steam-compat
 Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop 
