@@ -178,7 +178,6 @@ kldload linux64
 ### Packages                             ###
 ############################################
 # web
-pli curl
 pli wget
 # packages for WM
 pli xorg
@@ -208,7 +207,6 @@ pli cairo-clock
 # python38
 pli python38
 pli py38-setuptools
-pli py37-pip
 # compat
 pli gcc 
 pli linux-c7-devtools 
