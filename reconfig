@@ -116,7 +116,7 @@ Exec=python3.7 .tools.py
 StartupNotify=true
 Type=Application
 Name=Tools
-Icon=/usr/local/share/pixmaps/ysettings.png
+Icon=/usr/local/share/pixmaps/ysettingsnew.png
 EOF
 #cat << EOF > Desktop/Chromium.desktop
 #[Desktop Entry]
