@@ -1,6 +1,10 @@
 #!/bin/sh
 sleep 2
 cd ~
+#welcome
+python3.7 .tools.py & > /dev/null 2>&1
+sleep 2
+clear
 echo "Start customization for user $USER"
 
 ############################################
@@ -20,7 +24,6 @@ sleep 8
 ############################################
 ### Desktop customization                ###
 ############################################
-
 #lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
