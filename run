@@ -13,6 +13,7 @@ chmod +x steam-compat-wheel
 #chmod +x steam-wine-safe
 chmod +x steam-wine-wheel
 chmod +x steam-winepro-wheel
+chmod +x tools
 chmod +x tools.py
 chmod +x utils
 
@@ -427,6 +428,7 @@ cp steam-winepro-wheel /home/$AZER/.steam-winepro
 cp steam-compat-wheel /home/$AZER/.steam-compat
 cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
 cp utils /home/$AZER/.utils
+cp tools /home/$AZER/.tools
 cp tools.py /home/$AZER/.tools.py
 # wallpaper
 mkdir /usr/local/share/wallpapers
@@ -579,6 +581,13 @@ cat << EOF >> /usr/local/etc/xdg/autostart/compton.desktop
 Name=compton
 Type=Application
 Exec=compton
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/tools.desktop 
+[Desktop Entry]
+Name=tools
+Type=Application
+Exec=~/.tools
 Terminal=false
 EOF
 
