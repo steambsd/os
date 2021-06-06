@@ -53,7 +53,7 @@ echo -n 'Choose your number: '
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    /opt/steam-utils/bin/lsu-register-proton
-   lxterminal --geometry=30x3 -e ~/.steam-linux &
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
  ;;
  p4)
    ### download simple game
