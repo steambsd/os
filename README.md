@@ -1,5 +1,4 @@
-<h1>SteamBSD installation on the internet </h1> 
-<br>NOTE. This is a development version and may not work properly.
+<h1>SteamBSD installation on the internet (develop) </h1> 
 <br>Install FreeBSD, reboot PC and login as root:
 <br><code>su root</code>
 <br>
