@@ -14,6 +14,9 @@ else
  /opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
  sudo chown -R $USER:wheel /home/$USER/.steam
  /opt/steam-utils/bin/steam
+ sleep 8
+ echo 'If you want reinstall steam-compat, please remove .steam folder and reboot pc'
+ echo 'Press any key to run steam again'
 fi
 read ans
 done
