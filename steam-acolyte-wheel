@@ -1,11 +1,11 @@
 #!/bin/sh
 while true
 do
-echo 'steam-acolyte broken, try text version'
+echo 'steam-acolyte only text version'
 if [ -d /home/steam/.steam ]; then
  sleep 5
  echo '-===SECOND ACCAUNT OF STEAM===-'
- echo 'Continue run steam for user steam?'
+ echo 'Continue run steam (user steam)?'
  echo 'Press any key to proceed.'
  read ans
    read ans
@@ -14,7 +14,8 @@ if [ -d /home/steam/.steam ]; then
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sudo su steam -c 'steam'
 else
- echo 'Do you want install steam for user steam?'
+ sleep 60
+ echo 'Install steam for user steam?'
  echo 'Press any key to proceed...'
    read ans
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
