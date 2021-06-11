@@ -1,4 +1,5 @@
 #!/bin/sh
+echo 'steam-acolyte broken, try text version'
 if [ -d /home/steam/.steam ]; then
  sleep 5
  echo 'Do you want run steam for user steam?'
