@@ -1,5 +1,7 @@
 #!/bin/sh
 sleep 10
+while true
+do
 if [ -d .steam ]; then
  /opt/steam-utils/bin/steam
 else
@@ -11,3 +13,4 @@ else
  /opt/steam-utils/bin/steam
 fi
 read ans
+done
