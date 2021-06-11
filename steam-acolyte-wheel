@@ -13,6 +13,9 @@ if [ -d /home/steam/.steam ]; then
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sudo su steam -c 'steam'
+   sleep 8
+   echo 'If you want reinstall steam, please remove /home/steam/.steam folder and reboot pc'
+   echo 'Press any key to run steam again'
 else
  sleep 60
  echo 'Install steam for user steam?'
@@ -23,6 +26,9 @@ else
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sudo su steam -c 'steam-install &'
    sudo su steam -c 'steam &'
+   sleep 8
+   echo 'If you want reinstall steam, please remove /home/steam/.steam folder and reboot pc'
+   echo 'Press any key to run steam again'
 fi
 read ans
 done
