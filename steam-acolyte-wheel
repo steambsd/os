@@ -11,7 +11,7 @@ if [ -d /home/steam/.steam ]; then
  kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
  sleep 2
  kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
- sudo su steam -c 'steam'
+ sudo su steam -c '/opt/steam-utils/bin/steam &'
  sleep 8
  echo 'If you want reinstall steam, please remove /home/steam/.steam folder and reboot pc'
  echo 'Press any key to run steam again'
@@ -24,8 +24,8 @@ else
  sleep 2
  kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
  sudo cp /home/$USER/.i386-wine-pkg /home/steam/.i386-wine-pkg
- sudo su steam -c 'steam-install &'
- sudo su steam -c 'steam &'
+ sudo su steam -c '/opt/steam-utils/bin/steam-install &'
+ sudo su steam -c '/opt/steam-utils/bin/steam &'
  sleep 8
  echo 'If you want reinstall steam, please remove /home/steam/.steam folder and reboot pc'
  echo 'Press any key to run steam again'
