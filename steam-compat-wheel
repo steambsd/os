@@ -3,10 +3,6 @@ sleep 10
 while true
 do
 if [ -d .steam ]; then
- echo '-===COMPAT VERSION OF STEAM===-'
- echo 'Continue run steam?'
- echo 'Press any key to proceed.'
- read ans
  /opt/steam-utils/bin/steam
  sleep 8
  echo 'If you want reinstall steam-compat, please remove .steam folder and reboot pc'
