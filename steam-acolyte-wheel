@@ -22,6 +22,7 @@ else
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sudo su steam -c 'steam-install &'
+   sudo su steam -c 'steam &'
 fi
 read ans
 done
