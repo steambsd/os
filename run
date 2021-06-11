@@ -452,6 +452,8 @@ cd linuxulator-steam-utils-master
 make
 make install
 cd ..
+mv /usr/local/bin/steam /usr/local/bin/steam.save
+ln -s /opt/steam-utils/bin/steam /usr/local/bin/steam
 # steam-acolyte
 cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 # cache
