@@ -77,14 +77,14 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
-#cat << EOF > Desktop/Acolyte.desktop 
-#[Desktop Entry]
-#Name=Acolyte
-#Exec=/home/$USER/.local/bin/steam-acolyte
-#Type=Application
-#StartupNotify=true
-#Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
-#EOF
+cat << EOF > Desktop/Acolyte.desktop 
+[Desktop Entry]
+Name=Acolyte
+Exec=/home/$USER/.local/bin/steam-acolyte
+Type=Application
+StartupNotify=true
+Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
+EOF
 cat << EOF > Desktop/Recorder.desktop
 [Desktop Entry]
 Name=Recorder
