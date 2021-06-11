@@ -1,22 +1,20 @@
 #!/bin/sh
-if [ -d .steam ]; then
+if [ -d /home/steam/.steam ]; then
  sleep 5
  echo 'Do you want run steam for user steam?'
  echo 'Press any key to proceed...'
    read ans
-   killall -HUP lxterminal
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
-   sudo su steam -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &'
+   sudo su steam -c 'steam'
 else
  echo 'Do you want install steam for user steam?'
  echo 'Press any key to proceed...'
    read ans
-   killall -HUP lxterminal
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
-   sudo su steam -c 'lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam-install &'
+   sudo su steam -c 'steam-install &'
 fi
 read ans
