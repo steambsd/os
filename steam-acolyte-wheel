@@ -1,4 +1,6 @@
 #!/bin/sh
+while true
+do
 echo 'steam-acolyte broken, try text version'
 if [ -d /home/steam/.steam ]; then
  sleep 5
@@ -19,3 +21,4 @@ else
    sudo su steam -c 'steam-install &'
 fi
 read ans
+done
