@@ -23,6 +23,7 @@ else
  kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
  sleep 2
  kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+ sudo cp /home/$USER/.i386-wine-pkg /home/steam/.i386-wine-pkg
  sudo su steam -c 'steam-install &'
  sudo su steam -c 'steam &'
  sleep 8
