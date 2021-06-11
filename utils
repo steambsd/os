@@ -10,7 +10,10 @@ echo 'p1 - install proton 6.3'
 echo 'p2 - install steam linux runtime - soldier'
 echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
 echo 'p4 - download simple free game (High Octane Drift)'
-echo 'p5 - reboot PC (optional)'
+echo '### reinstall'
+echo 'ra - remove .steam and reboot PC (wheel user)'
+echo 'rs - remove .steam and reboot PC (steam user)'
+echo 'rd - remove .steam and reboot PC (steamdev user)'
 echo '### add switch keyboard layout (temporary)'
 echo 'sru - add russian switch alt-shift'
 echo 'sgr - add greek switch alt-shift'
@@ -63,8 +66,19 @@ echo -n 'Choose your number: '
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
  ;;
- p5)
-   ### reboot 
+ ra)
+   ### reinstall
+   rm -rf .steam
+   sudo shutdown -r now
+ ;;
+ rs)
+   ### reinstall
+   sudo su steam -c 'rm -rf .steam'
+   sudo shutdown -r now
+ ;;
+ rd)
+   ### reinstall
+   sudo su steamdev -c 'rm -rf .steam'
    sudo shutdown -r now
  ;;
  sru)
