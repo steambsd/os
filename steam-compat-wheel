@@ -1,11 +1,9 @@
 #!/bin/sh
 sleep 10
-while true
-do
 if [ -d .steam ]; then
  /opt/steam-utils/bin/steam
 else
- rm -rf /home/steam/.steam
+ rm -rf /home/steam/.steamdev
  sudo su steamdev -c /opt/steam-utils/bin/steam-install
  sudo mv /home/steamdev/.steam /home/$USER/.steam
  /opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
@@ -13,4 +11,4 @@ else
  /opt/steam-utils/bin/steam
 fi
 read ans
-done
+
