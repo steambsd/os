@@ -33,6 +33,12 @@ VERS=`uname -r | cut -d'-' -f1`
 #VERS='12.0' #not tested
 #VERS='12.1' #rebuild drm
 #VERS='12.2' #without drm
+mkdir -p /usr/local/etc/pkg/repos/
+cat << EOF > /usr/local/etc/pkg/repos/FreeBSD.conf
+FreeBSD: {
+  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
+}
+EOF
 
 ############################################
 ### Function                             ###
