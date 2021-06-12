@@ -150,12 +150,6 @@ freebsd-update install
 env ASSUME_ALWAYS_YES=YES pkg bootstrap
 env ASSUME_ALWAYS_YES=YES pkg update -f
 fi
-mkdir -p /usr/local/etc/pkg/repos/
-cat << EOF > /usr/local/etc/pkg/repos/FreeBSD.conf
-FreeBSD: {
-  url: "pkg+http://pkg.FreeBSD.org/${ABI}/latest"
-}
-EOF
 
 ############################################
 ### Prepare                              ###
