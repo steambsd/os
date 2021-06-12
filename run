@@ -191,8 +191,8 @@ pli slim
 # packages for wine
 pli i386-wine
 pli winetricks
-pli wine-mono
-pli wine-gecko
+#pli wine-mono
+#pli wine-gecko
 # packages for linux
 pli linux-steam-utils
 # right now may use linuxulator-steam-utils, for example:
@@ -222,8 +222,8 @@ pli wine-proton
 pli libc6-shim
 pli python3
 # emulators
-pli dgen-sdl
-pli ppsspp
+#pli dgen-sdl
+#pli ppsspp
 # games
 pli ctris
 pli foobillard
