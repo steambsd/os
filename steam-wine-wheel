@@ -12,8 +12,8 @@ if [ -d .wine ]; then
  echo 'If you want reinstall steam-wine, please remove .wine folder and reboot pc'
  echo 'Press any key to run steam again'
 else
- #sudo winetricks --self-update
- #winetricks -q 7zip
+ sudo winetricks --self-update
+ winetricks -q 7zip
  echo '-===WINE 32 VERSION OF STEAM===-'
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
