@@ -6,7 +6,8 @@ else
  rm -rf /home/steam/.steamdev
  sudo su steamdev -c /opt/steam-utils/bin/steam-install
  sudo mv /home/steamdev/.steam /home/$USER/.steam
- /opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
+ #/opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
+ /usr/local/wine-proton/bin/pkg32.sh install wine-proton mesa-dri
  sudo chown -R $USER:wheel /home/$USER/.steam
  /opt/steam-utils/bin/steam
 fi
