@@ -214,7 +214,7 @@ pli linux-c7-libgfortran
 pli linux_libusb 
 pli wine-proton 
 pli libc6-shim
-pli python3
+pli python37
 # emulators
 pli dgen-sdl
 pli ppsspp
@@ -458,7 +458,7 @@ ln -s /opt/steam-utils/bin/steam /usr/local/bin/steam
 cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 # cache
 #cp CACHE.TAR.XZ /home/$AZER/CACHE.TAR.XZ
-#cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
+cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # unpack steam-acolyte
 cd /home/$AZER
 tar xvf steam-acolyte.tar.xz
