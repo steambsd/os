@@ -34,7 +34,7 @@
 <br>Only for this internet installer (NOT for ISO IMG) you may choose old driver: nvidia-390, nvidia-340, nvidia-304
 <br>
 <br>For example:
-<br><code>./run ron nvidia lumina </code>
+<br><code>./run ash nvidia lumina </code>
 <br><code>./run bob nvidia plasma </code>
 <br><code>./run lee nvidia-390 lxqt </code>
 <br><code>./run kim nvidia-340 lumina</code>
