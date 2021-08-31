@@ -59,7 +59,7 @@ DOC_URL="https://lpros.blogspot.com/"
 
 # Creating /etc/motd
 cat << MOTD > /etc/motd.safe
-                                   Instance: (SteamBSD $RELEASE $BUILDDATE)
+                                   Instance: SteamBSD $RELEASE $BUILDDATE
                                    Site: $DOC_URL
 MOTD
 # Creating /etc/product file
