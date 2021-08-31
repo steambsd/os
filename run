@@ -192,7 +192,7 @@ pli linux-steam-utils
 # right now may use linuxulator-steam-utils, for example:
 #sudo su steam -c steam-install
 # packages for console
-pli screenFetch
+pli neofetch
 pli mc
 # packages for info
 pli lxterminal
