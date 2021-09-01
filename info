@@ -1,4 +1,10 @@
 #!/bin/sh
-sudo screenfetch
+neofetch --color_blocks off
+echo -n '                                   Swap: '
+swapinfo -m | tail -n1 | awk '{print $3"M"," / ",$2"M","  available: ",$4"M"}' | tr -s "\t " " "
+echo -n '                                   Disk: '
+zfs list zroot | tail -n1 | awk 'BEGIN{s=0}{s+=$2}{s+=$3}END{print $2," / ",s"G"," available: ",$3}'
+echo ' '
 cat /etc/motd.safe
 /usr/local/bin/bash
+
