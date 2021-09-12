@@ -9,4 +9,3 @@ zfs list zroot | tail -n1 | awk 'BEGIN{s=0}{s+=$2}{s+=$3}END{print $2," / ",s"G"
 echo ' '
 cat /etc/motd.safe
 /usr/local/bin/bash
-
