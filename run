@@ -224,7 +224,7 @@ pli foobillard
 ############################################
 ### PIP - python package manager         ###
 ############################################
-python3.7 get-pip.py
+/usr/local/bin/python3.7 get-pip.py
 
 ############################################
 ### DVD, USB and CLOUD                   ###
