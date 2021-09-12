@@ -420,6 +420,7 @@ esac
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
 cp info /home/$AZER/.info
+cp logo /home/$AZER/.logo
 cp reconfig /home/$AZER/
 cp steam-wine-wheel /home/$AZER/.steam-wine
 cp steam-winepro-wheel /home/$AZER/.steam-winepro
