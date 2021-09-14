@@ -111,7 +111,26 @@ esac
 ############################################
 ### Tuning                               ###
 ############################################
-# /boot/loader.conf
+# thermal monitoring
+hwmodel=`sysctl hw.model | cut -d' ' -f2 | head -c3`
+case "$hwmodel" in
+Int)
+ # detect intel processor
+ sysrc -f /boot/loader.conf coretemp_load=YES
+ ;;
+AMD)
+ # detect amd processor
+ sysrc -f /boot/loader.conf amd_load=YES
+ ;;
+*)
+ # using two modules
+ sysrc -f /boot/loader.conf coretemp_load=YES
+ sysrc -f /boot/loader.conf amd_load=YES
+ exit 0
+ ;;
+esac
+
+# main option for /boot/loader.conf
 sysrc -f /boot/loader.conf autoboot_delay=2
 sysrc -f /boot/loader.conf beastie_disable=YES
 # /etc/sysctl.conf
