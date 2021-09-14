@@ -25,6 +25,7 @@ echo '### resolution'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo '### system commands'
+echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
 echo 'upd - update utils'
@@ -169,13 +170,17 @@ Section "Screen"
 EndSection
 EOF'
  ;;
-  sht)
-   ### help
-   sudo shutdown -p now
+   ssh)
+   ### ssh
+   sudo sysrc sshd_enable=YES
  ;;
    rbt)
    ### reboot
    sudo shutdown -r now
+ ;;
+   sht)
+   ### shutdown
+   sudo shutdown -p now
  ;;
    upd)
    ### update utils
