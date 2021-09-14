@@ -10,8 +10,9 @@ echo 'p1 - install proton 6.3'
 echo 'p2 - install steam linux runtime - soldier'
 echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
 echo 'p4 - download simple free game (High Octane Drift)'
-echo '### reinstall'
-echo 'rw - remove .steam and reboot PC (wheel user)'
+echo '### reinstall steam repo (you need reboot PC)'
+echo 'suc - update steam code '
+echo 'sup - update steam code and proton libraries'
 echo '### add switch keyboard layout (temporary)'
 echo 'sru - add russian switch alt-shift'
 echo 'sgr - add greek switch alt-shift'
@@ -64,10 +65,32 @@ echo -n 'Choose your number: '
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
  ;;
- rw)
+ suc)
    ### reinstall
    rm -rf .steam
-   sudo shutdown -r now
+   sudo rm -rf /opt/steam-utils
+   cd /etc/ins
+   sudo rm -rf linuxulator-steam-utils-master
+   sudo rm -rf master.zip
+   sudo fetch https://github.com/shkhln/linuxulator-steam-utils/archive/refs/heads/master.zip
+   sudo unzip master.zip
+   cd linuxulator-steam-utils-master
+   sudo make
+   sudo make install
+ ;;
+  sup)
+   ### reinstall
+   rm -rf .steam
+   rm -rf .i386-wine-pkg
+   sudo rm -rf /opt/steam-utils
+   cd /etc/ins
+   sudo rm -rf linuxulator-steam-utils-master
+   sudo rm -rf master.zip
+   sudo fetch https://github.com/shkhln/linuxulator-steam-utils/archive/refs/heads/master.zip
+   sudo unzip master.zip
+   cd linuxulator-steam-utils-master
+   sudo make
+   sudo make install
  ;;
  rs)
    ### reinstall
