@@ -6,15 +6,17 @@ print_info() {
 
     prin "OS" "$(cat /etc/motd.safe | grep SteamBSD)"
     info "DE" de
+    prin "MB" "$(kenv | grep smbios | grep planar.product | cut -d"\"" -f2 ; kenv | grep smbios | grep bios.version | cut -d"\"" -f2)"
+    prin "MBT" "$(sysctl -a | grep -E 'acpi.thermal.*temperature|dev.cpu.*temperature' | cut -d":" -f2 ; echo '[normal 35C, critical 70C]')"
     info "GPU" gpu
     info "CPU" cpu
-    prin "CPU%" "$(echo line )"
+    prin "CPU%" "$(CPU_COUNT=`sysctl -n hw.ncpu`;vmstat -Pn0 -c2 -w0.1 | awk 'BEGIN{getline;getline;getline}{for(c='$CPU_COUNT'-1;c>=0;c--){print 100-$(NF-c*3)"% ";}}' | awk '{sum+=$1}{print $1} END {print "
+ | "int(sum/'$CPU_COUNT')"%"}')"
     prin "Disk" "$(zfs list zroot | tail -n1 | awk 'BEGIN{s=0}{s+=$2}{s+=$3}END{print $2,"/", s"G","avail:",$3}')"
     prin "Swap" "$(swapinfo -m | tail -n1 | awk '{print $3"M"," / ",$2"M","  avail: ",$4"M"}' | tr -s "\t " " ")"
     info "Memory" memory
     info "Uptime" uptime
     info "Local IP" local_ip
-    info "Public IP" public_ip
     info "Resolution" resolution
 
     info cols
