@@ -1,4 +1,4 @@
-!/bin/sh
+#!/bin/sh
 neofetch --color_blocks off --ascii .logo
 S1='                                        Swap: '
 S2=`swapinfo -m | tail -n1 | awk '{print $3"M"," / ",$2"M","  available: ",$4"M"
