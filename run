@@ -290,6 +290,16 @@ service devfs start
 ############################################
 ### Driver                               ###
 ############################################
+if [ "$DRIV" == "auto" ]
+then
+     gpu=`dmesg | grep intel`
+     if [ "$gpu" != '' ]; then DRIV="intel"; fi
+     gpu=`dmesg | grep amdgpu`
+     if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
+     gpu=`dmesg | grep nvidia`
+     if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
+fi
+
 case "$DRIV" in
  nvidia)
 pli nvidia-driver
@@ -388,11 +398,11 @@ kldload /boot/modules/i915kms.ko
 #EndSection
 #EOF
  ;;
- all)
+ alln)
  pli nvidia-driver
  pli linux-nvidia-libs
  pli nvidia-settings
- sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+ kld_list+="/boot/modules/nvidia-modeset.ko"
  kldload /boot/modules/nvidia-modeset.ko
  cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
  Section "Device"
@@ -409,12 +419,12 @@ kldload /boot/modules/i915kms.ko
  pli xf86-video-ati
  ;;
  *)
-#cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
-# Section "Device"
-#    Identifier    "Card0"
-#    Driver        "vesa"
-# EndSection 
-#EOF
+ #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+ # Section "Device"
+ #    Identifier    "Card0"
+ #    Driver        "vesa"
+ # EndSection 
+ #EOF
  ;;
 esac
 
