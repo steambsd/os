@@ -388,6 +388,26 @@ kldload /boot/modules/i915kms.ko
 #EndSection
 #EOF
  ;;
+ all)
+ pli nvidia-driver
+ pli linux-nvidia-libs
+ pli nvidia-settings
+ sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+ kldload /boot/modules/nvidia-modeset.ko
+ cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+ Section "Device"
+         Identifier "NV Card"
+         Driver "nvidia"
+ EndSection
+ EOF
+ pli drm-kmod
+ pw groupmod video -m $AZER
+ pw groupmod video -m steam
+ pw groupmod video -m steamdev
+ pli xf86-video-amdgpu 
+ pli xf86-video-intel
+ pli xf86-video-ati
+ ;;
  *)
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 # Section "Device"
