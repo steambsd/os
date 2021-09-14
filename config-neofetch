@@ -1,37 +1,19 @@
 print_info() {
+
     info title
     info underline
 
-    #info "OS" distro
-    prin "Your custom text here"
-    info "Host" model
-    info "Kernel" kernel
-    info "Uptime" uptime
-    info "Packages" packages
-    info "Shell" shell
-    info "Resolution" resolution
+    prin "OS" "$(cat /etc/motd.safe | grep SteamBSD)"
     info "DE" de
-    info "WM" wm
-    info "WM Theme" wm_theme
-    info "Theme" theme
-    info "Icons" icons
-    info "Terminal" term
-    info "Terminal Font" term_font
     info "CPU" cpu
     info "GPU" gpu
     info "Memory" memory
+    info "Uptime" uptime
+    info "Resolution" resolution
 
-     #info "GPU Driver" gpu_driver  # Linux/macOS only
-     #info "CPU Usage" cpu_usage
-     #info "Disk" disk
-     #info "Battery" battery
-     #info "Font" font
-     #info "Song" song
-     #[[ "$player" ]] && prin "Music Player" "$player"
+     info "CPU Usage" cpu_usage
      info "Local IP" local_ip
      info "Public IP" public_ip
-     #info "Users" users
-     #info "Locale" locale  # This only works on glibc systems.
 
     info cols
 }
