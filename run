@@ -120,12 +120,12 @@ Int)
  ;;
 AMD)
  # detect amd processor
- sysrc -f /boot/loader.conf amd_load=YES
+ sysrc -f /boot/loader.conf amdtemp_load=YES
  ;;
 *)
  # using two modules
  sysrc -f /boot/loader.conf coretemp_load=YES
- sysrc -f /boot/loader.conf amd_load=YES
+ sysrc -f /boot/loader.conf amdtemp_load=YES
  exit 0
  ;;
 esac
