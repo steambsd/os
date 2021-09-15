@@ -7,8 +7,7 @@ print_info() {
     info "DE" de
     prin "MBB" "$(kenv | grep smbios | grep planar.product | cut -d"\"" -f2 ; kenv | grep smbios | grep bios.version | cut -d"\"" -f2)"
     info "CPU" cpu
-    prin "CUS" "$(CPU_COUNT=`sysctl -n hw.ncpu`;vmstat -Pn0 -c2 -w0.1 | awk 'BEGIN{getline;getline;getline}{for(c='$CPU_COUNT'-1;c>=0;c--){print 100-$(NF-c*3)"% ";}}' | awk '{sum+=$1}{print $1} END {print "
-| "int(sum/'$CPU_COUNT')"%"}')"
+    prin "CUS" "$(CPU_COUNT=`sysctl -n hw.ncpu`;vmstat -Pn0 -c2 -w0.1 | awk 'BEGIN{getline;getline;getline}{for(c='$CPU_COUNT'-1;c>=0;c--){print 100-$(NF-c*3)"% ";}}' | awk '{sum+=$1}{print $1} END {print " | "int(sum/'$CPU_COUNT')"%"}')"
     info "GPU" gpu
     prin "MBBT" "$(sysctl -a | grep -E 'acpi.thermal.*temperature|dev.cpu.^temperature' | cut -d":" -f2 ; echo '[normal 35C, critical 70C]')"
     prin "CPUT" "$(sudo sysctl -a | grep dev.cpu.0.temperature | cut -d":" -f2 ; echo '[normal 45C, critical 90C]')"
