@@ -71,7 +71,7 @@ echo -n 'Choose your number: '
  ;;
  idc)
    ### install game for steam-compat
-   lxterminal --geometry=40x4 -e .idc &
+   lxterminal --geometry=40x4 -e sh .idc &
  ;;
  idw)
    ### install game for steam-wine
