@@ -398,7 +398,7 @@ kldload /boot/modules/i915kms.ko
 #EndSection
 #EOF
  ;;
- all)
+ allauto)
  pli nvidia-driver
  pli linux-nvidia-libs
  pli nvidia-settings
