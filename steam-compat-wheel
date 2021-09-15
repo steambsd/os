@@ -9,8 +9,8 @@ else
  #/opt/steam-utils/bin/lsu-pkg32 install -y wine-proton mesa-dri
  /usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri
  sudo chown -R $USER:wheel /home/$USER/.steam
- /opt/steam-utils/bin/steam
- #/opt/steam-utils/bin/steam steam://open/minigameslist -no-browser
+ #/opt/steam-utils/bin/steam
+ /opt/steam-utils/bin/steam steam://open/minigameslist -no-browser
 fi
 read ans
 
