@@ -529,6 +529,7 @@ cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 mkdir /usr/local/share/pixmaps
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
+cp ystartboosting.png /usr/local/share/pixmaps/ystartboosting.png
 #epic-games
 unzip epic-games.zip
 cd legendary-master
