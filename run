@@ -292,7 +292,6 @@ service devfs start
 ############################################
 if [ "$DRIV" == "auto" ]
 then
-     DRIV="vesa"
      gpu=`dmesg | grep intel`
      if [ "$gpu" != '' ]; then DRIV="intel"; fi
      gpu=`dmesg | grep amdgpu`
