@@ -368,7 +368,7 @@ kldload /boot/modules/amdgpu.ko
 #EndSection
 #EOF
  ;;
-  radeon)
+ radeon)
 pli drm-kmod
 pw groupmod video -m $AZER
 pw groupmod video -m steam
@@ -398,12 +398,10 @@ kldload /boot/modules/i915kms.ko
 #EndSection
 #EOF
  ;;
- alln)
+ all)
  pli nvidia-driver
  pli linux-nvidia-libs
  pli nvidia-settings
- kld_list+="/boot/modules/nvidia-modeset.ko"
- kldload /boot/modules/nvidia-modeset.ko
  cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
  Section "Device"
          Identifier "NV Card"
@@ -417,6 +415,49 @@ kldload /boot/modules/i915kms.ko
  pli xf86-video-amdgpu 
  pli xf86-video-intel
  pli xf86-video-ati
+ 
+ gpu=`dmesg | grep intel`
+ if [ "$gpu" != '' ]; then DRIV="intel"; fi
+ gpu=`dmesg | grep amdgpu`
+ if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
+ gpu=`dmesg | grep nvidia`
+ if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
+ 
+   case "$DRIV" in
+   nvidia)
+    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    kldload /boot/modules/nvidia-modeset.ko
+   ;;
+   nvidia-390)
+    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    kldload /boot/modules/nvidia-modeset.ko
+   ;;
+   nvidia-340)
+    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    kldload /boot/modules/nvidia-modeset.ko
+   ;;
+   nvidia-304)
+    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    kldload /boot/modules/nvidia-modeset.ko
+   ;;
+   amdgpu)
+    sysrc kld_list+="/boot/modules/amdgpu.ko"
+    kldload /boot/modules/amdgpu.ko
+   ;;
+   radeon)
+    sysrc kld_list+="/boot/modules/radeonkms.ko"
+    kldload /boot/modules/radeonkms.ko
+   ;;
+   intel)
+    sysrc kld_list+="/boot/modules/i915kms.ko"
+    kldload /boot/modules/i915kms.ko
+   ;;
+   *)
+    # nothing
+   ;;
+  esac
+ 
+ 
  ;;
  *)
  #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
