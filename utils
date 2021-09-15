@@ -99,7 +99,7 @@ echo -n 'Choose your number: '
    sudo make
    sudo make install
  ;;
-  rup)
+ rup)
    ### reinstall
    rm -rf .steam
    rm -rf .i386-wine-pkg
@@ -175,7 +175,7 @@ Section "Screen"
 EndSection
 EOF'
  ;;
-  1366)
+ 1366)
    ### add screen resolution 1366x768
    sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
 
@@ -205,23 +205,27 @@ EOF'
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
  ;;
+  dsa)
+   ### download steam autenticator
+   chrome https://drive.google.com/drive/folders/1ibHrCe6ACPx1pMs499NTwsFYrqqVR0Z_
+ ;;
  xsc)
    ### screensaver
    sudo pkg ins xscreensaver
  ;;
-   ssh)
+ ssh)
    ### ssh
    sudo sysrc sshd_enable=YES
  ;;
-   rbt)
+ rbt)
    ### reboot
    sudo shutdown -r now
  ;;
-   sht)
+ sht)
    ### shutdown
    sudo shutdown -p now
  ;;
-   upd)
+ upd)
    ### update utils
    fetch https://github.com/steambsd/os/archive/go.zip
    unzip go.zip
