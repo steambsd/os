@@ -28,7 +28,11 @@ echo 'zr - restore full snapshot of system'
 echo '### resolution'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
+echo 'sta - switch to amdgpu'
+echo 'stn - switch to nvidia'
+echo 'sti - switch to intel'
 echo '### system commands'
+echo 'xsc - install xscreensaver'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
@@ -185,6 +189,25 @@ Section "Screen"
         EndSubSection
 EndSection
 EOF'
+ ;;
+ sta)
+   ### switch to amdgpu
+   sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
+   sudo sysrc kld_list+="/boot/modules/amdgpu.ko"
+ ;;
+ stn)
+   ### switch to nvidia
+   sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.nvidia /usr/local/etc/X11/xorg.conf.d/xorg.conf
+   sudo sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+ ;;
+ sti)
+   ### switch to intel
+   sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
+   sudo sysrc kld_list+="/boot/modules/i915kms.ko"
+ ;;
+ xsc)
+   ### screensaver
+   sudo pkg ins xscreensaver
  ;;
    ssh)
    ### ssh
