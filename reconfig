@@ -88,7 +88,7 @@ EOF
 cat << EOF > Desktop/Boost.desktop 
 [Desktop Entry]
 Name=Boost
-Exec=xterm -geometry 40x4-0+0 -e ~/.boost
+Exec=xterm -geometry 40x4+0-0 -e ~/.boost
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ystartboosting.png
