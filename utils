@@ -13,6 +13,7 @@ echo 'p4 - download simple free game (High Octane Drift)'
 echo '### install steam game by id'
 echo 'idc - install for steam-compat'
 echo 'idw - install for steam-wine'
+echo 'idwp - install for steam-winepro'
 echo '### reinstall steam repo (you need reboot PC)'
 echo 'ruc - update steam code '
 echo 'rup - update steam code and proton libraries'
@@ -75,7 +76,11 @@ echo -n 'Choose your number: '
  ;;
  idw)
    ### install game for steam-wine
-   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/457330" &
+   lxterminal --geometry=40x4 -e sh .idw &
+ ;;
+ idwp)
+   ### install game for steam-winepro
+   lxterminal --geometry=40x4 -e sh .idwp &
  ;;
  ruc)
    ### reinstall
