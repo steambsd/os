@@ -292,12 +292,12 @@ service devfs start
 ############################################
 if [ "$DRIV" == "auto" ]
 then
-     gpu=`dmesg | grep intel`
-     if [ "$gpu" != '' ]; then DRIV="intel"; fi
-     gpu=`dmesg | grep amdgpu`
-     if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
-     gpu=`dmesg | grep nvidia`
-     if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
+ gpu=`pciconf -lv | grep Intel`
+ if [ "$gpu" != '' ]; then DRIV="intel"; fi
+ gpu=`pciconf -lv | grep AMD`
+ if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
+ gpu=`pciconf -lv | grep NVIDIA`
+ if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
 fi
 
 case "$DRIV" in
@@ -402,6 +402,12 @@ kldload /boot/modules/i915kms.ko
  pli nvidia-driver
  pli linux-nvidia-libs
  pli nvidia-settings
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf.nvidia
+Section "Device"
+        Identifier "NV Card"
+        Driver "nvidia"
+EndSection
+EOF
  pli drm-kmod
  pw groupmod video -m $AZER
  pw groupmod video -m steam
@@ -410,11 +416,11 @@ kldload /boot/modules/i915kms.ko
  pli xf86-video-intel
  pli xf86-video-ati
  
- gpu=`dmesg | grep intel`
+ gpu=`pciconf -lv | grep Intel`
  if [ "$gpu" != '' ]; then DRIV="intel"; fi
- gpu=`dmesg | grep amdgpu`
+ gpu=`pciconf -lv | grep AMD`
  if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
- gpu=`dmesg | grep nvidia`
+ gpu=`pciconf -lv | grep NVIDIA`
  if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
 
 ###ATTENTION! Integrated block  
