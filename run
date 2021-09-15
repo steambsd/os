@@ -509,6 +509,7 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
+cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
 cp idw /home/$AZER/.idw
 cp idwp /home/$AZER/.idwp
