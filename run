@@ -416,20 +416,37 @@ kldload /boot/modules/i915kms.ko
  if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
  gpu=`dmesg | grep nvidia`
  if [ "$gpu" != '' ]; then DRIV="nvidia"; fi
- 
- if [ "$DRIV" == "intel" ]; then sysrc kld_list+="/boot/modules/i915kms.ko"; kldload /boot/modules/i915kms.ko; fi
- if [ "$DRIV" == "amdgpu" ]; then sysrc kld_list+="/boot/modules/amdgpu.ko"; kldload /boot/modules/amdgpu.ko; fi
- if [ "$DRIV" == "nvidia" ]; then 
-  sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
-  kldload /boot/modules/nvidia-modeset.ko 
+
+###ATTENTION! Integrated block  
+case "$DRIV" in
+   nvidia)
+    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 Section "Device"
         Identifier "NV Card"
         Driver "nvidia"
 EndSection
 EOF
- fi
- 
+   ;;
+   amdgpu)
+    sysrc kld_list+="/boot/modules/amdgpu.ko"
+    kldload /boot/modules/amdgpu.ko
+   ;;
+   radeon)
+    sysrc kld_list+="/boot/modules/radeonkms.ko"
+    kldload /boot/modules/radeonkms.ko
+   ;;
+   intel)
+    sysrc kld_list+="/boot/modules/i915kms.ko"
+    kldload /boot/modules/i915kms.ko
+   ;;
+   *)
+    # nothing
+   ;;
+esac
+###ATTENTION! Integrated block  
+
  ;;
  *)
  #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
