@@ -34,6 +34,7 @@ echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
 echo 'dsa - download steam authenticator'
+echo 'xsc - install xscreensaver'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
@@ -206,9 +207,16 @@ EOF'
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
  ;;
-  dsa)
+ dsa)
    ### download steam autenticator
-   chrome https://drive.google.com/drive/folders/1ibHrCe6ACPx1pMs499NTwsFYrqqVR0Z_
+   cd Downloads
+   fetch https://github.com/Ezzpify/SteamAuthenticator/releases/download/1.2.1/Release.rar
+   unrar Release.rar
+   
+ ;;
+ xsc)
+   ### insteall screensaver
+   sudo pkg ins -y xscreensaver
  ;;
  ssh)
    ### ssh
