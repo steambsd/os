@@ -214,7 +214,8 @@ EOF'
    fetch https://github.com/Ezzpify/SteamAuthenticator/releases/download/1.2.1/Release.rar
    unrar x Release.rar
    rm Release.rar
-   wine 'Steam-Authenticator.exe'
+   lxterminal --geometry=40x4 -e wine 'Steam-Authenticator.exe' &
+   cd ~
  ;;
  xsc)
    ### insteall screensaver
