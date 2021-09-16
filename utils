@@ -218,6 +218,7 @@ EOF'
  ssh)
    ### ssh
    sudo sysrc sshd_enable=YES
+   sudo service sshd start
  ;;
  rbt)
    ### reboot
