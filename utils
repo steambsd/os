@@ -209,10 +209,12 @@ EOF'
  ;;
  dsa)
    ### download steam autenticator
-   cd Downloads
+   mkdir Downloads/Steam-Authenticator
+   cd Downloads/Steam-Authenticator
    fetch https://github.com/Ezzpify/SteamAuthenticator/releases/download/1.2.1/Release.rar
-   unrar Release.rar
-   
+   unrar x Release.rar
+   rm Release.rar
+   wine 'Steam-Authenticator.exe'
  ;;
  xsc)
    ### insteall screensaver
