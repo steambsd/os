@@ -34,7 +34,6 @@ echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
 echo 'dsa - download steam authenticator'
-echo 'xsc - install xscreensaver'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
@@ -210,10 +209,6 @@ EOF'
   dsa)
    ### download steam autenticator
    chrome https://drive.google.com/drive/folders/1ibHrCe6ACPx1pMs499NTwsFYrqqVR0Z_
- ;;
- xsc)
-   ### screensaver
-   sudo pkg ins xscreensaver
  ;;
  ssh)
    ### ssh
