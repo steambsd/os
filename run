@@ -608,9 +608,9 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
 lumina)
 pli lumina
-# remove some packages
-#pkg delete -f -y xscreensaver
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
+# remove some packages
+pkg delete -f -y xscreensaver
  ;;
 lxqt)
 pli lxqt
