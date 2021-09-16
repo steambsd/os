@@ -117,15 +117,19 @@ case "$hwmodel" in
 Int)
  # detect intel processor
  sysrc -f /boot/loader.conf coretemp_load=YES
+ kldload coretemp
  ;;
 AMD)
  # detect amd processor
  sysrc -f /boot/loader.conf amdtemp_load=YES
+ kldload amdtemp
  ;;
 *)
  # using two modules
  sysrc -f /boot/loader.conf coretemp_load=YES
  sysrc -f /boot/loader.conf amdtemp_load=YES
+ kldload coretemp
+ kldload amdtemp
  exit 0
  ;;
 esac
