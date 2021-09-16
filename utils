@@ -33,7 +33,7 @@ echo 'sta - switch to amdgpu'
 echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
-echo 'dsa - download steam authenticator'
+echo 'dsa - download and run Steam-Authenticator'
 echo 'xsc - install xscreensaver'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
@@ -214,7 +214,7 @@ EOF'
    fetch https://github.com/Ezzpify/SteamAuthenticator/releases/download/1.2.1/Release.rar
    unrar x Release.rar
    rm Release.rar
-   lxterminal --geometry=40x4 -e wine 'Steam-Authenticator.exe' &
+   lxterminal --geometry=40x4 -e wine 'Steam Authenticator.exe' &
    cd ~
  ;;
  xsc)
