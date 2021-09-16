@@ -216,6 +216,7 @@ pli linux-steam-utils
 pli neofetch
 pli mc
 pli unrar
+pli gtar
 # packages for info
 pli lxterminal
 pli leafpad
