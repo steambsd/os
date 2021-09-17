@@ -514,6 +514,14 @@ esac
 ############################################
 # create documents folder
 mkdir /home/$AZER/Documents
+# experemental proton
+cp sha256sum /usr/local/bin/sha256sum
+chmod +x /usr/local/bin/sha256sum
+ln -s /usr/local/bin/bash /bin/bash
+#mkdir /usr/lib/x86_64-linux-gnu/
+#cp /usr/local/lib/libgtk-3.so.0 /usr/lib/x86_64-linux-gnu/libgtk-3.so.0
+#mv /usr/local/lib/ /usr/lib/x86_64-linux-gnu/
+#env /usr/home/admin/PortWINE/PortProton/data/scripts/start.sh %F
 # copy steambsd scrips
 cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
