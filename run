@@ -250,8 +250,6 @@ pli foobillard
 # other
 pli vulkan-tools
 pli mesa-demos
-# info cpu
-pli cpu-x
 
 ############################################
 ### PIP - python package manager         ###
