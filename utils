@@ -218,8 +218,9 @@ EOF'
    cd ~
  ;;
  xsc)
-   ### insteall screensaver
-   sudo pkg ins -y xscreensaver
+   ### install/delete screensaver
+   #sudo pkg ins -y xscreensaver
+   sudo pkg delete -f -y xscreensaver
  ;;
  ssh)
    ### ssh
