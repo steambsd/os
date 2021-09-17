@@ -200,6 +200,7 @@ kldload linux64
 ############################################
 # web
 pli wget
+pli curl
 # packages for WM
 pli xorg
 pli slim
@@ -217,6 +218,7 @@ pli neofetch
 pli mc
 pli unrar
 pli gtar
+pli p7zip
 # packages for info
 pli lxterminal
 pli leafpad
@@ -245,6 +247,11 @@ pli ppsspp
 # games
 pli ctris
 pli foobillard
+# other
+pli vulkan-tools
+pli mesa-demos
+# info cpu
+cpu-x
 
 ############################################
 ### PIP - python package manager         ###
