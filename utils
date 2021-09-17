@@ -217,9 +217,12 @@ EOF'
    lxterminal --geometry=40x4 -e wine 'Steam Authenticator.exe' &
    cd ~
  ;;
- xsc)
-   ### install/delete screensaver
-   #sudo pkg ins -y xscreensaver
+ sci)
+   ### install screensaver
+   sudo pkg ins -y xscreensaver
+ ;;
+ scd)
+   ### delete screensaver
    sudo pkg delete -f -y xscreensaver
  ;;
  ssh)
