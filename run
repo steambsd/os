@@ -525,7 +525,6 @@ mkdir /home/$AZER/Documents
 cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
 cp idw /home/$AZER/.idw
-cp idwp /home/$AZER/.idwp
 cp info /home/$AZER/.info
 cp logo /home/$AZER/.logo
 cp config-neofetch /home/$AZER/.config-neofetch
