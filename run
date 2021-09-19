@@ -12,9 +12,10 @@ chmod +x steam-wine-wheel
 chmod +x steam-winepro-wheel
 chmod +x yet.py
 chmod +x utils
+chmod +x boost
 chmod +x idc
 chmod +x idw
-chmod +x boost
+chmod +x info
 
 ############################################
 ### Variables                            ###
