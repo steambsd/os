@@ -6,17 +6,15 @@
 ############   set permission   ############
 chmod +x info
 chmod +x reconfig
-#chmod +x steam-acolyte-safe
 chmod +x steam-acolyte-wheel
-#chmod +x steam-compat-safe
 chmod +x steam-compat-wheel
-#chmod +x steam-wine-safe
 chmod +x steam-wine-wheel
 chmod +x steam-winepro-wheel
 chmod +x yet.py
 chmod +x utils
 chmod +x idc
 chmod +x idw
+chmod +x boost
 
 ############################################
 ### Variables                            ###
