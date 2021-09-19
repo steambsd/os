@@ -17,7 +17,6 @@ chmod +x yet.py
 chmod +x utils
 chmod +x idc
 chmod +x idw
-chmod +x idwp
 
 ############################################
 ### Variables                            ###
