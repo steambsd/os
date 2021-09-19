@@ -1,5 +1,5 @@
 #!/bin/sh
 echo 'enter id: '
 read ans
-cd '.winepro/drive_c/Program Files (x86)/Steam/'
-winepro steam.exe steam://open/minigameslist "steam://install/$ans"
+cd "/home/$USER/.winepro/drive_c/Program Files (x86)/Steam/"
+winepro steam.exe "steam://install/$ans"
