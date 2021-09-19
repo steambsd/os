@@ -4,7 +4,6 @@
 ###                 STEAM                ###   
 ###              ON FREEBSD              ###
 ############   set permission   ############
-chmod +x info
 chmod +x reconfig
 chmod +x steam-acolyte-wheel
 chmod +x steam-compat-wheel
