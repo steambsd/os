@@ -85,10 +85,6 @@ echo -n 'Choose your number: '
    ### install game for steam-wine
    lxterminal --geometry=40x4 -e sh .idw &
  ;;
- idwp)
-   ### install game for steam-winepro
-   lxterminal --geometry=40x4 -e sh .idwp &
- ;;
  ruc)
    ### reinstall
    rm -rf .steam
