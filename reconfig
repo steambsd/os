@@ -171,6 +171,12 @@ mv ~/.steam-winepro ~/.steam-winepro.save
 mv ~/.steam-compat ~/.steam-compat.save
 mv ~/.steam-acolyte ~/.steam-acolyte.save
 su root -c "ln -s /home/$USER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte"
+sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte.desktop"
+sudo su root -c "echo 'Name=steam-acolyte' > /usr/local/etc/xdg/autostart/steam-acolyte.desktop"
+sudo su root -c "echo 'Type=Application' > /usr/local/etc/xdg/autostart/steam-acolyte.desktop"
+sudo su root -c "echo 'Exec=steam-acolyte' > /usr/local/etc/xdg/autostart/steam-acolyte.desktop"
+sudo su root -c "echo 'Terminal=false' > /usr/local/etc/xdg/autostart/steam-acolyte.desktop"
+
 echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
