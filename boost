@@ -1,2 +1,17 @@
 #!/bin/sh
-sudo killall compton
+
+sudo killall -HUP wine
+sudo killall -HUP chrome
+sudo killall -HUP compton
+sudo killall -HUP cairo-clock
+
+sudo service syslogd stop
+sudo service cleartmp stop
+
+sudo kldunload ext2fs
+sudo kldunload udf
+
+sudo sysctl kern.vt.enable_bell=0
+sudo sysctl hw.syscons.bell=0
+
+sleep 2
