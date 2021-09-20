@@ -5,7 +5,7 @@ if [ -d .steam ]; then
 else
  #sleep 1300
  echo 'I will be run after reboot'
- echo 'Please install proton before acolyte'
+ echo 'Please install steam before acolyte'
  echo '(first launch of SteamBSD)'
  #.local/bin/steam-acolyte
 fi
