@@ -210,7 +210,7 @@ EOF'
    compton &
    cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple &
    sudo service syslogd start
-   sudo service cleartmp start
+   #sudo service cleartmp start
    sudo kldload ext2fs
    sudo kldload udf
    sudo sysctl kern.vt.enable_bell=1
