@@ -16,7 +16,7 @@
 <br> 
 <br>Finally, run it:
 <br><code>./run [your_user] [video_driver] [your_desktop]</code>
-<br>Or run it without paramtrs (default user "admin" with pass "0000", driver "nvidia" and desktop "lumina"):
+<br>Or run it without paramtrs (default user "admin" with pass "0000", driver "auto" and desktop "lumina"):
 <br><code>./run</code>
 <br>
 <br>Where:
@@ -24,6 +24,8 @@
 <br>If the user does not exist, the script will add it automatically with the password "0000", you can change the password after installation:
 <br><code>passwd [your_user]</code>
 <br>[video_driver] is one of: nvidia, amdgpu, radeon, intel or vesa
+<br>auto - autodetect and install ONE driver
+<br>full - autodetect and install FULL packages of driver
 <br>nvidia - recommended, best choice for linux steam
 <br>amdgpu - not bad for wine steam
 <br>radeon - not bad for wine steam
