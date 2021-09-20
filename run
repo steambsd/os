@@ -681,7 +681,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop
 [Desktop Entry]
 Name=steam-acolyte
 Type=Application
-Exec=xterm -geometry 40x4-0+0 -e ~/.steam-acolyte
+Exec=steam-acolyte
 Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/cairo-clock.desktop 
