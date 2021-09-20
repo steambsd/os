@@ -32,6 +32,8 @@ echo 'sta - switch to amdgpu'
 echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
+echo 'bd - boost down'
+echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
 echo 'sci - install xscreensaver'
 echo 'scd - true-delete xscreensaver'
@@ -202,6 +204,18 @@ EOF'
    ### switch to intel
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
+ ;;
+ bd)
+   ### boost down
+   compton
+ ;;
+ clr)
+   ### clear
+   sudo pkg clean -y
+   rm -rf ~/.cache/winetricks/*
+   find . -name DS_Store -type d -delete
+   find . -name *.log -type f -delete
+   
  ;;
  dsa)
    ### download steam autenticator
