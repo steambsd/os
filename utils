@@ -120,12 +120,14 @@ echo -n 'Choose your number: '
    mv ~/.steam-wine.save ~/.steam-wine
    mv ~/.steam-winepro.save ~/.steam-winepro
    mv ~/.steam-compat.save ~/.steam-compat
+   mv ~/.steam-acolyte.save ~/.steam-acolyte
  ;;
  mas)
    ### move
    mv ~/.steam-wine ~/.steam-wine.save
    mv ~/.steam-winepro ~/.steam-winepro.save
    mv ~/.steam-compat ~/.steam-compat.save
+   mv ~/.steam-acolyte ~/.steam-acolyte.save
  ;;
  rd)
    ### reinstall
