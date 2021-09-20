@@ -122,7 +122,7 @@ echo -n 'Choose your number: '
    mv ~/.steam-compat.save ~/.steam-compat
  ;;
  mas)
-   ### restore
+   ### move
    mv ~/.steam-wine ~/.steam-wine.save
    mv ~/.steam-winepro ~/.steam-winepro.save
    mv ~/.steam-compat ~/.steam-compat.save
