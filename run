@@ -140,6 +140,8 @@ sysrc -f /boot/loader.conf beastie_disable=YES
 # /etc/sysctl.conf
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
+echo 'kern.shutdown.poweroff_delay=500' >> /etc/sysctl.conf
+sysctl kern.shutdown.poweroff_delay=500
 # /etc/rc.conf
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
@@ -295,6 +297,8 @@ EOF
 
 echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
+echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
+sysctl hw.usb.no_shutdown_wait=1
 sysrc devfs_system_ruleset=system
 service devfs start
 
