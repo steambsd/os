@@ -207,7 +207,7 @@ EOF'
  ;;
  bd)
    ### boost down
-   compton
+   compton &
  ;;
  clr)
    ### clear
