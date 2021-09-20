@@ -542,7 +542,6 @@ cp yet.py /home/$AZER/.yet.py
 # wallpaper
 mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
-cp wall2.jpg /usr/local/share/wallpapers/wall2.jpg
 # icons
 mkdir /usr/local/share/pixmaps
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
