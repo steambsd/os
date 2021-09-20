@@ -118,7 +118,7 @@ echo -n 'Choose your number: '
    ### restore
    mv ~/.steam-wine.save ~/.steam-wine
    mv ~/.steam-winepro.save ~/.steam-winepro
-   mv ~/.steam-compat ~/.steam-compat
+   mv ~/.steam-compat.save ~/.steam-compat
  ;;
  rd)
    ### reinstall
