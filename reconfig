@@ -169,7 +169,8 @@ mv ~/reconfig ~/.reconfig
 mv ~/.steam-wine ~/.steam-wine.save
 mv ~/.steam-winepro ~/.steam-winepro.save
 mv ~/.steam-compat ~/.steam-compat.save
-#su root -c "ln -s /home/$USER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte"
+mv ~/.steam-acolyte ~/.steam-acolyte.save
+su root -c "ln -s /home/$USER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte"
 echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
