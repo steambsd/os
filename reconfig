@@ -168,7 +168,7 @@ EOF
 mv ~/reconfig ~/.reconfig
 mv ~/.steam-wine ~/.steam-wine.save
 mv ~/.steam-winepro ~/.steam-winepro.save
-mv ~/.steam-compat ~/.steam-compat
+mv ~/.steam-compat ~/.steam-compat.save
 echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
