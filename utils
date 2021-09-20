@@ -17,6 +17,7 @@ echo '### reinstall steam repo (you need reboot PC)'
 echo 'ruc - update steam code '
 echo 'rup - update steam code and proton libraries'
 echo 'ras - restore autostart script for wine, winepro, compat'
+echo 'mas - move autostart script for wine, winepro, compat'
 echo '### add switch keyboard layout (temporary)'
 echo 'sru - add russian switch alt-shift'
 echo 'sgr - add greek switch alt-shift'
@@ -119,6 +120,12 @@ echo -n 'Choose your number: '
    mv ~/.steam-wine.save ~/.steam-wine
    mv ~/.steam-winepro.save ~/.steam-winepro
    mv ~/.steam-compat.save ~/.steam-compat
+ ;;
+ mas)
+   ### restore
+   mv ~/.steam-wine ~/.steam-wine.save
+   mv ~/.steam-winepro ~/.steam-winepro.save
+   mv ~/.steam-compat ~/.steam-compat.save
  ;;
  rd)
    ### reinstall
