@@ -142,6 +142,8 @@ echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
 echo 'kern.shutdown.poweroff_delay=500' >> /etc/sysctl.conf
 sysctl kern.shutdown.poweroff_delay=500
+echo 'vfs.zfs.arc_max=536870912' >> /etc/sysctl.conf
+sysctl vfs.zfs.arc_max=536870912
 # /etc/rc.conf
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
