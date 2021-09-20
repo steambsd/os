@@ -208,6 +208,14 @@ EOF'
  bd)
    ### boost down
    compton &
+   cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple &
+   sudo service syslogd start
+   sudo service cleartmp start
+   sudo kldload ext2fs
+   sudo kldload udf
+   sudo sysctl kern.vt.enable_bell=1
+   sudo sysctl hw.syscons.bell=1
+   sleep 2
  ;;
  clr)
    ### clear
@@ -215,7 +223,7 @@ EOF'
    rm -rf ~/.cache/winetricks/*
    find . -name DS_Store -type d -delete
    find . -name *.log -type f -delete
-   
+   sleep 2
  ;;
  dsa)
    ### download steam autenticator
