@@ -51,3 +51,4 @@
 <br>Site: https://lpros.blogspot.com/
 <br>E-mail: steambsd@gmail.com
 <img src="wall.jpg" alt="wall">
+<img src="wall2.jpg" alt="wall">
