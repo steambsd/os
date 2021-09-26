@@ -276,11 +276,12 @@ own     xpt0       root:operator
 perm    xpt0       0666
 EOF
 cat << EOF >> /etc/devfs.rules
-        [system=10]
-        add path 'acd*' mode 0666
-        add path 'cd*' mode 0666
-        add path 'pass*' mode 0666
-        add path 'xpt*' mode 0666
+[system=10]
+add path 'acd*' mode 0666
+add path 'cd*' mode 0666
+add path 'pass*' mode 0666
+add path 'xpt*' mode 0666
+add path 'usb*' mode 0666
 EOF
 sysrc -f /boot/loader.conf udf_load=YES
 kldload udf
