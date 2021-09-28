@@ -259,6 +259,8 @@ pli webcamd
 pli pwcview
 pli v4l-utils
 pli v4l_compat
+# for chrome
+pli gsettings-desktop-schemas
 
 ############################################
 ### PIP - python package manager         ###
