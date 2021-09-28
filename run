@@ -266,6 +266,7 @@ pli v4l_compat
 ############################################
 # Common
 cat << EOF >> /etc/devfs.conf
+
 # Allow all users to access optical media
 perm    /dev/acd0       0666
 perm    /dev/acd1       0666
