@@ -251,9 +251,14 @@ pli ppsspp
 # games
 pli ctris
 pli foobillard
-# other
+# 3d test
 pli vulkan-tools
 pli mesa-demos
+# web-camera
+pli webcamd
+pli pwcview
+pli v4l-utils
+pli v4l_compat
 
 ############################################
 ### PIP - python package manager         ###
@@ -304,6 +309,21 @@ echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
 sysctl hw.usb.no_shutdown_wait=1
 sysrc devfs_system_ruleset=system
 service devfs start
+
+############################################
+### Web-Cam                              ###
+############################################
+sysrc -f /boot/loader.conf cuse_load=YES
+kldload cuse
+sysrc webcamd_enable=YES
+ncam=`usbconfig | grep CAM | cut -d':' -f1 | cut -d'n' -f2`
+if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
+ncam=`usbconfig | grep cam | cut -d':' -f1 | cut -d'n' -f2`
+if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
+ncam=`usbconfig | grep Cam | cut -d':' -f1 | cut -d'n' -f2`
+if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
+service webcamd start
+service devd restart
 
 ############################################
 ### Driver                               ###
