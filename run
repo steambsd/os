@@ -340,9 +340,10 @@ cat << EOF >> /usr/local/etc/automount.conf
 USERUMOUNT=YES
 ATIME=NO
 REMOVEDIRS=YES
-USER=vermaden
+USER=\${AZER}
 ENCODING=pl_PL.UTF-8
 CODEPAGE=cp852
+FM="lumina-fm"
 EOF
 
 # Automount using sysutils/dsbmd
