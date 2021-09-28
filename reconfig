@@ -129,15 +129,15 @@ Type=Application
 Name=Yet
 Icon=/usr/local/share/pixmaps/ysettingsnew.png
 EOF
-#cat << EOF > Desktop/Chromium.desktop
-#[Desktop Entry]
-#Name=Chromium
-#Exec=chrome %U
-#StartupNotify=true
-#Type=Application
-#Name=Chromium
-#Icon=chrome
-#EOF
+cat << EOF > Desktop/Chromium.desktop
+[Desktop Entry]
+Name=Chromium
+Exec=chrome %U
+StartupNotify=true
+Type=Application
+Name=Chromium
+Icon=chrome
+EOF
 
 sleep 100
 ############################################
