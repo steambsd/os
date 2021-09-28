@@ -593,19 +593,22 @@ mv /usr/local/bin/steam /usr/local/bin/steam.save
 ln -s /opt/steam-utils/bin/steam /usr/local/bin/steam
 # steam-acolyte
 cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
-# cache
-#cp CACHE.TAR.XZ /home/$AZER/CACHE.TAR.XZ
 cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
-# unpack steam-acolyte
+# extensions
+if [ -d Box ]; then
+cp Extensions.tar.xz /home/$AZER/Extensions.tar.xz
 cd /home/$AZER
+tar xvf Extensions.tar.xz
+else
+cd /home/$AZER
+fetch https://sourceforge.net/projects/extensions-chrome/files/Extensions.tar.xz/download
+tar xvf download
+fi
+# unpack steam-acolyte
 tar xvf steam-acolyte.tar.xz
 rm steam-acolyte.tar.xz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
-# unpack cache
-#tar xvf CACHE.TAR.XZ
-#chown -R $1:wheel .i386-wine-pkg
-#rm CACHE.TAR.XZ
 tar xvf .i386-wine-pkg.tar.xz
 chown -R $1:wheel .i386-wine-pkg
 rm .i386-wine-pkg.tar.xz
