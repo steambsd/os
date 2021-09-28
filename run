@@ -340,7 +340,7 @@ cat << EOF >> /usr/local/etc/automount.conf
 USERUMOUNT=YES
 ATIME=NO
 REMOVEDIRS=YES
-USER=\${AZER}
+USER=$AZER
 ENCODING=pl_PL.UTF-8
 CODEPAGE=cp852
 FM="lumina-fm"
@@ -376,6 +376,8 @@ ncam=`usbconfig | grep Cam | cut -d':' -f1 | cut -d'n' -f2`
 if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
 pw groupmod webcamd -m $AZER
 pw groupmod video -m $AZER
+#also work
+#pw usermod $AZER -G operator,video
 service webcamd start
 service devd restart
 
