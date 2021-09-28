@@ -144,6 +144,8 @@ echo 'kern.shutdown.poweroff_delay=500' >> /etc/sysctl.conf
 sysctl kern.shutdown.poweroff_delay=500
 echo 'vfs.zfs.arc_max=536870912' >> /etc/sysctl.conf
 sysctl vfs.zfs.arc_max=536870912
+echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
+sysctl hw.usb.no_shutdown_wait=1
 # /etc/rc.conf
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
@@ -154,12 +156,6 @@ EOF
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
 sysrc sshd_enable=NO
-## view startup log
-#echo 'console.info                                    /var/log/console.log' >> /etc/syslog.conf
-#touch /var/log/console.log
-#chmod 600 /var/log/console.log
-#sysrc syslogd_enable=YES
-#service syslogd restart
 
 ############################################
 ### Update                               ###
@@ -259,8 +255,6 @@ pli webcamd
 pli pwcview
 pli v4l-utils
 pli v4l_compat
-# for chrome
-pli gsettings-desktop-schemas
 
 ############################################
 ### PIP - python package manager         ###
@@ -288,29 +282,54 @@ add path 'acd*' mode 0666
 add path 'cd*' mode 0666
 add path 'pass*' mode 0666
 add path 'xpt*' mode 0666
-add path 'usb*' mode 0666
 EOF
 sysrc -f /boot/loader.conf udf_load=YES
 kldload udf
 
 # USB
+
+# Manual mount
 sysrc -f /boot/loader.conf fusefs_load=YES
 kldload fusefs
 sysrc -f /boot/loader.conf ext2fs_load=YES
 kldload ext2fs
+pli fusefs-exfat
+pli fusefs-gphotofs
 pli fusefs-ntfs
+pli fusefs-simple-mtpfs
+pli fusefs-ext2
+pli fusefs-hfsfuse
+pli fusefs-lkl
 echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 cat << EOF >> /etc/devfs.rules
 add path 'da*' mode 0660 group operator
 add path 'ugen*' mode 0660 group operator
 EOF
-
 echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
-echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
-sysctl hw.usb.no_shutdown_wait=1
 sysrc devfs_system_ruleset=system
 service devfs start
+
+# Automount using sysutils/automount
+#pli automount
+#cat << EOF >> /usr/local/etc/automount.conf
+#USERUMOUNT=YES
+#ATIME=NO
+#REMOVEDIRS=YES
+#USER=vermaden
+#ENCODING=pl_PL.UTF-8
+#CODEPAGE=cp852
+#FM="lumina-fm"
+#EOF
+
+# Automount using sysutils/dsbmd
+pli dsbmc-cli 
+pli dsbmc 
+pli dsbmd
+sysrc dsbmd_enable=YES
+service dsbmd start
+echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
+echo 'dsbmc &' >> /home/$AZER/.xinitrc
 
 ############################################
 ### Web-Cam                              ###
@@ -647,8 +666,6 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
 lumina)
 pli lumina
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
-# remove some packages
-pkg delete -f -y xscreensaver
  ;;
 lxqt)
 pli lxqt
@@ -737,6 +754,12 @@ EOF
 ############################################
 ### Final stage                          ###
 ############################################
+# update packages
+#pkg update
+# remove some packages
+pkg delete -f -y xscreensaver
+# reinstall some packages
+pkg ins -f -y gsettings-desktop-schemas
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
