@@ -335,22 +335,22 @@ sysrc -f /boot/loader.conf ext2fs_load=YES
 kldload ext2fs
 echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 
-# Automount using sysutils/automount
-pli automount
-cat << EOF >> /usr/local/etc/automount.conf
-USERUMOUNT=YES
-ATIME=NO
-REMOVEDIRS=YES
-USER=$AZER
-ENCODING=pl_PL.UTF-8
-CODEPAGE=cp852
-FM="lumina-fm"
-EOF
+## Automount using sysutils/automount (i cant see ada and nvd disks)
+#pli automount
+#cat << EOF >> /usr/local/etc/automount.conf
+#USERUMOUNT=YES
+#ATIME=NO
+#REMOVEDIRS=YES
+#USER=$AZER
+#ENCODING=pl_PL.UTF-8
+#CODEPAGE=cp852
+#FM="lumina-fm"
+#EOF
 
 # Automount using sysutils/dsbmd
-#pli dsbmc-cli 
-#pli dsbmc 
-#pli dsbmd
+pli dsbmc-cli 
+pli dsbmc 
+pli dsbmd
 #pli fusefs-exfat
 #pli fusefs-gphotofs
 #pli fusefs-ntfs
@@ -358,10 +358,12 @@ EOF
 #pli fusefs-ext2
 #pli fusefs-hfsfuse
 #pli fusefs-lkl
-#sysrc dsbmd_enable=YES
-#service dsbmd start
-#echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
-#echo 'dsbmc &' >> /home/$AZER/.xinitrc
+sysrc dsbmd_enable=YES
+service dsbmd start
+echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
+dsbmc-cli -a &
+echo 'dsbmc &' >> /home/$AZER/.xinitrc
+dsbmc &
 
 ############################################
 ### Web-Cam                              ###
