@@ -727,7 +727,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/chrome-init.desktop
 [Desktop Entry]
 Name=chrome-init
 Type=Application
-Exec=chrome -window-size=800,400 https://lpros.blogspot.com/p/documents.html
+Exec=chrome -window-size=400,600 https://lpros.blogspot.com/p/documents.html
 Terminal=false
 EOF
 
