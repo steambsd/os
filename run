@@ -322,6 +322,7 @@ echo 'vfs.usermount=1' >> /etc/sysctl.conf
 sysctl vfs.usermount=1
 sysrc devfs_system_ruleset=system
 service devfs start
+service devd start
 
 # DVD
 pli xfburn
@@ -346,6 +347,8 @@ echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 #CODEPAGE=cp852
 #FM="lumina-fm"
 #EOF
+#service devfs restart
+#service devd restart
 
 # Automount using sysutils/dsbmd
 pli dsbmc-cli 
@@ -361,9 +364,7 @@ pli dsbmd
 sysrc dsbmd_enable=YES
 service dsbmd start
 echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
-dsbmc-cli -a &
 echo 'dsbmc &' >> /home/$AZER/.xinitrc
-dsbmc &
 
 ############################################
 ### Web-Cam                              ###
