@@ -3,6 +3,8 @@ sleep 2
 cd ~
 #welcome
 #python3.7 .yet.py & > /dev/null 2>&1
+dsbmc-cli -a &
+dsbmc &
 sleep 2
 clear
 echo "Start customization for user $USER"
