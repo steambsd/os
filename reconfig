@@ -132,7 +132,7 @@ EOF
 cat << EOF > Desktop/Chromium.desktop
 [Desktop Entry]
 Name=Chromium
-Exec=chrome --force-dark-mode --show-fps-counter
+Exec=chrome --show-fps-counter --force-dark-mode --window-size=640,1024 --window-position=640,0 https://store.steampowered.com
 StartupNotify=true
 Type=Application
 Name=Chromium
