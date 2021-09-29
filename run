@@ -807,7 +807,7 @@ cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc.desktop
 [Desktop Entry]
 Name=dsbmc
 Type=Application
-Exec=dsbmc
+Exec=dsbmc -i
 Terminal=false
 EOF
 
