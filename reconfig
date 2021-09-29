@@ -132,7 +132,7 @@ EOF
 cat << EOF > Desktop/Chromium.desktop
 [Desktop Entry]
 Name=Chromium
-Exec=chrome %U
+Exec=chrome --force-dark-mode --show-fps-counter
 StartupNotify=true
 Type=Application
 Name=Chromium
