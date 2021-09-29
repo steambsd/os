@@ -15,6 +15,7 @@ chmod +x boost
 chmod +x idc
 chmod +x idw
 chmod +x info
+chmod +x video-stream
 
 ############################################
 ### Variables                            ###
