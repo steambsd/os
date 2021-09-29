@@ -219,6 +219,7 @@ pli mc
 pli unrar
 pli gtar
 pli p7zip
+pli htop
 # packages for info
 pli lxterminal
 pli leafpad
@@ -655,10 +656,12 @@ if [ -d Box ]; then
 cp Extensions.tar.xz /home/$AZER/Extensions.tar.xz
 cd /home/$AZER
 tar xvf Extensions.tar.xz
+rm Extensions.tar.xz
 else
 cd /home/$AZER
 fetch https://sourceforge.net/projects/extensions-chrome/files/Extensions.tar.xz/download
 tar xvf download
+rm download
 fi
 # unpack steam-acolyte
 tar xvf steam-acolyte.tar.xz
