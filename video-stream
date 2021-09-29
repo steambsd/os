@@ -1,5 +1,5 @@
 #!/bin/sh
 echo 'Enter link (example http://192.168.43.103:8080/video): '
 read ans
-mpv --no-cache --keep-open --hwdec-codecs=all --cache-secs=0 --demuxer-readahead -secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
+mpv --no-cache --keep-open --hwdec-codecs=all --cache-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
 read ans
