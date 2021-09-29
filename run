@@ -843,9 +843,19 @@ case "$DRIV" in
  # detect radeon, need reboot...
  reboot
  ;;
+ intel)
+ # detect intel, need fix...
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 3 ; service slim restart )
+@reboot                                 root    ( sleep 4 ; service slim restart )
+EOF
+ ;;
  *)
- # nothing
- echo 'nothing...'
+ # detect nothing, need fix
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 3 ; service slim restart )
+@reboot                                 root    ( sleep 4 ; service slim restart )
+EOF
  ;;
 esac
 
