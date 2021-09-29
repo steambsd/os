@@ -802,8 +802,6 @@ EOF
 # disable some packages
 mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
 touch /usr/local/bin/xscreensaver
-# reinstall some packages
-pkg ins -f -y gsettings-desktop-schemas
 # clear
 rm -rf /etc/ins/*
 # set permission
