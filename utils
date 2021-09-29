@@ -220,7 +220,7 @@ EOF'
    ### open video
    echo 'Enter link (example http://192.168.43.103:8080/video): '
    read ans
-   lxterminal --geometry=40x4 -e "mpv --no-cache --keep-open --hwdec=vdpau --hwdec-codecs=all --cache-secs=0 --demuxer-readahead-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &"
+   lxterminal --geometry=40x4 -e mpv --no-cache --keep-open --hwdec=vdpau --hwdec-codecs=all --cache-secs=0 --demuxer-readahead-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
  ;;
  bd)
    ### boost down
