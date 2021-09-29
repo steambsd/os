@@ -220,8 +220,6 @@ EOF'
    ### open video
    read ans
    DISPLAY=:0 mpv --no-cache --keep-open --hwdec=vdpau --hwdec-codecs=all --vo=vdpau --cache-secs=0 --demuxer-readahead-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
-
- &
  ;;
  bd)
    ### boost down
