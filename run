@@ -803,7 +803,7 @@ EOF
 mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
 touch /usr/local/bin/xscreensaver
 # clear
-rm -rf /etc/ins/*
+#rm -rf /etc/ins/*
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
