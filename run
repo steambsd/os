@@ -217,7 +217,7 @@ pli linux-steam-utils
 #sudo su steam -c steam-install
 # packages for console
 pli neofetch
-pli mc
+pli mc-4
 pli unrar
 pli gtar
 pli p7zip
