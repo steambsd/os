@@ -225,7 +225,6 @@ pli lxterminal
 pli leafpad
 # packages for comfort
 pli chromium
-pli smplayer
 pli simplescreenrecorder
 # packages for desktop
 pli compton
@@ -798,7 +797,10 @@ EOF
 # update packages
 #pkg update
 # remove some packages
-pkg delete -f -y xscreensaver
+#pkg delete -f -y xscreensaver
+# disable some packages
+mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
+touch /usr/local/bin/xscreensaver
 # reinstall some packages
 pkg ins -f -y gsettings-desktop-schemas
 # set permission
