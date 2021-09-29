@@ -227,6 +227,7 @@ pli lxterminal
 pli leafpad
 # packages for comfort
 pli chromium
+pli mpv
 pli simplescreenrecorder
 # packages for desktop
 pli compton
