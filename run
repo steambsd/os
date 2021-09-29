@@ -625,6 +625,7 @@ mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 # icons
 mkdir /usr/local/share/pixmaps
+cp ychrome.png /usr/local/share/pixmaps/ychrome.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
 cp ystartboosting.png /usr/local/share/pixmaps/ystartboosting.png
@@ -803,6 +804,8 @@ mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
 touch /usr/local/bin/xscreensaver
 # reinstall some packages
 pkg ins -f -y gsettings-desktop-schemas
+# clear
+rm -rf /etc/ins/*
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
