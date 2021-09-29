@@ -16,11 +16,11 @@ echo 'idw - install for steam-wine'
 echo '### reinstall steam repo (you need reboot PC)'
 echo 'ruc - update steam code '
 echo 'rup - update steam code and proton libraries'
-echo 'ras - restore autostart script for wine, winepro, compat and acolyte'
-echo 'mas - move save autostart script for wine, winepro, compat and acolyte'
+echo 'sar - script-autostart restore for wine, winepro, compat and acolyte'
+echo 'sam - script autostart move to save for wine, winepro, compat and acolyte'
 echo '### add switch keyboard layout (temporary)'
-echo 'sru - add russian switch alt-shift'
-echo 'sgr - add greek switch alt-shift'
+echo 'kru - add keyboard layout for russian (switch alt-shift)'
+echo 'kgr - add keyboard layout for greek (switch alt-shift)'
 echo '### zfs snapshot'
 echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
@@ -116,7 +116,7 @@ echo -n 'Choose your number: '
    sudo make
    sudo make install
  ;;
- ras)
+ sar)
    ### restore
    mv ~/.steam-wine.save ~/.steam-wine
    mv ~/.steam-winepro.save ~/.steam-winepro
@@ -124,7 +124,7 @@ echo -n 'Choose your number: '
    mv ~/.steam-acolyte.save ~/.steam-acolyte
    sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
  ;;
- mas)
+ sam)
    ### move
    mv ~/.steam-wine ~/.steam-wine.save
    mv ~/.steam-winepro ~/.steam-winepro.save
@@ -136,15 +136,10 @@ echo -n 'Choose your number: '
    sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
    sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
  ;;
- rd)
-   ### reinstall
-   sudo su steamdev -c 'rm -rf .steam'
-   sudo shutdown -r now
- ;;
- sru)
+ kru)
  setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
- sgr)
+ kgr)
  setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
  zc)
