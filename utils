@@ -39,7 +39,8 @@ echo 'cam - test webcam using pwcview'
 echo 'ovl - open video by link'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
-echo 'scr - restore xscreensaver'
+echo 'xsr - xscreensaver restore'
+echo 'xsm - xscreensaver move to save'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
@@ -257,9 +258,15 @@ EOF'
    lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    cd ~
  ;;
- scr)
+ xsr)
    ### restore xscreensaver
+   rm /usr/local/bin/xscreensaver
    mv /usr/local/bin/xscreensaver.save /usr/local/bin/xscreensaver
+ ;;
+ xsm)
+   ### move xscreensaver
+   mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
+   touch /usr/local/bin/xscreensaver
  ;;
  ssh)
    ### ssh
