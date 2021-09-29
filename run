@@ -791,6 +791,20 @@ EOF
 #Exec=chrome -window-size=400,600 https://lpros.blogspot.com/p/documents.html
 #Terminal=false
 #EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc-cli.desktop 
+[Desktop Entry]
+Name=dsbmc-cli
+Type=Application
+Exec=dsbmc-cli -a &
+Terminal=false
+EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc.desktop 
+[Desktop Entry]
+Name=dsbmc
+Type=Application
+Exec=dsbmc &
+Terminal=false
+EOF
 
 ############################################
 ### Final stage                          ###
