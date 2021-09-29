@@ -35,6 +35,7 @@ echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
 echo 'bd - boost down'
+echo 'cam - test webcam using pwcview'
 echo 'ovl - open video by link'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
@@ -230,6 +231,10 @@ EOF'
    sudo sysctl hw.syscons.bell=1
    sleep 2
  ;;
+ cam)
+   ### open webcam
+   pwcview -s sif &
+ ;;
  ovl)
    ### open video
    lxterminal --geometry=60x4 -e sh .video-stream
@@ -277,7 +282,7 @@ EOF'
    sudo chmod +x .utils
    rm -rf os-go
    rm go.zip
-   xterm -geometry 73x41-0-25 -e ./.utils &
+   xterm -geometry 73x48-0-25 -e ./.utils &
    sleep 2
    break
  ;;
