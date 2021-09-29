@@ -1,0 +1,5 @@
+#!/bin/sh
+#Sets the webcam's video size. The default is sif. Can be
+#one of 'sqcif', 'qsif', 'qcif', 'sif', 'cif' or 'vga',
+pwcview -s sif &
+read ans
