@@ -34,7 +34,7 @@ echo 'sta - switch to amdgpu'
 echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
-echo 'ol - open video by link'
+echo 'ov - open video by link'
 echo 'bd - boost down'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
@@ -216,11 +216,9 @@ EOF'
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
  ;;
- ol)
+ ov)
    ### open video
-   echo 'Enter link (example http://192.168.43.103:8080/video): '
-   read ans
-   lxterminal --geometry=40x4 -e mpv --no-cache --keep-open --hwdec=vdpau --hwdec-codecs=all --cache-secs=0 --demuxer-readahead-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
+   lxterminal --geometry=60x4 -e sh .video-stream
  ;;
  bd)
    ### boost down
