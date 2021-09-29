@@ -653,7 +653,7 @@ cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # extensions
 if [ -d Box ]; then
-cp Extensions.tar.xz /home/$AZER/Extensions.tar.xz
+cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
 cd /home/$AZER
 tar xvf Extensions.tar.xz
 rm Extensions.tar.xz
