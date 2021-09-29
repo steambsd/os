@@ -34,6 +34,7 @@ echo 'sta - switch to amdgpu'
 echo 'stn - switch to nvidia'
 echo 'sti - switch to intel'
 echo '### system commands'
+echo 'ol - open video by link'
 echo 'bd - boost down'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
@@ -214,6 +215,13 @@ EOF'
    ### switch to intel
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
+ ;;
+ ol)
+   ### open video
+   read ans
+   DISPLAY=:0 mpv --no-cache --keep-open --hwdec=vdpau --hwdec-codecs=all --vo=vdpau --cache-secs=0 --demuxer-readahead-secs=0 --no-cache-pause --geometry=400x320+20+30 $ans &
+
+ &
  ;;
  bd)
    ### boost down
