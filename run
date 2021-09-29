@@ -795,14 +795,14 @@ cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc-cli.desktop
 [Desktop Entry]
 Name=dsbmc-cli
 Type=Application
-Exec=dsbmc-cli -a &
+Exec=dsbmc-cli -a
 Terminal=false
 EOF
 cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc.desktop 
 [Desktop Entry]
 Name=dsbmc
 Type=Application
-Exec=dsbmc &
+Exec=dsbmc
 Terminal=false
 EOF
 
