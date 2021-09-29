@@ -30,9 +30,9 @@ echo '### resolution (you need reboot PC)'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo '### video drivers, if full install (you need reboot PC)'
-echo 'sta - switch to amdgpu'
-echo 'stn - switch to nvidia'
-echo 'sti - switch to intel'
+echo 'gsa - graphic switch to amdgpu'
+echo 'gsn - graphic switch to nvidia'
+echo 'gsi - graphic switch to intel'
 echo '### system commands'
 echo 'bd - boost down'
 echo 'cam - test webcam using pwcview'
@@ -203,17 +203,17 @@ Section "Screen"
 EndSection
 EOF'
  ;;
- sta)
+ gsa)
    ### switch to amdgpu
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/amdgpu.ko"
  ;;
- stn)
+ gsn)
    ### switch to nvidia
    sudo cp /usr/local/etc/X11/xorg.conf.d/xorg.conf.nvidia /usr/local/etc/X11/xorg.conf.d/xorg.conf
    sudo sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
  ;;
- sti)
+ gsi)
    ### switch to intel
    sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
    sudo sysrc kld_list+="/boot/modules/i915kms.ko"
