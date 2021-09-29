@@ -233,7 +233,8 @@ EOF'
  ;;
  cam)
    ### open webcam
-   pwcview -s sif &
+   lxterminal --geometry=60x4 -e sh .video-camera
+   #pwcview -s sif &
  ;;
  ovl)
    ### open video
