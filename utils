@@ -37,8 +37,7 @@ echo '### system commands'
 echo 'bd - boost down'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
-echo 'sci - install xscreensaver'
-echo 'scd - true-delete xscreensaver'
+echo 'scr - restore xscreensaver'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
@@ -238,21 +237,17 @@ EOF'
  ;;
  dsa)
    ### download steam autenticator
-   mkdir Downloads/Steam-Authenticator
-   cd Downloads/Steam-Authenticator
-   fetch https://github.com/Ezzpify/SteamAuthenticator/releases/download/1.2.1/Release.rar
-   unrar x Release.rar
-   rm Release.rar
+   mkdir Downloads/SDA
+   cd Downloads/SDA
+   fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
+   unzip e SDA-1.0.10.zip
+   rm SDA-1.0.10.zip
    lxterminal --geometry=40x4 -e wine 'Steam Authenticator.exe' &
    cd ~
  ;;
- sci)
-   ### install screensaver
-   sudo pkg ins -y xscreensaver
- ;;
- scd)
-   ### delete screensaver
-   sudo pkg delete -f -y xscreensaver
+ scr)
+   ### restore xscreensaver
+   mv /usr/local/bin/xscreensaver.save /usr/local/bin/xscreensaver
  ;;
  ssh)
    ### ssh
