@@ -136,7 +136,7 @@ Exec=chrome --force-dark-mode --show-fps-counter
 StartupNotify=true
 Type=Application
 Name=Chromium
-Icon=chrome
+Icon=/usr/local/share/pixmaps/ychrome.png
 EOF
 
 sleep 100
