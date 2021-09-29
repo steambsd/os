@@ -16,6 +16,7 @@ chmod +x idc
 chmod +x idw
 chmod +x info
 chmod +x video-stream
+chmod +x video-camera
 
 ############################################
 ### Variables                            ###
@@ -608,6 +609,7 @@ esac
 # create documents folder
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
+cp video-stream /home/$AZER/.video-camera
 cp video-stream /home/$AZER/.video-stream
 cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
