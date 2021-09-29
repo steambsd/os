@@ -193,7 +193,7 @@ echo 'It is recommended to install PROTON right now.'
 echo 'Just open Utils on desktop and do p1,p2,p3...'
 echo '-------------------------------------'
 printf "\033[1;31mSystem installed successfully!\033[0;m\n"
-printf "\033[1;34mYou may close all terminals\033[0;m\n"
+printf "\033[1;34mYou may close all terminals.\033[0;m\n"
 printf "\033[1;34mYou may reboot later.\033[0;m\n"
 echo '-------------------------------------'
 echo -n 'Do you want to reboot PC now? (yes, no): '
