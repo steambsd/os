@@ -653,15 +653,15 @@ cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # extensions
 if [ -d Box ]; then
-cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
-cd /home/$AZER
-tar xvf Extensions.tar.xz
-rm Extensions.tar.xz
+  cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
+  cd /home/$AZER
+  tar xvf Extensions.tar.xz
+  rm Extensions.tar.xz
 else
-cd /home/$AZER
-fetch https://sourceforge.net/projects/extensions-chrome/files/Extensions.tar.xz/download
-tar xvf download
-rm download
+  cd /home/$AZER
+  fetch https://sourceforge.net/projects/extensions-chrome/files/Extensions.tar.xz/download
+  tar xvf download
+  rm download
 fi
 # unpack steam-acolyte
 tar xvf steam-acolyte.tar.xz
