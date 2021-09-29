@@ -6,7 +6,7 @@ else
  #sleep 1300
  echo 'I will be run after reboot'
  echo 'Please install steam before acolyte'
- printf "\033[1;31mAfter install you may close \033[1;34mterminals\033[0;m\n"
+ printf "\033[1;34mAfter install you may close terminals\033[0;m\n"
  #.local/bin/steam-acolyte
 fi
 read ans
