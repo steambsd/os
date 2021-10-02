@@ -366,8 +366,8 @@ pli dsbmd
 #pli fusefs-lkl
 sysrc dsbmd_enable=YES
 service dsbmd start
-#echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
-#echo 'dsbmc &' >> /home/$AZER/.xinitrc
+echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
+echo 'dsbmc &' >> /home/$AZER/.xinitrc
 
 ############################################
 ### Web-Cam                              ###
@@ -796,13 +796,13 @@ EOF
 #Exec=chrome -window-size=400,600 https://lpros.blogspot.com/p/documents.html
 #Terminal=false
 #EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc-cli.desktop 
-[Desktop Entry]
-Name=dsbmc-cli
-Type=Application
-Exec=dsbmc-cli -a
-Terminal=false
-EOF
+#cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc-cli.desktop 
+#[Desktop Entry]
+#Name=dsbmc-cli
+#Type=Application
+#Exec=dsbmc-cli -a
+#Terminal=false
+#EOF
 #cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc.desktop 
 #[Desktop Entry]
 #Name=dsbmc
