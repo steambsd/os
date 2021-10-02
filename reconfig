@@ -136,15 +136,14 @@ StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/yrchrome.png
 EOF
+cat << EOF > Desktop/Media.desktop
 [Desktop Entry]
 Name=Media
 Exec=sh .dsbmc
 StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/ymedia.png
-GenericName=dsbmc
-TryExec=sh
-
+EOF
 sleep 100
 ############################################
 ### Readme.txt                           ###
