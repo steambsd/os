@@ -126,6 +126,12 @@ echo -n 'Choose your number: '
    sudo make
    sudo make install
    cd ~
+   ### restore
+   mv ~/.steam-wine.save ~/.steam-wine
+   mv ~/.steam-winepro.save ~/.steam-winepro
+   mv ~/.steam-compat.save ~/.steam-compat
+   mv ~/.steam-acolyte.save ~/.steam-acolyte
+   sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
  ;;
  sar)
    ### restore
