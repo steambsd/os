@@ -368,7 +368,7 @@ pli dsbmd
 sysrc dsbmd_enable=YES
 service dsbmd start
 echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
-echo 'dsbmc &' >> /home/$AZER/.xinitrc
+echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
 
 ############################################
 ### Web-Cam                              ###
