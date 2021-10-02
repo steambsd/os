@@ -126,7 +126,6 @@ Name=Yet
 Exec=python3.7 .yet.py 
 StartupNotify=true
 Type=Application
-Name=Yet
 Icon=/usr/local/share/pixmaps/ysettingsnew.png
 EOF
 cat << EOF > Desktop/Chrome.desktop
@@ -135,7 +134,6 @@ Name=Chrome
 Exec=chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/
 StartupNotify=true
 Type=Application
-Name=Chrome
 Icon=/usr/local/share/pixmaps/yrchrome.png
 EOF
 
