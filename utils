@@ -92,6 +92,7 @@ echo -n 'Choose your number: '
  ;;
  ruc)
    ### reinstall
+   cd ~
    rm -rf .steam
    sudo rm -rf /opt/steam-utils
    cd /etc/ins
@@ -102,9 +103,11 @@ echo -n 'Choose your number: '
    cd linuxulator-steam-utils-master
    sudo make
    sudo make install
+   cd ~
  ;;
  rup)
    ### reinstall
+   cd ~
    rm -rf .steam
    rm -rf .i386-wine-pkg
    sudo rm -rf /opt/steam-utils
@@ -116,6 +119,7 @@ echo -n 'Choose your number: '
    cd linuxulator-steam-utils-master
    sudo make
    sudo make install
+   cd ~
  ;;
  sar)
    ### restore
