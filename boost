@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo '==> Start boost PC...'
+sleep 2
+
 sudo killall -HUP wine
 sudo killall -HUP chrome
 sudo killall -HUP compton
