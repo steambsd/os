@@ -613,14 +613,17 @@ cp info /home/$AZER/.info
 cp logo /home/$AZER/.logo
 cp config-neofetch /home/$AZER/.config-neofetch
 cp reconfig /home/$AZER/
-#cp steam-wine-wheel /home/$AZER/.steam-wine
-#cp steam-winepro-wheel /home/$AZER/.steam-winepro
-#cp steam-compat-wheel /home/$AZER/.steam-compat
-#cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
-cp steam-wine-wheel /home/$AZER/.steam-wine.save
-cp steam-winepro-wheel /home/$AZER/.steam-winepro.save
-cp steam-compat-wheel /home/$AZER/.steam-compat.save
-cp steam-acolyte-wheel /home/$AZER/.steam-acolyte.save
+if [ -d Box ]; then
+ cp steam-wine-wheel /home/$AZER/.steam-wine.save
+ cp steam-winepro-wheel /home/$AZER/.steam-winepro.save
+ cp steam-compat-wheel /home/$AZER/.steam-compat.save
+ cp steam-acolyte-wheel /home/$AZER/.steam-acolyte.save
+else
+ cp steam-wine-wheel /home/$AZER/.steam-wine
+ cp steam-winepro-wheel /home/$AZER/.steam-winepro
+ cp steam-compat-wheel /home/$AZER/.steam-compat
+ cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
+fi
 cp utils /home/$AZER/.utils
 cp yet.py /home/$AZER/.yet.py
 # wallpaper
