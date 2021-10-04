@@ -260,7 +260,7 @@ pli pwcview
 pli v4l-utils
 pli v4l_compat
 # mixer
-pli fossmixer
+pli dsbmixer
 
 ############################################
 ### PIP - python package manager         ###
