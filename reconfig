@@ -9,6 +9,8 @@ dsbmc &
 sleep 2
 clear
 echo "Start customization for user $USER"
+sudo winetricks --self-update
+winetricks -q 7zip
 
 ############################################
 ### Filesystem                           ###
