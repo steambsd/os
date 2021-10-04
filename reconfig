@@ -75,7 +75,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait... (5 minutes)'
-sleep 200
+sleep 150
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
@@ -155,8 +155,7 @@ EOF
 #Icon=/usr/local/share/pixmaps/ymixer.png
 #EOF
 
-sleep 100
-sudo su root -c "killall -HUP dsbmc"
+sleep 50
 ############################################
 ### Readme.txt                           ###
 ############################################
@@ -192,10 +191,10 @@ EOF
 mv ~/reconfig ~/.reconfig
 #sudo su root -c "rm /usr/local/etc/xdg/autostart/chrome-init.desktop"
 
-#mv ~/.steam-wine ~/.steam-wine.save
-#mv ~/.steam-winepro ~/.steam-winepro.save
-#mv ~/.steam-compat ~/.steam-compat.save
-#mv ~/.steam-acolyte ~/.steam-acolyte.save
+mv ~/.steam-wine ~/.steam-wine.save
+mv ~/.steam-winepro ~/.steam-winepro.save
+mv ~/.steam-compat ~/.steam-compat.save
+mv ~/.steam-acolyte ~/.steam-acolyte.save
 #su root -c "ln -s /home/$USER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte"
 sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 sudo su root -c "echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
