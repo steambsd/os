@@ -655,12 +655,11 @@ cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # extensions and steam
 if [ -d Box ]; then
   cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
+  cp Box/.steam.tar.xz /home/$AZER/.steam.tar.xz
   cd /home/$AZER
   tar xvf Extensions.tar.xz
   rm Extensions.tar.xz
   #---
-  cp Box/.steam.tar.xz /home/$AZER/.steam.tar.xz
-  cd /home/$AZER
   tar xvf .steam.tar.xz
   rm .steam.tar.xz
 else
