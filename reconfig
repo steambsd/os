@@ -147,7 +147,7 @@ EOF
 cat << EOF > Desktop/Mixer.desktop
 [Desktop Entry]
 Name=Mixer
-Exec=fossmixer
+Exec=dsbmixer
 StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/ymixer.png
