@@ -159,6 +159,11 @@ sleep 100
 ############################################
 cat << EOF > ~/Desktop/Readme
 
+If internet not work try / Если интернет не работает:
+1. Open Terminal
+2. Run command:
+sudo -s
+bsdconfig networking
 
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com
