@@ -677,6 +677,7 @@ tar xvf steam-acolyte.tar.xz
 rm steam-acolyte.tar.xz
 chown -R $AZER:wheel /home/$AZER/.local
 chmod -R +x /home/$AZER/.local/bin/
+ln -s /home/$AZER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte
 tar xvf .i386-wine-pkg.tar.xz
 chown -R $1:wheel .i386-wine-pkg
 rm .i386-wine-pkg.tar.xz
