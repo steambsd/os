@@ -1,6 +1,6 @@
 #!/bin/sh
 sleep 2
-sudo su root -c "killall -HUP dsbmc"
+
 cd ~
 #welcome
 #python3.7 .yet.py & > /dev/null 2>&1
@@ -24,6 +24,7 @@ sudo su root -c "echo 'procfs          /proc                   procfs    rw     
 sudo mount -a
 
 sleep 8
+sudo su root -c "killall -HUP dsbmc"
 ############################################
 ### Desktop customization                ###
 ############################################
