@@ -26,8 +26,6 @@ dsbmc &
 sleep 2
 clear
 echo "Start customization for user $USER"
-sudo winetricks --self-update
-winetricks -q 7zip
 
 ############################################
 ### Filesystem                           ###
@@ -165,14 +163,6 @@ StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/ymedia.png
 EOF
-#cat << EOF > Desktop/Mixer.desktop
-#[Desktop Entry]
-#Name=Mixer
-#Exec=dsbmixer
-#StartupNotify=true
-#Type=Application
-#Icon=/usr/local/share/pixmaps/ymixer.png
-#EOF
 
 sleep 50
 ############################################
@@ -207,7 +197,7 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/reconfig ~/.reconfig
-#sudo su root -c "rm /usr/local/etc/xdg/autostart/chrome-init.desktop"
+sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
 
 mv ~/.steam-wine ~/.steam-wine.save
 mv ~/.steam-winepro ~/.steam-winepro.save
