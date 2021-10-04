@@ -146,7 +146,7 @@ Icon=/usr/local/share/pixmaps/ymedia.png
 EOF
 cat << EOF > Desktop/Mixer.desktop
 [Desktop Entry]
-Name=Mixe
+Name=Mixer
 Exec=fossmixer
 StartupNotify=true
 Type=Application
