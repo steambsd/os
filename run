@@ -618,6 +618,11 @@ if [ -d Box ]; then
  cp steam-winepro-wheel /home/$AZER/.steam-winepro.save
  cp steam-compat-wheel /home/$AZER/.steam-compat.save
  cp steam-acolyte-wheel /home/$AZER/.steam-acolyte.save
+ echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
+ echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
+ echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
+ echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
+ echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
 else
  cp steam-wine-wheel /home/$AZER/.steam-wine
  cp steam-winepro-wheel /home/$AZER/.steam-winepro
