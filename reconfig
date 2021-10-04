@@ -144,14 +144,15 @@ StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/ymedia.png
 EOF
-cat << EOF > Desktop/Mixer.desktop
-[Desktop Entry]
-Name=Mixer
-Exec=dsbmixer
-StartupNotify=true
-Type=Application
-Icon=/usr/local/share/pixmaps/ymixer.png
-EOF
+#cat << EOF > Desktop/Mixer.desktop
+#[Desktop Entry]
+#Name=Mixer
+#Exec=dsbmixer
+#StartupNotify=true
+#Type=Application
+#Icon=/usr/local/share/pixmaps/ymixer.png
+#EOF
+
 sleep 100
 ############################################
 ### Readme.txt                           ###
