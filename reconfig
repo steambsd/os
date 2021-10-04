@@ -1,6 +1,23 @@
 #!/bin/sh
-sleep 2
 
+############################################
+### Function                             ###
+############################################
+# package type installation (local or inet)
+pli()
+{
+if [ -d All ]; then
+zvar=`ls All | grep $1 | awk '{ print length, $0 }' | sort -n | cut -d" " -f2- | head -1`
+pkg add -f All/$zvar
+else
+pkg ins -f -y $1
+fi
+}
+
+############################################
+### Start                                ###
+############################################
+sleep 2
 cd ~
 #welcome
 #python3.7 .yet.py & > /dev/null 2>&1
@@ -163,11 +180,10 @@ sleep 50
 ############################################
 cat << EOF > ~/Desktop/Readme
 
-If internet not work try / Если интернет не работает:
+If internet not work / Если интернет не работает:
 1. Open Terminal
 2. Run command:
-sudo -s
-bsdconfig networking
+sudo bsdconfig networking
 
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com
@@ -205,7 +221,11 @@ sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam
 sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 
 # reinstall some packages
-sudo su root -c "pkg ins -f -y gsettings-desktop-schemas"
+cd /etc/ins/
+#sudo su root -c "pkg ins -f -y gsettings-desktop-schemas"
+sudo su root -c "pli gsettings-desktop-schemas"
+# clear
+#sudo su root -c "rm -rf /etc/ins/*"
 
 echo '################################################'
 echo '###      System installed successfully!      ###'
