@@ -804,40 +804,24 @@ Type=Application
 Exec=compton
 Terminal=false
 EOF
-#cat << EOF >> /usr/local/etc/xdg/autostart/chrome-init.desktop
-#[Desktop Entry]
-#Name=chrome-init
-#Type=Application
-#Exec=chrome -window-size=400,600 https://lpros.blogspot.com/p/documents.html
-#Terminal=false
-#EOF
-#cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc-cli.desktop 
-#[Desktop Entry]
-#Name=dsbmc-cli
-#Type=Application
-#Exec=dsbmc-cli -a
-#Terminal=false
-#EOF
-#cat << EOF >> /usr/local/etc/xdg/autostart/dsbmc.desktop 
-#[Desktop Entry]
-#Name=dsbmc
-#Type=Application
-#Exec=dsbmc
-#Terminal=false
-#EOF
+cat << EOF >> /usr/local/etc/xdg/autostart/wine.desktop 
+[Desktop Entry]
+Name=wine
+Type=Application
+Exec=winetricks -q 7zip
+Terminal=false
+EOF
 
 ############################################
 ### Final stage                          ###
 ############################################
 # update packages
 #pkg update
-# remove some packages
-#pkg delete -f -y xscreensaver
+# update winetricks
+#winetricks --self-update
 # disable some packages
 mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
 touch /usr/local/bin/xscreensaver
-# clear
-#rm -rf /etc/ins/*
 # set permission
 chown -R $AZER:wheel /home/$AZER/
 # startx
