@@ -22,6 +22,8 @@ chmod +x dsbmc
 ############################################
 ### Variables                            ###
 ############################################
+# type of installation
+#if [ -d All ]; then TYPI="L"; fi
 # main dir
 MATH=`echo $PWD`
 # user with wheel group
