@@ -259,8 +259,6 @@ pli webcamd
 pli pwcview
 pli v4l-utils
 pli v4l_compat
-# mixer
-pli dsbmixer
 
 ############################################
 ### PIP - python package manager         ###
@@ -360,6 +358,7 @@ echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 pli dsbmc-cli 
 pli dsbmc 
 pli dsbmd
+pli dsbmixer
 #pli fusefs-exfat
 #pli fusefs-gphotofs
 #pli fusefs-ntfs
@@ -369,8 +368,11 @@ pli dsbmd
 #pli fusefs-lkl
 sysrc dsbmd_enable=YES
 service dsbmd start
+
 echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
 echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
+echo 'dsbmixer -i &' >> /home/$AZER/.xinitrc
+
 
 ############################################
 ### Web-Cam                              ###
@@ -623,7 +625,7 @@ cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 # icons
 mkdir /usr/local/share/pixmaps
 cp ymedia.png /usr/local/share/pixmaps/ymedia.png
-cp ymixer.png /usr/local/share/pixmaps/ymixer.png
+#cp ymixer.png /usr/local/share/pixmaps/ymixer.png
 cp yrchrome.png /usr/local/share/pixmaps/yrchrome.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
