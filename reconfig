@@ -3,6 +3,8 @@
 ############################################
 ### Function                             ###
 ############################################
+TYPI="I"
+if [ -d /etc/ins/All ]; then TYPI="L"; fi
 # package type installation (local or inet)
 pli()
 {
@@ -92,7 +94,8 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 
 # relay
 echo 'Please, wait... (5 minutes)'
-sleep 150
+#sleep 150
+if [ $TYPI == "L" ]; then sleep 30; else sleep 150; fi
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
@@ -164,7 +167,8 @@ Type=Application
 Icon=/usr/local/share/pixmaps/ymedia.png
 EOF
 
-sleep 50
+#sleep 50
+if [ $TYPI == "L" ]; then sleep 10; else sleep 50; fi
 ############################################
 ### Readme.txt                           ###
 ############################################
