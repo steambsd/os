@@ -182,11 +182,10 @@ EOF
 mv ~/reconfig ~/.reconfig
 sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
 
-mv ~/.steam-wine ~/.steam-wine.save
-mv ~/.steam-winepro ~/.steam-winepro.save
-mv ~/.steam-compat ~/.steam-compat.save
-mv ~/.steam-acolyte ~/.steam-acolyte.save
-#su root -c "ln -s /home/$USER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte"
+mv ~/.steam-wine ~/.steam-wine.save >> /dev/null 2>&1
+mv ~/.steam-winepro ~/.steam-winepro.save >> /dev/null 2>&1
+mv ~/.steam-compat ~/.steam-compat.save >> /dev/null 2>&1
+mv ~/.steam-acolyte ~/.steam-acolyte.save >> /dev/null 2>&1
 sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 sudo su root -c "echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
@@ -196,8 +195,9 @@ sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-aco
 # reinstall some packages
 cd /etc/ins/
 pli gsettings-desktop-schemas
+cd ~
 # clear
-sudo su root -c "rm -rf /etc/ins/*"
+sudo rm -rf /etc/ins/*
 
 echo '################################################'
 echo '###      System installed successfully!      ###'
