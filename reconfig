@@ -92,7 +92,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 ( kquitapp5 plasmashell || killall plasmashell && kstart5 plasmashell ) >> /dev/null 2>&1
 
 # relay
-printf "\033[1;33m===> information:\033[0;m\n"
+printf "\033[1;34m===> information:\033[0;m\n"
 printf "\033[1;34mPlease, wait... (5 minutes)\033[0;m\n"
 #sleep 150
 if [ $TYPI == "L" ]; then sleep 40; else sleep 200; fi
