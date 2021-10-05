@@ -23,9 +23,8 @@ sleep 2
 cd ~
 #welcome
 #python3.7 .yet.py & > /dev/null 2>&1
-dsbmc-cli -a &
-dsbmc &
-sleep 2
+#dsbmc-cli -a &
+#dsbmc &
 clear
 echo "Start customization for user $USER"
 
@@ -42,7 +41,7 @@ sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw     
 sudo su root -c "echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab"
 sudo mount -a
 
-sleep 8
+sleep 6
 sudo su root -c "killall -HUP dsbmc"
 ############################################
 ### Desktop customization                ###
@@ -95,7 +94,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 # relay
 printf "\033[1;33mPlease, wait... (5 minutes)\033[0;m\n"
 #sleep 150
-if [ $TYPI == "L" ]; then sleep 35; else sleep 150; fi
+if [ $TYPI == "L" ]; then sleep 40; else sleep 200; fi
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
