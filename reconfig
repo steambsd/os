@@ -196,7 +196,7 @@ cd ~
 sudo rm -rf /etc/ins/*
 
 echo '################################################'
-echo '###      System installed successfully!      ###'
+echo '###              Recommendations             ###'
 echo '################################################'
 echo 'If LAN not work, run "sudo bsdconfig networking"'
 echo 'Please wait if Steam updates (github install).'
