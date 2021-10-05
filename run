@@ -639,7 +639,6 @@ cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 # icons
 mkdir /usr/local/share/pixmaps
 cp ymedia.png /usr/local/share/pixmaps/ymedia.png
-#cp ymixer.png /usr/local/share/pixmaps/ymixer.png
 cp yrchrome.png /usr/local/share/pixmaps/yrchrome.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
