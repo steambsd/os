@@ -153,10 +153,6 @@ if [ $TYPI == "L" ]; then sleep 10; else sleep 50; fi
 ############################################
 cat << EOF > ~/Desktop/Readme
 
-If internet not work / Если интернет не работает:
-1. Open Terminal
-2. Run command:
-sudo bsdconfig networking
 
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com
@@ -202,8 +198,8 @@ sudo rm -rf /etc/ins/*
 echo '################################################'
 echo '###      System installed successfully!      ###'
 echo '################################################'
-echo ''
-echo 'Please wait if Steam updates.'
+echo 'If LAN not work, run "sudo bsdconfig networking"'
+echo 'Please wait if Steam updates (github install).'
 echo 'It is recommended to install PROTON right now.'
 echo 'Just open Utils on desktop and do p1,p2,p3...'
 echo '-------------------------------------'
