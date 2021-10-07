@@ -2,7 +2,7 @@
 sleep 4
 while true
 do
-if [ -d .wine ]; then
+if [ -f "/home/$USER/.wine/drive_c/Program Files/Steam/steam.exe" ]; then
  echo '-===WINE 32 VERSION OF STEAM===-'
  echo 'Continue run steam?'
  echo 'Press any key to proceed.'
