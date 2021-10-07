@@ -1,0 +1,4 @@
+#!/bin/sh
+echo 'enter id: '
+read ans
+winepro steam.exe steam://install/$ans 
