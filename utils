@@ -264,7 +264,7 @@ EOF'
        let "a+=1"
 
        # detect any key  press
-       read -n 1 keypress
+       read keypress
        echo $keypress
 
    done
