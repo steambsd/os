@@ -256,6 +256,19 @@ EOF'
  win)
    ### test wine
    wine iexplore mail.yandex.ru &
+   count=0
+   while : ; do
+
+       # dummy action
+       echo -n "$a "
+       let "a+=1"
+
+       # detect any key  press
+       read -n 1 keypress
+       echo $keypress
+
+   done
+   echo "Thanks for using this script."
  ;;
  cam)
    ### open webcam
