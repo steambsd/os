@@ -615,22 +615,10 @@ cp info /home/$AZER/.info
 cp logo /home/$AZER/.logo
 cp config-neofetch /home/$AZER/.config-neofetch
 cp reconfig /home/$AZER/
-if [ -d Box ]; then
- cp steam-wine-wheel /home/$AZER/.steam-wine.save
- cp steam-winepro-wheel /home/$AZER/.steam-winepro.save
- cp steam-compat-wheel /home/$AZER/.steam-compat.save
- cp steam-acolyte-wheel /home/$AZER/.steam-acolyte.save
- echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
- echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
- echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
- echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
- echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop
-else
- cp steam-wine-wheel /home/$AZER/.steam-wine
- cp steam-winepro-wheel /home/$AZER/.steam-winepro
- cp steam-compat-wheel /home/$AZER/.steam-compat
- cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
-fi
+cp steam-wine-wheel /home/$AZER/.steam-wine
+cp steam-winepro-wheel /home/$AZER/.steam-winepro
+cp steam-compat-wheel /home/$AZER/.steam-compat
+cp steam-acolyte-wheel /home/$AZER/.steam-acolyte
 cp utils /home/$AZER/.utils
 cp yet.py /home/$AZER/.yet.py
 # wallpaper
@@ -668,13 +656,9 @@ cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
 # extensions and steam
 if [ -d Box ]; then
   cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
-  cp Box/.steam.tar.xz /home/$AZER/.steam.tar.xz
   cd /home/$AZER
   tar xvf Extensions.tar.xz
   rm Extensions.tar.xz
-  #---
-  tar xvf .steam.tar.xz
-  rm .steam.tar.xz
 else
   cd /home/$AZER
   fetch https://sourceforge.net/projects/extensions-chrome/files/Extensions.tar.xz/download
