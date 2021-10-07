@@ -36,6 +36,8 @@ echo 'gsn - graphic switch to nvidia'
 echo 'gsi - graphic switch to intel'
 echo '### system commands'
 echo 'bd - boost down'
+echo 'win - test internet under wine'
+echo 'wip - test internet under winepro'
 echo 'cam - test webcam using pwcview'
 echo 'ovl - open video by link using mpv'
 echo 'clr - clear system (small files, packages and etc)'
@@ -251,6 +253,14 @@ EOF'
    sudo sysctl kern.vt.enable_bell=1
    sudo sysctl hw.syscons.bell=1
    sleep 2
+ ;;
+win)
+   ### test internet under wine
+   wine iexplore mail.yandex.ru
+ ;;
+wip)
+   ### test internet under winepro
+   winepro iexplore
  ;;
  cam)
    ### open webcam
