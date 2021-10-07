@@ -26,12 +26,12 @@ else
  winepro steam.exe steam://open/minigameslist -no-browser
  cd ~
 
- echo '[Desktop Entry]' > Desktop/Steam64.desktop 
- echo 'Name=Steam64' >> Desktop/Steam64.desktop 
- echo 'Type=Application' >> Desktop/Steam64.desktop 
- echo 'Exec=steam-acolyte' >> Desktop/Steam64.desktop 
- echo 'Terminal=false' >> Desktop/Steam64.desktop
- echo 'Icon=/usr/local/share/pixmaps/ysteam.png' >> Desktop/Steam64.desktop 
+ #echo '[Desktop Entry]' > Desktop/Steam64.desktop 
+ #echo 'Name=Steam64' >> Desktop/Steam64.desktop 
+ #echo 'Type=Application' >> Desktop/Steam64.desktop 
+ #echo 'Exec=steam-acolyte' >> Desktop/Steam64.desktop 
+ #echo 'Terminal=false' >> Desktop/Steam64.desktop
+ #echo 'Icon=/usr/local/share/pixmaps/ysteam.png' >> Desktop/Steam64.desktop 
 
 fi
 read ans
