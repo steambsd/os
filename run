@@ -606,7 +606,7 @@ esac
 mkdir /home/$AZER/Documents
 # copy steambsd scrips
 cp dsbmc /home/$AZER/.dsbmc
-cp video-stream /home/$AZER/.video-camera
+cp video-camera /home/$AZER/.video-camera
 cp video-stream /home/$AZER/.video-stream
 cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
