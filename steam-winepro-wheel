@@ -31,7 +31,7 @@ else
  echo 'Type=Application' >> Desktop/Steam64.desktop 
  echo 'Exec=chrome ' >> Desktop/Steam64.desktop 
  echo 'Terminal=false' >> Desktop/Steam64.desktop
- echo 'Icon=/usr/local/share/pixmaps/ysteam.png' >> Desktop/Steam64.desktop 
+ echo 'Icon=/usr/local/share/pixmaps/ypsteam.png' >> Desktop/Steam64.desktop 
 
 fi
 read ans
