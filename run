@@ -13,6 +13,7 @@ chmod +x yet.py
 chmod +x utils
 chmod +x boost
 chmod +x idc
+chmod +x idp
 chmod +x idw
 chmod +x info
 chmod +x video-stream
@@ -610,6 +611,7 @@ cp video-camera /home/$AZER/.video-camera
 cp video-stream /home/$AZER/.video-stream
 cp boost /home/$AZER/.boost
 cp idc /home/$AZER/.idc
+cp idp /home/$AZER/.idp
 cp idw /home/$AZER/.idw
 cp info /home/$AZER/.info
 cp logo /home/$AZER/.logo
