@@ -2,7 +2,7 @@
 sleep 4
 while true
 do
-if [ -d .winepro ]; then
+if [ -f "/home/$USER/.winepro/drive_c/Program Files (x86)/Steam/steam.exe" ]; then
  echo '-===WINEPRO 32-64 VERSION OF STEAM===-'
  echo 'Continue run steam?'
  echo 'Press any key to proceed.'
