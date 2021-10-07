@@ -12,6 +12,7 @@ echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
 echo 'p4 - download simple free game (High Octane Drift)'
 echo '### install steam game by id'
 echo 'idc - install for steam-compat'
+echo 'idp - install for steam-compat'
 echo 'idw - install for steam-wine'
 echo '### reinstall steam repo (you need reboot PC)'
 echo 'ruc - update steam code '
@@ -85,6 +86,10 @@ echo -n 'Choose your number: '
  idc)
    ### install game for steam-compat
    lxterminal --geometry=40x4 -e sh .idc &
+ ;;
+ idp)
+   ### install game for steam-compat
+   lxterminal --geometry=40x4 -e sh .idp &
  ;;
  idw)
    ### install game for steam-wine
@@ -247,10 +252,13 @@ EOF'
    sudo sysctl hw.syscons.bell=1
    sleep 2
  ;;
+ win)
+   ### test wine
+   wine iexplore mail.yandex.ru &
+ ;;
  cam)
    ### open webcam
    lxterminal --geometry=38x4 -e sh .video-camera
-   #pwcview -s sif &
  ;;
  ovl)
    ### open video
