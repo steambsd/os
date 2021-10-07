@@ -36,7 +36,7 @@ echo 'gsn - graphic switch to nvidia'
 echo 'gsi - graphic switch to intel'
 echo '### system commands'
 echo 'bd - boost down'
-echo 'win - test internet under wine'
+echo 'win - test internet'
 echo 'cam - test webcam using pwcview'
 echo 'ovl - open video by link'
 echo 'clr - clear system (small files, packages and etc)'
@@ -254,7 +254,7 @@ EOF'
    sleep 2
  ;;
  win)
-   ### test wine
+   ### test internet
    wine iexplore mail.yandex.ru &
  ;;
  cam)
