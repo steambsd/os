@@ -227,7 +227,7 @@ EOF'
  ;;
  gsa)
    ### switch to amdgpu
-   sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
+   sudo rm /usr/local/etc/X11/xorg.conf.d/xorg.conf
    sudo sysrc kld_list="/boot/modules/amdgpu.ko"
  ;;
  gsn)
@@ -237,7 +237,7 @@ EOF'
  ;;
  gsi)
    ### switch to intel
-   sudo rm /usr/local/etc/X11/xorg.conf.d/corg.conf
+   sudo rm /usr/local/etc/X11/xorg.conf.d/xorg.conf
    sudo sysrc kld_list="/boot/modules/i915kms.ko"
  ;;
  bd)
