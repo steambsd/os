@@ -108,7 +108,7 @@ EOF
 cat << EOF > Desktop/Terminal.desktop 
 [Desktop Entry]
 Name=Terminal
-Exec=lxterminal --geometry=80x22 -e ./.info &
+Exec=lxterminal --geometry=84x24 -e ./.info &
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/mini.xterm_48x48.xpm
