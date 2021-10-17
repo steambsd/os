@@ -700,11 +700,16 @@ echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /et
 echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab
 echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab
 echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab
-sudo mount -a
+#mount -a
 
-test
-service sshd onestart
-/bin/sh
+echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/mount-a.desktop
+echo 'Name=mount-a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+echo 'Type=Application' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+echo 'Exec=mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+
+#service sshd onestart
+#/bin/sh
 
 ############################################
 ### Login manager                        ###
