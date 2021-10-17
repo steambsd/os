@@ -799,7 +799,7 @@ Terminal=false
 EOF
 
 ############################################
-### Final stage                          ###
+### Custom stage                         ###
 ############################################
 # update packages
 #pkg update
@@ -810,11 +810,6 @@ mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
 touch /usr/local/bin/xscreensaver
 # set permission
 chown -R $AZER:wheel /home/$AZER/
-# startx
-service dbus start
-service hald start
-service slim start
-su $AZER -c 'startx'
 
 ############################################
 ### Framebuffer                          ###
@@ -858,3 +853,11 @@ EOF
  ;;
 esac
 
+############################################
+### Final stage                          ###
+############################################
+# startx
+service dbus start
+service hald start
+service slim start
+su $AZER -c 'startx'
