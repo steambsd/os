@@ -1,6 +1,12 @@
 #!/bin/sh
 
 ############################################
+### Check standart driver                ###
+############################################
+CDRV=`cat /usr/local/etc/X11/xorg.conf.d/xorg.conf | grep "Standart"`
+if [ "$CDRV" != '' ]; then sudo rm /usr/local/etc/X11/xorg.conf.d/xorg.conf; fi
+
+############################################
 ### Function                             ###
 ############################################
 TYPI="I"
