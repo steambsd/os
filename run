@@ -652,9 +652,9 @@ cd ..
 mv /usr/local/bin/steam /usr/local/bin/steam.save
 ln -s /opt/steam-utils/bin/steam /usr/local/bin/steam
 # block of steam installation
-  sudo su steamdev -c steam-install
+  su steamdev -c /opt/steam-utils/bin/steam-install
   mv /home/steamdev/.steam /home/$AZER/.steam
-  sudo su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
+  su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
   chown -R $AZER:wheel /home/$AZER/.steam
   echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop
   echo 'Name=steam-start' >> /usr/local/etc/xdg/autostart/steam-start.desktop
