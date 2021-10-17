@@ -533,15 +533,15 @@ EndSection
 EOF
    ;;
    amdgpu)
-    sysrc kld_list+="/boot/modules/amdgpu.ko"
+    sysrc kld_list="/boot/modules/amdgpu.ko"
     #kldload /boot/modules/amdgpu.ko
    ;;
    radeon)
-    sysrc kld_list+="/boot/modules/radeonkms.ko"
+    sysrc kld_list="/boot/modules/radeonkms.ko"
     #kldload /boot/modules/radeonkms.ko
    ;;
    intel)
-    sysrc kld_list+="/boot/modules/i915kms.ko"
+    sysrc kld_list="/boot/modules/i915kms.ko"
     kldload /boot/modules/i915kms.ko
    ;;
    *)
