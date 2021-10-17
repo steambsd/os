@@ -165,13 +165,13 @@ echo -n 'Choose your number: '
    fetch https://github.com/derrod/legendary/archive/refs/heads/master.zip
    unzip master.zip
    cd legendary-master
-   /usr/local/bin/python3.8 setup.py install
+   sudo /usr/local/bin/python3.8 setup.py install
    rm master.zip
    rm -rf legendary-master
  ;;
  pur)
    fetch https://bootstrap.pypa.io/get-pip.py
-   /usr/local/bin/python3.7 get-pip.py
+   sudo /usr/local/bin/python3.7 get-pip.py
    rm get-pip.py
  ;;
  kru)
