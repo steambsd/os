@@ -523,7 +523,7 @@ EOF
 ###ATTENTION! Integrated block  
 case "$DRIV" in
    nvidia)
-    sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+    sysrc kld_list="/boot/modules/nvidia-modeset.ko"
     kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 Section "Device"
