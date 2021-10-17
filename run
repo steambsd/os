@@ -694,6 +694,10 @@ echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 
+#test
+sudo service sshd start
+/usr/local/bin/bash
+
 ############################################
 ### Login manager                        ###
 ############################################
