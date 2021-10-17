@@ -414,7 +414,7 @@ case "$DRIV" in
 pli nvidia-driver
 pli linux-nvidia-libs
 pli nvidia-settings
-sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
 kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
@@ -427,7 +427,7 @@ EOF
 pli nvidia-driver-390
 pli linux-nvidia-libs-390
 pli nvidia-settings
-sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
 kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
@@ -440,7 +440,7 @@ EOF
 pli nvidia-driver-340
 pli linux-nvidia-libs-340
 pli nvidia-settings
-sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
 kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
@@ -453,7 +453,7 @@ EOF
 pli nvidia-driver-304
 pli linux-nvidia-libs-304
 pli nvidia-settings
-sysrc kld_list+="/boot/modules/nvidia-modeset.ko"
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
 kldload /boot/modules/nvidia-modeset.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
@@ -465,8 +465,8 @@ EOF
  amdgpu)
 pli drm-kmod
 pli xf86-video-amdgpu
-sysrc kld_list+="/boot/modules/amdgpu.ko"
-kldload /boot/modules/amdgpu.ko
+sysrc kld_list="/boot/modules/amdgpu.ko"
+#kldload /boot/modules/amdgpu.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
@@ -477,8 +477,8 @@ kldload /boot/modules/amdgpu.ko
  radeon)
 pli drm-kmod
 #pli xf86-video-ati
-sysrc kld_list+="/boot/modules/radeonkms.ko"
-kldload /boot/modules/radeonkms.ko
+sysrc kld_list="/boot/modules/radeonkms.ko"
+#kldload /boot/modules/radeonkms.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
 #        Identifier "Card0"
@@ -489,7 +489,7 @@ kldload /boot/modules/radeonkms.ko
  intel)
 pli drm-kmod
 pli xf86-video-intel
-sysrc kld_list+="/boot/modules/i915kms.ko"
+sysrc kld_list="/boot/modules/i915kms.ko"
 kldload /boot/modules/i915kms.ko
 #cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 #Section "Device"
@@ -534,11 +534,11 @@ EOF
    ;;
    amdgpu)
     sysrc kld_list+="/boot/modules/amdgpu.ko"
-    kldload /boot/modules/amdgpu.ko
+    #kldload /boot/modules/amdgpu.ko
    ;;
    radeon)
     sysrc kld_list+="/boot/modules/radeonkms.ko"
-    kldload /boot/modules/radeonkms.ko
+    #kldload /boot/modules/radeonkms.ko
    ;;
    intel)
     sysrc kld_list+="/boot/modules/i915kms.ko"
