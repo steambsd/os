@@ -705,7 +705,7 @@ echo 'procfs          /proc                   procfs    rw           0 0' >> /et
 echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Name=mount-a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Type=Application' >> /usr/local/etc/xdg/autostart/mount-a.desktop
-echo 'Exec=mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+echo 'Exec=sudo mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 
 #service sshd onestart
