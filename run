@@ -703,7 +703,7 @@ echo 'procfs          /proc                   procfs    rw           0 0' >> /et
 sudo mount -a
 
 test
-service sshd start
+service sshd onestart
 /bin/sh
 
 ############################################
