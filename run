@@ -823,6 +823,13 @@ case "$DRIV" in
  amdgpu)
  # detect amdgpu, need reboot...
  #reboot
+ #kldunload amdgpu.ko
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+Section "Device"
+         Identifier "Standart"
+         Driver "vesa"
+EndSection
+EOF
  ;;
  radeon)
  # detect radeon, need reboot...
