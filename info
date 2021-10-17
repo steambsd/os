@@ -1,6 +1,6 @@
 #!/bin/sh
 neofetch --color_blocks off --refresh_rate on --ascii .logo --config .config-neofetch
-S0='       Good night and good luck!       '
+S0='       The morning is a cool! :)       '
 S1='Developer: '
 S2=`echo "Dmitry V"`
 printf "\033[1;34m${S0} \033[1;31m${S1}\033[0;m${S2}\n"
