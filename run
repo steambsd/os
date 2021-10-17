@@ -684,6 +684,7 @@ echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 ############################################
 ### Block of steam installation          ###
 ############################################
+export PATH=$PATH:/usr/local/bin
 su steamdev -c /opt/steam-utils/bin/steam-install
 mv /home/steamdev/.steam /home/$AZER/.steam
 su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
@@ -695,8 +696,8 @@ echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 
 #test
-sudo service sshd start
-/usr/local/bin/bash
+#service sshd start
+#/bin/sh
 
 ############################################
 ### Login manager                        ###
