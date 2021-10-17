@@ -217,8 +217,16 @@ pli wine-mono
 pli wine-gecko
 # packages for linux
 pli linux-steam-utils
-# right now may use linuxulator-steam-utils, for example:
-#sudo su steam -c steam-install
+# right now may use linuxulator-steam-utils:
+sudo su steamdev -c steam-install
+mv /home/steamdev/.steam /home/$AZER/.steam
+/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri
+chown -R $AZER:wheel /home/$AZER/.steam
+echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop
+echo 'Name=steam-start' >> /usr/local/etc/xdg/autostart/steam-start.desktop
+echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-start.desktop
+echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
+echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 # packages for console
 pli neofetch
 pli mc-4
