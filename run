@@ -822,11 +822,11 @@ su $AZER -c 'startx'
 case "$DRIV" in
  amdgpu)
  # detect amdgpu, need reboot...
- reboot
+ #reboot
  ;;
  radeon)
  # detect radeon, need reboot...
- reboot
+ #reboot
  ;;
  intel)
  # detect intel, need fix...
