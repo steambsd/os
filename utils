@@ -19,6 +19,9 @@ echo 'ruc - update steam code '
 echo 'rup - update steam code and proton libraries'
 echo 'sar - script-autostart restore for wine, winepro, compat and acolyte'
 echo 'sam - script autostart move to save for wine, winepro, compat and acolyte'
+echo '### reinstall / update other programs'
+echo 'lur - legendary (epic-games) update/reinstall'
+echo 'pur - pip (python package manager) update/reinstall'
 echo '### add switch keyboard layout (temporary)'
 echo 'kru - add keyboard layout for russian (switch alt-shift)'
 echo 'kgr - add keyboard layout for greek (switch alt-shift)'
@@ -157,6 +160,19 @@ echo -n 'Choose your number: '
    sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
    sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
    sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+ ;;
+ lur)
+   fetch https://github.com/derrod/legendary/archive/refs/heads/master.zip
+   unzip master.zip
+   cd legendary-master
+   /usr/local/bin/python3.8 setup.py install
+   rm master.zip
+   rm -rf legendary-master
+ ;;
+ pur)
+   fetch https://bootstrap.pypa.io/get-pip.py
+   /usr/local/bin/python3.7 get-pip.py
+   rm get-pip.py
  ;;
  kru)
  setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle,grp_led:scroll"
