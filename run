@@ -231,6 +231,7 @@ pli leafpad
 pli chromium
 pli mpv
 pli simplescreenrecorder
+pli keepassxc
 # packages for desktop
 pli compton
 pli cairo-clock
