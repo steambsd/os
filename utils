@@ -34,6 +34,7 @@ echo '### resolution (you need reboot PC)'
 echo '800 - add screen resolution 800x600 to xorg.conf'
 echo '1366 - add screen resolution 1366x768 to xorg.conf'
 echo '### video drivers, if full install (you need reboot PC)'
+echo 'drm - install drm-kmod (for intel and amdgpu)'
 echo 'gsa - graphic switch to amdgpu'
 echo 'gsn - graphic switch to nvidia'
 echo 'gsi - graphic switch to intel'
@@ -240,6 +241,10 @@ Section "Screen"
         EndSubSection
 EndSection
 EOF'
+ ;;
+ drm)
+   ### install drm-kmod and addons
+   sudo pkg ins -y drm-kmod xf86-video-amdgpu xf86-video-intel
  ;;
  gsa)
    ### switch to amdgpu
