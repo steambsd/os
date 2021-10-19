@@ -30,14 +30,13 @@ echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
 echo 'zl - list snapshot of system'
 echo 'zr - restore full snapshot of system'
-echo '### resolution (you need reboot PC)'
-echo '800 - add screen resolution 800x600 to xorg.conf (small window of VM)'
 echo '### video drivers (you need reboot PC)'
 echo 'drm - install drm-kmod and addons xf86... (for intel and amdgpu)'
 echo 'dnv - install latest nvidia-driver, linux-nvidia-libs & nvidia-settings'
 echo 'gsa - graphic switch to amdgpu (if you have all preinstalled drivers)'
 echo 'gsn - graphic switch to nvidia (if you have all preinstalled drivers)'
 echo 'gsi - graphic switch to intel (if you have all preinstalled drivers)'
+echo '800 - add screen resolution 800x600 to xorg.conf (small window of VM)'
 echo '### system commands'
 echo 'bd - boost down'
 echo 'cam - test webcam using pwcview'
@@ -212,36 +211,6 @@ echo -n 'Choose your number: '
    sudo zfs rollback zroot/var/mail@backup
    #sudo zfs rollback zroot/var/tmp@backup
  ;;
- 800)
-   ### add screen resolution 800x600
-   sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
-
-Section "Screen"
-        Identifier "Screen0"
-        Monitor    "Monitor0"
-        SubSection "Display"
-                Viewport   0 0
-                Depth     24
-                Modes     "800x600"
-        EndSubSection
-EndSection
-EOF'
- ;;
- 1366)
-   ### add screen resolution 1366x768
-   sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
-
-Section "Screen"
-        Identifier "Screen0"
-        Monitor    "Monitor0"
-        SubSection "Display"
-                Viewport   0 0
-                Depth     24
-                Modes     "1366x768"
-        EndSubSection
-EndSection
-EOF'
- ;;
  drm)
    ### install drm-kmod and addons
    sudo pkg ins -y drm-kmod xf86-video-amdgpu xf86-video-intel
@@ -264,6 +233,21 @@ EOF'
    ### switch to intel
    sudo rm /usr/local/etc/X11/xorg.conf.d/xorg.conf
    sudo sysrc kld_list="/boot/modules/i915kms.ko"
+ ;;
+ 800)
+   ### add screen resolution 800x600
+   sudo su root -c 'cat << EOF >> /usr/local/etc/X11/xorg.conf.d/xorg.conf
+
+Section "Screen"
+        Identifier "Screen0"
+        Monitor    "Monitor0"
+        SubSection "Display"
+                Viewport   0 0
+                Depth     24
+                Modes     "800x600"
+        EndSubSection
+EndSection
+EOF'
  ;;
  bd)
    ### boost down
