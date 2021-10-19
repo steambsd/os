@@ -32,12 +32,12 @@ echo 'zl - list snapshot of system'
 echo 'zr - restore full snapshot of system'
 echo '### resolution (you need reboot PC)'
 echo '800 - add screen resolution 800x600 to xorg.conf'
-echo '1366 - add screen resolution 1366x768 to xorg.conf'
-echo '### video drivers, if full install (you need reboot PC)'
+echo '### video drivers (you need reboot PC)'
 echo 'drm - install drm-kmod and addons xf86... (for intel and amdgpu)'
-echo 'gsa - graphic switch to amdgpu'
-echo 'gsn - graphic switch to nvidia'
-echo 'gsi - graphic switch to intel'
+echo 'dnv - install latest nvidia-driver, linux-nvidia-libs & nvidia-settings'
+echo 'gsa - graphic switch to amdgpu (if you have all preinstalled drivers)'
+echo 'gsn - graphic switch to nvidia (if you have all preinstalled drivers)'
+echo 'gsi - graphic switch to intel (if you have all preinstalled drivers)'
 echo '### system commands'
 echo 'bd - boost down'
 echo 'cam - test webcam using pwcview'
@@ -245,6 +245,10 @@ EOF'
  drm)
    ### install drm-kmod and addons
    sudo pkg ins -y drm-kmod xf86-video-amdgpu xf86-video-intel
+ ;;
+ dnv)
+   ### install latest nvidia-driver and addons
+   sudo pkg ins -y nvidia-driver linux-nvidia-libs nvidia-settings
  ;;
  gsa)
    ### switch to amdgpu
