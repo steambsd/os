@@ -1,6 +1,5 @@
 #!/bin/sh
-neofetch --color_blocks off --refresh_rate on --ascii .logo --config .config-neofetc
-h
+neofetch --color_blocks off --refresh_rate on --ascii .logo --config .config-neofetch
 S0='       The morning is very cold!       '
 S1='Developer: '
 S2=`echo "Dmitry V"`
