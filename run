@@ -374,6 +374,14 @@ echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
 echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
 #echo 'dsbmixer -i &' >> /home/$AZER/.xinitrc
 
+unzip drivers.zip
+cd DSBDriverd-master
+make install
+sysrc dsbdriverd_enable="YES"
+service dsbdriverd start
+./dsbdriverd
+cd ..
+
 ############################################
 ### From TrueOS                          ###
 ############################################
