@@ -377,9 +377,8 @@ echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
 unzip drivers.zip
 cd DSBDriverd-master
 make install
-sysrc dsbdriverd_enable="YES"
+sysrc dsbdriverd_enable=YES
 service dsbdriverd start
-./dsbdriverd
 cd ..
 
 ############################################
