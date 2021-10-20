@@ -330,7 +330,7 @@ service devfs start
 service devd start
 
 # DVD
-pli xfburn
+pli tkdvd
 sysrc -f /boot/loader.conf udf_load=YES
 kldload udf
 
@@ -359,7 +359,7 @@ echo 'export NTFS_USE_UBLIO=0' >> /home/$AZER/.bashrc
 pli dsbmc-cli 
 pli dsbmc 
 pli dsbmd
-pli dsbmixer
+#pli dsbmixer
 #pli fusefs-exfat
 #pli fusefs-gphotofs
 #pli fusefs-ntfs
@@ -372,7 +372,20 @@ service dsbmd start
 
 echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
 echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
-echo 'dsbmixer -i &' >> /home/$AZER/.xinitrc
+#echo 'dsbmixer -i &' >> /home/$AZER/.xinitrc
+
+############################################
+### From TrueOS                          ###
+############################################
+pli pc-networkmanager
+pli pc-mixer
+cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
+[Desktop Entry]
+Name=pc-mixer
+Type=Application
+Exec=pc-mixer
+Terminal=false
+EOF
 
 
 ############################################
@@ -769,56 +782,56 @@ polkit.addRule(function (action, subject)
 EOF
 
 # autostart
-cat << EOF >> /usr/local/etc/xdg/autostart/reconfig.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/reconfig.desktop 
 [Desktop Entry]
 Name=reconfig
 Type=Application
 Exec=xterm -geometry 50x15+0-25 -e ~/reconfig
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-wine.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/steam-wine.desktop 
 [Desktop Entry]
 Name=steam-wine
 Type=Application
 Exec=xterm -geometry 40x4-750+0 -e ~/.steam-wine
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-winepro.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/steam-winepro.desktop 
 [Desktop Entry]
 Name=steam-winepro
 Type=Application
 Exec=xterm -geometry 40x4-500+0 -e ~/.steam-winepro
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-compat.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/steam-compat.desktop 
 [Desktop Entry]
 Name=steam-compat
 Type=Application
 Exec=xterm -geometry 40x4-250+0 -e ~/.steam-compat
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/steam-acolyte.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/steam-acolyte.desktop 
 [Desktop Entry]
 Name=steam-acolyte
 Type=Application
 Exec=xterm -geometry 40x4-0+0 -e ~/.steam-acolyte
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/cairo-clock.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/cairo-clock.desktop 
 [Desktop Entry]
 Name=cairo-clock
 Type=Application
 Exec=cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/compton.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/compton.desktop 
 [Desktop Entry]
 Name=compton
 Type=Application
 Exec=compton
 Terminal=false
 EOF
-cat << EOF >> /usr/local/etc/xdg/autostart/wine.desktop 
+cat << EOF > /usr/local/etc/xdg/autostart/wine.desktop 
 [Desktop Entry]
 Name=wine
 Type=Application
