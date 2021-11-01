@@ -18,6 +18,7 @@ chmod +x idw
 chmod +x info
 chmod +x video-stream
 chmod +x video-camera
+#chmod +x dsbmc
 
 ############################################
 ### Variables                            ###
