@@ -19,6 +19,7 @@ chmod +x info
 chmod +x video-stream
 chmod +x video-camera
 #chmod +x dsbmc
+chmod +x network
 
 ############################################
 ### Variables                            ###
@@ -605,6 +606,8 @@ esac
 ############################################
 # create documents folder
 mkdir /home/$AZER/Documents
+# cp other scripts
+cp network /usr/local/bin/network
 # copy steambsd scrips
 cp dsbmc /home/$AZER/.dsbmc
 cp video-camera /home/$AZER/.video-camera
