@@ -634,6 +634,7 @@ mkdir /usr/local/share/pixmaps
 #cp ymedia.png /usr/local/share/pixmaps/ymedia.png
 cp ypsteam.png /usr/local/share/pixmaps/ypsteam.png
 cp yrchrome.png /usr/local/share/pixmaps/yrchrome.png
+cp ysacolyte.png /usr/local/share/pixmaps/ysacolyte.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
 cp ystartboosting.png /usr/local/share/pixmaps/ystartboosting.png
