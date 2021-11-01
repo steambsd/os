@@ -319,6 +319,7 @@ EOF'
   sudo killall -HUP dsbmc
   dsbmc
   EOF
+  sudo chmod +x dsbmc
 
   cat << EOF > Desktop/Media.desktop
   [Desktop Entry]
