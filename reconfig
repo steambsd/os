@@ -145,14 +145,6 @@ StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/yrchrome.png
 EOF
-cat << EOF > Desktop/Media.desktop
-[Desktop Entry]
-Name=Media
-Exec=sh .dsbmc
-StartupNotify=true
-Type=Application
-Icon=/usr/local/share/pixmaps/ymedia.png
-EOF
 
 #sleep 50
 if [ $TYPI == "L" ]; then sleep 10; else sleep 50; fi
