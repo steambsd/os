@@ -314,21 +314,21 @@ EOF'
   sudo echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
   sudo echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
 
-  cat << EOF > /home/$AZER/.dsbmc
-  #!/bin/sh
-  sudo killall -HUP dsbmc
-  dsbmc
-  EOF
+cat << EOF > /home/$AZER/.dsbmc
+#!/bin/sh
+sudo killall -HUP dsbmc
+dsbmc
+EOF
   sudo chmod +x dsbmc
 
-  cat << EOF > Desktop/Media.desktop
-  [Desktop Entry]
-  Name=Media
-  Exec=sh .dsbmc
-  StartupNotify=true
-  Type=Application
-  Icon=drive-removable-media-usb-pendrive
-  EOF
+cat << EOF > Desktop/Media.desktop
+[Desktop Entry]
+Name=Media
+Exec=sh .dsbmc
+StartupNotify=true
+Type=Application
+Icon=drive-removable-media-usb-pendrive
+EOF
 
   sudo pkg delete -f -y pc-mixer
   sudo pkg ins -y dsbmixer
