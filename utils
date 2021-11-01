@@ -311,8 +311,8 @@ EOF'
   #pkg ins -y fusefs-lkl
   sudo sysrc dsbmd_enable=YES
   sudo service dsbmd start
-  sudo echo 'dsbmc-cli -a &' >> /home/$AZER/.xinitrc
-  sudo echo 'dsbmc -i &' >> /home/$AZER/.xinitrc
+  sudo echo 'dsbmc-cli -a &' >> /home/$USER/.xinitrc
+  sudo echo 'dsbmc -i &' >> /home/$USER/.xinitrc
 
 cat << EOF > /home/$AZER/.dsbmc
 #!/bin/sh
