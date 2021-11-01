@@ -755,6 +755,7 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
 lxde)
 pli lxde-meta
 echo 'startlxde' >> /home/$AZER/.xinitrc
+pkg delete -f -y pc-mixer
  ;;
 *)
  echo "Error. Unrecognized desktop."
