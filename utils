@@ -372,6 +372,10 @@ EOF
    sleep 2
    break
  ;;
+ tst)
+   echo 'This is test.'
+   sleep 1
+ ;;
  exit)
    echo 'Exit.'
    sleep 1
