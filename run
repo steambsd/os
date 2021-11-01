@@ -752,6 +752,10 @@ pli lxqt
 echo 'startlxqt' >> /home/$AZER/.xinitrc
 printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/lxqt/session.conf
  ;;
+expr)
+#this experemental function
+echo 'openbox-session' >> /home/$AZER/.xinitrc
+ ;;
 lxde)
 pli lxde-meta
 echo 'startlxde' >> /home/$AZER/.xinitrc
