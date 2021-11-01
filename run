@@ -18,7 +18,6 @@ chmod +x idw
 chmod +x info
 chmod +x video-stream
 chmod +x video-camera
-chmod +x dsbmc
 
 ############################################
 ### Variables                            ###
@@ -628,7 +627,7 @@ mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 # icons
 mkdir /usr/local/share/pixmaps
-cp ymedia.png /usr/local/share/pixmaps/ymedia.png
+#cp ymedia.png /usr/local/share/pixmaps/ymedia.png
 cp ypsteam.png /usr/local/share/pixmaps/ypsteam.png
 cp yrchrome.png /usr/local/share/pixmaps/yrchrome.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
