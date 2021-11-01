@@ -54,6 +54,7 @@ sudo su root -c "killall -HUP dsbmc"
 ############################################
 #lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
+sudo chmod 644 /home/$USER/Desktop/*
 
 #lxqt-preset
 pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
