@@ -756,6 +756,7 @@ lxde)
 pli lxde-meta
 echo 'startlxde' >> /home/$AZER/.xinitrc
 pkg delete -f -y pc-mixer
+printf '%s\n' /config/a 'quick_exec=1' . w q | ex -s /usr/local/etc/xdg/libfm/libfm.conf
  ;;
 *)
  echo "Error. Unrecognized desktop."
