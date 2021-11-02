@@ -112,6 +112,7 @@ Exec=/usr/local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
+EOF
 fi
 cat << EOF > Desktop/Boost.desktop 
 [Desktop Entry]
