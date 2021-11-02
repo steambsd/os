@@ -77,9 +77,9 @@ fi
 if [ "$DENV" == "live" ]
 then
 pli xorg
-pli openbox
+pli lumina
 echo 'xterm' >> /root/.xinitrc
-echo 'openbox-session' >> /root/.xinitrc
+echo 'start-lumina-desktop' >> /root/.xinitrc
 startx
 fi
 
