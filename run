@@ -73,23 +73,8 @@ fi
 ############################################
 ### Check live                           ###
 ############################################
-if [ "$DENV" == "live" ]
-then
-pli xorg
-pli lumina
-pli pc-networkmanager
-pli pc-mixer
-cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
-[Desktop Entry]
-Name=pc-mixer
-Type=Application
-Exec=pc-mixer
-Terminal=false
-EOF
-#echo 'xterm' >> /root/.xinitrc
-echo 'start-lumina-desktop' >> /root/.xinitrc
-startx
-fi
+CHK=`ls /dev | grep md1 | head -n1`
+if [ "$CHK" == "md1" ]; then echo '-= Detected minimal mode =-'; fi
 
 ############################################
 ### Check system                         ###
@@ -216,6 +201,9 @@ pw usermod steam -s /usr/local/bin/bash
 # user for steam development
 pw useradd steamdev -m
 pw usermod steamdev -s /usr/local/bin/bash
+# terminal customization
+echo alias ls=\'ls -G\' >> /root/.bashrc
+echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
 # linux
 sysrc linux_enable=YES
 sysrc linux64_enable=YES
@@ -287,7 +275,11 @@ pli batterycat
 ############################################
 ### PIP - python package manager         ###
 ############################################
+if [ "$CHK" == "md1" ]; then 
+echo '-= Detected minimal mode =-'
+else
 /usr/local/bin/python3.7 get-pip.py
+fi
 
 ############################################
 ### DVD, USB and CLOUD                   ###
@@ -657,17 +649,26 @@ cp ysacolyte.png /usr/local/share/pixmaps/ysacolyte.png
 cp ysettings.png /usr/local/share/pixmaps/ysettings.png
 cp ysettingsnew.png /usr/local/share/pixmaps/ysettingsnew.png
 cp ystartboosting.png /usr/local/share/pixmaps/ystartboosting.png
+
+if [ "$CHK" == "md1" ]; then 
+echo '-= Detected minimal mode =-'
+else
 #epic-games
 unzip epic-games.zip
 cd legendary-master
 /usr/local/bin/python3.8 setup.py install
 cd ..
+fi
 echo alias epic=\'legendary\' >> /home/$AZER/.bashrc
 echo alias epicpro=\'LGDRY_WINE_BINARY=/usr/local/bin/winepro legendary\' >> /home/$AZER/.bashrc
 # winepro
 echo '#!/bin/sh' > /usr/local/bin/winepro
 echo 'WINEPREFIX=~/.winepro /opt/steam-utils/bin/lsu-wine-env wine $1' >> /usr/local/bin/winepro
 chmod +x /usr/local/bin/winepro
+
+if [ "$CHK" == "md1" ]; then 
+echo '-= Detected minimal mode =-'
+else
 # steam-linux-devel
 unzip master.zip
 cd linuxulator-steam-utils-master
@@ -679,7 +680,7 @@ ln -s /opt/steam-utils/bin/steam /usr/local/bin/steam
 # steam-acolyte
 cp steam-acolyte.tar.xz /home/$AZER/steam-acolyte.tar.xz
 cp Box/.i386-wine-pkg.tar.xz /home/$AZER/.i386-wine-pkg.tar.xz
-# extensions and steam
+# extensions
 if [ -d Box ]; then
   cp Box/Extensions.tar.xz /home/$AZER/Extensions.tar.xz
   cd /home/$AZER
@@ -700,26 +701,20 @@ ln -s /home/$AZER/.local/bin/steam-acolyte /usr/local/bin/steam-acolyte
 tar xvf .i386-wine-pkg.tar.xz
 chown -R $1:wheel .i386-wine-pkg
 rm .i386-wine-pkg.tar.xz
-# terminal customization
-echo alias ls=\'ls -G\' >> /root/.bashrc
-echo alias ls=\'ls -G\' >> /home/$AZER/.bashrc
 # steam-acolyte alias
 echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
-
-############################################
-### Block of steam installation          ###
-############################################
+# block of steam installation
 export PATH=$PATH:/usr/local/bin
 su steamdev -c /opt/steam-utils/bin/steam-install
 mv /home/steamdev/.steam /home/$AZER/.steam
 su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
 chown -R $AZER:wheel /home/$AZER/.steam
-
 echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Name=steam-start' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
+fi
 
 echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab
 echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab
@@ -732,9 +727,6 @@ echo 'Name=mount-a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Type=Application' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Exec=sudo mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
-
-#service sshd onestart
-#/bin/sh
 
 ############################################
 ### Login manager                        ###
@@ -851,6 +843,9 @@ Type=Application
 Exec=compton
 Terminal=false
 EOF
+if [ "$CHK" == "md1" ]; then 
+echo '-= Detected minimal mode =-'
+else
 cat << EOF > /usr/local/etc/xdg/autostart/wine.desktop 
 [Desktop Entry]
 Name=wine
@@ -858,6 +853,7 @@ Type=Application
 Exec=winetricks -q 7zip
 Terminal=false
 EOF
+fi
 
 ############################################
 ### Custom stage                         ###
