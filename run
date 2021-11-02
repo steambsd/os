@@ -18,7 +18,6 @@ chmod +x idw
 chmod +x info
 chmod +x video-stream
 chmod +x video-camera
-#chmod +x dsbmc
 chmod +x network
 
 ############################################
@@ -78,7 +77,7 @@ if [ "$DENV" == "live" ]
 then
 pli xorg
 pli lumina
-echo 'xterm' >> /root/.xinitrc
+#echo 'xterm' >> /root/.xinitrc
 echo 'start-lumina-desktop' >> /root/.xinitrc
 startx
 fi
@@ -621,7 +620,6 @@ mkdir /home/$AZER/Documents
 # cp other scripts
 cp network /usr/local/bin/network
 # copy steambsd scrips
-cp dsbmc /home/$AZER/.dsbmc
 cp video-camera /home/$AZER/.video-camera
 cp video-stream /home/$AZER/.video-stream
 cp boost /home/$AZER/.boost
