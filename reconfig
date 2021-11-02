@@ -125,7 +125,7 @@ EOF
 cat << EOF > Desktop/Utils.desktop 
 [Desktop Entry]
 Name=Utils
-Exec=xterm -geometry 73x48-0-25 -e ./.utils &
+Exec=xterm -geometry 73x50-0-25 -e ./.utils &
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
