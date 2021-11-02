@@ -49,8 +49,8 @@ echo 'xsm - xscreensaver move to save'
 echo 'ssh - enable SSH'
 echo 'rbt - reboot PC'
 echo 'sht - shutdown PC'
-echo 'upd - update utils'
 echo 'yet - test python'
+echo 'upd - update utils'
 echo 'exit - close utils'
 echo ''
 echo -n 'Choose your number: '
@@ -362,6 +362,15 @@ EOF
    ### shutdown
    sudo shutdown -p now
  ;;
+ tst)
+   echo 'This is test.'
+   sleep 1
+ ;;
+ yet)
+   echo 'This is test of python 3.7'
+   sleep 1
+   python3.7 .yet.py 
+ ;;
  upd)
    ### update utils
    fetch https://github.com/steambsd/os/archive/go.zip
@@ -373,15 +382,6 @@ EOF
    xterm -geometry 73x50-0-25 -e ./.utils &
    sleep 2
    break
- ;;
- tst)
-   echo 'This is test.'
-   sleep 1
- ;;
- yet)
-   echo 'This is test of python 3.7'
-   sleep 1
-   python3.7 .yet.py 
  ;;
  exit)
    echo 'Exit.'
