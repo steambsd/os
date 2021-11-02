@@ -72,7 +72,7 @@ env ASSUME_ALWAYS_YES=YES pkg update -f
 fi
 
 ############################################
-### Check-live                           ###
+### Check live                           ###
 ############################################
 if [ "$DENV" == "live" ]
 then
