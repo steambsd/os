@@ -376,6 +376,11 @@ EOF
    echo 'This is test.'
    sleep 1
  ;;
+ yet)
+   echo 'This is test of python 3.7'
+   sleep 1
+   python3.7 .yet.py 
+ ;;
  exit)
    echo 'Exit.'
    sleep 1
