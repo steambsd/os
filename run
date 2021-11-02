@@ -85,35 +85,6 @@ exit 0
 fi
 
 ############################################
-### Motd                            ###
-############################################
-# Build date used for motd and product file
-BUILDDATE=$(date +%Y%m%d)
-RELEASE="$VERS"
-DOC_URL="https://lpros.blogspot.com/"
-
-# Creating /etc/motd
-cat << MOTD > /etc/motd.safe
-SteamBSD $RELEASE $BUILDDATE
-$DOC_URL
-MOTD
-# Creating /etc/product file
-cat << PRODUCT > /etc/product.safe
-Name: SteamBSD Instance
-Image: SteamBSD $RELEASE $BUILDDATE
-Documentation: $DOC_URL
-Description: SteamBSD $RELEASE 64-bit image with just essential packages \
-installed. Find your favorite game and forget about everything \
-that might bother you.
-PRODUCT
-
-############################################
-### Bugs                                 ###
-############################################
-# drm-kmod not work on FreeBSD 12.2
-#if [ $DRIV != 'nvidia' ]; then DRIV='vesa'; fi
-
-############################################
 ### Check system                         ###
 ############################################
 # blank arguments
@@ -142,6 +113,35 @@ case "$#" in
  exit 0
  ;;
 esac
+
+############################################
+### Motd                            ###
+############################################
+# Build date used for motd and product file
+BUILDDATE=$(date +%Y%m%d)
+RELEASE="$VERS"
+DOC_URL="https://lpros.blogspot.com/"
+
+# Creating /etc/motd
+cat << MOTD > /etc/motd.safe
+SteamBSD $RELEASE $BUILDDATE
+$DOC_URL
+MOTD
+# Creating /etc/product file
+cat << PRODUCT > /etc/product.safe
+Name: SteamBSD Instance
+Image: SteamBSD $RELEASE $BUILDDATE
+Documentation: $DOC_URL
+Description: SteamBSD $RELEASE 64-bit image with just essential packages \
+installed. Find your favorite game and forget about everything \
+that might bother you.
+PRODUCT
+
+############################################
+### Bugs                                 ###
+############################################
+# drm-kmod not work on FreeBSD 12.2
+#if [ $DRIV != 'nvidia' ]; then DRIV='vesa'; fi
 
 ############################################
 ### Tuning                               ###
