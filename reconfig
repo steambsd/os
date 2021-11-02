@@ -205,6 +205,7 @@ pli gsettings-desktop-schemas
 cd ~
 # clear
 #sudo rm -rf /etc/ins/*
+cd /home/$USER
 
 echo '################################################'
 echo '###              Recommendations             ###'
