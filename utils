@@ -280,7 +280,8 @@ EOF'
  clr)
    ### clear
    sudo pkg clean -y
-   rm -rf ~/.cache/winetricks/*
+   sudo rm -rf /etc/ins/*
+   rm -rf ~/.cache/winetricks/*   
    find . -name DS_Store -type d -delete
    find . -name *.log -type f -delete
    sleep 2
