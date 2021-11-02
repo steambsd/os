@@ -220,7 +220,11 @@ cd /etc/ins/
 pli gsettings-desktop-schemas
 cd ~
 # clear
+if [ "$CHK" == "md1" ]; then 
 #sudo rm -rf /etc/ins/*
+else
+sudo rm -rf /etc/ins/*
+fi
 cd /home/$USER
 
 echo '################################################'
