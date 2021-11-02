@@ -901,12 +901,16 @@ cat << EOF >> /etc/crontab
 @reboot                                 root    ( sleep 4 ; service slim restart )
 EOF
  ;;
- *)
- # detect nothing, need fix
-cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 3 ; service slim restart )
-@reboot                                 root    ( sleep 4 ; service slim restart )
+ vesa)
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+Section "Device"
+         Identifier "Vesa"
+         Driver "vesa"
+EndSection
 EOF
+ ;;
+ *)
+ # detect other, nothing
  ;;
 esac
 
