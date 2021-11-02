@@ -204,7 +204,7 @@ cd /etc/ins/
 pli gsettings-desktop-schemas
 cd ~
 # clear
-sudo rm -rf /etc/ins/*
+#sudo rm -rf /etc/ins/*
 
 echo '################################################'
 echo '###              Recommendations             ###'
