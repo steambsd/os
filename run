@@ -57,6 +57,32 @@ fi
 }
 
 ############################################
+### Update                               ###
+############################################
+if [ -d All ]; then
+tar xf All/pkg-* -s ",/.*/,,g" "*/pkg-static"
+./pkg-static add All/pkg-*
+else
+# system
+env PAGER=cat freebsd-update fetch
+freebsd-update install
+# pkg
+env ASSUME_ALWAYS_YES=YES pkg bootstrap
+env ASSUME_ALWAYS_YES=YES pkg update -f
+fi
+
+############################################
+### Check-live                           ###
+############################################
+if [ "$DENV" == "live" ]
+then
+
+pli openbox
+echo 'xterm' >> /home/$AZER/.xinitrc
+echo 'openbox-session' >> /home/$AZER/.xinitrc
+fi
+
+############################################
 ### Motd                            ###
 ############################################
 # Build date used for motd and product file
@@ -163,21 +189,6 @@ EOF
 sysrc sendmail_enable=NO
 sysrc moused_enable=NO
 sysrc sshd_enable=NO
-
-############################################
-### Update                               ###
-############################################
-if [ -d All ]; then
-tar xf All/pkg-* -s ",/.*/,,g" "*/pkg-static"
-./pkg-static add All/pkg-*
-else
-# system
-env PAGER=cat freebsd-update fetch
-freebsd-update install
-# pkg
-env ASSUME_ALWAYS_YES=YES pkg bootstrap
-env ASSUME_ALWAYS_YES=YES pkg update -f
-fi
 
 ############################################
 ### Prepare                              ###
@@ -754,12 +765,6 @@ echo 'startlxqt' >> /home/$AZER/.xinitrc
 printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share/lxqt/session.conf
  ;;
 expr)
-#this experemental function
-pli openbox
-echo 'xterm' >> /home/$AZER/.xinitrc
-echo 'openbox-session' >> /home/$AZER/.xinitrc
- ;;
-live)
 #this experemental function
 pli openbox
 echo 'xterm' >> /home/$AZER/.xinitrc
