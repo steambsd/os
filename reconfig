@@ -83,7 +83,7 @@ printf '%s\n' /Wallpaper/a 'Image=file:///usr/local/share/wallpapers/wall.jpg' .
 # relay
 printf "\033[1;34mPlease, wait... (5 minutes)\033[0;m\n"
 #sleep 150
-if [ $TYPI == "L" ]; then sleep 40; else sleep 200; fi
+if [ $TYPI == "L" ]; then sleep 50; else sleep 200; fi
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
