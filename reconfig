@@ -4,7 +4,6 @@
 ### Check mode                           ###
 ############################################
 CHK=`ls /dev | grep md1 | head -n1`
-if [ "$CHK" == "md1" ]; then echo '-= Detected minimal mode =-'; fi
 
 ############################################
 ### Check standart driver                ###
@@ -37,6 +36,7 @@ sleep 2
 cd ~
 #welcome
 #python3.7 .yet.py & > /dev/null 2>&1
+#
 clear
 echo "Start customization for user $USER"
 
@@ -95,6 +95,16 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
+if [ "$CHK" == "md1" ]; then 
+cat << EOF > Desktop/Installer.desktop 
+[Desktop Entry]
+Name=Installer
+Exec=python3.7 .yet.py
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/yinstall.png
+EOF
+else
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
@@ -102,7 +112,8 @@ Exec=/usr/local/bin/steam-acolyte
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
-EOF
+fi
+
 cat << EOF > Desktop/Boost.desktop 
 [Desktop Entry]
 Name=Boost
