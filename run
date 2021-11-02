@@ -76,10 +76,12 @@ fi
 ############################################
 if [ "$DENV" == "live" ]
 then
-
+pli xorg
 pli openbox
 echo 'xterm' >> /home/$AZER/.xinitrc
-echo 'openbox-session' >> /home/$AZER/.xinitrc
+echo 'openbox-session' >> /root/.xinitrc
+startx
+exit 0
 fi
 
 ############################################
