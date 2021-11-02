@@ -222,6 +222,7 @@ cd ~
 # clear
 if [ "$CHK" == "md1" ]; then 
 #sudo rm -rf /etc/ins/*
+echo ' '
 else
 sudo rm -rf /etc/ins/*
 fi
