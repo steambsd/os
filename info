@@ -2,7 +2,7 @@
 neofetch --color_blocks off --refresh_rate on --ascii .logo --config .config-neofetch
 #S0='       The morning is very cold!       '
 #S1='Developer: '
-#S2=`echo "Dmitry V"`
+#S2=`echo "Lpros LTD"`
 #printf "\033[1;34m${S0} \033[1;31m${S1}\033[0;m${S2}\n"
 C0='       Try commands: ctris, dgen       '
 C1='Engineer-programmer: '
