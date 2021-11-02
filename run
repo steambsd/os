@@ -755,6 +755,14 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
  ;;
 expr)
 #this experemental function
+pli openbox
+echo 'xterm' >> /home/$AZER/.xinitrc
+echo 'openbox-session' >> /home/$AZER/.xinitrc
+ ;;
+live)
+#this experemental function
+pli openbox
+echo 'xterm' >> /home/$AZER/.xinitrc
 echo 'openbox-session' >> /home/$AZER/.xinitrc
  ;;
 lxde)
