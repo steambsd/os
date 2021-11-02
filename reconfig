@@ -1,6 +1,12 @@
 #!/bin/sh
 
 ############################################
+### Check mode                           ###
+############################################
+CHK=`ls /dev | grep md1 | head -n1`
+if [ "$CHK" == "md1" ]; then echo '-= Detected minimal mode =-'; fi
+
+############################################
 ### Check standart driver                ###
 ############################################
 CDRV=`cat /usr/local/etc/X11/xorg.conf.d/xorg.conf | grep "Standart"`
