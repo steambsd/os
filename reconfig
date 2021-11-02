@@ -89,14 +89,6 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
-#cat << EOF > Desktop/Acolyte.desktop 
-#[Desktop Entry]
-#Name=Acolyte
-#Exec=/home/$USER/.local/bin/steam-acolyte
-#Type=Application
-#StartupNotify=true
-#Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
-#EOF
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
@@ -138,14 +130,6 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysettings.png
 EOF
-cat << EOF > Desktop/Yet.desktop
-[Desktop Entry]
-Name=Yet
-Exec=python3.7 .yet.py 
-StartupNotify=true
-Type=Application
-Icon=/usr/local/share/pixmaps/ysettingsnew.png
-EOF
 cat << EOF > Desktop/Chrome.desktop
 [Desktop Entry]
 Name=Chrome
@@ -154,6 +138,22 @@ StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/yrchrome.png
 EOF
+#cat << EOF > Desktop/Yet.desktop
+#[Desktop Entry]
+#Name=Yet
+#Exec=python3.7 .yet.py 
+#StartupNotify=true
+#Type=Application
+#Icon=/usr/local/share/pixmaps/ysettingsnew.png
+#EOF
+#cat << EOF > Desktop/Acolyte.desktop 
+#[Desktop Entry]
+#Name=Acolyte
+#Exec=/home/$USER/.local/bin/steam-acolyte
+#Type=Application
+#StartupNotify=true
+#Icon=/usr/home/$USER/.local/lib/python3.7/site-packages/steam_acolyte/acolyte.svg
+#EOF
 
 #sleep 50
 if [ $TYPI == "L" ]; then sleep 10; else sleep 50; fi
