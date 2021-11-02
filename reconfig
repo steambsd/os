@@ -113,7 +113,6 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
 fi
-
 cat << EOF > Desktop/Boost.desktop 
 [Desktop Entry]
 Name=Boost
