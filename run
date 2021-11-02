@@ -81,7 +81,6 @@ pli openbox
 echo 'xterm' >> /root/.xinitrc
 echo 'openbox-session' >> /root/.xinitrc
 startx
-exit 0
 fi
 
 ############################################
