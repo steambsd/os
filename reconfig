@@ -95,14 +95,6 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
-cat << EOF > Desktop/Installer.desktop 
-[Desktop Entry]
-Name=Installer
-Exec=python3.7 .yet.py
-Type=Application
-StartupNotify=true
-Icon=/usr/local/share/pixmaps/yinstall.png
-EOF
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
