@@ -99,7 +99,7 @@ EOF
 #service hald start
 #service slim start
 cd /root
-startx
+/usr/local/bin/startx
 
 echo '==> Minimal installation fineshed. Press any key to proceed'
 read ans
