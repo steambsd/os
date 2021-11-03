@@ -81,14 +81,6 @@ if [ "$DENV" == "mini" ]; then
 pli xorg
 pli lumina
 pli pc-networkmanager
-pli pc-mixer
-cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
-[Desktop Entry]
-Name=pc-mixer
-Type=Application
-Exec=pc-mixer
-Terminal=false
-EOF
 echo 'start-lumina-desktop' >> /root/.xinitrc
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
 Section "Device"
