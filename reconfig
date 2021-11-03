@@ -30,6 +30,15 @@ fi
 }
 
 ############################################
+### Fix bugs                             ###
+############################################
+cd /etc/ins/
+pli gsettings-desktop-schemas
+cd ~
+# clear
+sudo rm -rf /etc/ins/*
+
+############################################
 ### Start                                ###
 ############################################
 sleep 2
@@ -190,13 +199,6 @@ EOF
 ############################################
 ### Final                                ###
 ############################################
-# reinstall some packages
-cd /etc/ins/
-pli gsettings-desktop-schemas
-cd ~
-# clear
-sudo rm -rf /etc/ins/*
-
 mv ~/reconfig ~/.reconfig
 sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
 sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-start.desktop"
