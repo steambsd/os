@@ -4,11 +4,10 @@
 ### Desktop customization                ###
 ############################################
 sleep 2
-printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
-#sed -i '' 's/hidepanel=false/hidepanel=true/g' /home/$USER/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
-sed -i '' 's/pluginlist/ /g' /home/$USER/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
+printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /root/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
+sed -i '' 's/pluginlist/ /g' /root/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
 
-cat << EOF > Desktop/Installer.desktop 
+cat << EOF > /root/Desktop/Installer.desktop 
 [Desktop Entry]
 Name=Installer
 Exec=xterm -geometry 100x50-0+0 -e bsdinstall
@@ -20,7 +19,8 @@ EOF
 ############################################
 ### Readme.txt                           ###
 ############################################
-cat << EOF > ~/Desktop/Readme
+cat << EOF > /root/Desktop/Readme
+
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com
 Github (inet): https://github.com/steambsd/os
@@ -35,11 +35,6 @@ EOF
 ### Final                                ###
 ############################################
 mv ~/reconfig-mini ~/.reconfig-mini
-
-# reinstall some packages
-cd /etc/ins/
-pli gsettings-desktop-schemas
-cd ~
 
 echo '################################################'
 echo '###              Recommendations             ###'
