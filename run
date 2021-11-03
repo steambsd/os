@@ -79,6 +79,7 @@ if [ "$CHK" == "md1" ]; then echo '==> Detected minimal mode'; fi
 if [ "$DENV" == "mini" ]; then 
 pli xorg
 pli lumina
+pli chromium
 pli pc-networkmanager
 pli pc-mixer
 cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
