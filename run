@@ -103,6 +103,7 @@ mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 mkdir /usr/local/share/pixmaps
 cp yinstall.png /usr/local/share/pixmaps/yinstall.png
+cp yrchrome.png /usr/local/share/pixmaps/yrchrome.png
 
 cat << EOF > /usr/local/etc/xdg/autostart/reconfig-mini.desktop 
 [Desktop Entry]
