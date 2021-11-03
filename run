@@ -108,7 +108,6 @@ EOF
 #service dbus start
 #service hald start
 #service slim start
-cd /root
 /usr/local/bin/startx
 
 echo '==> Minimal installation fineshed. Press any key to proceed'
