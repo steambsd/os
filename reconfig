@@ -1,15 +1,6 @@
 #!/bin/sh
 
 ############################################
-### Check mode                           ###
-############################################
-#CHK=`ls /dev | grep md0 | head -n1`
-#if [ "$CHK" == 'md0' ]; then 
-# ETH=`ifconfig | grep flags | cut -d\: -f1 | head -n1 | tail -n1`
-# dhclient $ETH
-#fi
-
-############################################
 ### Check standart driver                ###
 ############################################
 CDRV=`cat /usr/local/etc/X11/xorg.conf.d/xorg.conf | grep "Standart"`
@@ -219,15 +210,12 @@ sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam
 sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 
 ############################################
-### Fix bugs                             ###
+### Fix VMs shortcut 7zip bugs           ###
 ############################################
-gpu=`pciconf -lv | grep Intel`
-if [ "$gpu" != '' ]; then 
 sleep 50
 cd ~
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
-fi
 
 echo '################################################'
 echo '###              Recommendations             ###'
