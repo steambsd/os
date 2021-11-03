@@ -4,6 +4,10 @@
 ### Check mode                           ###
 ############################################
 #CHK=`ls /dev | grep md0 | head -n1`
+#if [ "$CHK" == 'md0' ]; then 
+# ETH=`ifconfig | grep flags | cut -d\: -f1 | head -n1 | tail -n1`
+# dhclient $ETH
+#fi
 
 ############################################
 ### Check standart driver                ###
