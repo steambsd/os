@@ -9,7 +9,7 @@ printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.
 cat << EOF > Desktop/Installer.desktop 
 [Desktop Entry]
 Name=Installer
-Exec=xterm -geometry 50x15+0-0 -e bsdinstall
+Exec=xterm -geometry 100x50-0+0 -e bsdinstall
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/yinstall.png
