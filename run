@@ -74,7 +74,26 @@ fi
 ### Check mode                           ###
 ############################################
 CHK=`ls /dev | grep md1 | head -n1`
-if [ "$CHK" == "md1" ]; then echo '-= Detected minimal mode =-'; fi
+if [ "$CHK" == "md1" ]; then echo '==> Detected minimal mode'; fi
+
+if [ "$DENV" == "mini" ]; then 
+pli xorg
+pli lumina
+echo 'start-lumina-desktop' >> /root/.xinitrc
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
+Section "Device"
+         Identifier "Vesa"
+         Driver "vesa"
+EndSection
+EOF
+#service dbus start
+#service hald start
+#service slim start
+startx
+
+else
+ echo '==> Detected normal mode'
+fi
 
 ############################################
 ### Check system                         ###
@@ -757,7 +776,7 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
 lumina)
 pli lumina
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
-echo "FM=\"lumina-fm\"" >> /usr/local/etc/automount.conf
+#echo "FM=\"lumina-fm\"" >> /usr/local/etc/automount.conf
  ;;
 lxqt)
 pli lxqt
