@@ -80,7 +80,6 @@ if [ "$CHK" == "md1" ]; then echo '==> Detected minimal mode'; fi
 if [ "$DENV" == "mini" ]; then 
 pli xorg
 pli lumina
-pli chromium
 pli pc-networkmanager
 pli pc-mixer
 cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
@@ -105,10 +104,8 @@ Type=Application
 Exec=xterm -geometry 50x15+0-25 -e ~/reconfig-mini
 Terminal=false
 EOF
-#service dbus start
-#service hald start
-#service slim start
-/usr/local/bin/startx
+
+su root -c 'startx'
 
 echo '==> Minimal installation fineshed. Press any key to proceed'
 read ans
