@@ -49,7 +49,7 @@ mv ~/reconfig-mini ~/.reconfig-mini
 echo '################################################'
 echo '###              Recommendations             ###'
 echo '################################################'
-echo 'If LAN not work, run "doas bsdconfig networking"'
+echo 'If LAN not work, run "bsdconfig networking"'
 echo 'Or use pc-networkmanager (right-bottom tray icon)'
 echo 'Also run shortcut installer to install from GUI.'
 echo 'Just enter your parametrs...'
