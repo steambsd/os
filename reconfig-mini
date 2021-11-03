@@ -29,6 +29,7 @@ EOF
 ############################################
 cat << EOF > /root/Desktop/Readme
 
+
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com
 Github (inet): https://github.com/steambsd/os
