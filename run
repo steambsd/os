@@ -5,6 +5,7 @@
 ###              ON FREEBSD              ###
 ############   set permission   ############
 chmod +x reconfig
+chmod +x reconfig-mini
 chmod +x steam-acolyte-wheel
 chmod +x steam-compat-wheel
 chmod +x steam-wine-wheel
@@ -95,6 +96,14 @@ Section "Device"
          Identifier "Vesa"
          Driver "vesa"
 EndSection
+EOF
+cp reconfig-mini /root/
+cat << EOF > /usr/local/etc/xdg/autostart/reconfig-mini.desktop 
+[Desktop Entry]
+Name=reconfig-mini
+Type=Application
+Exec=xterm -geometry 50x15+0-25 -e ~/reconfig-mini
+Terminal=false
 EOF
 #service dbus start
 #service hald start
