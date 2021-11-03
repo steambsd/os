@@ -98,11 +98,13 @@ EOF
 #service dbus start
 #service hald start
 #service slim start
+cd /root
 startx
 
 echo '==> Minimal installation fineshed. Press any key to proceed'
 read ans
-
+/bin/sh
+exit 0
 fi
 
 ############################################
