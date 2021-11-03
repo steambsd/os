@@ -1,5 +1,10 @@
 #!/bin/sh
 
+############################################
+### Desktop customization                ###
+############################################
+sleep 2
+printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /home/$USER/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
 
 cat << EOF > Desktop/Installer.desktop 
 [Desktop Entry]
@@ -9,6 +14,7 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/yinstall.png
 EOF
+
 ############################################
 ### Readme.txt                           ###
 ############################################
