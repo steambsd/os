@@ -1,0 +1,47 @@
+#!/bin/sh
+
+
+cat << EOF > Desktop/Installer.desktop 
+[Desktop Entry]
+Name=Installer
+Exec=xterm -geometry 50x15+0-0 -e bsdinstall
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/yinstall.png
+EOF
+############################################
+### Readme.txt                           ###
+############################################
+cat << EOF > ~/Desktop/Readme
+--- SteamBSD © is FREE operating system.
+Site (ISO/IMG): https://lpros.blogspot.com
+Github (inet): https://github.com/steambsd/os
+Email: steambsd@gmail.com
+--- Help to SteamBSD project
+Mastercard: 5336 6903 9850 8962
+Yoomoney (Yandex.Money): 4100 1172 5027 6133
+DAlerts: https://www.donationalerts.com/r/steambsd
+EOF
+
+############################################
+### Final                                ###
+############################################
+mv ~/reconfig-mini ~/.reconfig-mini
+
+# reinstall some packages
+cd /etc/ins/
+pli gsettings-desktop-schemas
+cd ~
+
+echo '################################################'
+echo '###              Recommendations             ###'
+echo '################################################'
+echo 'If LAN not work, run "doas bsdconfig networking"'
+echo 'Or use pc-networkmanager (right-bottom tray icon)'
+echo 'Also run shortcut installer to install from GUI.'
+echo 'Just enter your parametrs...'
+echo '-------------------------------------'
+printf "\033[1;31mReconfig was successful!\033[0;m\n"
+printf "\033[1;34mThis is mini installation.\033[0;m\n"
+echo '-------------------------------------'
+sleep 20
