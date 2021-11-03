@@ -199,6 +199,9 @@ EOF
 ############################################
 ### Final                                ###
 ############################################
+rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
+rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
+
 mv ~/reconfig ~/.reconfig
 sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
 sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-start.desktop"
