@@ -203,8 +203,7 @@ EOF
 ############################################
 ### Final                                ###
 ############################################
-rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
-rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
+
 
 mv ~/reconfig ~/.reconfig
 sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
@@ -220,6 +219,13 @@ sudo su root -c "echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam
 sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
 sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+
+gpu=`pciconf -lv | grep Intel`
+if [ "$gpu" != '' ]; then 
+sleep 30
+rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
+rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
+fi
 
 echo '################################################'
 echo '###              Recommendations             ###'
