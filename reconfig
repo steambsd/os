@@ -3,7 +3,7 @@
 ############################################
 ### Check mode                           ###
 ############################################
-CHK=`ls /dev | grep md1 | head -n1`
+#CHK=`ls /dev | grep md0 | head -n1`
 
 ############################################
 ### Check standart driver                ###
@@ -95,7 +95,6 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
-if [ "$CHK" == "md1" ]; then 
 cat << EOF > Desktop/Installer.desktop 
 [Desktop Entry]
 Name=Installer
@@ -104,7 +103,6 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/yinstall.png
 EOF
-else
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
@@ -113,7 +111,6 @@ Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
 EOF
-fi
 cat << EOF > Desktop/Boost.desktop 
 [Desktop Entry]
 Name=Boost
@@ -221,13 +218,7 @@ cd /etc/ins/
 pli gsettings-desktop-schemas
 cd ~
 # clear
-if [ "$CHK" == "md1" ]; then 
-#sudo rm -rf /etc/ins/*
-echo ' '
-else
 sudo rm -rf /etc/ins/*
-fi
-cd /home/$USER
 
 echo '################################################'
 echo '###              Recommendations             ###'
