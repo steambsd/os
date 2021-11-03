@@ -7,10 +7,10 @@ sleep 2
 printf '%s\n' /desktop-/a 'background\filelist=/usr/local/share/wallpapers/wall.jpg' . w q | ex -s /root/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
 sed -i '' 's/pluginlist/ /g' /root/.config/lumina-desktop/desktopsettings.conf >> /dev/null 2>&1
 
-cat << EOF > Desktop/Chrome.desktop
+cat << EOF > /root/Desktop/Chrome.desktop
 [Desktop Entry]
 Name=Chrome
-Exec=chrome --no-sandbox --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/
+Exec=chrome --no-sandbox --force-dark-mode --window-size=640,760 --window-position=640,0 https://store.steampowered.com/
 StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/yrchrome.png
@@ -18,7 +18,7 @@ EOF
 cat << EOF > /root/Desktop/Installer.desktop 
 [Desktop Entry]
 Name=Installer
-Exec=xterm -geometry 100x50-0+0 -e bsdinstall
+Exec=xterm -geometry 100x50-0-100 -e bsdinstall
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/yinstall.png
@@ -33,6 +33,7 @@ cat << EOF > /root/Desktop/Readme
 Site (ISO/IMG): https://lpros.blogspot.com
 Github (inet): https://github.com/steambsd/os
 Email: steambsd@gmail.com
+
 --- Help to SteamBSD project
 Mastercard: 5336 6903 9850 8962
 Yoomoney (Yandex.Money): 4100 1172 5027 6133
