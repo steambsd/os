@@ -440,6 +440,7 @@ ncam=`usbconfig | grep cam | cut -d':' -f1 | cut -d'n' -f2`
 if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
 ncam=`usbconfig | grep Cam | cut -d':' -f1 | cut -d'n' -f2`
 if [ "$ncam" != '' ]; then echo "webcamd_0_flags=\"-d ugen${ncam}\"" >> /etc/rc.conf; fi
+pw groupmod network -m $AZER
 pw groupmod webcamd -m $AZER
 pw groupmod video -m $AZER
 #also work
