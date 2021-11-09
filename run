@@ -764,7 +764,7 @@ echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 ############################################
 # slim customization
 sysrc dbus_enable=YES
-sysrc hald_enable=YES
+#sysrc hald_enable=YES
 sysrc slim_enable=YES
 echo "default_user        $AZER" >> /usr/local/etc/slim.conf
 echo 'auto_login          yes' >> /usr/local/etc/slim.conf
@@ -800,6 +800,7 @@ expr)
 pli openbox
 echo 'xterm' >> /home/$AZER/.xinitrc
 echo 'openbox-session' >> /home/$AZER/.xinitrc
+mkdir /home/$AZER/Desktop
 mkdir /home/$AZER/.config
 mkdir /home/$AZER/.config/openbox
 cp /usr/local/etc/xdg/openbox/*.* /home/$AZER/.config/openbox
@@ -809,10 +810,12 @@ xterm -geometry 40x4-750+0 -e ~/.steam-wine
 xterm -geometry 40x4-500+0 -e ~/.steam-winepro
 xterm -geometry 40x4-250+0 -e ~/.steam-compat
 xterm -geometry 40x4-0+0 -e ~/.steam-acolyte
-cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple
-compton
+#cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple
+xclock -geometry 200x200-50+50
+#compton
 winetricks -q 7zip
 EOF
+echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
  ;;
 lxde)
 pli lxde-meta
@@ -960,6 +963,6 @@ esac
 ############################################
 # startx
 service dbus start
-service hald start
+#service hald start
 service slim start
 su $AZER -c 'startx'
