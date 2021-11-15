@@ -420,14 +420,6 @@ cd ..
 ### From TrueOS                          ###
 ############################################
 pli pc-networkmanager
-pli pc-mixer
-cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
-[Desktop Entry]
-Name=pc-mixer
-Type=Application
-Exec=pc-mixer
-Terminal=false
-EOF
 
 ############################################
 ### Web-Cam                              ###
@@ -790,6 +782,14 @@ lumina)
 pli lumina
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
 #echo "FM=\"lumina-fm\"" >> /usr/local/etc/automount.conf
+pli pc-mixer
+cat << EOF > /usr/local/etc/xdg/autostart/pc-mixer.desktop 
+[Desktop Entry]
+Name=pc-mixer
+Type=Application
+Exec=pc-mixer
+Terminal=false
+EOF
  ;;
 lxqt)
 pli lxqt
@@ -821,7 +821,7 @@ echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
 lxde)
 pli lxde-meta
 echo 'startlxde' >> /home/$AZER/.xinitrc
-pkg delete -f -y pc-mixer
+#pkg delete -f -y pc-mixer
 printf '%s\n' /config/a 'quick_exec=1' . w q | ex -s /usr/local/etc/xdg/libfm/libfm.conf
  ;;
 *)
