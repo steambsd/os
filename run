@@ -97,7 +97,7 @@ EndSection
 EOF
 
 cp reconfig-mini /root/
-cp utils /root/
+cp utils /root/.utils
 mkdir /usr/local/share/wallpapers
 cp wall.jpg /usr/local/share/wallpapers/wall.jpg
 mkdir /usr/local/share/pixmaps
