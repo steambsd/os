@@ -458,6 +458,8 @@ then
  if [ "$gpu" != '' ]; then DRIV="intel"; fi
  gpu=`pciconf -lv | grep SVGA`
  if [ "$gpu" != '' ]; then DRIV="vesa"; fi
+ gpu=`pciconf -lv | grep VirtualBox`
+ if [ "$gpu" != '' ]; then DRIV="vesa"; fi
  gpu=`pciconf -lv | grep AMD`
  if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
  gpu=`pciconf -lv | grep NVIDIA`
@@ -571,6 +573,8 @@ EOF
  gpu=`pciconf -lv | grep Intel`
  if [ "$gpu" != '' ]; then DRIV="intel"; fi
  gpu=`pciconf -lv | grep SVGA`
+ if [ "$gpu" != '' ]; then DRIV="vesa"; fi
+ gpu=`pciconf -lv | grep VirtualBox`
  if [ "$gpu" != '' ]; then DRIV="vesa"; fi
  gpu=`pciconf -lv | grep AMD`
  if [ "$gpu" != '' ]; then DRIV="amdgpu"; fi
