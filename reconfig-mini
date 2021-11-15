@@ -57,4 +57,4 @@ echo '-------------------------------------'
 printf "\033[1;31mReconfig was successful!\033[0;m\n"
 printf "\033[1;34mThis is mini installation.\033[0;m\n"
 echo '-------------------------------------'
-sleep 20
+sleep 10
