@@ -410,13 +410,9 @@ service devfs restart
 service devd restart
 
 #Drivers
-pli lua52
-unzip drivers.zip
-cd DSBDriverd-master
-make install
+pli dsbdriverd
 sysrc dsbdriverd_enable=YES
 service dsbdriverd start
-cd ..
 
 ############################################
 ### From TrueOS                          ###
