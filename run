@@ -761,9 +761,9 @@ echo "default_user        $AZER" >> /usr/local/etc/slim.conf
 echo 'auto_login          yes' >> /usr/local/etc/slim.conf
 echo 'focus_password      yes' >> /usr/local/etc/slim.conf
 # bugs
-cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 2 ; service slim start )
-EOF
+#cat << EOF >> /etc/crontab
+#@reboot                                 root    ( sleep 2 ; service slim start )
+#EOF
 
 ############################################
 ### Desktop environment                  ###
@@ -797,8 +797,7 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
 expr)
 #this experemental function
 pli openbox
-echo 'xterm' >> /home/$AZER/.xinitrc
-echo 'openbox-session' >> /home/$AZER/.xinitrc
+echo 'exec openbox-session' >> /home/$AZER/.xinitrc
 mkdir /home/$AZER/Desktop
 mkdir /home/$AZER/.config
 mkdir /home/$AZER/.config/openbox
@@ -828,7 +827,7 @@ printf '%s\n' /config/a 'quick_exec=1' . w q | ex -s /usr/local/etc/xdg/libfm/li
  ;;
 esac
 
-## adding buttons
+# adding buttons
 #cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
 #polkit.addRule(function (action, subject) 
 #  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
