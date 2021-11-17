@@ -6,10 +6,10 @@
 ############   set permission   ############
 chmod +x reconfig
 chmod +x reconfig-mini
-chmod +x steam-acolyte-wheel
-chmod +x steam-compat-wheel
-chmod +x steam-wine-wheel
-chmod +x steam-winepro-wheel
+chmod +x steam-acolyte
+chmod +x steam-compat
+chmod +x steam-wine
+chmod +x steam-winepro
 chmod +x yet.py
 chmod +x utils
 chmod +x boost
@@ -661,10 +661,10 @@ cp info /home/$AZER/.info
 cp logo /home/$AZER/.logo
 cp config-neofetch /home/$AZER/.config-neofetch
 cp reconfig /home/$AZER/
-cp steam-wine-wheel /home/$AZER/.steam-wine.save
-cp steam-winepro-wheel /home/$AZER/.steam-winepro.save
-cp steam-compat-wheel /home/$AZER/.steam-compat.save
-cp steam-acolyte-wheel /home/$AZER/.steam-acolyte.save
+cp steam-wine /home/$AZER/.steam-wine.save
+cp steam-winepro /home/$AZER/.steam-winepro.save
+cp steam-compat /home/$AZER/.steam-compat.save
+cp steam-acolyte /home/$AZER/.steam-acolyte.save
 cp utils /home/$AZER/.utils
 cp yet.py /home/$AZER/.yet.py
 # wallpaper
@@ -828,16 +828,16 @@ printf '%s\n' /config/a 'quick_exec=1' . w q | ex -s /usr/local/etc/xdg/libfm/li
  ;;
 esac
 
-# adding buttons
-cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
-polkit.addRule(function (action, subject) 
-  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
-      action.id == "org.freedesktop.consolekit.system.stop")
-      && subject.isInGroup("wheel")) {
-    return polkit.Result.YES;
-  }
-});
-EOF
+## adding buttons
+#cat << EOF >> /usr/local/etc/polkit-1/rules.d/50-default.rules
+#polkit.addRule(function (action, subject) 
+#  if ((action.id == "org.freedesktop.consolekit.system.restart" ||
+#      action.id == "org.freedesktop.consolekit.system.stop")
+#      && subject.isInGroup("wheel")) {
+#    return polkit.Result.YES;
+#  }
+#});
+#EOF
 
 # autostart
 cat << EOF > /usr/local/etc/xdg/autostart/reconfig.desktop 
