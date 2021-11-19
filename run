@@ -814,10 +814,11 @@ xterm -geometry 40x4-750+0 -e ~/.steam-wine &
 xterm -geometry 40x4-500+0 -e ~/.steam-winepro &
 xterm -geometry 40x4-250+0 -e ~/.steam-compat &
 xterm -geometry 40x4-0+0 -e ~/.steam-acolyte &
-winetricks -q 7zip &
-steam &
+xclock -geometry 200x200-50+50 &
 pc-mixer &
 sudo networkmgr &
+winetricks -q 7zip &
+steam &
 EOF
 echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
 cat << EOF >> /etc/crontab
