@@ -11,9 +11,9 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Winecfg">
+  <item label="Utils">
     <action name="Execute">
-      <command>winecfg</command>
+      <command>xterm -geometry 73x50-0-25 -e ./.utils &</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
