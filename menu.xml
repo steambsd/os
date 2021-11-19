@@ -30,7 +30,7 @@
   </item>
    <item label="Utils">
     <action name="Execute">
-      <command>xterm -geometry 73x50-0-25 -e ./.utils &</command>
+      <command>xterm -geometry 73x50-0-25 -e ./.utils</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -38,7 +38,7 @@
   </item>
   <item label="Terminal">
     <action name="Execute">
-      <command>lxterminal --geometry=84x24 -e ./.info &</command>
+      <command>lxterminal --geometry=84x24 -e ./.info</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -202,7 +202,7 @@
   </item>
   <item label="Boost">
     <action name="Execute">
-      <command>xterm -geometry 73x50-0-25 -e ./.boost &</command>
+      <command>xterm -geometry 73x50-0-25 -e ./.boost</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -210,7 +210,7 @@
   </item>
   <item label="Compton">
     <action name="Execute">
-      <command>compton &</command>
+      <command>compton</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -218,7 +218,7 @@
   </item>
   <item label="Xclock">
     <action name="Execute">
-      <command>xclock -geometry 200x200-50+50 &</command>
+      <command>xclock -geometry 200x200-50+50</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
