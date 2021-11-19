@@ -797,6 +797,7 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
 obox)
 #this experemental function
 pli openbox
+pli pc-networkmanager
 pli pcmanfm
 pli obconf
 pli tint2
