@@ -146,7 +146,7 @@
 <menu id="apps-multimedia-menu" label="Multimedia">
   <item label="MPV">
     <action name="Execute">
-      <command>mpv</command>
+      <command>mpv --player-operation-mode=pseudo-gui</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
