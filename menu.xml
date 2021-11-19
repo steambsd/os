@@ -93,6 +93,14 @@
       </startupnotify>
     </action>
   </item>
+  <item label="XtermHD">
+    <action name="Execute">
+      <command>xterm -fa "Mono" -fs 11 - geometry +20+20</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <item label="Xterm">
     <action name="Execute"><command>xterm</command></action>
   </item>
