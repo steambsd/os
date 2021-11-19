@@ -257,7 +257,13 @@
   </item>
   <item label="Htop">
     <action name="Execute">
-      <command>htop</command>
+      <command>xterm -e htop</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Other">
+    <action name="Execute">
+      <command>xterm -geometry 73x31-0-25 -e ./.cosmos</command>
       <startupnotify><enabled>yes</enabled></startupnotify>
     </action>
   </item>
