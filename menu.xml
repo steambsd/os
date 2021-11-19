@@ -3,6 +3,31 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="apps-accessories-menu" label="Accessories">
+    <item label="Chrome">
+    <action name="Execute">
+      <command>chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Chrome</wmclass>
+      </startupnotify>
+    </action>
+  </item> 
+   <item label="Steam">
+    <action name="Execute">
+      <command>steam</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Steam-Acolyte">
+    <action name="Execute">
+      <command>steam-acolyte</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
    <item label="Utils">
     <action name="Execute">
       <command>xterm -geometry 73x50-0-25 -e ./.utils &</command>
@@ -72,28 +97,12 @@
 </menu>
 
 <menu id="apps-net-menu" label="Internet">
-  <item label="Chrome">
+  <item label="Chromium">
     <action name="Execute">
       <command>chrome</command>
       <startupnotify>
         <enabled>yes</enabled>
         <wmclass>Chrome</wmclass>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Steam">
-    <action name="Execute">
-      <command>steam</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Steam-Acolyte">
-    <action name="Execute">
-      <command>steam-acolyte</command>
-      <startupnotify>
-        <enabled>yes</enabled>
       </startupnotify>
     </action>
   </item>
