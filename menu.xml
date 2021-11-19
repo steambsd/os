@@ -3,7 +3,7 @@
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
 <menu id="apps-main-menu" label="Main">
-    <item label="Chrome">
+   <item label="Chrome">
     <action name="Execute">
       <command>chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/</command>
       <startupnotify>
@@ -12,7 +12,7 @@
       </startupnotify>
     </action>
   </item> 
-   <item label="Steam">
+  <item label="Steam">
     <action name="Execute">
       <command>steam</command>
       <startupnotify>
@@ -162,8 +162,7 @@
       </startupnotify>
     </action>
   </item>
-</menu>
-<item label="TkDVD">
+  <item label="TkDVD">
     <action name="Execute">
       <command>tkdvd</command>
       <startupnotify>
