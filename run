@@ -797,6 +797,10 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
 obox)
 #this experemental function
 pli openbox
+pli pcmanfm
+pli obconf
+pli tint2
+pli feh
 echo 'exec openbox-session' >> /home/$AZER/.xinitrc
 mkdir /home/$AZER/Desktop
 mkdir /home/$AZER/.config
@@ -805,6 +809,8 @@ cp /usr/local/etc/xdg/openbox/*.* /home/$AZER/.config/openbox
 cp menu.xml /home/$AZER/.config/openbox/menu.xml
 cat << EOF >> /home/$AZER/.config/openbox/autostart
 sudo mount -a
+tint2 &
+feh --bg-scale /usr/local/share/wallpapers/wall.jpg &
 xterm -geometry 50x15+0-25 -e ~/reconfig &
 xterm -geometry 40x4-750+0 -e ~/.steam-wine &
 xterm -geometry 40x4-500+0 -e ~/.steam-winepro &
