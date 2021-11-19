@@ -119,12 +119,12 @@
       </startupnotify>
     </action>
   </item>
-  <item label="Opera">
+  <item label="Chrome">
     <action name="Execute">
-      <command>opera</command>
+      <command>chrome</command>
       <startupnotify>
         <enabled>yes</enabled>
-        <wmclass>Opera</wmclass>
+        <wmclass>Chrome</wmclass>
       </startupnotify>
     </action>
   </item>
