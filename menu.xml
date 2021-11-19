@@ -75,7 +75,7 @@
   </item>
 </menu>
  
-<menu id="apps-games-menu" label="Multimedia">
+<menu id="apps-games-menu" label="Games">
   <item label="Foobillard">
     <action name="Execute">
       <command>foobillard</command>
@@ -128,6 +128,15 @@
     </action>
   </item>
 </menu>
+<item label="TkDVD">
+    <action name="Execute">
+      <command>tkdvd</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
 
 <menu id="apps-fileman-menu" label="File Managers">
   <item label="PCMan File Manager">
@@ -141,7 +150,7 @@
 </menu>
 
 <menu id="apps-graphics-menu" label="Graphics">
-  <item label="FEH">
+  <item label="Feh">
     <action name="Execute">
       <command>feh /usr/local/share/pixmaps/ypsteam.png</command>
       <startupnotify>
