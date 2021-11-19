@@ -1,6 +1,19 @@
 #!/bin/sh
 
 ############################################
+### Filesystem                           ###
+############################################
+#sudo su root -c "rm -Rf /tmp/*"
+#sudo su root -c "/etc/rc.d/cleartmp start"
+# fstab and mount
+#sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab"
+#sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
+#sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
+#sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
+#sudo su root -c "echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab"
+sudo mount -a
+
+############################################
 ### Check standart driver                ###
 ############################################
 CDRV=`cat /usr/local/etc/X11/xorg.conf.d/xorg.conf | grep "Standart"`
@@ -43,19 +56,6 @@ cd ~
 #
 clear
 echo "Start customization for user $USER"
-
-############################################
-### Filesystem                           ###
-############################################
-#sudo su root -c "rm -Rf /tmp/*"
-#sudo su root -c "/etc/rc.d/cleartmp start"
-# fstab and mount
-#sudo su root -c "echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab"
-#sudo su root -c "echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab"
-#sudo su root -c "echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab"
-#sudo su root -c "echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab"
-#sudo su root -c "echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab"
-#sudo mount -a
 
 sleep 6
 #sudo su root -c "killall -HUP dsbmc"
