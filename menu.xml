@@ -208,7 +208,23 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Xclock">
+    <action name="Execute">
+      <command>xclock -geometry 200x200-50+50 &</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
   <item label="Cairo-clock">
+    <action name="Execute">
+      <command>cairo-clock</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+   <item label="Cairo-clock-simple">
     <action name="Execute">
       <command>cairo-clock -w 200 -h 200 -x 200 -y 200 -s -t simple</command>
       <startupnotify>
