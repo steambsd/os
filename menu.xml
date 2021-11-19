@@ -2,7 +2,7 @@
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
-<menu id="apps-accessories-menu" label="Accessories">
+<menu id="apps-main-menu" label="Main">
     <item label="Chrome">
     <action name="Execute">
       <command>chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/</command>
@@ -46,7 +46,7 @@
   </item>
   <item label="Compton">
     <action name="Execute">
-      <command>compton</command>
+      <command>compton &</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -217,7 +217,7 @@
 
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
-  <menu id="apps-accessories-menu"/>
+  <menu id="apps-main-menu"/>
   <menu id="apps-editors-menu"/>
   <menu id="apps-graphics-menu"/>
   <menu id="apps-net-menu"/>
