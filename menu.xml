@@ -64,6 +64,24 @@
       </startupnotify>
     </action>
   </item>
+  <item label="Notepad">
+    <action name="Execute">
+      <command>wine notepad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>GVim</wmclass>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Wordpad">
+    <action name="Execute">
+      <command>wine wordpad</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>GVim</wmclass>
+      </startupnotify>
+    </action>
+  </item>
 </menu>
 
 <menu id="apps-term-menu" label="Terminals">
