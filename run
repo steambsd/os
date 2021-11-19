@@ -802,9 +802,8 @@ mkdir /home/$AZER/Desktop
 mkdir /home/$AZER/.config
 mkdir /home/$AZER/.config/openbox
 cp /usr/local/etc/xdg/openbox/*.* /home/$AZER/.config/openbox
+cp menu.xml /home/$AZER/.config/openbox/menu.xml
 cat << EOF >> /home/$AZER/.config/openbox/autostart
-sudo mount -a
-steam
 xterm -geometry 50x15+0-25 -e ~/reconfig
 xterm -geometry 40x4-750+0 -e ~/.steam-wine
 xterm -geometry 40x4-500+0 -e ~/.steam-winepro
@@ -814,6 +813,9 @@ xterm -geometry 40x4-0+0 -e ~/.steam-acolyte
 xclock -geometry 200x200-50+50
 #compton
 winetricks -q 7zip
+#steam
+sudo mount -a
+steam
 EOF
 echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
  ;;
