@@ -276,7 +276,7 @@ EOF'
  ;;
  glx)
    ### open webcam
-   lxterminal --geometry=38x4 -e sh glxgears
+   lxterminal --geometry=38x4 -e glxgears
  ;;
  ovl)
    ### open video
