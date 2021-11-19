@@ -264,6 +264,22 @@
       <prompt>yes</prompt>
     </action>
   </item>
+   <item label="Reboot">
+    <action name="Execute">
+      <command>sudo shutdown -r now</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Poweroff">
+    <action name="Execute">
+      <command>sudo shutdown -p now</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>  
 </menu>
 
 </openbox_menu>
