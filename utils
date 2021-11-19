@@ -40,6 +40,7 @@ echo '800 - add screen resolution 800x600 to xorg.conf (small window of VM)'
 echo '### system commands'
 echo 'bd - boost down'
 echo 'cam - test webcam using pwcview'
+echo 'glx - test 3d-graphic using glxgears'
 echo 'ovl - open video by link using mpv'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
@@ -272,6 +273,10 @@ EOF'
  cam)
    ### open webcam
    lxterminal --geometry=38x4 -e sh .video-camera
+ ;;
+ glx)
+   ### open webcam
+   lxterminal --geometry=38x4 -e sh glxgears
  ;;
  ovl)
    ### open video
