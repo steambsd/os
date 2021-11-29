@@ -44,7 +44,7 @@ echo 'glx - test 3d-graphic using glxgears'
 echo 'ovl - open video by link using mpv'
 echo 'clr - clear system (small files, packages and etc)'
 echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
-echo 'rtp - replace tray program on analog (dsbmd, dsbmixer and networkmgr)'
+echo 'rad - replace automount to dsbmd'
 echo 'xsr - xscreensaver restore'
 echo 'xsm - xscreensaver move to save'
 echo 'ssh - enable SSH'
@@ -301,8 +301,8 @@ EOF'
    lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    cd ~
  ;;
- rtp)
-   # replace tray program on analog (mount using dsbmd, dsbmixer and networkmgr)
+ rad)
+   # replace automont to dsbmd
   sudo pkg delete -f -y automount
   sudo pkg ins -y vlc
   sudo pkg ins -y dsbmc-cli 
@@ -321,7 +321,7 @@ EOF'
   sudo echo 'dsbmc-cli -a &' >> /home/$USER/.xinitrc
   sudo echo 'dsbmc -i &' >> /home/$USER/.xinitrc
 
-cat << EOF > /home/$AZER/.dsbmc
+cat << EOF > /home/$USER/.dsbmc
 #!/bin/sh
 sudo killall -HUP dsbmc
 dsbmc
@@ -336,13 +336,6 @@ StartupNotify=true
 Type=Application
 Icon=drive-removable-media-usb-pendrive
 EOF
-
-  sudo pkg delete -f -y pc-mixer
-  sudo pkg ins -y dsbmixer
-  echo 'dsbmixer -i &' >> /home/$USER/.xinitrc
-
-  sudo pkg delete -f -y pc-networkmanager
-  sudo pkg ins -y networkmgr
  ;;
  xsr)
    ### restore xscreensaver
