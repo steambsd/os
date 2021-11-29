@@ -281,6 +281,7 @@ pli htop
 pli lxterminal
 pli leafpad
 # packages for comfort
+pli feh
 pli chromium
 pli mpv
 pli simplescreenrecorder
@@ -793,21 +794,20 @@ printf '%s\n' /General/a 'window_manager=openbox' . w q | ex -s /usr/local/share
 obox)
 #this experemental function
 pli openbox
-pli networkmgr
 pli pc-mixer
+pli pc-networkmanager
 pli pcmanfm
-pli obconf
-pli tint2
-pli feh
+pli lxpanel
+
 echo 'exec openbox-session' >> /home/$AZER/.xinitrc
 mkdir /home/$AZER/Desktop
 mkdir /home/$AZER/.config
 mkdir /home/$AZER/.config/openbox
 cp /usr/local/etc/xdg/openbox/*.* /home/$AZER/.config/openbox
-cp menu.xml /home/$AZER/.config/openbox/menu.xml
+#cp menu.xml /home/$AZER/.config/openbox/menu.xml
 cat << EOF >> /home/$AZER/.config/openbox/autostart
 sudo mount -a
-tint2 &
+lxpanel &
 feh --bg-scale /usr/local/share/wallpapers/wall.jpg &
 xterm -geometry 50x15+0-25 -e ~/reconfig &
 xterm -geometry 40x4-750+0 -e ~/.steam-wine &
@@ -815,14 +815,146 @@ xterm -geometry 40x4-500+0 -e ~/.steam-winepro &
 xterm -geometry 40x4-250+0 -e ~/.steam-compat &
 xterm -geometry 40x4-0+0 -e ~/.steam-acolyte &
 pc-mixer &
-sudo networkmgr &
+sudo pc-nettray &
 winetricks -q 7zip &
 steam &
 EOF
-echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
-cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 2 ; service slim restart )
+cat << EOF >> /home/$AZER/.config/openbox/menu.xml
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu xmlns="http://openbox.org/3.4/menu">
+
+<menu id="apps-main-menu" label="Main">
+   <item label="Chrome">
+    <action name="Execute">
+      <command>chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+        <wmclass>Chrome</wmclass>
+      </startupnotify>
+    </action>
+  </item> 
+  <item label="Steam">
+    <action name="Execute">
+      <command>steam</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Steam-Acolyte">
+    <action name="Execute">
+      <command>steam-acolyte</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+   <item label="Utils">
+    <action name="Execute">
+      <command>xterm -geometry 73x50-0-25 -e ./.utils</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Terminal">
+    <action name="Execute">
+      <command>lxterminal --geometry=84x24 -e ./.info</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Winetricks">
+    <action name="Execute">
+      <command>winetricks</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+</menu>
+
+<menu id="system-menu" label="System">
+  <item label="Openbox Configuration Manager">
+    <action name="Execute">
+      <command>obconf</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Batterycat">
+    <action name="Execute">
+      <command>batterycat</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Htop">
+    <action name="Execute">
+      <command>xterm -e htop</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Other">
+    <action name="Execute">
+      <command>xterm -geometry 73x31-0-25 -e ./.cosmos</command>
+      <startupnotify><enabled>yes</enabled></startupnotify>
+    </action>
+  </item>
+  <item label="Manage Cups Printers">
+    <action name="Execute">
+      <command>xdg-open http://localhost:631/</command>
+      <startupnotify>
+        <enabled>no</enabled>
+        <icon>cups</icon>
+      </startupnotify>
+    </action>
+  </item>
+  <separator />
+  <item label="Reconfigure Openbox">
+    <action name="Reconfigure" />
+  </item>
+</menu>
+
+<menu id="root-menu" label="Openbox 3">
+  <separator label="Applications" />
+  <menu id="apps-main-menu"/>
+  <menu id="apps-editors-menu"/>
+  <menu id="apps-graphics-menu"/>
+  <menu id="apps-net-menu"/>
+  <menu id="apps-games-menu"/>
+  <menu id="apps-multimedia-menu"/>
+  <menu id="apps-term-menu"/>
+  <menu id="apps-fileman-menu"/>
+  <separator label="System" />
+  <menu id="system-menu"/>
+  <separator />
+  <item label="Log Out">
+    <action name="Exit">
+      <prompt>yes</prompt>
+    </action>
+  </item>
+   <item label="Reboot">
+    <action name="Execute">
+      <command>sudo shutdown -r now</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Poweroff">
+    <action name="Execute">
+      <command>sudo shutdown -p now</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>  
+</menu>
+
+</openbox_menu>
 EOF
+echo sessiondir /usr/local/share/xsessions/ >> /usr/local/slim.conf
  ;;
 lxde)
 pli lxde-meta
@@ -961,6 +1093,7 @@ cat << EOF >> /etc/crontab
 @reboot                                 root    ( sleep 2 ; service slim restart )
 @reboot                                 root    ( sleep 4 ; service slim restart )
 @reboot                                 root    ( sleep 6 ; service slim restart )
+@reboot                                 root    ( sleep 8 ; service slim restart )
 EOF
  ;;
  vesa)
