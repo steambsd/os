@@ -823,7 +823,23 @@ cat << EOF >> /home/$AZER/.config/openbox/menu.xml
 
 <openbox_menu xmlns="http://openbox.org/3.4/menu">
 
-<menu id="apps-main-menu" label="Main">
+<menu id="apps-main-menu" label="Desktop">
+  <item label="Steam-Acolyte">
+    <action name="Execute">
+      <command>steam-acolyte</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
+  <item label="Boost">
+    <action name="Execute">
+      <command>xterm -geometry 40x4+0-0 -e ./.boost</command>
+      <startupnotify>
+        <enabled>yes</enabled>
+      </startupnotify>
+    </action>
+  </item>
    <item label="Chrome">
     <action name="Execute">
       <command>chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://stadia.google.com/</command>
@@ -833,30 +849,6 @@ cat << EOF >> /home/$AZER/.config/openbox/menu.xml
       </startupnotify>
     </action>
   </item> 
-  <item label="Steam">
-    <action name="Execute">
-      <command>steam</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-  <item label="Steam-Acolyte">
-    <action name="Execute">
-      <command>steam-acolyte</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
-   <item label="Utils">
-    <action name="Execute">
-      <command>xterm -geometry 73x50-0-25 -e ./.utils</command>
-      <startupnotify>
-        <enabled>yes</enabled>
-      </startupnotify>
-    </action>
-  </item>
   <item label="Terminal">
     <action name="Execute">
       <command>lxterminal --geometry=84x24 -e ./.info</command>
@@ -865,9 +857,9 @@ cat << EOF >> /home/$AZER/.config/openbox/menu.xml
       </startupnotify>
     </action>
   </item>
-  <item label="Winetricks">
+  <item label="Utils">
     <action name="Execute">
-      <command>winetricks</command>
+      <command>xterm -geometry 73x50-0-25 -e ./.utils</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -918,13 +910,6 @@ cat << EOF >> /home/$AZER/.config/openbox/menu.xml
 <menu id="root-menu" label="Openbox 3">
   <separator label="Applications" />
   <menu id="apps-main-menu"/>
-  <menu id="apps-editors-menu"/>
-  <menu id="apps-graphics-menu"/>
-  <menu id="apps-net-menu"/>
-  <menu id="apps-games-menu"/>
-  <menu id="apps-multimedia-menu"/>
-  <menu id="apps-term-menu"/>
-  <menu id="apps-fileman-menu"/>
   <separator label="System" />
   <menu id="system-menu"/>
   <separator />
