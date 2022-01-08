@@ -408,9 +408,9 @@ service devfs restart
 service devd restart
 
 #Drivers
-pli dsbdriverd
-sysrc dsbdriverd_enable=YES
-service dsbdriverd start
+#pli dsbdriverd
+#sysrc dsbdriverd_enable=YES
+#service dsbdriverd start
 
 ############################################
 ### Web-Cam                              ###
