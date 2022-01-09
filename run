@@ -864,7 +864,7 @@ cat << EOF > /home/$AZER/.config/openbox/menu.xml
   </item>
   <item label="Utils">
     <action name="Execute">
-      <command>xterm -geometry 73x50-0-25 -e ./.utils</command>
+      <command>xterm -geometry 73x55-0-25 -e ./.utils</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
