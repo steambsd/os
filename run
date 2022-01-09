@@ -796,6 +796,7 @@ obox)
 pli openbox
 pli obconf
 pli pc-networkmanager
+pli pc-mixer
 pli pcmanfm
 pli lxpanel
 
