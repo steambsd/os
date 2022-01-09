@@ -925,7 +925,7 @@ cat << EOF > /home/$AZER/.config/openbox/menu.xml
   </item>
    <item label="Reboot">
     <action name="Execute">
-      <command>sudo shutdown -r now</command>
+      <command>sudo reboot</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
@@ -933,7 +933,7 @@ cat << EOF > /home/$AZER/.config/openbox/menu.xml
   </item>
   <item label="Poweroff">
     <action name="Execute">
-      <command>sudo shutdown -p now</command>
+      <command>sudo poweroff</command>
       <startupnotify>
         <enabled>yes</enabled>
       </startupnotify>
