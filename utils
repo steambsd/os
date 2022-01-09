@@ -188,6 +188,24 @@ echo -n 'Choose your number: '
  kgr)
  setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
+ uc)
+   ### create snapshot
+
+ ;;
+ ud)
+   ### delete snapshot
+
+ ;;
+ ul)
+   ### list
+
+   echo 'sleep 5 sec'
+   sleep 5
+ ;;
+ ur)
+   ### restore snapshot
+
+ ;;
  zc)
    ### create snapshot zroot
    sudo zfs snapshot -r zroot@backup
