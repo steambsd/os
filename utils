@@ -130,7 +130,7 @@ echo -n 'Choose your number: '
  rup)
    ### reinstall
    cd ~
-   sudo rm -rf .steam
+   rm -rf .steam
    sudo rm -rf .i386-wine-pkg
    sudo rm -rf /opt/steam-utils
    cd /etc/ins
