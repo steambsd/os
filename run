@@ -1045,14 +1045,14 @@ chown -R $AZER:wheel /home/$AZER/
 ### Framebuffer                          ###
 ############################################
 
-gpu=`pciconf -lv | grep VirtualBox`
-if [ "$gpu" != '' ]; then 
-cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 2 ; service slim restart )
-@reboot                                 root    ( sleep 4 ; service slim restart )
-@reboot                                 root    ( sleep 6 ; service slim restart )
-EOF
-fi
+#gpu=`pciconf -lv | grep VirtualBox`
+#if [ "$gpu" != '' ]; then 
+#cat << EOF >> /etc/crontab
+#@reboot                                 root    ( sleep 2 ; service slim restart )
+#@reboot                                 root    ( sleep 4 ; service slim restart )
+#@reboot                                 root    ( sleep 6 ; service slim restart )
+#EOF
+#fi
 
 case "$DRIV" in
  amdgpu)
@@ -1079,12 +1079,12 @@ EOF
  ;;
  intel)
  # detect intel, need fix...
-#cat << EOF >> /etc/crontab
-#@reboot                                 root    ( sleep 2 ; service slim restart )
-#@reboot                                 root    ( sleep 4 ; service slim restart )
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 2 ; service slim restart )
+@reboot                                 root    ( sleep 4 ; service slim restart )
 #@reboot                                 root    ( sleep 6 ; service slim restart )
 #@reboot                                 root    ( sleep 8 ; service slim restart )
-#EOF
+EOF
  ;;
  vesa)
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf
