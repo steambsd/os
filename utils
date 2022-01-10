@@ -190,21 +190,25 @@ echo -n 'Choose your number: '
  ;;
  uc)
    ### create snapshot
-
+   #mksnap_ffs / backup
+   echo 'this finction not availible yet'
+   sleep 4
  ;;
  ud)
    ### delete snapshot
-
+   echo 'this finction not availible yet'
+   sleep 4
  ;;
  ul)
    ### list
-
-   echo 'sleep 5 sec'
+   echo 'this finction not availible yet'
+   sleep 4
    sleep 5
  ;;
  ur)
    ### restore snapshot
-
+   echo 'this finction not availible yet'
+   sleep 4
  ;;
  zc)
    ### create snapshot zroot
