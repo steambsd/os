@@ -474,6 +474,9 @@ Section "Device"
         Driver "nvidia"
 EndSection
 EOF
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 2 ; service slim restart )
+EOF
  ;;
  nvidia-340)
 pli nvidia-driver-340
@@ -487,6 +490,9 @@ Section "Device"
         Driver "nvidia"
 EndSection
 EOF
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 2 ; service slim restart )
+EOF
  ;;
  nvidia-304)
 pli nvidia-driver-304
@@ -499,6 +505,9 @@ Section "Device"
         Identifier "NV Card"
         Driver "nvidia"
 EndSection
+EOF
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 2 ; service slim restart )
 EOF
  ;;
  amdgpu)
