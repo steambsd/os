@@ -351,7 +351,7 @@ EOF'
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    else
-     /usr/local/share/wine/pkg32.sh install wine mesa-dri
+     /usr/local/share/wine/pkg32.sh install -y wine mesa-dri
      winetricks -q 7zip
      mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"    
      echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
