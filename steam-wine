@@ -19,6 +19,7 @@ else
  
  # block of wine-32 installation
  /usr/local/share/wine/pkg32.sh install -y wine mesa-dri
+ winetricks -q 7zip
 
  cd "/home/$USER/.wine/dosdevices/c:/Program Files"
  fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
