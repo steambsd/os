@@ -347,7 +347,7 @@ EOF'
  dsa)
    ### download steam autenticator
    
-   if [ -d "/home/$USER/.wine/drive_c/Program Files/SDA" ]; then
+   if [ -d "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"   ]; then
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    else
