@@ -356,7 +356,6 @@ EOF'
      mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"    
      echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
      sleep 4
-     mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"  
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
      unzip SDA-1.0.10.zip
