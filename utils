@@ -322,7 +322,8 @@ EOF'
    ### download steam autenticator
    /usr/local/share/wine/pkg32.sh install wine mesa-dri
    winetricks -q 7zip
-   echo '==> Please use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
+   echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
+   sleep 4
    
    mkdir '/home/.wine/dosdevices/c:/Program Files/SDA'
    cd '/home/.wine/dosdevices/c:/Program Files/SDA'
