@@ -360,6 +360,7 @@ EOF'
      fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
      unzip SDA-1.0.10.zip
      rm SDA-1.0.10.zip
+     lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    fi 
      cd ~
  ;;
