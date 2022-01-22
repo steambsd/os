@@ -347,20 +347,21 @@ EOF'
  dsa)
    ### download steam autenticator
    
-   if [ -f "/home/$USER/.wine/drive_c/Program Files/SDA" ]; then
+   if [ -d "/home/$USER/.wine/drive_c/Program Files/SDA" ]; then
+     cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
+     lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
+   else
      /usr/local/share/wine/pkg32.sh install wine mesa-dri
      winetricks -q 7zip
      mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"    
      echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
      sleep 4
-   else
+     mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"  
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
      unzip SDA-1.0.10.zip
      rm SDA-1.0.10.zip
    fi 
-     cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
-     lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
      cd ~
  ;;
  rad)
