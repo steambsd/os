@@ -48,8 +48,8 @@ echo 'cam - test webcam using pwcview'
 echo 'glx - test 3d-graphic using glxgears'
 echo 'ovl - open video by link using mpv'
 echo 'clr - clear system (small files, packages and etc)'
+echo 'csa - open steam with console option'
 echo 'dsa - download and run Steam-Authenticator'
-echo 'rad - replace automount to dsbmd'
 echo 'xsr - xscreensaver restore'
 echo 'xsm - xscreensaver move to save'
 echo 'ssh - enable SSH'
@@ -317,6 +317,14 @@ EOF'
    find . -name DS_Store -type d -delete
    find . -name *.log -type f -delete
    sleep 2
+ ;;
+ csa)
+   ### open console of steam
+   killall -HUP lxterminal
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   sleep 2
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://open/console" &
  ;;
  dsa)
    ### download steam autenticator
