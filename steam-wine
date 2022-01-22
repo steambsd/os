@@ -16,6 +16,10 @@ else
  echo 'Do you want install steam?'
  echo 'Press any key to install.'
  read ans
+ 
+ /usr/local/share/wine/pkg32.sh install wine mesa-dri
+ winetricks -q 7zip
+ 
  fetch https://cdn.cloudflare.steamstatic.com/client/installer/SteamSetup.exe
  wine SteamSetup.exe /S
  rm SteamSetup.exe
