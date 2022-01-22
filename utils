@@ -320,8 +320,16 @@ EOF'
  ;;
  dsa)
    ### download steam autenticator
-   mkdir Downloads/SDA
-   cd Downloads/SDA
+   /usr/local/share/wine/pkg32.sh install wine mesa-dri
+   winetricks -q 7zip
+   echo '==> Please use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
+   
+   mkdir '/home/.wine/dosdevices/c:/Program Files/SDA'
+   cd '/home/.wine/dosdevices/c:/Program Files/SDA'
+   
+   #mkdir Downloads/SDA
+   #cd Downloads/SDA
+      
    fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
    unzip SDA-1.0.10.zip
    rm SDA-1.0.10.zip
