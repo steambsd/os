@@ -48,7 +48,7 @@ echo 'cam - test webcam using pwcview'
 echo 'glx - test 3d-graphic using glxgears'
 echo 'ovl - open video by link using mpv'
 echo 'clr - clear system (small files, packages and etc)'
-echo 'dsa - download and run Steam-Authenticator (in ~/Downloads folder)'
+echo 'dsa - download and run Steam-Authenticator'
 echo 'rad - replace automount to dsbmd'
 echo 'xsr - xscreensaver restore'
 echo 'xsm - xscreensaver move to save'
@@ -320,22 +320,22 @@ EOF'
  ;;
  dsa)
    ### download steam autenticator
-   /usr/local/share/wine/pkg32.sh install wine mesa-dri
-   winetricks -q 7zip
-   echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
-   sleep 4
    
-   mkdir '/home/.wine/dosdevices/c:/Program Files/SDA'
-   cd '/home/.wine/dosdevices/c:/Program Files/SDA'
-   
-   #mkdir Downloads/SDA
-   #cd Downloads/SDA
-      
-   fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
-   unzip SDA-1.0.10.zip
-   rm SDA-1.0.10.zip
-   lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
-   cd ~
+   if [ -f "/home/$USER/.wine/drive_c/Program Files/SDA" ]; then
+     /usr/local/share/wine/pkg32.sh install wine mesa-dri
+     winetricks -q 7zip
+     mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"    
+     echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
+     sleep 4
+   else
+     cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
+     fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
+     unzip SDA-1.0.10.zip
+     rm SDA-1.0.10.zip
+   fi 
+     cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
+     lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
+     cd ~
  ;;
  rad)
    # replace automont to dsbmd
