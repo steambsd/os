@@ -16,7 +16,8 @@ echo 'idp - install game by id for steam-winepro'
 echo 'idw - install game by id for steam-wine'
 echo '### reinstall steam repo (you need reboot PC)'
 echo 'ruc - update steam code '
-echo 'rup - update steam code and proton libraries'
+echo 'rui - update steam code and i386 libraries'
+echo 'rup - reinstall proton with save steam'
 echo 'sar - script-autostart restore for wine, winepro, compat and acolyte'
 echo 'sam - script autostart move to save for wine, winepro, compat and acolyte'
 echo '### reinstall / update other programs'
@@ -127,7 +128,7 @@ echo -n 'Choose your number: '
    mv ~/.steam-acolyte.save ~/.steam-acolyte
    sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
  ;;
- rup)
+ rui)
    ### reinstall
    cd ~
    sudo rm -rf .steam
@@ -148,6 +149,24 @@ echo -n 'Choose your number: '
    mv ~/.steam-compat.save ~/.steam-compat
    mv ~/.steam-acolyte.save ~/.steam-acolyte
    sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+ ;;
+ rup)
+   ### reinstall proton with save steam
+   rm -rf ~/.steam/steam/compatibilitytools.d/FreeBSD_Proton
+   
+   sudo rm -rf /opt/steam-utils
+   cd /etc/ins
+   sudo rm -rf linuxulator-steam-utils-master
+   sudo rm -rf master.zip
+   sudo fetch https://github.com/shkhln/linuxulator-steam-utils/archive/refs/heads/master.zip
+   sudo unzip master.zip
+   cd linuxulator-steam-utils-master
+   sudo make
+   sudo make install
+   
+   echo 'Please do p1,p2,p3 of Proton section'
+   sleep 6
+   cd ~
  ;;
  sar)
    ### restore
