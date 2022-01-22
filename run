@@ -755,6 +755,9 @@ echo 'Type=Application' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Exec=sudo mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 
+# block of wine-32 installation
+/usr/local/share/wine/pkg32.sh install -y wine mesa-dri
+
 ############################################
 ### Login manager                        ###
 ############################################
