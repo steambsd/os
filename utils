@@ -354,7 +354,7 @@ EOF'
      /usr/local/share/wine/pkg32.sh install -y wine mesa-dri
      winetricks -q 7zip
      mkdir "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"    
-     echo '==> Please, use folder: /home/.wine/dosdevices/c:/Program Files/SDA'
+     echo "==> Please, use folder: /home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      sleep 4
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
