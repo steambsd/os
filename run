@@ -1065,6 +1065,9 @@ Section "Device"
          Driver "vesa"
 EndSection
 EOF
+cat << EOF >> /etc/crontab
+ @reboot                                 root    ( sleep 2 ; service slim restart )
+EOF
  ;;
  radeon)
  # detect radeon, need reboot...
