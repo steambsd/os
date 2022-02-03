@@ -4,6 +4,7 @@ echo '==> Start boost PC...'
 sleep 2
 
 sudo killall -HUP wine
+sudo killall -HUP wine.bin
 sudo killall -HUP chrome
 sudo killall -HUP compton
 sudo killall -HUP cairo-clock
