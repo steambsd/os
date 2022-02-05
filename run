@@ -1045,6 +1045,10 @@ chown -R $AZER:wheel /home/$AZER/
 ### Framebuffer                          ###
 ############################################
 
+cat << EOF >> /etc/crontab
+@reboot                                  root    ( sleep 2 ; service slim restart )
+EOF
+
 #gpu=`pciconf -lv | grep VirtualBox`
 #if [ "$gpu" != '' ]; then 
 #cat << EOF >> /etc/crontab
@@ -1065,9 +1069,6 @@ Section "Device"
          Driver "vesa"
 EndSection
 EOF
-cat << EOF >> /etc/crontab
- @reboot                                 root    ( sleep 2 ; service slim restart )
-EOF
  ;;
  radeon)
  # detect radeon, need reboot...
@@ -1083,7 +1084,6 @@ EOF
  intel)
  # detect intel, need fix...
 cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 2 ; service slim restart )
 @reboot                                 root    ( sleep 4 ; service slim restart )
 @reboot                                 root    ( sleep 6 ; service slim restart )
 EOF
@@ -1098,9 +1098,7 @@ EOF
  ;;
  *)
  # detect all
-cat << EOF >> /etc/crontab
- @reboot                                 root    ( sleep 2 ; service slim restart )
-EOF
+ 
  ;;
 esac
 
