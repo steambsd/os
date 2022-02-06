@@ -466,8 +466,8 @@ EOF
 pli nvidia-hybrid-graphics
 pli linux-nvidia-libs
 pli nvidia-settings
-sysrc kld_list="/boot/modules/nvidia-modeset.ko"
-kldload /boot/modules/nvidia-modeset.ko
+sysrc nvidia_xorg_enable="YES"
+service nvidia_xorg start
  ;;
  nvidia-390)
 pli nvidia-driver-390
@@ -486,8 +486,8 @@ EOF
 pli nvidia-hybrid-graphics-390
 pli linux-nvidia-libs-390
 pli nvidia-settings
-sysrc kld_list="/boot/modules/nvidia-modeset.ko"
-kldload /boot/modules/nvidia-modeset.ko
+sysrc nvidia_xorg_enable="YES"
+service nvidia_xorg start
  ;;
  nvidia-340)
 pli nvidia-driver-340
