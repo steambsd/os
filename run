@@ -763,8 +763,7 @@ echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 ############################################
 ### Wine                                 ###
 ############################################
-/usr/local/share/wine/pkg32.sh install -y wine mesa-dri
-read ans
+su admin -c '/usr/local/share/wine/pkg32.sh install -y wine mesa-dri'
 
 ############################################
 ### Login manager                        ###
