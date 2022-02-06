@@ -462,8 +462,34 @@ Section "Device"
 EndSection
 EOF
  ;;
+  nvidia-hybrid)
+pli nvidia-hybrid-graphics
+pli linux-nvidia-libs
+pli nvidia-settings
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
+kldload /boot/modules/nvidia-modeset.ko
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+Section "Device"
+        Identifier "NV Card"
+        Driver "nvidia"
+EndSection
+EOF
+ ;;
  nvidia-390)
 pli nvidia-driver-390
+pli linux-nvidia-libs-390
+pli nvidia-settings
+sysrc kld_list="/boot/modules/nvidia-modeset.ko"
+kldload /boot/modules/nvidia-modeset.ko
+cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
+Section "Device"
+        Identifier "NV Card"
+        Driver "nvidia"
+EndSection
+EOF
+ ;;
+ nvidia-hybrid-390)
+pli nvidia-hybrid-graphics-390
 pli linux-nvidia-libs-390
 pli nvidia-settings
 sysrc kld_list="/boot/modules/nvidia-modeset.ko"
