@@ -467,7 +467,7 @@ pli nvidia-hybrid-graphics
 pli linux-nvidia-libs
 pli nvidia-settings
 sysrc nvidia_xorg_enable="YES"
-service nvidia_xorg start
+service nvidia_xorg onestart
  ;;
  nvidia-390)
 pli nvidia-driver-390
@@ -487,7 +487,7 @@ pli nvidia-hybrid-graphics-390
 pli linux-nvidia-libs-390
 pli nvidia-settings
 sysrc nvidia_xorg_enable="YES"
-service nvidia_xorg start
+service nvidia_xorg onestart
  ;;
  nvidia-340)
 pli nvidia-driver-340
@@ -759,6 +759,12 @@ echo 'Name=mount-a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Type=Application' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Exec=sudo mount -a' >> /usr/local/etc/xdg/autostart/mount-a.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/mount-a.desktop
+
+############################################
+### Wine                                 ###
+############################################
+/usr/local/share/wine/pkg32.sh install -y wine mesa-dri
+read ans
 
 ############################################
 ### Login manager                        ###
