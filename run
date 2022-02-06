@@ -1060,7 +1060,7 @@ chown -R $AZER:wheel /home/$AZER/
 ############################################
 
 cat << EOF >> /etc/crontab
-@reboot                                  root    ( sleep 2 ; service slim restart )
+@reboot                                 root    ( sleep 2 ; service slim restart )
 EOF
 
 #gpu=`pciconf -lv | grep VirtualBox`
