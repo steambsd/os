@@ -405,13 +405,13 @@ EOF
  ;;
  xsr)
    ### restore xscreensaver
-   rm /usr/local/bin/xscreensaver
-   mv /usr/local/bin/xscreensaver.save /usr/local/bin/xscreensaver
+   sudo rm /usr/local/bin/xscreensaver
+   sudo mv /usr/local/bin/xscreensaver.save /usr/local/bin/xscreensaver
  ;;
  xsm)
    ### move xscreensaver
-   mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
-   touch /usr/local/bin/xscreensaver
+   sudo mv /usr/local/bin/xscreensaver /usr/local/bin/xscreensaver.save
+   sudo touch /usr/local/bin/xscreensaver
  ;;
  ssh)
    ### ssh
