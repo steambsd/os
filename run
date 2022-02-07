@@ -656,6 +656,8 @@ esac
 ############################################
 ### Files                                ###
 ############################################
+# copy gecko for wine
+cp .config /home/$AZER/.config
 # create documents folder
 mkdir /home/$AZER/Documents
 # cp other scripts
