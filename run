@@ -285,6 +285,7 @@ pli feh
 pli chromium
 pli mpv
 pli simplescreenrecorder
+pli quiterss
 # packages for desktop
 pli compton
 pli cairo-clock
