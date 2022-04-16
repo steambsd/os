@@ -181,7 +181,7 @@ cat << EOF > ~/Desktop/Readme
 --- SteamBSD © is FREE operating system.
 Site (ISO/IMG): https://lpros.blogspot.com or https://steambsd.ga
 Github (inet): https://github.com/steambsd/os
-Email: steambsd@gmail.com
+Telegram: @SteamBSD
 
 --- Help to SteamBSD project
 Mastercard: 5536 9141 4886 5052
@@ -207,9 +207,9 @@ My Phone: +7-963-810-26-31
 Metamask: 0x114aB181D26807BdA2A7763e1e37c4D2c438C066
 
 --- Other information
-RSS: https://steambsd.ga/feeds/posts/default
 Skype: Progres Light
-Telegram: @SteamBSD
+Email: steambsd@gmail.com
+RSS: https://lpros.blogspot.com/feeds/posts/default
 EOF
 
 ############################################
