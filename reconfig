@@ -70,6 +70,7 @@ pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 pcmanfm-qt --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 
 #lumina-preset
+sed -i '' '/filelist/d' /home/$USER/.config/lumina-desktop/desktopsettings.conf  >> /dev/null 2>&1
 sleep 2
 sudo su root -c "cp /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf /home/$USER/.config/lumina-desktop/pluginsettings/desktopsettings.conf.save" >> /dev/null 2>&1
 sudo su root -c "cp /home/$USER/.config/lumina-desktop/desktopsettings.conf /home/$USER/.config/lumina-desktop/desktopsettings.conf.save" >> /dev/null 2>&1
