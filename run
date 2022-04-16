@@ -1055,7 +1055,7 @@ EOF
 ### Custom stage                         ###
 ############################################
 # update packages
-#pkg update
+pkg update
 # update winetricks
 #winetricks --self-update
 # disable some packages
