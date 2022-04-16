@@ -179,15 +179,38 @@ cat << EOF > ~/Desktop/Readme
 
 
 --- SteamBSD © is FREE operating system.
-Site (ISO/IMG): https://lpros.blogspot.com
+Site (ISO/IMG): https://lpros.blogspot.com or https://steambsd.ga
 Github (inet): https://github.com/steambsd/os
 Email: steambsd@gmail.com
 
 --- Help to SteamBSD project
-Mastercard: 5336 6903 9850 8962
-Yoomoney (Yandex.Money): 4100 1172 5027 6133
+Mastercard: 5536 9141 4886 5052
+QIWI wallet: qiwi.com/n/STEAMBSD
+Cloudtips: https://pay.cloudtips.ru/p/47f93af5
+
+--- Help to SteamBSD project (other way)
+MIR: 2202 2032 0244 2887
+YMoney: https://yoomoney.ru/to/4100117613550064
 DAlerts: https://www.donationalerts.com/r/steambsd
+
+--- Help to SteamBSD from BANK
+Beneficiary account: 40817810203002314378
+Beneficiary Bank: SBERBANK
+BIK: 040813608
+
+--- Help to SteamBSD project for international (CONTACT METHOD)
+Link: https://www.contact-sys.com/
+Name: VYSOCHIN DMITRIY VALENTINOVICH
+My Phone: +7-963-810-26-31
+
+--- Help the SteamBSD project with cryptocurrencies
+Metamask: 0x114aB181D26807BdA2A7763e1e37c4D2c438C066
 EOF
+
+--- Other information
+RSS: https://steambsd.ga/feeds/posts/default
+Skype: Progres Light
+Telegram: @SteamBSD
 
 ############################################
 ### Plugins for Steam                    ###
