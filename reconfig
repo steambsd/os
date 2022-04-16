@@ -59,9 +59,12 @@ echo "Start customization for user $USER"
 
 sleep 6
 #sudo su root -c "killall -HUP dsbmc"
+
 ############################################
 ### Desktop customization                ###
 ############################################
+rm 'Desktop/chromium-browser.desktop' >> /dev/null 2>&1
+
 #lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
 #printf '%s\n' /config/a 'quick_exec=1' . w q | ex -s /home/$USER/.config/libfm/libfm.conf >> /dev/null 2>&1
@@ -218,7 +221,6 @@ sleep 50
 cd ~
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
-rm 'Desktop/chromium-browser.desktop' >> /dev/null 2>&1
 
 echo '################################################'
 echo '###              Recommendations             ###'
