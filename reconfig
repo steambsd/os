@@ -65,6 +65,7 @@ sleep 6
 ############################################
 rm 'Desktop/chromium-browser.desktop' >> /dev/null 2>&1
 rm 'Desktop/lthemeengine.desktop' >> /dev/null 2>&1
+rm 'Desktop/lumina-config.desktop' >> /dev/null 2>&1
 
 #lxde-preset
 pcmanfm --set-wallpaper /usr/local/share/wallpapers/wall.jpg >> /dev/null 2>&1
