@@ -218,6 +218,7 @@ sleep 50
 cd ~
 rm 'Desktop/7-Zip File Manager.desktop' >> /dev/null 2>&1
 rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
+rm 'Desktop/chromium-browser.desktop' >> /dev/null 2>&1
 
 echo '################################################'
 echo '###              Recommendations             ###'
