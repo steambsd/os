@@ -417,6 +417,14 @@ service devd restart
 #sysrc dsbdriverd_enable=YES
 #service dsbdriverd start
 
+#Printers
+sysrc lpd_enable=YES
+sysrc cupsd_enable=YES
+sysrc cups_browsed_enable=YES
+service lpd start
+service cupsd start
+service cups_browsed start
+
 ############################################
 ### Web-Cam                              ###
 ############################################
