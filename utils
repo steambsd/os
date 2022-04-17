@@ -230,7 +230,7 @@ echo -n 'Choose your number: '
  ;;
  ul)
    ### list
-   echo '==> List of backups:'
+   echo '==> List of backups (see /backup folder):'
    sudo ls /backup 
    sleep 4
  ;;
