@@ -218,6 +218,7 @@ echo -n 'Choose your number: '
    cd /backup
    sudo tar -czvf ${NAME} --exclude=/home/${USER}/.steam/steam/steamapps --exclude=/tmp --exclude=/mnt --exclude=/media --exclude=/proc --exclude=/backup /
 
+   cd ~
    echo "==> Complete! Name of backup: ${NAME}"
    sleep 4
  ;;
@@ -230,6 +231,7 @@ echo -n 'Choose your number: '
  ul)
    # list
    echo '==> List of backups:'
+   cd ~
    sudo ls /backup 
    sleep 4
  ;;
