@@ -207,7 +207,7 @@ echo -n 'Choose your number: '
  setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
  uc)
-   #create
+   ### create
    echo '==> Starting a backup...'
 
    DATE=`date '+%Y-%m-%d-%H-%M'`
@@ -223,19 +223,19 @@ echo -n 'Choose your number: '
    sleep 4
  ;;
  ud)
-   #delete
+   ### delete
    echo '==> Starting remove all backups...'
    sudo rm -rf /backup/*
    sleep 4
  ;;
  ul)
-   #list
+   ### list
    echo '==> List of backups:'
    sudo ls /backup 
    sleep 4
  ;;
  ur)
-   # restore
+   ### restore
    echo '==> Starting a restore...'
    RNAME=`sudo ls /backup | tail -n1`
    sudo tar -xzvf /backup/${RNAME}
