@@ -216,7 +216,7 @@ echo -n 'Choose your number: '
    
    sudo mkdir /backup
    cd /backup
-   sudo tar czvf ${NAME} --exclude=/home/${USER}/.steam/steam/steamapps --exclude=/tmp --exclude=/mnt --exclude=/media --exclude=/proc --exclude=/backup /
+   sudo tar czvf ${NAME} --exclude=/home/${USER}/.steam/steam/steamapps --exclude=/tmp --exclude=/mnt --exclude=/media --exclude=/proc --exclude=/zroot --exclude=/backup /
 
    cd ~
    echo "==> Complete! Name of backup: ${NAME}"
