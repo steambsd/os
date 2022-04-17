@@ -231,7 +231,6 @@ echo -n 'Choose your number: '
  ul)
    # list
    echo '==> List of backups:'
-   cd ~
    sudo ls /backup 
    sleep 4
  ;;
