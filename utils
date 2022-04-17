@@ -26,11 +26,11 @@ echo 'pur - pip (python package manager) update/reinstall'
 echo '### add switch keyboard layout (temporary)'
 echo 'kru - add keyboard layout for russian (switch alt-shift)'
 echo 'kgr - add keyboard layout for greek (switch alt-shift)'
-echo '### ufs snapshot'
-echo 'uc - construct full snapshot of system'
-echo 'ud - delete full snapshot of system'
-echo 'ul - list snapshot of system'
-echo 'ur - restore full snapshot of system'
+echo '### ufs backup'
+echo 'uc - construct full backup of system'
+echo 'ud - delete full backup of system'
+echo 'ul - list backup of system'
+echo 'ur - restore full backup of system'
 echo '### zfs snapshot'
 echo 'zc - construct full snapshot of system'
 echo 'zd - delete full snapshot of system'
@@ -207,25 +207,50 @@ echo -n 'Choose your number: '
  setxkbmap -layout "us,gr" -option "grp:alt_shift_toggle,grp_led:scroll"
  ;;
  uc)
-   ### create snapshot
-   #mksnap_ffs / backup
-   echo 'this finction not availible yet'
+   ### create
+   #echo 'this finction not availible yet'
+   # записываем в переменную значение текущей даты
+   DATE=`date "+%Y%m%d"`
+   # записываем в переменную пути к каталогам бэкапов
+   VPATH="/mnt"
+   NAME="backup"
+   VUSER="user"
+   # создаем временный каталог
+   mkdir ${VPATH}/temp
+   # копируем в temp все, что нужно сохранить
+   echo "Сохранение каталога /home/${VUSER}/apps"
+   cp -r /home/${VUSER}/apps ${VPATH}/temp/home_${VUSER}_apps
+   echo "Сохранение каталога /root/scrpts"
+   cp -r /root/scrpts ${VPATH}/temp/root_scrpts
+   # архивируем все и удаляем temp
+   echo "Архивирование резервной копии..."
+   cd ${VPATH}/temp/
+   tar czf ${VPATH}/${NAME}_${DATE}.tar.gz ./*
+   rm -r ${VPATH}/temp
+   # показываем юзеру файл
+   ls -lh ${VPATH}
+   DUMPFILE="${NAME}_${DATE}.tar.gz"
+   echo "Выполнено бэкап отправлен на ФТП-сервер. Имя файла: ${DUMPFILE}"
+
+
    sleep 4
  ;;
  ud)
-   ### delete snapshot
-   echo 'this finction not availible yet'
+   ### delete
+   #echo 'this finction not availible yet'
+   
    sleep 4
  ;;
  ul)
    ### list
-   echo 'this finction not availible yet'
+   #echo 'this finction not availible yet'
+   
    sleep 4
-   sleep 5
  ;;
  ur)
-   ### restore snapshot
-   echo 'this finction not availible yet'
+   ### restore
+   #echo 'this finction not availible yet'
+   
    sleep 4
  ;;
  zc)
