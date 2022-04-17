@@ -108,7 +108,7 @@ cat << EOF > /usr/local/etc/xdg/autostart/reconfig-mini.desktop
 [Desktop Entry]
 Name=reconfig-mini
 Type=Application
-Exec=xterm -geometry 50x15+0-25 -e ~/reconfig-mini
+Exec=xterm -geometry 50x15+0-50 -e ~/reconfig-mini
 Terminal=false
 EOF
 
@@ -846,7 +846,7 @@ cat << EOF >> /home/$AZER/.config/openbox/autostart
 sudo mount -a
 lxpanel &
 feh --bg-scale /usr/local/share/wallpapers/wall.jpg &
-xterm -geometry 50x15+0-25 -e ~/reconfig &
+xterm -geometry 50x15+0-50 -e ~/reconfig &
 xterm -geometry 40x4-750+0 -e ~/.steam-wine &
 xterm -geometry 40x4-500+0 -e ~/.steam-winepro &
 xterm -geometry 40x4-250+0 -e ~/.steam-compat &
@@ -1007,7 +1007,7 @@ cat << EOF > /usr/local/etc/xdg/autostart/reconfig.desktop
 [Desktop Entry]
 Name=reconfig
 Type=Application
-Exec=xterm -geometry 50x15+0-25 -e ~/reconfig
+Exec=xterm -geometry 50x15+0-50 -e ~/reconfig
 Terminal=false
 EOF
 cat << EOF > /usr/local/etc/xdg/autostart/steam-wine.desktop 
