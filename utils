@@ -224,20 +224,20 @@ echo -n 'Choose your number: '
  ud)
    ### delete
    echo '==> Starting remove all backups...'
-   rm -rf /backup/*
+   sudo rm -rf /backup/*
    sleep 4
  ;;
  ul)
    # list
    echo '==> List of backups:'
-   ls /backup 
+   sudo ls /backup 
    sleep 4
  ;;
  ur)
    # restore
    echo '==> Starting a restore...'
-   RNAME=`ls /backup | tail -n1`
-   tar -xzvf ${RNAME}
+   RNAME=`sudo ls /backup | tail -n1`
+   sudo tar -xzvf ${RNAME}
    sleep 4
  ;;
  zc)
