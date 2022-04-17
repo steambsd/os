@@ -238,7 +238,7 @@ echo -n 'Choose your number: '
    # restore
    echo '==> Starting a restore...'
    RNAME=`sudo ls /backup | tail -n1`
-   sudo tar -xzvf ${RNAME}
+   sudo tar -xzvf /backup/${RNAME}
    sleep 4
  ;;
  zc)
