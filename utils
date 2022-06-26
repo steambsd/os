@@ -110,7 +110,6 @@ echo -n 'Choose your number: '
  ;;
  ruc)
    ### reinstall
-   sudo mount /compat/linux/dev/shm
    cd ~
    rm -rf .steam
    sudo rm -rf /opt/steam-utils
@@ -132,7 +131,6 @@ echo -n 'Choose your number: '
  ;;
  rui)
    ### reinstall
-   sudo mount /compat/linux/dev/shm
    cd ~
    sudo rm -rf .steam
    sudo rm -rf .i386-wine-pkg
