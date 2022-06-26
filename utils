@@ -6,7 +6,6 @@ do
 clear
 
 echo '### proton'
-echo 'p0 - install proton 6.3'
 echo 'p1 - install proton 7.0'
 echo 'p2 - install steam linux runtime - soldier'
 echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
