@@ -1,5 +1,6 @@
 #!/bin/sh
 sleep 10
+sudo mount /compat/linux/dev/shm
 if [ -d .steam ]; then
  /opt/steam-utils/bin/steam
 else
