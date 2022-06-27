@@ -1083,9 +1083,9 @@ chown -R $AZER:wheel /home/$AZER/
 ### Framebuffer                          ###
 ############################################
 
-cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 2 ; service slim restart )
-EOF
+#cat << EOF >> /etc/crontab
+#@reboot                                 root    ( sleep 2 ; service slim restart )
+#EOF
 
 #gpu=`pciconf -lv | grep VirtualBox`
 #if [ "$gpu" != '' ]; then 
