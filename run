@@ -764,7 +764,7 @@ chown -R $AZER:wheel /home/$AZER/.steam
 echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Name=steam-start' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-start.desktop
-echo 'Exec=bash -c "DISPLAY=:0 steam"' >> /usr/local/etc/xdg/autostart/steam-start.desktop
+echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'X-GNOME-Autostart-Delay=5' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 
