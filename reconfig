@@ -229,7 +229,6 @@ EOF
 mv ~/reconfig ~/.reconfig
 sudo su root -c "rm /usr/local/etc/xdg/autostart/wine.desktop"
 sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-start.desktop"
-sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-start2.desktop"
 sudo su root -c "rm /usr/local/etc/xdg/autostart/mount-a.desktop"
 
 mv ~/.steam-wine ~/.steam-wine.save >> /dev/null 2>&1
