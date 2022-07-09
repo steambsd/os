@@ -46,10 +46,10 @@ cd ~
 # clear
 sudo rm -rf /etc/ins/*
 
-CHK=`cat /etc/fstab | grep zfs`
-if [ "$CHK" == '' ]; then 
- lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
-fi
+#CHK=`cat /etc/fstab | grep zfs`
+#if [ "$CHK" == '' ]; then 
+# lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
+#fi
 
 ############################################
 ### Start                                ###
