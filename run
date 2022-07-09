@@ -1124,7 +1124,7 @@ EOF
  intel)
  # detect intel, need fix...
 cat << EOF >> /etc/crontab
-@reboot                                 root    ( sleep 4 ; service slim restart )
+@reboot                                 root    ( sleep 8 ; service slim restart )
 EOF
  ;;
  vesa)
