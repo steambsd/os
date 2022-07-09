@@ -49,7 +49,7 @@ sudo rm -rf /etc/ins/*
 sleep 1
 CHK=`cat /etc/rc.conf | grep zfs`
 if [ "$CHK" == '' ]; then 
- lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
+ xterm -geometry 40x4-0+0 -e steam & > /dev/null 2>&1
 fi
 
 ############################################
