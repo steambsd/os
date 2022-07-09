@@ -286,7 +286,7 @@ pli chromium
 pli mpv
 pli simplescreenrecorder
 pli quiterss
-pli telegram-desktop
+#pli telegram-desktop
 # packages for desktop
 pli compton
 pli cairo-clock
