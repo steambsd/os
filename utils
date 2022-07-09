@@ -276,11 +276,11 @@ echo -n 'Choose your number: '
  ;;
  zc)
    ### create snapshot zroot
-   sudo zfs snapshot -r zroot@backup
+   sudo zfs snapshot -r tank@backup
  ;;
  zd)
    ### delete snapshot zroot
-   sudo zfs destroy -r zroot@backup
+   sudo zfs destroy -r tank@backup
  ;;
  zl)
    ### list
@@ -290,20 +290,20 @@ echo -n 'Choose your number: '
  ;;
  zr)
    ### restore snapshot zroot
-   sudo zfs rollback zroot@backup
-   sudo zfs rollback zroot/ROOT@backup
-   sudo zfs rollback zroot/ROOT/default@backup
-   #sudo zfs rollback zroot/tmp@backup 
-   sudo zfs rollback zroot/usr@backup
-   sudo zfs rollback zroot/usr/home@backup
-   sudo zfs rollback zroot/usr/ports@backup
-   sudo zfs rollback zroot/usr/src@backup 
-   sudo zfs rollback zroot/var@backup 
-   sudo zfs rollback zroot/var/audit@backup
-   sudo zfs rollback zroot/var/crash@backup
-   sudo zfs rollback zroot/var/log@backup
-   sudo zfs rollback zroot/var/mail@backup
-   #sudo zfs rollback zroot/var/tmp@backup
+   sudo zfs rollback tank@backup
+   sudo zfs rollback tank/ROOT@backup
+   sudo zfs rollback tank/ROOT/default@backup
+   #sudo zfs rollback tank/tmp@backup 
+   sudo zfs rollback tank/usr@backup
+   sudo zfs rollback tank/usr/home@backup
+   sudo zfs rollback tank/usr/ports@backup
+   sudo zfs rollback tank/usr/src@backup 
+   sudo zfs rollback tank/var@backup 
+   sudo zfs rollback tank/var/audit@backup
+   sudo zfs rollback tank/var/crash@backup
+   sudo zfs rollback tank/var/log@backup
+   sudo zfs rollback tank/var/mail@backup
+   #sudo zfs rollback tank/var/tmp@backup
  ;;
  drm)
    ### install drm-kmod and addons
