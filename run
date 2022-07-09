@@ -286,6 +286,7 @@ pli chromium
 pli mpv
 pli simplescreenrecorder
 pli quiterss
+pli abseil
 pli telegram-desktop
 # packages for desktop
 pli compton
