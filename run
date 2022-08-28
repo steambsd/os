@@ -49,7 +49,11 @@ pli()
 {
 if [ -d All ]; then
 zvar=`ls All | grep $1 | awk '{ print length, $0 }' | sort -n | cut -d" " -f2- | head -1`
-pkg add All/$zvar
+ if [ "$zvar" == '' ]; then
+  pkg ins -y $1
+ else 
+  pkg add All/$zvar
+ fi
 #pkg add All/$1-*
 else
 pkg ins -y $1
