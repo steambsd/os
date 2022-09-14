@@ -225,6 +225,7 @@ echo -n 'Choose your number: '
    unzip master.zip
    cd legendary-master
    sudo /usr/local/bin/python3.8 setup.py install
+   cd ..
    rm master.zip
    rm -rf legendary-master
  ;;
