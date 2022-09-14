@@ -279,7 +279,7 @@ pli neofetch
 pli mc-4
 pli unrar
 pli gtar
-pli p7zip
+#pli p7zip
 pli htop
 # packages for info
 pli lxterminal
