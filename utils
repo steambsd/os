@@ -317,6 +317,7 @@ echo -n 'Choose your number: '
    sudo pkg delete -f -y nvidia-driver-304 linux-nvidia-libs-304
    sudo pkg delete -f -y nvidia-driver-340 linux-nvidia-libs-340
    sudo pkg delete -f -y nvidia-driver-390 linux-nvidia-libs-390
+   sudo pkg delete -f -y nvidia-driver-470 linux-nvidia-libs-470
    sudo pkg delete -f -y nvidia-settings
    sudo pkg ins -y nvidia-driver linux-nvidia-libs nvidia-settings
  ;;
