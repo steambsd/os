@@ -6,8 +6,8 @@ do
 clear
 
 echo '### proton'
-#echo 'p1 - install proton 6.3'
-echo 'p1 - install proton 7.0'
+echo 'p1 - install proton 6.3'
+#echo 'p1 - install proton 7.0'
 echo 'p2 - install steam linux runtime - soldier'
 echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
 echo 'p4 - download simple free game (High Octane Drift)'
@@ -63,14 +63,14 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
- p0)
+ p1)
    ### install proton 6.3
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1580130" &
  ;;
- p1)
+ p0)
    ### install proton 7.0
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
