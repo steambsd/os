@@ -507,8 +507,8 @@ EOF
 pli nvidia-driver-340
 pli linux-nvidia-libs-340
 pli nvidia-settings
-sysrc kld_list="/boot/modules/nvidia-modeset.ko"
-kldload /boot/modules/nvidia-modeset.ko
+sysrc kld_list="/boot/modules/nvidia.ko"
+kldload /boot/modules/nvidia.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
         Identifier "NV Card"
@@ -520,8 +520,8 @@ EOF
 pli nvidia-driver-304
 pli linux-nvidia-libs-304
 pli nvidia-settings
-sysrc kld_list="/boot/modules/nvidia-modeset.ko"
-kldload /boot/modules/nvidia-modeset.ko
+sysrc kld_list="/boot/modules/nvidia.ko"
+kldload /boot/modules/nvidia.ko
 cat << EOF > /usr/local/etc/X11/xorg.conf.d/xorg.conf 
 Section "Device"
         Identifier "NV Card"
