@@ -63,6 +63,13 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "$ans" in
+ ptest)
+   ### install proton 6.3
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   sleep 2
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam -console &
+ ;;
  p1)
    ### install proton 6.3
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
