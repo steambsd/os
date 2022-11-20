@@ -92,7 +92,8 @@ echo -n 'Choose your number: '
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
-   /opt/steam-utils/bin/lsu-register-proton
+   #/opt/steam-utils/bin/lsu-register-proton
+   lsu-register-proton
    sleep 6
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
  ;;
