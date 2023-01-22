@@ -6,11 +6,11 @@ do
 clear
 
 echo '### proton'
-echo 'p0 - install proton 6.3'
+#echo 'p0 - install proton 6.3'
 echo 'p1 - install proton 7.0'
-echo 'p2 - install steam linux runtime - soldier'
-echo 'p3 - select emulators/wine-proton in Settings -> Steam Play'
-echo 'p4 - download simple free game (High Octane Drift)'
+#echo 'p1s - install steam linux runtime - soldier'
+echo 'p2 - select emulators/wine-proton in Settings -> Steam Play'
+echo 'p3 - download simple free game (High Octane Drift)'
 echo '### install steam game by id'
 echo 'idc - install game by id for steam-compat'
 echo 'idp - install game by id for steam-winepro'
@@ -84,7 +84,7 @@ echo -n 'Choose your number: '
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1887720" &
  ;;
- p2)
+ p1s)
    ### install slrs
    killall -HUP lxterminal
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
@@ -92,7 +92,7 @@ echo -n 'Choose your number: '
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1391110" &
  ;;
- p3)
+ p2)
    ### select emulators/wine-proton in properties
    killall -HUP lxterminal
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1 
@@ -104,7 +104,7 @@ echo -n 'Choose your number: '
    sleep 6
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam &
  ;;
- p4)
+ p3)
    ### download simple game
    killall -HUP lxterminal
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
