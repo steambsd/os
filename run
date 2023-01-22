@@ -1149,27 +1149,27 @@ esac
 ############################################
 ### Parametrs                            ###
 ############################################
-echo 'Timer 10 seconds...'
-echo 'Press 0 to shell of the end'
-echo 'Press 1 to shutdown of the end'
-echo 'Press 2 to starting X-server of the end'
+echo 'Timer 10 seconds, choose answer and press enter...'
+echo 'Press 0 to shell'
+echo 'Press 1 to starting xorg'
+echo 'Press 2 to shutdown computer'
 echo 'Else - operating system go to reboot'
-/usr/local/bin/bash read -t 10 -n 1 vop
+read -t 10 vop
 case $vop in
   0)
    # shell
    /bin/sh
   ;;
-  1)		  
-   # shutdown
-   shutdown -p now
-  ;;
-  2)
+  1)
    # startx
    cd /home/$AZER
    service dbus start
    service slim start
    su $AZER -c 'startx'
+  ;;
+  2)		  
+   # shutdown
+   shutdown -p now
   ;;
   *)
    # proceed...
