@@ -1173,7 +1173,6 @@ case $vop in
    reboot
   ;;
 esac
-sleep 4
 
 ############################################
 ### Final stage                          ###
