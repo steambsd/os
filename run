@@ -1149,6 +1149,7 @@ esac
 echo 'Timer 10 seconds...'
 echo 'Press 0 to startx right now'
 echo 'Press 1 to shutdown right now'
+echo 'Press 2 to go to bash right now'
 echo 'Else - operating system go to reboot'
 /usr/local/bin/bash read -t 10 -n 1 vop
 case $vop in
@@ -1160,13 +1161,18 @@ case $vop in
    su $AZER -c 'startx'
   ;;
   1)		  
-   #Shutdown
+   # shutdown
    shutdown -p now
 		;;
+  2)
+   # bash
+   /usr/local/bin/bash
+  ;;
   *)
    #Proceed...
   ;;
 esac
+sleep 4
 reboot
 
 ############################################
