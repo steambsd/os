@@ -772,9 +772,10 @@ echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 echo 'X-GNOME-Autostart-Delay=2' >> /usr/local/etc/xdg/autostart/steam-start.desktop
 
+echo 'devfs           /compat/linux/dev       devfs     rw,late                    0  0' >> /etc/fstab
+echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,late,size=1g,mode=1777  0  0' >> /etc/fstab
 echo 'linprocfs       /compat/linux/proc      linprocfs rw           0 0' >> /etc/fstab
 echo 'linsysfs        /compat/linux/sys       linsysfs  rw           0 0' >> /etc/fstab
-echo 'tmpfs           /compat/linux/dev/shm   tmpfs     rw,mode=1777 0 0' >> /etc/fstab
 echo 'fdesc           /dev/fd                 fdescfs   rw           0 0' >> /etc/fstab
 echo 'procfs          /proc                   procfs    rw           0 0' >> /etc/fstab
 
