@@ -1150,7 +1150,7 @@ echo 'Timer 10 seconds...'
 echo 'Press 0 to startx right now'
 echo 'Press 1 to shutdown right now'
 echo 'Else - operating system go to reboot'
-read -t 10 -n 1 vop
+/usr/local/bin/bash read -t 10 -n 1 vop
 case $vop in
   0)
    # startx
