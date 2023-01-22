@@ -662,9 +662,9 @@ case "$VERS" in
  ;;
  13.1)
   echo 'Detect latest system'
-cat << EOF >> /etc/crontab
-@reboot                                 root    mount /compat/linux/dev/shm
-EOF
+#cat << EOF >> /etc/crontab
+#@reboot                                 root    mount /compat/linux/dev/shm
+#EOF
  ;;
  *)
   echo -n 'Script is not intended for installation on this version of the system: '
@@ -1144,6 +1144,7 @@ EOF
  
  ;;
 esac
+reboot
 
 ############################################
 ### Final stage                          ###
