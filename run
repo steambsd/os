@@ -22,16 +22,6 @@ chmod +x video-camera
 chmod +x network
 
 ############################################
-### Parametrs                            ###
-############################################
-echo 'Timer 10 seconds...'
-echo 'Press 0 to shell of the end'
-echo 'Press 1 to shutdown of the end'
-echo 'Press 2 to starting X-server of the end'
-echo 'Else - operating system go to reboot'
-/usr/local/bin/bash read -t 10 -n 1 vop
-
-############################################
 ### Variables                            ###
 ############################################
 # type of installation
@@ -1154,31 +1144,6 @@ EOF
  # detect all
  
  ;;
-esac
-
-############################################
-### Do parametrs                         ###
-############################################
-case $vop in
-  0)
-   # bash
-   /usr/local/bin/bash
-  ;;
-  1)		  
-   # shutdown
-   shutdown -p now
-  ;;
-  2)
-   # startx
-   cd /home/$AZER
-   service dbus start
-   service slim start
-   su $AZER -c 'startx'
-  ;;
-  *)
-   #Proceed...
-   reboot
-  ;;
 esac
 
 ############################################
