@@ -171,7 +171,8 @@ esac
 ### Motd                            ###
 ############################################
 # Build date used for motd and product file
-BUILDDATE=$(date +%Y%m%d)
+#BUILDDATE=$(date +%Y%m%d)
+BUILDDATE="20230201"
 RELEASE="$VERS"
 DOC_URL="https://lpros.blogspot.com/"
 
