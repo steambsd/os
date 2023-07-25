@@ -27,12 +27,12 @@ chmod +x network
 echo '######################################'
 echo '##### System parametrs of the end ####'
 echo '######################################'
-echo 'Timer 10 seconds, choose answer and press enter...'
-echo 'Press 0 to shell'
-echo 'Press 1 to starting xorg'
-echo 'Press 2 to shutdown computer'
-echo 'Else - operating system go to reboot'
-read -t 10 vop
+#echo 'Timer 6 seconds, choose answer and press enter...'
+#echo 'Press 0 to shell'
+#echo 'Press 1 to starting xorg'
+#echo 'Press 2 to shutdown computer'
+#echo 'Else - operating system go to reboot'
+read -t 6 vop
 
 ############################################
 ### Variables                            ###
