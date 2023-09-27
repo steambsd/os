@@ -1128,6 +1128,10 @@ Section "Device"
          Driver "vesa"
 EndSection
 EOF
+ # detect amdgpu, need fix...
+cat << EOF >> /etc/crontab
+@reboot                                 root    ( sleep 8 ; service slim restart )
+EOF
  ;;
  radeon)
  # detect radeon, need reboot...
