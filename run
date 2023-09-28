@@ -102,6 +102,27 @@ if [ "$CHK" == "md1" ]; then echo '==> Detected minimal mode'; fi
 if [ "$DENV" == "mini" ]; then 
 pli xorg
 pli lumina
+
+pli fluxbox
+pli fluxbox-tenr-styles-pack
+pli la-capitaine-icon-theme
+pli lumina-archiver
+pli lumina-calculator
+pli lumina-core
+pli lumina-coreutils
+pli lumina-fileinfo
+pli lumina-mediaplayer
+pli lumina-pdf
+pli lumina-photo
+pli lumina-screenshot
+pli lumina-textedit
+pli numlockx
+pli openjpeg
+pli poppler
+pli poppler-data
+pli poppler-qt5
+pli xbrightness
+
 pli zenity
 pli chromium
 pli pc-networkmanager
@@ -833,7 +854,27 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
 lumina)
 pli lumina
-read ans
+
+pli fluxbox
+pli fluxbox-tenr-styles-pack
+pli la-capitaine-icon-theme
+pli lumina-archiver
+pli lumina-calculator
+pli lumina-core
+pli lumina-coreutils
+pli lumina-fileinfo
+pli lumina-mediaplayer
+pli lumina-pdf
+pli lumina-photo
+pli lumina-screenshot
+pli lumina-textedit
+pli numlockx
+pli openjpeg
+pli poppler
+pli poppler-data
+pli poppler-qt5
+pli xbrightness
+
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
 #echo "FM=\"lumina-fm\"" >> /usr/local/etc/automount.conf
 pli pc-networkmanager
@@ -1164,6 +1205,9 @@ EOF
  
  ;;
 esac
+
+echo '==> Installation complete!!! Press any key to reboot...'
+read vop
 
 ############################################
 ### Apply parametrs                      ###
