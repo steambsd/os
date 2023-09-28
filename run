@@ -24,15 +24,34 @@ chmod +x network
 ############################################
 ### Parametrs                            ###
 ############################################
-echo '######################################'
-echo '##### System parametrs of the end ####'
-echo '######################################'
-#echo 'Timer 6 seconds, choose answer and press enter...'
-#echo 'Press 0 to shell'
-#echo 'Press 1 to starting xorg'
-#echo 'Press 2 to shutdown computer'
-#echo 'Else - operating system go to reboot'
-read -t 6 vop
+echo ' '
+echo '####################################################################'
+echo '##### System timer 10 seconds, choose answer and press enter... ####'
+echo '####################################################################'
+echo 'Press 0 to shell'
+echo 'Press 1 to stop point'
+echo 'Press 2 to shutdown computer'
+echo 'Else - proceed'
+read -t 10 vop
+
+case $vop in
+  0)
+   # shell
+   /bin/sh
+  ;;
+  1)
+   # stop
+   read ans
+  ;;
+  2)		  
+   # shutdown
+   shutdown -p now
+  ;;
+  *)
+   # proceed...
+   echo '==> Proceed installation...'
+  ;;
+esac
 
 ############################################
 ### Variables                            ###
@@ -1207,10 +1226,14 @@ EOF
 esac
 
 echo ' '
-echo '####################################№№№№№№№№№№№№№№№№№№№№№№№№##'
-echo '##### Installation complete!!! Press any key to reboot... ####'
-echo '#################################№№№№№№№№№№№№№№№№№№№№№№№№#####'
-read vop
+echo '################################################################################'
+echo '##### Installation complete!!! Press any key to reboot (15 second delay)... ####'
+echo '################################################################################'
+echo 'Press 0 to shell'
+echo 'Press 1 to starting xorg'
+echo 'Press 2 to shutdown computer'
+echo 'Else - operating system go to reboot'
+read -t 15 vop
 
 ############################################
 ### Apply parametrs                      ###
