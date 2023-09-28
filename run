@@ -833,6 +833,7 @@ echo 'startplasma-x11' >> /home/$AZER/.xinitrc
  ;;
 lumina)
 pli lumina
+read ans
 echo 'start-lumina-desktop' >> /home/$AZER/.xinitrc
 #echo "FM=\"lumina-fm\"" >> /usr/local/etc/automount.conf
 pli pc-networkmanager
