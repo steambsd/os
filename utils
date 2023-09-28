@@ -215,52 +215,6 @@ echo -n 'Choose your number: '
    mv ~/.steam-acolyte.save ~/.steam-acolyte
    sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
  ;;
-  rur1)
-   ### reinstall
-   cd ~
-   sudo rm -rf .steam
-   sudo rm -rf .i386-wine-pkg
-   sudo rm -rf /opt/steam-utils
-   cd /etc/ins
-   sudo rm -rf linuxulator-steam-utils-master
-   sudo rm -rf master.zip
-   sudo fetch https://github.com/shkhln/linuxulator-steam-utils/archive/refs/tags/20220115.zip
-   sudo unzip 20220115.zip
-   sudo mv linuxulator-steam-utils-20220115 linuxulator-steam-utils-master
-   cd linuxulator-steam-utils-master
-   sudo make
-   sudo make install
-   cd ~
-   ### restore
-   mv ~/.steam-wine.save ~/.steam-wine
-   mv ~/.steam-winepro.save ~/.steam-winepro
-   mv ~/.steam-compat.save ~/.steam-compat
-   mv ~/.steam-acolyte.save ~/.steam-acolyte
-   sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
- ;;
-   rur2)
-   ### reinstall
-   cd ~
-   sudo rm -rf .steam
-   sudo rm -rf .i386-wine-pkg
-   sudo rm -rf /opt/steam-utils
-   cd /etc/ins
-   sudo rm -rf linuxulator-steam-utils-master
-   sudo rm -rf master.zip
-   sudo fetch https://github.com/shkhln/linuxulator-steam-utils/archive/refs/tags/20221113.zip
-   sudo unzip 20220115.zip
-   sudo mv linuxulator-steam-utils-20220115 linuxulator-steam-utils-master
-   cd linuxulator-steam-utils-master
-   sudo make
-   sudo make install
-   cd ~
-   ### restore
-   mv ~/.steam-wine.save ~/.steam-wine
-   mv ~/.steam-winepro.save ~/.steam-winepro
-   mv ~/.steam-compat.save ~/.steam-compat
-   mv ~/.steam-acolyte.save ~/.steam-acolyte
-   sudo su root -c "rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
- ;;
  sar)
    ### restore
    mv ~/.steam-wine.save ~/.steam-wine
