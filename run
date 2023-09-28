@@ -1206,7 +1206,10 @@ EOF
  ;;
 esac
 
-echo '==> Installation complete!!! Press any key to reboot...'
+echo ' '
+echo '####################################№№№№№№№№№№№№№№№№№№№№№№№№##'
+echo '##### Installation complete!!! Press any key to reboot... ####'
+echo '#################################№№№№№№№№№№№№№№№№№№№№№№№№#####'
 read vop
 
 ############################################
