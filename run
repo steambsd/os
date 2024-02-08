@@ -212,7 +212,7 @@ esac
 ############################################
 # Build date used for motd and product file
 #BUILDDATE=$(date +%Y%m%d)
-BUILDDATE="20230929"
+BUILDDATE="20240209"
 RELEASE="$VERS"
 DOC_URL="https://lpros.blogspot.com/"
 
@@ -711,19 +711,23 @@ case "$VERS" in
   kldunload "/boot/modules/radeonkms.ko"
  ;;
  13.0)
-  echo 'Nothing'
-  
+  echo 'Nothing' 
  ;;
  13.1)
-  echo 'Detect latest system'
+  echo 'Nothing'
 #cat << EOF >> /etc/crontab
 #@reboot                                 root    mount /compat/linux/dev/shm
 #EOF
  ;;
+ 13.2)
+  echo 'Nothing'
+ ;;
+ 14.0)
+  echo 'Nothing'
+ ;;
  *)
   echo -n 'Script is not intended for installation on this version of the system: '
   echo -n $VERS
-
  ;;
 esac
 
