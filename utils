@@ -68,26 +68,33 @@ echo -n 'Choose your number: '
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam -console &
  ;;
- pold)
+ pveryold)
    ### install proton 6.3
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1580130" &
  ;;
- p1)
+ pold)
    ### install proton 7.0
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/1887720" &
  ;;
- pdev)
+ p1)
    ### install proton 8.0
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    sleep 2
    kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
    lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/2348590" &
+ ;;
+ pdev)
+   ### install proton 9.0
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   sleep 2
+   kill -9 `cat ./.steam/steam.pid` > /dev/null 2>&1
+   lxterminal --geometry=40x4 -e /opt/steam-utils/bin/steam "steam://install/xxxxxxx" &
  ;;
  p1s)
    ### install slrs
