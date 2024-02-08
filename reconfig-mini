@@ -31,14 +31,34 @@ cat << EOF > /root/Desktop/Readme
 
 
 --- SteamBSD © is FREE operating system.
-Site (ISO/IMG): https://lpros.blogspot.com
+Site: https://lpros.blogspot.com
 Github (inet): https://github.com/steambsd/os
-Email: steambsd@gmail.com
+Telegram: https://t.me/steambsd
 
 --- Help to SteamBSD project
-Mastercard: 5336 6903 9850 8962
-Yoomoney (Yandex.Money): 4100 1172 5027 6133
+MIR: 2202 2068 2683 8075
+YMoney: https://yoomoney.ru/to/4100117613550064
 DAlerts: https://www.donationalerts.com/r/steambsd
+
+--- Help to SteamBSD from BANK
+Beneficiary account: 40817810203002314378
+Beneficiary Bank: SBERBANK
+BIK: 040813608
+
+--- Help to SteamBSD (CONTACT METHOD)
+Link: https://www.contact-sys.com/
+Name: VYSOCHIN DMITRIY VALENTINOVICH
+My Phone: +7-963-810-26-31
+
+--- Help the SteamBSD project with cryptocurrencies
+DonatePay: https://new.donatepay.ru/@972255
+Green WT (BTC): 3GP3TM46FbczJL4YrGrFnspfH5RzXY7soo
+MetaMask (ETH): 0x114aB181D26807BdA2A7763e1e37c4D2c438C066
+
+--- Other information
+Skype: Progres Light
+Email: steambsd@gmail.com
+RSS: https://lpros.blogspot.com/feeds/posts/default
 EOF
 
 ############################################
