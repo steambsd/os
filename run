@@ -360,7 +360,8 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim
 pli python3
-pli python37
+#pli python37
+pli python38
 # 3d test
 pli vulkan-tools
 pli mesa-demos
