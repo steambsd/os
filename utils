@@ -430,10 +430,9 @@ EOF'
      echo "==> Please, use folder: /home/$USER/.wine/dosdevices/c:/Program Files/SDA"
      sleep 4
      cd "/home/$USER/.wine/dosdevices/c:/Program Files/SDA"
-     #fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.10/SDA-1.0.10.zip
      fetch https://github.com/Jessecar96/SteamDesktopAuthenticator/releases/download/1.0.13/SDA.1.0.13.zip
-     unzip SDA-1.0.13.zip
-     rm SDA-1.0.13.zip
+     unzip SDA.1.0.13.zip
+     rm SDA.1.0.13.zip
      lxterminal --geometry=40x4 -e wine 'Steam Desktop Authenticator.exe' &
    fi 
      cd ~
