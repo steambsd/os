@@ -501,10 +501,9 @@ EOF
    sleep 1
  ;;
  yet)
-   echo 'This is test of python 3.7'
+   echo 'This is test of python 3.9'
    sleep 1
-   #python3.7 .yet.py 
-   python3.8 .yet.py
+   python3.9 .yet.py
  ;;
  upd)
    ### update utils
