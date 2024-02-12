@@ -360,7 +360,6 @@ pli linux_libusb
 pli wine-proton 
 pli libc6-shim
 pli python3
-#pli python37
 pli python38
 pli py39-qt5
 # 3d test
