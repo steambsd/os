@@ -156,11 +156,19 @@ EOF
 cat << EOF > Desktop/Chrome.desktop
 [Desktop Entry]
 Name=Chrome
-Exec=chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA/videos
+Exec=chrome --force-dark-mode --window-size=640,760 --window-position=640,0 https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA/videos
 StartupNotify=true
 Type=Application
 Icon=/usr/local/share/pixmaps/yrchrome.png
 EOF
+#cat << EOF > Desktop/Chrome.desktop
+#[Desktop Entry]
+#Name=Chrome
+#Exec=chrome --show-fps-counter --force-dark-mode --window-size=640,760 --window-position=640,0 https://www.youtube.com/channel/UC8wwRY8yGWiJ-bIQlK0wvUA/videos
+#StartupNotify=true
+#Type=Application
+#Icon=/usr/local/share/pixmaps/yrchrome.png
+#EOF
 #cat << EOF > Desktop/Yet.desktop
 #[Desktop Entry]
 #Name=Yet
