@@ -822,6 +822,9 @@ rm .i386-wine-pkg.tar.xz
 echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 
 # block of steam installation
+# simple way:
+# su admin -c /opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys
+# but old method:
 export PATH=$PATH:/usr/local/bin
 su steamdev -c /opt/steam-utils/bin/steam-install
 mv /home/steamdev/.steam /home/$AZER/.steam
