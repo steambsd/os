@@ -267,6 +267,8 @@ esac
 sysrc -f /boot/loader.conf autoboot_delay=2
 sysrc -f /boot/loader.conf beastie_disable=YES
 # /etc/sysctl.conf
+echo 'security.bsd.unprivileged_chroot=1' >> /etc/sysctl.conf
+sysctl security.bsd.unprivileged_chroot=1
 echo 'kern.coredump=0' >> /etc/sysctl.conf
 sysctl kern.coredump=0
 echo 'kern.shutdown.poweroff_delay=500' >> /etc/sysctl.conf
@@ -276,6 +278,8 @@ sysctl vfs.zfs.arc_max=536870912
 echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
 sysctl hw.usb.no_shutdown_wait=1
 # /etc/rc.conf
+sysrc kld_list+=nullfs
+kldload nullfs
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
 cat << EOF >> /etc/crontab
