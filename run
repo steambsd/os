@@ -825,10 +825,14 @@ echo 'export PATH=$PATH:.local/bin/' >> /home/$AZER/.bashrc
 # simple way:
 # su admin -c /opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys
 # but old method:
+
 export PATH=$PATH:/usr/local/bin
 su steamdev -c /opt/steam-utils/bin/steam-install
 mv /home/steamdev/.steam /home/$AZER/.steam
 su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
+
+su $AZER -c '/opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys'
+
 chown -R $AZER:wheel /home/$AZER/.steam
 
 echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop
