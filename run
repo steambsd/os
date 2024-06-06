@@ -834,7 +834,7 @@ su steamdev -c /opt/steam-utils/bin/steam-install
 mv /home/steamdev/.steam /home/$AZER/.steam
 su $AZER -c '/usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri'
 
-#su $AZER -c '/opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys'
+su $AZER -c '/opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys'
 
 chown -R $AZER:wheel /home/$AZER/.steam
 
