@@ -279,6 +279,9 @@ echo 'hw.usb.no_shutdown_wait=1' >> /etc/sysctl.conf
 sysctl hw.usb.no_shutdown_wait=1
 # /etc/rc.conf
 sysrc kld_list+=nullfs
+cat << EOF >> /etc/crontab
+@reboot                                 root    kldload nullfs
+EOF
 kldload nullfs
 sysrc clear_tmp_enable=YES
 /etc/rc.d/cleartmp start
