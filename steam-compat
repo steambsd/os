@@ -1,6 +1,10 @@
 #!/bin/sh
 sleep 10
 if [ -d .steam ]; then
+ #IMPORTANT!!!
+ IGNORE_OSVERSION=yes /usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri
+ /opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys
+ #IMPORTANT!!!
  /opt/steam-utils/bin/steam
 else
  rm -rf /home/steamdev/.steam
