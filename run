@@ -357,7 +357,7 @@ pli telegram-desktop
 # packages for desktop
 pli compton
 pli cairo-clock
-# python38
+# python39
 pli python39
 pli py39-setuptools
 # compat
@@ -365,6 +365,7 @@ pli gcc
 #pli linux-c7-devtools 
 #pli linux-c7-libgfortran 
 # new
+pkg remove -y -f linux-base-c7
 pli ca_root_nss
 pli linux-rl9-dbus-libs
 pli linux-rl9-devtools
