@@ -7,7 +7,7 @@ do
 clear
 echo '### different games'
 echo 'ag - show popular native games'
-echo 'eg - open steam from browser'
+echo 'eg - open epic-games console app'
 echo '### try to open steam'
 echo 'sa - open steam for user admin'
 echo 'sb - open steam from browser'
