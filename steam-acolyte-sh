@@ -188,43 +188,8 @@ Icon=/usr/local/share/pixmaps/filled-xterm_48x48.xpm
 EOF
 
 cat << EOF > /home/$USER/Desktop/Readcs 
-===> move
-+left
--left
-===> record
-record csgo
-stop
-playdemo csgo
-demoui
-===> info
-net_graph 1
-===> chat
-say Thanks! Goodbye...
-say Please add to freind. I want to play with you.
-say_team Go A
-say_team Go B
-say_team PLEASE HIDE!
-say ( ͡° ͜ʖ ͡°)
-say ¯\(°_o)/¯
-say (°◡°)
-say 🄽🄸🄲🄴 🅃🅁🅈
-say 𝖕𝖊𝖗𝖋𝖊𝖈𝖙
-say ▄︻┻┳═一∵∴∷∶∵
-===> crosshair
-big blue:
-cl_crosshairalpha 500; cl_crosshaircolor 4; cl_crosshairdot 1; cl_crosshairgap -2; cl_crosshairsize 3; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 1; cl_crosshair_drawoutline 0;
-middle green:
-cl_crosshairalpha 255; cl_crosshaircolor 1; cl_crosshairdot 0; cl_crosshairgap -3; cl_crosshairsize 2; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 0; cl_crosshair_drawoutline 0;
-very smallest red:
-cl_crosshairalpha 255; cl_crosshaircolor 0; cl_crosshairdot 1; cl_crosshairgap -5; cl_crosshairsize 1; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 0; cl_crosshair_drawoutline 0;
-code for dot red:
-CSGO-8MEfp-O79Dc-t2pen-3WuOO-wwNQC
-CSGO-KeZws-oAdEG-8Q3bm-cFphM-N3nQD
-CSGO-SXOVe-Wnxh9-3tv4c-qz4Ta-Q6XXC
-===> links
-https://prosettings.net/counterstrike/
-https://skins.cash/blog/csgo-console-commands-list/
-
+===> readme
+you can play native games, epic-games or steam etc
 EOF
 
 echo '===> Create users...'
