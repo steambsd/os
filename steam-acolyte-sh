@@ -5,7 +5,13 @@ cat << EOF > /home/$USER/.cos0
 while :
 do
 clear
-echo '### steam'
+echo '### different games'
+echo 'ag - show popular native games'
+echo 'eg - open steam from browser'
+echo '### try to open steam'
+echo 'sa - open steam for user admin'
+echo 'sb - open steam from browser'
+echo '### multi steam'
 echo 's1 - open steam for user steam0u1'
 echo 's2 - open steam for user steam0u2'
 echo 's3 - open steam for user steam0u3'
@@ -29,6 +35,22 @@ echo ''
 echo -n 'Choose your number: '
  read ans
  case "\${ans}" in
+ ag)
+   ### native games
+   sudo su admin -c 'xterm -geometry 40x4-0+0 -e echo "pkg ins trigger-rally 0ad xonotic" &' > /dev/null 2>&1
+ ;;
+ eg)
+   ### epic-games
+   sudo su admin -c 'xterm -geometry 40x4-0+0 -e /opt/steam-utils/bin/steam -language russian &' > /dev/null 2>&1
+ ;;
+ sa)
+   ### steam admin
+   sudo su admin -c 'xterm -geometry 40x4-0+0 -e /opt/steam-utils/bin/steam -language russian &' > /dev/null 2>&1
+ ;;
+ sb)
+   ### steam browser
+   sudo su admin -c 'xterm -geometry 40x4-0+0 -e chrome https://store.steampowered.com/ &' > /dev/null 2>&1
+ ;;
  s1)
    ### steam1
    sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -language russian &' > /dev/null 2>&1
