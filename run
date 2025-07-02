@@ -362,15 +362,16 @@ pli python39
 pli py39-setuptools
 # compat
 pli gcc 
-#pli linux-c7-devtools 
-#pli linux-c7-libgfortran 
+pli linux-c7-devtools 
+pli linux-c7-libgfortran
+pli linux-steam-utils
 # new
 pli ca_root_nss
 pli linux-rl9-dbus-libs
 pli linux-rl9-devtools
 pli linux-rl9-nss
 pli linux-rl9-ca-certificates
-#pli linux-steam-utils
+
 #pkg remove -y -f linux-base-c7
 
 pli linux_libusb 
