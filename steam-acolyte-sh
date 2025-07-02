@@ -41,7 +41,7 @@ echo -n 'Choose your number: '
  ;;
  eg)
    ### epic-games
-   sudo su admin -c 'xterm -geometry 40x4-0+0 -e /opt/steam-utils/bin/steam -language russian &' > /dev/null 2>&1
+   sudo su admin -c 'xterm -geometry 40x4-0+0 -e epic auth &' > /dev/null 2>&1
  ;;
  sa)
    ### steam admin
