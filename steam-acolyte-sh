@@ -1,0 +1,251 @@
+#!/bin/sh
+
+echo '===> Create script, shortcut and info-file'
+cat << EOF > /home/$USER/.cos0
+while :
+do
+clear
+echo '### steam'
+echo 's1 - open steam for user steam0u1'
+echo 's2 - open steam for user steam0u2'
+echo 's3 - open steam for user steam0u3'
+echo 's4 - open steam for user steam0u4'
+echo '### CSGO'
+echo '1 - open CSGO for user steam0u1'
+echo '2 - open CSGO for user steam0u2'
+echo '3 - open CSGO for user steam0u3'
+echo '4 - open CSGO for user steam0u4'
+echo '### CSGO all'
+echo 'a - open CSGO for all 4 users'
+echo '### system commands'
+echo 'yam - open mail of yandex for wine'
+echo 'abs - add boost and steam to start'
+echo 'dbs - disable boost and steam in start'
+echo 'per - set permission 777 on steamapps'
+echo 'pes - set permission 700 to .i386-wine-pkg	'
+echo 'rei - reinstall steam for all users'
+echo 'exit - close cosmos'
+echo ''
+echo -n 'Choose your number: '
+ read ans
+ case "\${ans}" in
+ s1)
+   ### steam1
+   sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -language russian &' > /dev/null 2>&1
+ ;;
+ s2)
+   ### steam2
+   sudo su steam0u2 -c 'xterm -geometry 40x4-0+0 -e steam -language russian &' > /dev/null 2>&1
+ ;;
+ s3)
+   ### steam3
+   sudo su steam0u3 -c 'xterm -geometry 40x4-0+0 -e steam -language russian &' > /dev/null 2>&1
+ ;;
+ s4)
+   ### steam4
+   sudo su steam0u4 -c 'xterm -geometry 40x4-0+0 -e steam -language russian &' > /dev/null 2>&1
+ ;;
+ 1)
+   ### steam1
+   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+ ;;
+ 2)
+   ### steam2
+   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo su steam0u2 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+ ;;
+ 3)
+   ### steam3
+   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo su steam0u3 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+ ;;
+ 4)
+   ### steam4
+   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo su steam0u4 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+ ;;  
+ a)
+   ### steam1
+   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+   sleep 60
+   ### steam2
+   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo su steam0u2 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+   sleep 70
+   ### steam3
+   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo su steam0u3 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+   sleep 80
+   ### steam4
+   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo su steam0u4 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
+ ;;
+ yam)
+   xterm -geometry 40x4-0+0 -e wine iexplore mail.yandex.ru
+ ;;
+ abs)
+   echo '[Desktop Entry]' > Desktop/Htop.desktop
+   echo 'Name=Htop' >> Desktop/Htop.desktop
+   echo 'Type=Application' >> Desktop/Htop.desktop
+   echo 'Exec=lxterminal --geometry=84x24 -e htop' >> Desktop/Htop.desktop
+   echo 'Icon=htop' >> Desktop/Htop.desktop
+ 
+   sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/boost-start.desktop"
+   sudo su root -c "echo 'Name=boost-start' >> /usr/local/etc/xdg/autostart/boost-start.desktop"
+   sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/boost-start.desktop"
+   sudo su root -c "echo 'Exec=xterm -geometry 40x4+0-0 -e ~/.boost' >> /usr/local/etc/xdg/autostart/boost-start.desktop"
+   sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/boost-start.desktop"
+
+   sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-start.desktop"
+   sudo su root -c "echo 'Name=steam-start' >> /usr/local/etc/xdg/autostart/steam-start.desktop"
+   sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-start.desktop"
+   sudo su root -c "echo 'Exec=steam' >> /usr/local/etc/xdg/autostart/steam-start.desktop"
+   sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-start.desktop"
+   
+   sudo rm /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop >> /dev/null 2>&1
+   mv ~/.steam-acolyte ~/.steam-acolyte.save >> /dev/null 2>&1
+ ;;
+ dbs)
+   sudo rm Desktop/Htop.desktop >> /dev/null 2>&1
+   sudo rm /usr/local/etc/xdg/autostart/boost-start.desktop >> /dev/null 2>&1
+   sudo rm /usr/local/etc/xdg/autostart/steam-start.desktop >> /dev/null 2>&1
+   mv ~/.steam-acolyte.save ~/.steam-acolyte >> /dev/null 2>&1
+   sudo su root -c "echo '[Desktop Entry]' > /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+   sudo su root -c "echo 'Name=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+   sudo su root -c "echo 'Type=Application' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+   sudo su root -c "echo 'Exec=steam-acolyte' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+   sudo su root -c "echo 'Terminal=false' >> /usr/local/etc/xdg/autostart/steam-acolyte-link.desktop"
+ ;;
+ per)
+   sudo chmod -R 777 /home/admin/.steam/steam/steamapps  	
+ ;;
+ pes)
+   sudo chmod  -R 0700 /home/admin/.i386-wine-pkg	
+ ;;
+ rei)
+   sudo rm -rf /usr/home/steam0u1/.steam
+   sudo rm -rf /usr/home/steam0u2/.steam
+   sudo rm -rf /usr/home/steam0u3/.steam
+   sudo rm -rf /usr/home/steam0u4/.steam
+   sudo su steam0u1 -c steam-install
+   sudo su steam0u2 -c steam-install
+   sudo su steam0u3 -c steam-install
+   sudo su steam0u4 -c steam-install
+   sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u1/.i386-wine-pkg
+   sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u1/.steam/steam/steamapps
+   sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u2/.i386-wine-pkg
+   sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u2/.steam/steam/steamapps
+   sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u3/.i386-wine-pkg
+   sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u3/.steam/steam/steamapps
+   sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u4/.i386-wine-pkg
+   sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u4/.steam/steam/steamapps
+ ;;
+ exit)
+   echo 'Exit.'
+   sleep 1
+   break
+ ;;
+ *)
+   echo "Error. Please, type number. Start again..."
+ ;;
+ esac
+done
+EOF
+
+chmod +x /home/$USER/.cos0
+
+cat << EOF > /home/$USER/Desktop/Cos0.desktop 
+[Desktop Entry]
+Name=Cos0
+Exec=xterm -geometry 73x31-0-25 -e ./.cos0 &
+Type=Application
+StartupNotify=true
+Icon=/usr/local/share/pixmaps/filled-xterm_48x48.xpm
+EOF
+
+cat << EOF > /home/$USER/Desktop/Readcs 
+===> move
++left
+-left
+===> record
+record csgo
+stop
+playdemo csgo
+demoui
+===> info
+net_graph 1
+===> chat
+say Thanks! Goodbye...
+say Please add to freind. I want to play with you.
+say_team Go A
+say_team Go B
+say_team PLEASE HIDE!
+say ( ͡° ͜ʖ ͡°)
+say ¯\(°_o)/¯
+say (°◡°)
+say 🄽🄸🄲🄴 🅃🅁🅈
+say 𝖕𝖊𝖗𝖋𝖊𝖈𝖙
+say ▄︻┻┳═一∵∴∷∶∵
+===> crosshair
+big blue:
+cl_crosshairalpha 500; cl_crosshaircolor 4; cl_crosshairdot 1; cl_crosshairgap -2; cl_crosshairsize 3; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 1; cl_crosshair_drawoutline 0;
+middle green:
+cl_crosshairalpha 255; cl_crosshaircolor 1; cl_crosshairdot 0; cl_crosshairgap -3; cl_crosshairsize 2; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 0; cl_crosshair_drawoutline 0;
+very smallest red:
+cl_crosshairalpha 255; cl_crosshaircolor 0; cl_crosshairdot 1; cl_crosshairgap -5; cl_crosshairsize 1; cl_crosshairstyle 4; cl_crosshairusealpha 1; cl_crosshairthickness 0; cl_crosshair_drawoutline 0;
+code for dot red:
+CSGO-8MEfp-O79Dc-t2pen-3WuOO-wwNQC
+CSGO-KeZws-oAdEG-8Q3bm-cFphM-N3nQD
+CSGO-SXOVe-Wnxh9-3tv4c-qz4Ta-Q6XXC
+===> links
+https://prosettings.net/counterstrike/
+https://skins.cash/blog/csgo-console-commands-list/
+
+EOF
+
+echo '===> Create users...'
+sudo pw useradd steam0u1 -m
+sudo pw useradd steam0u2 -m
+sudo pw useradd steam0u3 -m
+sudo pw useradd steam0u4 -m
+echo '===> Create steam folder...'
+if [ "$1" == "-f" ]; then
+  sudo rm -rf /home/steam0u1/.steam
+  echo 'Start copying files for user steam0u1...'  
+  sudo cp -R /home/$USER/.steam /home/steam0u1/.steam
+  sudo chown -R steam0u1:steam0u1 /home/steam0u1/.steam
+  sudo rm -rf /home/steam0u2/.steam
+  echo 'Start copying files for user steam0u2...'
+  sudo cp -R /home/$USER/.steam /home/steam0u2/.steam
+  sudo chown -R steam0u2:steam0u2 /home/steam0u2/.steam
+  sudo rm -rf /home/steam0u3/.steam
+  echo 'Start copying files for user steam0u3...'
+  sudo cp -R /home/$USER/.steam /home/steam0u3/.steam
+  sudo chown -R steam0u3:steam3 /home/steam0u3/.steam
+  sudo rm -rf /home/steam0u4/.steam
+  echo 'Start copying files for user steam0u4...'
+  sudo cp -R /home/$USER/.steam /home/steam0u4/.steam
+  sudo chown -R steam0u4:steam0u4 /home/steam0u4/.steam
+else
+  sudo su steam0u1 -c steam-install
+  sudo su steam0u2 -c steam-install
+  sudo su steam0u3 -c steam-install
+  sudo su steam0u4 -c steam-install
+  sudo chmod -R 777 /home/admin/.steam/steam/steamapps  
+  sudo chmod -R 777 /home/admin/.i386-wine-pkg
+  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u1/.i386-wine-pkg
+  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u1/.steam/steam/package
+  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u1/.steam/steam/steamapps
+  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u2/.i386-wine-pkg
+  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u2/.steam/steam/package
+  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u2/.steam/steam/steamapps
+  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u3/.i386-wine-pkg
+  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u3/.steam/steam/package
+  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u3/.steam/steam/steamapps
+  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u4/.i386-wine-pkg
+  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u4/.steam/steam/package
+  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u4/.steam/steam/steamapps
+fi
+
