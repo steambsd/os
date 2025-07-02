@@ -113,9 +113,17 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 
 #shortcut
 cat << EOF > Desktop/Acolyte.desktop 
+#[Desktop Entry]
+#Name=Acolyte
+#Exec=/usr/local/bin/steam-acolyte
+#Type=Application
+#StartupNotify=true
+#Icon=/usr/local/share/pixmaps/ysacolyte.png
+#EOF
+cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
-Exec=/usr/local/bin/steam-acolyte
+Exec=/home/$USER/.steam-acolyte-sh
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
