@@ -7,6 +7,7 @@
 chmod +x reconfig
 chmod +x reconfig-mini
 chmod +x steam-acolyte
+chmod +x steam-acolyte-sh
 chmod +x steam-compat
 chmod +x steam-wine
 chmod +x steam-winepro
