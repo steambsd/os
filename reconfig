@@ -112,7 +112,7 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 #rm Desktop/Steam.desktop >> /dev/null 2>&1
 
 #shortcut
-cat << EOF > Desktop/Acolyte.desktop 
+#cat << EOF > Desktop/Acolyte.desktop 
 #[Desktop Entry]
 #Name=Acolyte
 #Exec=/usr/local/bin/steam-acolyte
