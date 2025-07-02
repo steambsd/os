@@ -771,6 +771,7 @@ cp steam-wine /home/$AZER/.steam-wine.save
 cp steam-winepro /home/$AZER/.steam-winepro.save
 cp steam-compat /home/$AZER/.steam-compat.save
 cp steam-acolyte /home/$AZER/.steam-acolyte.save
+cp steam-acolyte-sh /home/$AZER/.steam-acolyte-sh
 cp utils /home/$AZER/.utils
 cp yet.py /home/$AZER/.yet.py
 # wallpaper
