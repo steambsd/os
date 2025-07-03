@@ -5,12 +5,12 @@ cat << EOF > /home/$USER/.cos0
 while :
 do
 clear
-echo '### different games'
-echo 'ag - show popular native games'
-echo 'eg - open epic-games console app'
-echo '### try to open steam'
-echo 'sa - open steam for user admin'
-echo 'sb - open steam from browser'
+#echo '### different games'
+#echo 'ag - show popular native games'
+#echo 'eg - open epic-games console app'
+#echo '### try to open steam'
+#echo 'sa - open steam for user admin'
+#echo 'sb - open steam from browser'
 echo '### multi steam'
 echo 's1 - open steam for user steam0u1'
 echo 's2 - open steam for user steam0u2'
