@@ -1,6 +1,17 @@
 #!/bin/sh
 sleep 10
 if [ -d .steam ]; then
+ #new
+ echo 'devfs           /compat/ubuntu/dev      devfs           rw,late                      0       0' >> /etc/fstab
+ echo 'tmpfs           /compat/ubuntu/dev/shm  tmpfs           rw,late,size=1g,mode=1777    0       0' >> /etc/fstab
+ echo 'fdescfs         /compat/ubuntu/dev/fd   fdescfs         rw,late,linrdlnk             0       0' >> /etc/fstab
+ echo 'linprocfs       /compat/ubuntu/proc     linprocfs       rw,late                      0       0' >> /etc/fstab
+ echo 'linsysfs        /compat/ubuntu/sys      linsysfs        rw,late                      0       0' >> /etc/fstab
+ echo '/tmp            /compat/ubuntu/tmp      nullfs          rw,late                      0       0' >> /etc/fstab
+ echo '/home           /compat/ubuntu/home     nullfs          rw,late                      0       0' >> /etc/fstab
+ mount -a
+ service linux start
+ debootstrap jammy /compat/ubuntu
  #IMPORTANT!!!
  IGNORE_OSVERSION=yes /usr/local/wine-proton/bin/pkg32.sh install -y wine-proton mesa-dri
  /opt/steam-utils/bin/lsu-bootstrap --allow-stealing-my-passwords,-browser-history-and-ssh-keys
