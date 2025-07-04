@@ -137,7 +137,7 @@ rm 'Desktop/7-Zip Help.desktop' >> /dev/null 2>&1
 cat << EOF > Desktop/Acolyte.desktop 
 [Desktop Entry]
 Name=Acolyte
-Exec=xterm -geometry 73x55-0-50 -e ./.steam-acolyte-sh &
+Exec=xterm -geometry 55x20-0-50 -e ./.steam-acolyte-sh &
 Type=Application
 StartupNotify=true
 Icon=/usr/local/share/pixmaps/ysacolyte.png
