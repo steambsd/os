@@ -27,6 +27,14 @@ sleep 2
 sudo su root -c "service linux restart"
 sudo su root -c "service linux64 restart"
 
+# some new
+#pkg install -f git
+#git clone https://git.FreeBSD.org/ports.git /usr/ports
+#git -C /usr/ports pull
+#cd /usr/ports/games/linux-steam-utils
+#echo 'make USES= linux:rl9 ruby:run' >> Makefile
+
+
 ############################################
 ### Check standart driver                ###
 ############################################
