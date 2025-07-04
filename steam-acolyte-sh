@@ -1,7 +1,5 @@
 #!/bin/sh
 
-echo '===> Create script, shortcut and info-file'
-cat << EOF > /home/$USER/.cos0
 while :
 do
 clear
@@ -34,7 +32,7 @@ echo 'exit - close'
 echo ''
 echo -n 'Choose your number: '
  read ans
- case "\${ans}" in
+ case "${ans}" in
  ag)
    ### native games
    sudo su admin -c 'xterm -geometry 40x4-0+0 -e echo "pkg ins trigger-rally 0ad xonotic" &' > /dev/null 2>&1
@@ -69,39 +67,39 @@ echo -n 'Choose your number: '
  ;;
  1)
    ### steam1
-   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` > /dev/null 2>&1
    sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
  ;;
  2)
    ### steam2
-   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` > /dev/null 2>&1
    sudo su steam0u2 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
  ;;
  3)
    ### steam3
-   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` > /dev/null 2>&1
    sudo su steam0u3 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
  ;;
  4)
    ### steam4
-   sudo rm /tmp/\`ls /tmp | grep engine\` > /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` > /dev/null 2>&1
    sudo su steam0u4 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
  ;;  
  a)
    ### steam1
-   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` >> /dev/null 2>&1
    sudo su steam0u1 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
    sleep 60
    ### steam2
-   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` >> /dev/null 2>&1
    sudo su steam0u2 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
    sleep 70
    ### steam3
-   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` >> /dev/null 2>&1
    sudo su steam0u3 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
    sleep 80
    ### steam4
-   sudo rm /tmp/\`ls /tmp | grep engine\` >> /dev/null 2>&1
+   sudo rm /tmp/`ls /tmp | grep engine` >> /dev/null 2>&1
    sudo su steam0u4 -c 'xterm -geometry 40x4-0+0 -e steam -applaunch 730 -w 640 -novid -console &' > /dev/null 2>&1
  ;;
  yam)
@@ -174,65 +172,5 @@ echo -n 'Choose your number: '
  ;;
  esac
 done
-EOF
 
-chmod +x /home/$USER/.cos0
-
-cat << EOF > /home/$USER/Desktop/Cos0.desktop 
-[Desktop Entry]
-Name=Cos0
-Exec=xterm -geometry 73x31-0-25 -e ./.cos0 &
-Type=Application
-StartupNotify=true
-Icon=/usr/local/share/pixmaps/filled-xterm_48x48.xpm
-EOF
-
-cat << EOF > /home/$USER/Desktop/Readcs 
-===> readme
-you can play native games, epic-games or steam etc
-EOF
-
-echo '===> Create users...'
-sudo pw useradd steam0u1 -m
-sudo pw useradd steam0u2 -m
-sudo pw useradd steam0u3 -m
-sudo pw useradd steam0u4 -m
-echo '===> Create steam folder...'
-if [ "$1" == "-f" ]; then
-  sudo rm -rf /home/steam0u1/.steam
-  echo 'Start copying files for user steam0u1...'  
-  sudo cp -R /home/$USER/.steam /home/steam0u1/.steam
-  sudo chown -R steam0u1:steam0u1 /home/steam0u1/.steam
-  sudo rm -rf /home/steam0u2/.steam
-  echo 'Start copying files for user steam0u2...'
-  sudo cp -R /home/$USER/.steam /home/steam0u2/.steam
-  sudo chown -R steam0u2:steam0u2 /home/steam0u2/.steam
-  sudo rm -rf /home/steam0u3/.steam
-  echo 'Start copying files for user steam0u3...'
-  sudo cp -R /home/$USER/.steam /home/steam0u3/.steam
-  sudo chown -R steam0u3:steam3 /home/steam0u3/.steam
-  sudo rm -rf /home/steam0u4/.steam
-  echo 'Start copying files for user steam0u4...'
-  sudo cp -R /home/$USER/.steam /home/steam0u4/.steam
-  sudo chown -R steam0u4:steam0u4 /home/steam0u4/.steam
-else
-  sudo su steam0u1 -c steam-install
-  sudo su steam0u2 -c steam-install
-  sudo su steam0u3 -c steam-install
-  sudo su steam0u4 -c steam-install
-  sudo chmod -R 777 /home/admin/.steam/steam/steamapps  
-  sudo chmod -R 777 /home/admin/.i386-wine-pkg
-  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u1/.i386-wine-pkg
-  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u1/.steam/steam/package
-  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u1/.steam/steam/steamapps
-  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u2/.i386-wine-pkg
-  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u2/.steam/steam/package
-  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u2/.steam/steam/steamapps
-  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u3/.i386-wine-pkg
-  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u3/.steam/steam/package
-  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u3/.steam/steam/steamapps
-  sudo ln -s /usr/home/admin/.i386-wine-pkg /usr/home/steam0u4/.i386-wine-pkg
-  sudo ln -s /usr/home/admin/.steam/steam/package /usr/home/steam0u4/.steam/steam/package
-  sudo ln -s /usr/home/admin/.steam/steam/steamapps /usr/home/steam0u4/.steam/steam/steamapps
-fi
 
