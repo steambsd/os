@@ -365,7 +365,9 @@ pli gcc
 #pli linux-c7-devtools 
 #pli linux-c7-libgfortran
 #pli linux-steam-utils
+#pli linux_libusb 
 # new
+#pkg remove -y -f linux-base-c7
 pli ca_root_nss
 pli linux-rl9-dbus-libs
 pli linux-rl9-devtools
@@ -373,15 +375,11 @@ pli linux-rl9-nss
 pli linux-rl9-ca-certificates
 pli debootstrap
 
-#pkg remove -y -f linux-base-c7
-
-pli linux_libusb 
 pli wine-proton 
 pli libc6-shim
 pli python3
 pli python39
 pli py39-qt5
-
 
 # 3d test
 pli vulkan-tools
